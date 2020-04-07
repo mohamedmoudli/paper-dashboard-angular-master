@@ -1,0 +1,38 @@
+
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+
+
+<div class="col-md-6 container    my-5">
+  <div class="card card-user  panel">
+    <div class="card-header panel-heading bg-primary ">
+      <h5 class="card-title "> ajouter categories </h5>
+    </div>
+    <div class="card-body">
+      <form #f="ngForm" (ngSubmit)="ajoutercategorie(f.value)">
+
+        <div class="form-group">
+          <label class="control-label">nom categorie:</label>
+          <input type="text" name="nomcat"  ngModel class="form-control">
+        </div>
+
+
+        <button class="btn btn-danger" routerLink="/categoriesPI" style="float: left">Annuler</button>
+
+        <button class="btn btn-primary "  style="float: right"  >create</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>

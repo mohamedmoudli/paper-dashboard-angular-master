@@ -1,0 +1,42 @@
+
+<div class="col-md-6 container    my-5">
+  <div class="card card-user  panel">
+    <div class="card-header panel-heading bg-primary ">
+      <h5 class="card-title "> create compte </h5>
+    </div>
+    <div class="card-body">
+<form #f="ngForm" (ngSubmit)="createCompte(f.value)">
+  <div >
+    <div *ngIf="err" class="alert alert-danger">
+      <span ></span>  l'email que vous a choisi est déja associé a un compte !
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label">email:</label>
+    <input type="text" name="email" placeholder="votre email" ngModel class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="control-label">username:</label>
+    <input type="text" name="username" placeholder="votre username" ngModel class="form-control">
+  </div>
+  <div class="form-group">
+    <label class="control-label">Password:</label>
+    <input type="password" name="password" placeholder="votre password" ngModel class="form-control">
+  </div>
+  <div>
+    <select name="roles" placeholder="role" id="pet-select" ngModel>
+
+      <option value="">--choisir votre role--</option>
+      <option value="ROLE_USER">role user</option>
+      <option value="ROLE_ADMIN">role admin</option>
+      <option value="ROLE_SUPERADMIN">role super admin</option>
+    </select>
+  </div>
+  <button class="btn btn-danger" routerLink="/login" style="float: left">Annuler</button>
+
+  <button class="btn btn-primary "  style="float: right"  >create</button>
+</form>
+
+    </div>
+  </div>
+</div>

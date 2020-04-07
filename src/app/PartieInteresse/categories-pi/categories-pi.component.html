@@ -1,0 +1,65 @@
+
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content" >
+      <button class="btn btn-primary " (click)="afficher()">ajouter categories</button>
+<div class="card col-md-6">
+
+                <table class="table">
+                  <thead class=" text-primary">
+          <tr>
+            <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+          </tr>
+          </thead>
+          <tbody >
+          <tr *ngFor="let c of users">
+            <td>{{c.id}}</td>
+            <td>{{c.nomcat}}</td>
+            <td></td>
+            <td><button class="btn btn-danger" (click)="supp(c.id)">supp</button></td>
+          </tr>
+          </tbody>
+        </table>
+
+        </div>
+
+
+
+        <div class="med col-md-4"  *ngIf="med" style="float: right" >
+          <div class="card   panel">
+            <div class="card-header panel-heading bg-primary ">
+              <h5 class="card-title "> ajouter categories </h5>
+            </div>
+            <div class="card-body">
+              <form #f="ngForm" (ngSubmit)="ajoutercategorie(f.value)">
+
+                <div class="form-group">
+                  <label class="control-label">nom categorie:</label>
+                  <input type="text" name="nomcat"  ngModel class="form-control">
+                </div>
+
+
+                <button class="btn btn-danger" routerLink="/categoriesPI" style="float: left" (click)="afficher()">Annuler</button>
+
+                <button class="btn btn-primary "  style="float: right" >create</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+  </div>
+
+<fixedplugin-cmp></fixedplugin-cmp>
+
+

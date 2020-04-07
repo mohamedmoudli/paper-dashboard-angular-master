@@ -1,0 +1,131 @@
+
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content container ">
+<div class=" text-info">
+<h1>partie intéressé </h1>
+</div>
+
+      <div>
+ <button routerLink="/categoriesPI"  class="btn btn-simple">gérer les categories</button>
+ <div class="card col-md-4" style="float: right">
+      <table class="table">
+        <thead class=" text-primary">
+        <tr>
+          <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+        </tr>
+        </thead>
+        <tbody >
+        <tr *ngFor="let c of users">
+         <td> {{c.nomcat}}</td>
+        </tr>
+        </tbody>
+      </table>
+ </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="med">
+      <div class="card col-md-5" *ngFor="let c of users" >
+        <div class="navbar" ><h4>{{c.nomcat}}</h4></div>
+        <table class="table">
+          <thead class=" text-primary">
+          <tr>
+            <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+          </tr>
+          </thead>
+          <tbody >
+          <tr *ngFor="let p of c.partieinteresses ">
+            <td>{{p.id}}</td>
+            <td>{{p.NomPI}}</td>
+
+            <td ></td>
+
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div>
+      <button class="btn btn-danger" routerLink="/ajouterPI">ajouter partie interesse</button>
+      <div class="card col-md-11">
+
+        <div class=" navbar "> <h4>liste des partie interessé </h4></div>
+        <mat-form-field style="float: right" >
+          <input matInput (keyup)="search()" [(ngModel)]="NomPI" placeholder="Filter">
+        </mat-form-field>
+        <table class="table">
+          <thead>
+          <tr>
+            <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+          </tr>
+          </thead>
+          <tbody >
+          <tr *ngFor="let c of users1 " >
+            <td>Pi{{c.id}}</td>
+            <td>{{c.NomPI}}</td>
+            <td >{{c.CategoriesPI.nomcat}}</td>
+            <td></td>
+            <td ><button class=" btn bg-success" routerLink="/pipertinante" >evaluer</button></td>
+
+          </tr>
+
+          </tbody>
+        </table>
+    </div>
+      <div>
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>
+

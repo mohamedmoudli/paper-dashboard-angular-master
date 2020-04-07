@@ -1,0 +1,32 @@
+
+<div class="col-md-6 container    my-5">
+  <div class="card card-user  ">
+    <div class="card-header panel-heading bg-primary  ">
+      <h5 class="card-title"> Login</h5>
+    </div>
+    <div class="card-body">
+      <form  #f="ngForm" (ngSubmit)="onLogin(f.value)">
+
+        <div >
+          <div *ngIf="err" class="alert alert-danger">
+            <span ></span>  verifier votre corrdonné !
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Login:</label>
+          <input type="text" name="email" ngModel class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="control-label">Password:</label>
+          <input type="password" name="password" ngModel class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary" >Login</button>
+      </form>
+
+  </div>
+    <div>
+      <a routerLink="/createregister">creer un compte</a>
+    </div>
+</div>
+</div>
+
