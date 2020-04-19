@@ -1,0 +1,27 @@
+
+          <div class="card-header panel-heading bg-primary ">
+            <h2 class="card-title "> ajouter categories extern</h2>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="angForm" name="form"  (ngSubmit)=" onSubmit() " >
+
+              <div class="form-group">
+                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('NomCategorie').errors && (angForm.get('NomCategorie').touched || angForm.get('NomCategorie').dirty ) }">
+                <label class="control-label">nom categorie:</label>
+                <input type="text" name="NomCategorie" formControlName="NomCategorie" [(ngModel)]="data.NomCategorie" class="form-control">
+                  <div *ngIf="angForm.get('NomCategorie').errors && (angForm.get('NomCategorie').touched || angForm.get('NomCategorie').dirty )" class="alert alert-danger">
+                    <span *ngIf="angForm.get('NomCategorie').errors.required"></span>  nom de categories est obligatoire
+                  </div>
+                </div>
+              </div>
+
+
+              <button class="btn btn-danger" (click)="onNoClick()" style="float: left">Annuler</button>
+
+              <button class="btn btn-primary "  style="float: right"   [disabled]="angForm.invalid" (click)="addcategorie()" >create</button>
+            </form>
+
+          </div>
+
+
+

@@ -1,0 +1,63 @@
+
+
+
+          <div class="card-header panel-heading bg-primary ">
+            <h2 class="card-title "> ajouter enjeu intern </h2>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="angForm" name="form" (ngSubmit)=" onSubmit() " >
+
+              <div class="form-group">
+                <label class="control-label">description:</label>
+                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Description').errors && (angForm.get('Description').touched || angForm.get('Description').dirty ) }">
+                <input type="text" name="Description" formControlName="Description" [(ngModel)]="data.Description" class="form-control">
+                  <div *ngIf="angForm.get('Description').errors && (angForm.get('Description').touched || angForm.get('Description').dirty )" class="alert alert-danger">
+                    <span *ngIf="angForm.get('Description').errors.required"></span>  description est obligatoire
+                  </div>
+              </div>
+              </div>
+
+              <div>
+                <div>
+                  <label>le type d'enjeu</label>
+                </div>
+                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('typeEnjeu').errors && (angForm.get('typeEnjeu').touched || angForm.get('typeEnjeu').dirty ) }">
+
+                <select name="typeEnjeu" placeholder="role" formControlName="typeEnjeu" [(ngModel)]="data.typeEnjeu">
+
+                  <option value="">--chnoisir type--</option>
+                  <option value="api/type_enjeus/1">force</option>
+                  <option value="api/type_enjeus/2">faiblesses</option>
+                </select>
+
+                </div>
+              </div>
+
+              <div>
+                <div>
+                <label>la categorie :</label>
+                </div>
+                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('categorieEnjeu').errors && (angForm.get('categorieEnjeu').touched || angForm.get('categorieEnjeu').dirty ) }">
+                <select name="CategoriesEnjeu" placeholder="nom cat" formControlName="categorieEnjeu" id="pet-select" [(ngModel)]="data.CategoriesEnjeu" >
+
+                  <option value="">--choisir la categories--</option>
+                  <option *ngFor="let c of users" value="api/categories_enjeu_internes/{{c.id}}">{{c.NomCategories}}</option>
+
+                </select>
+                  <div *ngIf="angForm.get('categorieEnjeu').errors && (angForm.get('categorieEnjeu').touched || angForm.get('categorieEnjeu').dirty )" class="alert alert-danger">
+                    <span *ngIf="angForm.get('categorieEnjeu').errors.required"></span>  description is required
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-danger" (click)="onNoClick()" style="float: left">Annuler</button>
+
+              <button class="btn btn-primary "  style="float: right" [disabled]="angForm.invalid"  (click)="saveEnjeuForce()" >create</button>
+            </form>
+
+          </div>
+
+
+
+
+

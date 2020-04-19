@@ -1,0 +1,69 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+      <div class="row">
+        <button routerLink="/ajouterRisque" class="btn btn-success">ajouter un risque</button>
+       <button (click)="affficheEnjeux()" class="btn btn-warning" >enjeux</button>
+       <button class="btn btn-warning">pipertinante</button>
+        <div style="float: left" >
+       <button class="btn btn-primary" routerLink="/RisqueCategories" style="float: left">gerer categorie</button>
+        </div>
+        <div style="float: left" >
+       <button class="btn btn-primary" routerLink="/strategiqueRisque" style="float: left">gerer strategique</button>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title"> Risque</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary" >
+                  <tr>
+                  <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+                  </tr>
+
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let c of users">
+                    <td>{{c.CategorieRisque.nomCategorie}}</td>
+                    <td>{{c.Description}}</td>
+                    <td>{{c.CourtTerm}}</td>
+                    <td>{{c.MoyenTerm}}</td>
+                    <td>{{c.LongTerm}}</td>
+                    <td>{{c.DateIdentification}}</td>
+                    <td>{{c.Causes}}</td>
+                    <td>{{c.Censequence}}</td>
+                    <td>{{c.Gravite}}</td>
+                    <td>{{c.Probabilite}}</td>
+                    <td>{{c.detectabilite}}</td>
+                    <td>{{c.Criticite}}</td>
+                    <td>{{c.Decision}}</td>
+                    <td>{{c.StrategiqueRisque.nomSrategique}}</td>
+                    <td>{{c.Processus.processus}}</td>
+                    <td>  <p *ngFor="let p of c.planDeActions "> {{ p.id}}</p> </td>
+                    <td>{{c.EtatRisque}}</td>
+                    <td>{{c.Commentaire}}</td>
+
+                    <td>{{c.Pilote}}</td>
+                    <td ></td>
+
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>

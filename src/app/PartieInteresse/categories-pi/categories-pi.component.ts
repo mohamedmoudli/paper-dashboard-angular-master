@@ -3,9 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import {AuthentificationService} from '../../Login/authentification.service';
 import {Router} from '@angular/router';
 import {MatTableDataSource} from '@angular/material/table';
-import { MatDialogRef} from '@angular/material/dialog';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {PartieinteresseService} from '../../Services/partieinteresse.service';
-import {AjouterCategoriesPIComponent} from '../ajouter-categories-pi/ajouter-categories-pi.component';
+import {AjouterCategoriesPIComponent} from '../Create-categories-pi/ajouter-categories-pi.component';
+import {CreateCategorieExternComponent} from '../../Enjeux/create-categorie-extern/create-categorie-extern.component';
+import {DelateExigencePIComponent} from '../delate-exigence-pi/delate-exigence-pi.component';
+import {DelateCategoriesPIComponent} from '../delate-categories-pi/delate-categories-pi.component';
 
 @Component({
   selector: 'app-categories-pi',
@@ -29,7 +32,7 @@ export class CategoriesPIComponent implements OnInit {
 
 
   constructor( private partieinteresse: PartieinteresseService,
-              private router:Router) {}
+              private router:Router , private dialog: MatDialog) {}
 
 
 
@@ -44,18 +47,7 @@ export class CategoriesPIComponent implements OnInit {
       });
   }
 
-  public supp(id) {
-    console.log(id);
-    this.partieinteresse.deletCategories(id).subscribe((data) => {
-      console.log("ffffffffff");
-      this.ngOnInit();
 
-    }), (error) => {
-
-      console.log("Error", error);
-    };
-
-  }
   public applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
@@ -73,25 +65,33 @@ export class CategoriesPIComponent implements OnInit {
 
 
 
-  ajoutercategorie(data){
-    console.log(data);
-    this.partieinteresse.postCategoriesPI(data).subscribe(
-      resp=>{
-        console.log(resp);
-        return this.router.navigate(['categoriesPI']);
-      },error => {
+  public ajouterCategoriedialog(): void {
 
-        console.log(error);
+    const dialogRef = this.dialog.open(AjouterCategoriesPIComponent, {
+      width: "500px",
+      height: "300px",
 
-        return error;
-      }
-    )
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
   }
 
 
+  public delateCategorie(id): void {
 
-  public afficher() {
-    this.med = !this.med;
-    console.log(this.med);
+    const dialogRef = this.dialog.open(DelateCategoriesPIComponent, {
+      width: "500px",
+      height: "150px",
+      data:id
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
   }
 }

@@ -23,6 +23,10 @@ export class PartieinteresseService {
     return this.http.get(this.host+"/partieinteresse/cat1");
 
   }
+  public getNbreCategories() {
+    return this.http.get(this.host+"/nbreCategories");
+
+  }
 
   public postCategoriesPI(data1) {
     console.log(data1);
@@ -31,7 +35,7 @@ export class PartieinteresseService {
   }
 
   public deletCategories(id: number){
-    return this.http.delete(this.host+"/api/categoriepis/" + id);
+    return this.http.delete(this.host+"/api/categoriepis/"+id);
   }
 
   public postpartieinteresse(data) {
@@ -39,8 +43,33 @@ export class PartieinteresseService {
 
   }
 
+  public postExigencePI(data) {
+    return this.http.post(this.host+"/api/exigencepis",data);
+
+  }
+  public getExigencePI() {
+    return this.http.get(this.host+"/GetExigenceByAction");
+
+  }
+
+
+
+
   public getpartieinteresse() {
-    return this.http.get(this.host+"/all");
+    return this.http.get(this.host+"/api/partieinteresses");
+
+  }
+
+  public getpoidsbyid(id , data) {
+    console.log(this.http.post(this.host+"/getPoids/"+id ,data));
+
+    return this.http.post(this.host+"/getPoids/"+id ,data);
+
+  }
+
+  public getpipertinante(id) {
+    console.log(id);
+    return this.http.get(this.host+"/pipertinante/"+id);
 
   }
   public getpartieinteressebyid(id) {
@@ -48,8 +77,37 @@ export class PartieinteresseService {
     return this.http.get(this.host+"/partieinteresse/cat/"+id);
 
   }
+
+  public getNomCategorie() {
+    return this.http.get(this.host+"/getNomCategorie");
+
+  }
   public deletepartieinteresse(id) {
     return this.http.delete(this.host+"/api/partieinteresses/"+id);
+
+  }
+
+  public deleteExigence(id) {
+    return this.http.delete(this.host+"/api/exigencepis/"+id);
+
+  }
+  public updatepartieinteresse(id) {
+    return this.http.delete(this.host+"/api/partieinteresses/"+id);
+
+  }
+
+  public savehistoriquePI(seul) {
+    return this.http.get(this.host+"/savehistorique/"+seul);
+
+  }
+
+  public gethistoriquePI() {
+    return this.http.get(this.host+"/api/historique_p_is");
+
+  }
+
+  public deleteHistorique(id) {
+    return this.http.delete(this.host+"/api/historique_p_is/"+id);
 
   }
 
