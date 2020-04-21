@@ -17,7 +17,7 @@ export class RisqueComponent implements OnInit {
   Enjeu: any ;
 
 
-  public hidder = ["id", "description" , "court term" , "moyen term" , "long term" ,
+  public hidder = ["id", "CategorieRisque" , "description" , "court term" , "moyen term" , "long term" ,
     "date d'indentification" , "cause" , "consequence" , "gravite" , "probabilité" , "detectabilité" , "creticité" , "decision" ,
     'strategique' , "process lié" , "N action" , "etat risque" , "commentaire"];
   constructor(private risqueService: RisqueService,
@@ -60,6 +60,18 @@ export class RisqueComponent implements OnInit {
       console.log("The dialog was closed");
       this.animal = result;
     });
+  }
+
+  saveHistoriqueRisque(){
+    this.risqueService.saveHistoriqueRisque()
+      .subscribe((data) => {
+
+        console.log(data);
+        this.users = data;
+        console.log(this.users);
+      }, error => {
+        console.log(false);
+      });
   }
 }
 

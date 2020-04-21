@@ -49,4 +49,11 @@ export class RisqueService {
     return this.http.get(this.host+"/api/enjeus");
 
   }
+  public getHistoriqueRisque() {
+    return this.http.get(this.host+"/GethistoriqueRisque");
+  }
+  public saveHistoriqueRisque() {
+    return this.http.get(this.host+"/savehistoriqueRisque");
+  }
+
 }

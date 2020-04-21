@@ -60,6 +60,16 @@ import { DelatecategorieInternComponent } from './Enjeux/delatecategorie-intern/
 import { DelateenjeuComponent } from './Enjeux/delateenjeu/delateenjeu.component';
 import { DelateGuideComponent } from './GuideUtilisation/delate-guide/delate-guide.component';
 import { DelateProcessComponent } from './Périmetre/delate-process/delate-process.component';
+import { OpportuniteComponent } from './Opportunite/opportunite/opportunite.component';
+import { CreateOpportuniteComponent } from './Opportunite/create-opportunite/create-opportunite.component';
+import { ReevaluerOpportuniteComponent } from './Opportunite/reevaluer-opportunite/reevaluer-opportunite.component';
+import { CategorieOpportuniteComponent } from './Opportunite/categorie-opportunite/categorie-opportunite.component';
+import { StrategiqueOpportuniteComponent } from './Opportunite/strategique-opportunite/strategique-opportunite.component';
+import { CreateStrategiqueOpportuniteComponent } from './Opportunite/create-strategique-opportunite/create-strategique-opportunite.component';
+import { CreateCategorieOpportuniteComponent } from './Opportunite/create-categorie-opportunite/create-categorie-opportunite.component';
+import { HistoriqueOpportuniteComponent } from './Opportunite/historique-opportunite/historique-opportunite.component';
+import { DeleteCategorieOpportuniteComponent } from './Opportunite/delete-categorie-opportunite/delete-categorie-opportunite.component';
+import { DelateStrategiqueOpportuniteComponent } from './Opportunite/delate-strategique-opportunite/delate-strategique-opportunite.component';
 
 
 
@@ -70,11 +80,7 @@ import { DelateProcessComponent } from './Périmetre/delate-process/delate-proce
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    DelatecategorieExternComponent,
-    DelatecategorieInternComponent,
-    DelateenjeuComponent,
-    DelateGuideComponent,
-    DelateProcessComponent,
+
 
 
 

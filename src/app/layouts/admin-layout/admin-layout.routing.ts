@@ -39,6 +39,8 @@ import {CategorieRisqueComponent} from '../../Risque/categorie-risque/categorie-
 import {StrategiqueRisqueComponent} from '../../Risque/strategique-risque/strategique-risque.component';
 import {CategorieInternComponent} from '../../Enjeux/categorie-intern/categorie-intern.component';
 import {CategorieExternComponent} from '../../Enjeux/categorie-extern/categorie-extern.component';
+import {OpportuniteComponent} from '../../Opportunite/opportunite/opportunite.component';
+import {CreateOpportuniteComponent} from '../../Opportunite/create-opportunite/create-opportunite.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -75,5 +77,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'test5',  component: Test5Component },
     { path: 'ajouterguideUtilisation',  component: AjouterGuideUtilisationComponent },
     { path: 'historiquepipertinante',  component: HistoriquePIpertinanteComponent },
+    { path: 'Opportunite',  component: OpportuniteComponent },
+    { path: 'ajouterOpportunite',  component: CreateOpportuniteComponent },
     { path: 'upgrade',        component: UpgradeComponent }
 ];
