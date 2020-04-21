@@ -57,5 +57,15 @@ export class OpportuniteComponent implements OnInit {
       this.animal = result;
     });
   }
+  saveHistoriqueOpportunite(){
+    this.opportuniteService.saveHistoriqueOpportunite()
+      .subscribe((data) => {
+
+        console.log(data);
+
+      }, error => {
+        console.log(false);
+      });
+  }
 
 }

@@ -41,6 +41,9 @@ import {CategorieInternComponent} from '../../Enjeux/categorie-intern/categorie-
 import {CategorieExternComponent} from '../../Enjeux/categorie-extern/categorie-extern.component';
 import {OpportuniteComponent} from '../../Opportunite/opportunite/opportunite.component';
 import {CreateOpportuniteComponent} from '../../Opportunite/create-opportunite/create-opportunite.component';
+import {HistoriqueOpportuniteComponent} from '../../Opportunite/historique-opportunite/historique-opportunite.component';
+import {CategorieOpportuniteComponent} from '../../Opportunite/categorie-opportunite/categorie-opportunite.component';
+import {StrategiqueOpportuniteComponent} from '../../Opportunite/strategique-opportunite/strategique-opportunite.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -77,7 +80,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'test5',  component: Test5Component },
     { path: 'ajouterguideUtilisation',  component: AjouterGuideUtilisationComponent },
     { path: 'historiquepipertinante',  component: HistoriquePIpertinanteComponent },
+    { path: 'historiqueOpportunite',  component: HistoriqueOpportuniteComponent },
     { path: 'Opportunite',  component: OpportuniteComponent },
+    { path: 'CategoriesOpportunite',  component: CategorieOpportuniteComponent },
+    { path: 'StrategiqueOpportunite',  component: StrategiqueOpportuniteComponent },
     { path: 'ajouterOpportunite',  component: CreateOpportuniteComponent },
     { path: 'upgrade',        component: UpgradeComponent }
 ];

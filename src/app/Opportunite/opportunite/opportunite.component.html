@@ -6,17 +6,21 @@
     <navbar-cmp></navbar-cmp>
     <div class="content">
       <div class="row">
+
+        <div style="float: left" >
+          <button class="btn btn-primary" routerLink="/historiqueOpportunite" style="float: left">historique</button>
+        </div>
         <button routerLink="/ajouterOpportunite" class="btn btn-success">ajouter un opportunite</button>
         <button (click)="affficheEnjeux()" class="btn btn-warning" >enjeux</button>
         <button class="btn btn-warning">pipertinante</button>
         <div style="float: left" >
-          <button class="btn btn-primary" routerLink="/RisqueCategories" style="float: left">gerer categorie</button>
+          <button class="btn btn-primary" routerLink="/CategoriesOpportunite" style="float: left">gerer categorie</button>
         </div>
         <div style="float: left" >
-          <button class="btn btn-primary" routerLink="/strategiqueRisque" style="float: left">gerer strategique</button>
+          <button class="btn btn-primary" routerLink="/StrategiqueOpportunite" style="float: left">gerer strategique</button>
         </div>
         <div style="float: left" >
-          <button class="btn btn-primary" (click)="saveHistoriqueRisque()" style="float: left">Enregister etat</button>
+          <button class="btn btn-primary" (click)="saveHistoriqueOpportunite()" style="float: left">Enregister etat</button>
         </div>
         <div class="col-md-12">
           <div class="card">
