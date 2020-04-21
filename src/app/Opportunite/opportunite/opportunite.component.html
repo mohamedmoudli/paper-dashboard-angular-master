@@ -6,7 +6,7 @@
     <navbar-cmp></navbar-cmp>
     <div class="content">
       <div class="row">
-        <button routerLink="/ajouterRisque" class="btn btn-success">ajouter un risque</button>
+        <button routerLink="/ajouterOpportunite" class="btn btn-success">ajouter un opportunite</button>
         <button (click)="affficheEnjeux()" class="btn btn-warning" >enjeux</button>
         <button class="btn btn-warning">pipertinante</button>
         <div style="float: left" >
@@ -59,8 +59,8 @@
                     <td>{{c.AventageReevaluation}}</td>
                     <td>{{c.PoidsReevaluation}}</td>
                     <td>{{c.DecisionReevaluation}}</td>
-                    <td>{{c.StrategiqueEvaluation.nomStrategique}}</td>
-                    <td>{{c.ProcessLieReevaluation.processus}}</td>
+                    <td *ngIf="c.StrategiqueEvaluation !== null">{{c.StrategiqueEvaluation.nomStrategique}}</td>
+                    <td *ngIf="c.ProcessLieReevaluation !== null">{{c.ProcessLieReevaluation.processus}}</td>
                     <td>  <p *ngFor="let p of c.NumActionReevaluation "> {{ p.id}}</p> </td>
                     <td>{{c.EtatOpportuniteReevaluation}}</td>
                     <td>{{c.Commentaire}}</td>

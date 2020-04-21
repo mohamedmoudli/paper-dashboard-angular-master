@@ -1,1 +1,150 @@
-<p>create-opportunite works!</p>
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+      <div class="col-md-6 container    my-5">
+        <div class="card card-user  panel">
+          <div class="card-header panel-heading bg-primary ">
+            <h5 class="card-title "> ajouter opportunite </h5>
+          </div>
+          <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="saveOpportunite(f.value)">
+
+              <div>
+                <select name="idcategorie" placeholder="nom cat"  ngModel type="number">
+
+                  <option value="">--choisir categories--</option>
+                  <option *ngFor="let c of categorieOpportunite" value="{{c.id}}">{{c.NomCategorie}}</option>
+
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"> description :</label>
+                <input type="text" name="Description"  ngModel class="form-control">
+              </div>
+
+              <p>durée</p>
+              <div>
+                <input type="checkbox" name="CourtTerm"  value="*" ngModel>
+                <label>court term</label><br>
+
+                <input type="checkbox" name="MoyenTerm" value="*" ngModel>
+                <label >moyen term</label><br>
+                <input type="checkbox" name="LongTerm" value="*" ngModel>
+                <label >long term</label>
+              </div>
+              <div class="form-group">
+                <label class="control-label"> date:</label>
+                <input type="date" name="DateIdentification"  ngModel class="form-control">
+              </div>
+
+              <h1>Qualification de l'opportunite</h1>
+              <div>
+                <div>
+                <input type="checkbox" name="Coherence"  value="*" ngModel>
+                <label>Coherence</label><br>
+                </div>
+                <div>
+                <input type="checkbox" name="Allignement" value="*" ngModel>
+                <label >Allignement</label><br>
+                </div>
+                <div>
+                <input type="checkbox" name="Presence" value="*" ngModel>
+                <label >Presence</label>
+                </div>
+                <div>
+                <input type="checkbox" name="Competences" value="*" ngModel>
+                <label >Competences</label><br>
+                </div>
+                <div>
+                <input type="checkbox" name="Continute" value="*" ngModel>
+                <label >Continute</label><br>
+                </div>
+                <div>
+                <input type="checkbox" name="Gain" value="*" ngModel>
+                <label >Gain</label><br>
+                </div>
+              </div>
+              <div>
+                <h1 class="bg-primary">evaluation</h1>
+                <div>
+                  <div>
+                    <select name="Efforts" placeholder="role"  ngModel>
+
+                      <option value="">--choisir efforts--</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+                  <div>
+                    <select name="Aventages" placeholder="Aventage"  ngModel>
+
+                      <option value="">--choisir Aventage--</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <select  name="idstrategique" placeholder="nom cat" ngModel type="number" >
+
+                      <option value="">--choisir strategique--</option>
+                      <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NomStrategique}}</option>
+
+                    </select>
+                  </div>
+                  <div>
+                    <select name="idprocess" placeholder="nom cat" id="pet-select" ngModel type="number" >
+
+                      <option value="">--choisir votre role--</option>
+                      <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Processus}}</option>
+
+                    </select>
+                  </div>
+
+                  <div>
+                    <select name="EtatOpportunite" placeholder="Aventage"  ngModel>
+
+                      <option value="">--choisir Aventage--</option>
+                      <option>ouvert</option>
+                      <option>En cours de selection</option>
+                      <option>fermé</option>
+                      <option>Cloture</option>
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Commentaire:</label>
+                <input type="text" name="Commentaire"  ngModel class="form-control">
+              </div>
+
+
+
+
+
+              <button class="btn btn-danger" routerLink="/categoriesPI" style="float: left">Annuler</button>
+
+              <button class="btn btn-primary "  style="float: right"  >create</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>
+
+

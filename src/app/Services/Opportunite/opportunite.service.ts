@@ -13,7 +13,7 @@ export class OpportuniteService {
     return this.http.get(this.host+"/GetOpportuniteByAction");
   }
 
-  public saveRisque(data) {
+  public saveOpportunite(data) {
     return this.http.post(this.host+"/CreateOppOrtunite" , data);
 
   }
