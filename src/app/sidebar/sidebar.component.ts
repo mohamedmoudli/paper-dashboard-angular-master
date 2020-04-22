@@ -17,6 +17,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/partieinteresse',          title: 'partieinteresse',              icon:'nc-diamond',      class: '' },
     { path: '/risque',          title: 'risque',              icon:'nc-diamond',      class: '' },
     { path: '/Opportunite',          title: 'Opportunite',              icon:'nc-diamond',      class: '' },
+    { path: '/Objective',          title: 'Objective',              icon:'nc-diamond',      class: '' },
     { path: '/enjeu', title: 'enjeux',     icon:'nc-diamond',    class: '' },
     { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
     { path: '/table',         title: 'Table List',        icon:'nc-tile-56',    class: '' },

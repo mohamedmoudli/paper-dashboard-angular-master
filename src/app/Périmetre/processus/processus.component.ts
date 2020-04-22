@@ -18,6 +18,8 @@ export class ProcessusComponent implements OnInit {
   public animal: string;
   perimetre : any;
   politique: any;
+  affichepolitique : any;
+  afficheperimetre : any;
   users: any ;
   perimetre1: any ;
   public hidder = ["Processus", "indicateur de performance" , "pilote"];
@@ -25,6 +27,9 @@ export class ProcessusComponent implements OnInit {
               private router: Router , private dialog: MatDialog ) { }
 
   ngOnInit(): void {
+    this.affichepolitique = localStorage.getItem('politique');
+    this.afficheperimetre = localStorage.getItem('perimetre');
+
     this.processusService.getprocessus()
       .subscribe((data) => {
 
@@ -96,5 +101,12 @@ export class ProcessusComponent implements OnInit {
       console.log("The dialog was closed");
       this.animal = result;
     });
+  }
+
+  savepolitique(){
+    localStorage.setItem('politique' , this.politique)
+  }
+  saveperimetre(){
+    localStorage.setItem('perimetre' , this.perimetre)
   }
 }

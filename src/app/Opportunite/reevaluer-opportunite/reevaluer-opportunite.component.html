@@ -1,1 +1,56 @@
-<p>reevaluer-opportunite works!</p>
+<div>
+  <form>
+  <div>
+    <select name="EffortReevaluation" placeholder="role"  [(ngModel)]="data.EffortReevaluation">
+
+      <option value="">--choisir efforts--</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+  </div>
+  <div>
+    <select name="AventageReevaluation" placeholder="Aventage"  [(ngModel)]="data.AventageReevaluation">
+
+      <option value="">--choisir Aventage--</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+    </select>
+  </div>
+
+  <div>
+    <select  name="idstrategiqueReevaluation" placeholder="nom cat" [(ngModel)]="data.idstrategiqueReevaluation" type="number" >
+
+      <option value="">--choisir strategique--</option>
+      <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NomStrategique}}</option>
+
+    </select>
+  </div>
+  <div>
+    <select name="idprocessReevaluation" placeholder="nom cat" id="pet-select" [(ngModel)]="data.idprocessReevaluation" type="number" >
+
+      <option value="">--choisir votre role--</option>
+      <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Processus}}</option>
+
+    </select>
+  </div>
+
+  <div>
+    <select name="EtatOpportuniteReevaluation" placeholder="Aventage"  [(ngModel)]="data.EtatOpportuniteReevaluation">
+
+      <option value="">--choisir Aventage--</option>
+      <option>ouvert</option>
+      <option>En cours de selection</option>
+      <option>fermé</option>
+      <option>Cloture</option>
+    </select>
+  </div>
+
+    <button class="btn btn-danger" (click)="onNoClick()" style="float: left">Annuler</button>
+
+    <button class="btn btn-primary "  style="float: right"  (click)="reevaluationOpportunite()" >create</button>
+  </form>
+</div>

@@ -49,6 +49,10 @@ export class OpportuniteService {
     return this.http.get(this.host+"/api/enjeus");
 
   }
+  public reevaluationOpportinute(id , data) {
+    return this.http.post(this.host+"/UpdateOppOrtunite/"+id , data);
+
+  }
   public getHistoriqueOpportunite() {
     return this.http.get(this.host+"/GethistoriqueOpportunite");
   }

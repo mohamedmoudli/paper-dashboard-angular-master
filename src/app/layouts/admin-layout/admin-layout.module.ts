@@ -96,6 +96,10 @@ import {CreateCategorieOpportuniteComponent} from '../../Opportunite/create-cate
 import {HistoriqueOpportuniteComponent} from '../../Opportunite/historique-opportunite/historique-opportunite.component';
 import {DeleteCategorieOpportuniteComponent} from '../../Opportunite/delete-categorie-opportunite/delete-categorie-opportunite.component';
 import {DelateStrategiqueOpportuniteComponent} from '../../Opportunite/delate-strategique-opportunite/delate-strategique-opportunite.component';
+import {PIpertinanteComponent} from '../../Risque/pipertinante/pipertinante.component';
+import {ObjectifComponent} from '../../Objectif/objectif/objectif.component';
+import {CreateObjectifComponent} from '../../Objectif/create-objectif/create-objectif.component';
+import {HistoriqueObjectifComponent} from '../../Objectif/historique-objectif/historique-objectif.component';
 
 
 @NgModule({
@@ -193,6 +197,10 @@ import {DelateStrategiqueOpportuniteComponent} from '../../Opportunite/delate-st
     HistoriqueOpportuniteComponent,
     DeleteCategorieOpportuniteComponent,
     DelateStrategiqueOpportuniteComponent,
+    PIpertinanteComponent,
+    ObjectifComponent,
+    CreateObjectifComponent,
+    HistoriqueObjectifComponent,
     HistoriquerisqueComponent,
     AjouterrisqueComponent,
     AjouterCategoriesPIComponent

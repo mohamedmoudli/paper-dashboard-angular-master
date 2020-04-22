@@ -44,6 +44,9 @@ import {CreateOpportuniteComponent} from '../../Opportunite/create-opportunite/c
 import {HistoriqueOpportuniteComponent} from '../../Opportunite/historique-opportunite/historique-opportunite.component';
 import {CategorieOpportuniteComponent} from '../../Opportunite/categorie-opportunite/categorie-opportunite.component';
 import {StrategiqueOpportuniteComponent} from '../../Opportunite/strategique-opportunite/strategique-opportunite.component';
+import {ObjectifComponent} from '../../Objectif/objectif/objectif.component';
+import {CreateObjectifComponent} from '../../Objectif/create-objectif/create-objectif.component';
+import {HistoriqueObjectifComponent} from '../../Objectif/historique-objectif/historique-objectif.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -85,5 +88,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'CategoriesOpportunite',  component: CategorieOpportuniteComponent },
     { path: 'StrategiqueOpportunite',  component: StrategiqueOpportuniteComponent },
     { path: 'ajouterOpportunite',  component: CreateOpportuniteComponent },
+    { path: 'Objective',  component: ObjectifComponent },
+    { path: 'ajouterObjective',  component: CreateObjectifComponent },
+    { path: 'historiqueObjective',  component: HistoriqueObjectifComponent },
     { path: 'upgrade',        component: UpgradeComponent }
 ];

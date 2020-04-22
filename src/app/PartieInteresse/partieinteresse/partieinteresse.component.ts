@@ -65,6 +65,7 @@ export class PartieinteresseComponent implements OnInit {
 
   public exigence;
   public idseul;
+
   public id;
   public influence;
   public poui: number;
@@ -104,6 +105,20 @@ export class PartieinteresseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (!!localStorage.getItem('seul')) {
+      const seul = localStorage.getItem('seul');
+      this.partieinteresse.getpipertinante(seul)
+        .subscribe((data) => {
+            console.log(data);
+            this.pipert = data;
+          }, error => {
+
+          }
+        )
+
+    }
+
+
     this.partieinteresse.getNbreCategories()
       .subscribe((data) => {
         this.catchartjs = data;
@@ -227,6 +242,7 @@ export class PartieinteresseComponent implements OnInit {
 
 
   pipertinante() {
+    localStorage.setItem('seul' , this.idseul);
     this.partieinteresse.getpipertinante(this.idseul)
       .subscribe((data) => {
           console.log(data);

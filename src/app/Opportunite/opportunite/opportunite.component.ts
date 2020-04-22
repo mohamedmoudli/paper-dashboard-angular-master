@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {OpportuniteService} from '../../Services/Opportunite/opportunite.service';
 import {EnjeuRiqueComponent} from '../../Risque/enjeu-rique/enjeu-rique.component';
+import {ReevaluerOpportuniteComponent} from '../reevaluer-opportunite/reevaluer-opportunite.component';
+import {PIpertinanteComponent} from '../../Risque/pipertinante/pipertinante.component';
 
 @Component({
   selector: 'app-opportunite',
@@ -57,6 +59,20 @@ export class OpportuniteComponent implements OnInit {
       this.animal = result;
     });
   }
+
+  public afffichePIpertinante(): void {
+
+    const dialogRef = this.dialog.open(PIpertinanteComponent, {
+      width: "300px",
+      height: "300px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
+  }
   saveHistoriqueOpportunite(){
     this.opportuniteService.saveHistoriqueOpportunite()
       .subscribe((data) => {
@@ -67,5 +83,16 @@ export class OpportuniteComponent implements OnInit {
         console.log(false);
       });
   }
+  reevaluerOpportunite(id){
+    const dialogRef = this.dialog.open(ReevaluerOpportuniteComponent, {
+      width: "300px",
+      height: "300px",
+      data:id
+    });
 
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
+  }
 }

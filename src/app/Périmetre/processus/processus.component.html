@@ -10,24 +10,36 @@
         <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
         <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
       </svg>
-      <div *ngFor="let c of perimetre1">
-        <button (click)="updateperimetre(c.id)" class="btn btn-warning">definir périmtre et politique</button>
+      <div >
+
     <div class="bg-primary">
      <h3> Périmètre d'application de managment </h3>
     </div>
+        <form >
+          <div>
+            <textarea name="perimetre" [(ngModel)]="perimetre" class="col-md-10"> </textarea>
+          </div>
+          <button (click)="saveperimetre()" class="btn bg-primary">ok</button>
+        </form>
 
 
-      <div class="card" >
-        <h2>{{c.Perimetre}}</h2>
-      </div>
+        <div class="card">
+          <h2>{{ afficheperimetre }}</h2>
+        </div>
 
       <div class=" bg-primary">
         <h3> Politique </h3>
       </div>
+        <form >
+          <div>
+          <textarea name="politique" [(ngModel)]="politique" class="col-md-10"> </textarea>
+          </div>
+          <button (click)="savepolitique()" class="btn bg-primary">ok</button>
+        </form>
 
 
       <div class="card">
-        <h2>{{c.Politique}}</h2>
+        <h2>{{ affichepolitique }}</h2>
       </div>
     </div>
       <button class="btn btn-primary " (click)="CreateProcess()">ajouter processus</button>

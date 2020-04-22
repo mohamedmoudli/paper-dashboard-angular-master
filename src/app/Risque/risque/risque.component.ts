@@ -4,6 +4,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import {Router} from '@angular/router';
 import {RisqueService} from '../../Services/Risque/risque.service';
 import {EnjeuRiqueComponent} from '../enjeu-rique/enjeu-rique.component';
+import {PIpertinanteComponent} from '../pipertinante/pipertinante.component';
 
 @Component({
   selector: 'app-risque',
@@ -62,6 +63,19 @@ export class RisqueComponent implements OnInit {
     });
   }
 
+  public afffichePIpertinante(): void {
+
+    const dialogRef = this.dialog.open(PIpertinanteComponent, {
+      width: "300px",
+      height: "300px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
+  }
   saveHistoriqueRisque(){
     this.risqueService.saveHistoriqueRisque()
       .subscribe((data) => {
