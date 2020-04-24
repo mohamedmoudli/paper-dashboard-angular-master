@@ -13,6 +13,18 @@
           <div class="card-body">
             <form #f="ngForm" (ngSubmit)="ajouterrisque(f.value)">
 
+              <div>
+                <label>categorie de risque</label>
+              </div>
+              <div>
+                <select name="idcategorie" placeholder="nom cat"  ngModel type="number">
+
+                  <option value="">--choisir categories--</option>
+                  <option *ngFor="let c of categorierisque" value="{{c.id}}">{{c.NomCategorie}}</option>
+
+                </select>
+              </div>
+
               <div class="form-group">
                 <label class="control-label"> description :</label>
                 <input type="text" name="Description"  ngModel class="form-control">
@@ -53,40 +65,49 @@
                 <label class="control-label">Detectabilite:</label>
                 <input type="number" name="Detectabilite"  ngModel class="form-control">
               </div>
-
-              <div class="form-group">
-                <label class="control-label">EtatRisque:</label>
-                <input type="text" name="EtatRisque"  ngModel class="form-control">
-              </div>
-              <div class="form-group">
-                <label class="control-label">Commentaire:</label>
-                <input type="text" name="Commentaire"  ngModel class="form-control">
-              </div>
-
               <div>
-                <select name="idcategorie" placeholder="nom cat"  ngModel type="number">
-
-                  <option value="">--choisir categories--</option>
-                  <option *ngFor="let c of categorierisque" value=1>{{c.NomCategorie}}</option>
-
-                </select>
-              </div>
-              <div>
-                <select  name="idstrategique" placeholder="nom cat" ngModel type="number" >
-
-                  <option value="">--choisir strategique--</option>
-                  <option *ngFor="let c of Strategique" value=1>{{c.NomSrategique}}</option>
-
-                </select>
+                <label>processus lie au risque</label>
               </div>
               <div>
                 <select name="idprocess" placeholder="nom cat" id="pet-select" ngModel type="number" >
 
                   <option value="">--choisir votre role--</option>
-                  <option *ngFor="let c of Process" value=3 >{{c.Processus}}</option>
+                  <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Processus}}</option>
 
                 </select>
               </div>
+
+              <div>
+                <label>strategique de risque</label>
+              </div>
+
+              <div>
+                <select  name="idstrategique" placeholder="nom cat" ngModel type="number" >
+
+                  <option value="">--choisir strategique--</option>
+                  <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NomSrategique}}</option>
+
+                </select>
+              </div>
+              <div>
+                <label>etat de risque</label>
+              </div>
+              <div>
+                <select name="idEtatRisque" placeholder="nom cat"  ngModel type="number">
+
+                  <option value="">--choisir Etat de risque--</option>
+                  <option *ngFor="let c of EtatRisque" value="{{c.id}}">{{c.NomEtatRisque}}</option>
+
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Commentaire:</label>
+                <input type="text" name="Commentaire"  ngModel class="form-control">
+              </div>
+
+
+
 
               <button class="btn btn-danger" routerLink="/categoriesPI" style="float: left">Annuler</button>
 

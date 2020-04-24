@@ -11,6 +11,7 @@ export class CreateOpportuniteComponent implements OnInit {
   categorieOpportunite: any ;
   Strategique: any ;
   Process: any ;
+  EtatOpportunite: any;
   constructor(private opportuniteService: OpportuniteService,
               private router: Router) { }
 
@@ -20,6 +21,16 @@ export class CreateOpportuniteComponent implements OnInit {
 
         this.categorieOpportunite = data['hydra:member'];
         console.log(this.categorieOpportunite);
+
+      },error => {
+        console.log(false);
+      });
+
+    this.opportuniteService.getEtatOpportunite()
+      .subscribe((data) => {
+
+        this.EtatOpportunite = data['hydra:member'];
+        console.log(this.EtatOpportunite);
 
       },error => {
         console.log(false);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {Test6Component} from '../test6/test6.component';
+import {ObjectiveService} from '../Services/Objective/objective.service';
 
 export interface DialogData {
   animal: string;
@@ -13,24 +14,24 @@ export interface DialogData {
 })
 export class Test5Component implements OnInit {
 
-  ngOnInit(): void {
-  }
 
+  ELEMENT_DATA : any;
   animal: string;
   name: string;
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  dataSource = this.ELEMENT_DATA;
+  constructor(private dialog: MatDialog , private objectiveService: ObjectiveService) {}
 
-  constructor(private dialog: MatDialog) {}
+  ngOnInit(): void {
+    this.objectiveService.getObjective()
+      .subscribe((data) => {
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(Test6Component, {
-      width: '250px',
-      data: {name: this.name, animal: this.animal}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
-    });
+        console.log(data);
+        this.ELEMENT_DATA = data;
+        console.log(this.ELEMENT_DATA);
+      }, error => {
+        console.log(false);
+      });
   }
 
 }

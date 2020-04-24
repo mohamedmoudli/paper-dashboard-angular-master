@@ -39,13 +39,10 @@
   </div>
 
   <div>
-    <select name="EtatOpportuniteReevaluation" placeholder="Aventage"  [(ngModel)]="data.EtatOpportuniteReevaluation">
+    <select name="idEtatOpportuniteReevaluation" placeholder="Aventage"  [(ngModel)]="data.idEtatOpportuniteReevaluation">
+      <option value="">--choisir votre role--</option>
+      <option *ngFor="let c of EtatOpportunite" value="{{c.id}}" >{{c.NomEtatOpportunite}}</option>
 
-      <option value="">--choisir Aventage--</option>
-      <option>ouvert</option>
-      <option>En cours de selection</option>
-      <option>fermé</option>
-      <option>Cloture</option>
     </select>
   </div>
 

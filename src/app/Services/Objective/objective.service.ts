@@ -14,7 +14,7 @@ export class ObjectiveService {
   }
 
   public saveObjective(data) {
-    return this.http.post(this.host+"/api/objectives" , data);
+    return this.http.post(this.host+"/CreateObjective" , data);
 
   }
   public getAvencementObjective() {

@@ -9,6 +9,10 @@ export class RisqueService {
   constructor(private http: HttpClient) { }
 
 
+  public getEtatRisque() {
+    return this.http.get(this.host+"/api/etat_risques");
+  }
+
   public getRisque() {
     return this.http.get(this.host+"/GetRisqueByAction");
   }

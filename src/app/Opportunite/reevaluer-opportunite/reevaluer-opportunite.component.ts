@@ -12,12 +12,13 @@ export class ReevaluerOpportuniteComponent implements OnInit {
   categorieOpportunite: any ;
   Strategique: any ;
   Process: any ;
+  EtatOpportunite: any ;
   public data = {
     EffortReevaluation: '',
     AventageReevaluation: '',
     idstrategiqueReevaluation: '',
     idprocessReevaluation: '',
-    EtatOpportuniteReevaluation: ''
+    idEtatOpportuniteReevaluation: ''
   };
 
   constructor(private opportuniteService: OpportuniteService,
@@ -34,6 +35,17 @@ export class ReevaluerOpportuniteComponent implements OnInit {
       },error => {
         console.log(false);
       });
+
+    this.opportuniteService.getEtatOpportunite()
+      .subscribe((data) => {
+
+        this.EtatOpportunite = data['hydra:member'];
+        console.log(this.EtatOpportunite);
+
+      },error => {
+        console.log(false);
+      });
+
     this.opportuniteService.getProcessRisque()
       .subscribe((data) => {
 

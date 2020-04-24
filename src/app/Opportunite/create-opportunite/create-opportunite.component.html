@@ -102,7 +102,15 @@
                     </select>
                   </div>
                   <div>
-                    <select name="idprocess" placeholder="nom cat" id="pet-select" ngModel type="number" >
+                    <select name="idEtatOpportunite" placeholder="nom cat"  ngModel type="number" >
+
+                      <option value="">--choisir votre role--</option>
+                      <option *ngFor="let c of EtatOpportunite" value="{{c.id}}" >{{c.NomEtatOpportunite}}</option>
+
+                    </select>
+                  </div>
+                  <div>
+                    <select name="idprocess" placeholder="nom cat"  ngModel type="number" >
 
                       <option value="">--choisir votre role--</option>
                       <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Processus}}</option>
@@ -110,16 +118,7 @@
                     </select>
                   </div>
 
-                  <div>
-                    <select name="EtatOpportunite" placeholder="Aventage"  ngModel>
 
-                      <option value="">--choisir Aventage--</option>
-                      <option>ouvert</option>
-                      <option>En cours de selection</option>
-                      <option>fermé</option>
-                      <option>Cloture</option>
-                    </select>
-                  </div>
                 </div>
 
               </div>

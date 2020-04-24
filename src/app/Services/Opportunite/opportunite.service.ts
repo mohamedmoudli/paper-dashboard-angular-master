@@ -8,7 +8,9 @@ export class OpportuniteService {
   public host: string = "http://localhost:8000";
   constructor(private http: HttpClient) { }
 
-
+  public getEtatOpportunite() {
+    return this.http.get(this.host+"/api/etat_opportunites");
+  }
   public getOpportunite() {
     return this.http.get(this.host+"/GetOpportuniteByAction");
   }
