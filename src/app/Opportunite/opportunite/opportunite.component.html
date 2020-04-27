@@ -6,14 +6,19 @@
     <navbar-cmp></navbar-cmp>
     <div class="content">
       <div class="row">
+        <svg class="bi bi-search" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helpOpportunite()">
+          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
+          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
+        </svg>
+        <button class="btn btn-simple" (click)="definitionOpportunite()" style="float: right">definition</button>
 
-        <div style="float: left" >
+        <div  >
           <button class="btn btn-primary" routerLink="/historiqueOpportunite" style="float: left">historique</button>
         </div>
         <button routerLink="/ajouterOpportunite" class="btn btn-success">ajouter un opportunite</button>
         <button (click)="affficheEnjeux()"  class="btn btn-warning" >enjeux</button>
         <button (click)="afffichePIpertinante()" class="btn btn-warning">pipertinante</button>
-        <div style="float: left" >
+        <div >
           <button class="btn btn-primary" routerLink="/CategoriesOpportunite" style="float: left">gerer categorie</button>
         </div>
         <div style="float: left" >

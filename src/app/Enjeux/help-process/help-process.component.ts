@@ -7,10 +7,11 @@ import {MatDialogRef} from '@angular/material/dialog';
   styleUrls: ['./help-process.component.css']
 })
 export class HelpProcessComponent implements OnInit {
-
+  afficheaideEnjeu : any;
   constructor(public dialogRef: MatDialogRef<HelpProcessComponent>) { }
 
   ngOnInit(): void {
+    this.afficheaideEnjeu = localStorage.getItem('aideEnjeu');
   }
   onNoClick(): void {
     this.dialogRef.close();

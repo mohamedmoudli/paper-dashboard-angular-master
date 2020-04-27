@@ -6,6 +6,8 @@ import {OpportuniteService} from '../../Services/Opportunite/opportunite.service
 import {EnjeuRiqueComponent} from '../../Risque/enjeu-rique/enjeu-rique.component';
 import {ReevaluerOpportuniteComponent} from '../reevaluer-opportunite/reevaluer-opportunite.component';
 import {PIpertinanteComponent} from '../../Risque/pipertinante/pipertinante.component';
+import {DefinitionOpportuniteComponent} from '../definition-opportunite/definition-opportunite.component';
+import {AideOpportuniteComponent} from '../aide-opportunite/aide-opportunite.component';
 
 @Component({
   selector: 'app-opportunite',
@@ -88,6 +90,29 @@ export class OpportuniteComponent implements OnInit {
       width: "300px",
       height: "300px",
       data:id
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
+  }
+  definitionOpportunite(){
+    const dialogRef = this.dialog.open(DefinitionOpportuniteComponent, {
+      width: "300px",
+      height: "300px",
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
+  }
+  helpOpportunite(){
+    const dialogRef = this.dialog.open(AideOpportuniteComponent, {
+      width: "300px",
+      height: "300px",
+
     });
 
     dialogRef.afterClosed().subscribe((result) => {

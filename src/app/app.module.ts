@@ -74,6 +74,20 @@ import { PIpertinanteComponent } from './Risque/pipertinante/pipertinante.compon
 import { ObjectifComponent } from './Objectif/objectif/objectif.component';
 import { CreateObjectifComponent } from './Objectif/create-objectif/create-objectif.component';
 import { HistoriqueObjectifComponent } from './Objectif/historique-objectif/historique-objectif.component';
+import { PlanDeActionComponent } from './PlanDeAction/plan-de-action/plan-de-action.component';
+import { CreatePlanDeActionComponent } from './PlanDeAction/create-plan-de-action/create-plan-de-action.component';
+import { SyntheseComponent } from './Synthese/synthese/synthese.component';
+import { DefinitionComponent } from './Definition/definition/definition.component';
+import { DefinitionRisqueComponent } from './Risque/definition-risque/definition-risque.component';
+import { AideRisqueComponent } from './Risque/aide-risque/aide-risque.component';
+import { DefinitionOpportuniteComponent } from './Opportunite/definition-opportunite/definition-opportunite.component';
+import { AideOpportuniteComponent } from './Opportunite/aide-opportunite/aide-opportunite.component';
+import { AideObjectifComponent } from './Objectif/aide-objectif/aide-objectif.component';
+import { DefinitionPIPertinanteComponent } from './PartieInteresse/definition-pipertinante/definition-pipertinante.component';
+import { AidePIPertinanteComponent } from './PartieInteresse/aide-pipertinante/aide-pipertinante.component';
+import { DefinitionPartieInteresseComponent } from './PartieInteresse/definition-partie-interesse/definition-partie-interesse.component';
+import { DefinitionEnjeuxComponent } from './Enjeux/definition-enjeux/definition-enjeux.component';
+import { AideExigencePIComponent } from './PartieInteresse/aide-exigence-pi/aide-exigence-pi.component';
 
 
 
@@ -84,6 +98,9 @@ import { HistoriqueObjectifComponent } from './Objectif/historique-objectif/hist
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+
+
+
 
 
 

@@ -1,0 +1,51 @@
+
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+<div class="bg-primary">
+  <h1>RISQUE</h1>
+</div>
+ <h3 class="text-success">Etat de risque</h3>
+      <div style="display: block">
+        <canvas baseChart [data]="pieChartDataEtatRisque"
+                [labels]="pieChartLabelsEtatRisque" [colors]="chartColorsEtatRisque"
+                [labels]="chartLabelsEtatRisque" [colors]="chartColorsEtatRisque" [chartType]="pieChartTypeEtatRisque"></canvas>
+      </div>
+
+
+<h3 class="text-success">Categories risque</h3>
+      <div style="display: block">
+        <canvas baseChart [data]="pieChartData"
+                [labels]="pieChartLabels" [colors]="chartColors"
+                [labels]="chartLabels" [colors]="chartColors" [chartType]="pieChartType"></canvas>
+      </div>
+
+      <div class="bg-primary">
+        <h1>Opportunite</h1>
+      </div>
+      <h3 class="text-success">Etat Opportunite</h3>
+      <div style="display: block">
+        <canvas baseChart [data]="pieChartDataEtatOpportunite"
+                [labels]="pieChartLabelsEtatOpportunite" [colors]="chartColorsEtatOpportunite"
+                [labels]="chartLabelsEtatOpportunite" [colors]="chartColorsEtatOpportunite" [chartType]="pieChartTypeEtatOpportunite"></canvas>
+      </div>
+      <h3 class="text-success">Categories Opportunite</h3>
+      <div style="display: block">
+        <canvas baseChart [data]="pieChartDataCategorieOpportunite"
+                [labels]="pieChartLabelsCategorieOpportunite" [colors]="chartColorsCategorieOpportunite"
+                [labels]="chartLabelsCategorieOpportunite" [colors]="chartColorsCategorieOpportunite" [chartType]="pieChartTypeCategorieOpportunite"></canvas>
+      </div>
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>
+
+
+
+
+

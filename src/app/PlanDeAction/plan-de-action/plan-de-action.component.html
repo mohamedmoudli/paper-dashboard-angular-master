@@ -1,0 +1,68 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+      <div class="row">
+        <button class="btn btn-primary" routerLink="/CreatePlandeaction" style="float: left">ajouter plan d'action</button>
+        <div style="float: left" >
+          <button class="btn btn-primary" routerLink="/historiqueOpportunite" style="float: left">historique</button>
+        </div>
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title"> Risque</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary" >
+                  <tr>
+                    <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+                  </tr>
+
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let c of plandeaction">
+                    <td>{{c.id}}</td>
+                    <td>{{c.Origine}}</td>
+                    <td *ngIf="c.Exigencepi !== null">{{c.Exigencepi.id}}</td>
+                    <td *ngIf="c.Risque !== null">{{c.Risque.id}}</td>
+                    <td *ngIf="c.opportunite !== null">{{c.opportunite.id}}</td>
+                    <td *ngIf="c.opportuniteReevalution !== null">{{c.opportuniteReevalution.id}}</td>
+                    <td *ngIf="c.objective !== null">{{c.objective.id}}</td>
+                    <td>{{c.Description}}</td>
+                    <td>{{c.Action}}</td>
+                    <td>{{c.DateDebutPanifie}}</td>
+                    <td>{{c.Delai}}</td>
+                    <td>{{c.Respensable}}</td>
+                    <td>{{c.Realisateur}}</td>
+                    <td>{{c.Consulter}}</td>
+                    <td>{{c.Avencement}}</td>
+                    <td>{{c.CritereDeCloture}}</td>
+                    <td>{{c.PreuveDeCloture}}</td>
+                    <td>{{c.CritaireEfficacite}}</td>
+                    <td>{{c.EtatDeEfficacite}}</td>
+                    <td>{{c.EtatActuel}}</td>
+                    <td>{{c.Commentaire}}</td>
+
+
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>
+
+

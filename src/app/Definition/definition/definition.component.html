@@ -1,0 +1,117 @@
+
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+      <div class="bg-primary">
+        <h1> definition et aide Enjeux </h1>
+      </div>
+      <h4 class="text-info"> definition Enjeux </h4>
+      <form >
+        <div>
+          <textarea name="definitionEnjeu" [(ngModel)]="definitionEnjeu" class="col-md-10"> </textarea>
+        </div>
+        <button (click)="savedefinitionEnjeu()" class="btn bg-primary">ok</button>
+      </form>
+      <h4 class="text-info"> aide Enjeux </h4>
+      <form >
+        <div>
+          <textarea name="aideEnjeu" [(ngModel)]="aideEnjeu" class="col-md-10"> </textarea>
+        </div>
+        <button (click)="saveaideEnjeu()" class="btn bg-primary">ok</button>
+      </form>
+      <div class="bg-primary">
+        <h1> definition et aide partie interesse </h1>
+      </div>
+      <h4 class="text-info"> definition partie interesse </h4>
+      <form >
+        <div>
+          <textarea name="definitionpartieinteresse" [(ngModel)]="definitionpartieinteresse" class="col-md-10"> </textarea>
+        </div>
+        <button (click)="savedefinitionpartieinteresse()" class="btn bg-primary">ok</button>
+      </form>
+      <div class="bg-primary">
+        <h1> definition et aide partie interesse pertinante </h1>
+      </div>
+      <h4 class="text-info"> definition partie interesse pertinante</h4>
+      <form >
+        <div>
+          <textarea name="definitionpiPertinante" [(ngModel)]="definitionpiPertinante" class="col-md-10"> </textarea>
+        </div>
+        <button (click)="savedefinitionpiPertinante()" class="btn bg-primary">ok</button>
+      </form>
+      <h4 class="text-info"> aide partie interesse pertinante</h4>
+      <form >
+        <div>
+          <textarea name="aidepiPertinante" [(ngModel)]="aidepiPertinante" class="col-md-10"> </textarea>
+        </div>
+        <button (click)="saveaidepiPertinante()" class="btn bg-primary">ok</button>
+      </form>
+      <div class="bg-primary">
+        <h3>definition et aide exigence partie interesse </h3>
+      </div>
+      <h4 class="text-info"> aide exigences partie interesse </h4>
+      <form >
+        <div>
+          <textarea name="aideExigencepi" [(ngModel)]="aideExigencepi" class="col-md-10"> </textarea>
+        </div>
+        <button (click)="saveaideExigencepi()" class="btn bg-primary">ok</button>
+      </form>
+      <div class="bg-primary">
+        <h1> definition et aide Risque </h1>
+      </div>
+      <h4 class="text-info"> definition risque </h4>
+      <form >
+        <div>
+          <textarea name="definitionRisque" [(ngModel)]="definitionRisque" class="col-md-10"> </textarea>
+        </div>
+        <button (click)="savedefinitionRisque()" class="btn bg-primary">ok</button>
+      </form>
+      <h4 class="text-info"> aide risque </h4>
+      <form >
+        <div>
+          <textarea name="aideRisque" [(ngModel)]="aideRisque" class="col-md-10"> </textarea>
+        </div>
+        <button (click)="saveaideRisque()" class="btn bg-primary">ok</button>
+      </form>
+      <div class="bg-primary">
+        <h1>definition et aide opportunite </h1>
+      </div>
+      <h4 class="text-info"> definition opportunite </h4>
+      <form >
+        <div>
+          <textarea name="definitionOpportunite" [(ngModel)]="definitionOpportunite" class="col-md-10"> </textarea>
+        </div>
+        <button (click)="savedefinitionOpportunite()" class="btn bg-primary">ok</button>
+      </form>
+      <h4 class="text-info"> aide opportunite </h4>
+      <form >
+        <div>
+          <textarea name="aideOpportunite" [(ngModel)]="aideOpportunite" class="col-md-10"> </textarea>
+        </div>
+        <button (click)="saveaideOpportunite()" class="btn bg-primary">ok</button>
+      </form>
+      <div class="bg-primary">
+        <h1> definition et aide objective </h1>
+      </div>
+      <h4 class="text-info"> aide opportunite </h4>
+      <form >
+        <div>
+          <textarea name="aideObjective" [(ngModel)]="aideObjective" class="col-md-10"> </textarea>
+        </div>
+        <button (click)="saveaideObjective()" class="btn bg-primary">ok</button>
+      </form>
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>
+
+
+
+
+
+

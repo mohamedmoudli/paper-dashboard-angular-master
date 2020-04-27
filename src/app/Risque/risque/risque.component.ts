@@ -5,6 +5,8 @@ import {Router} from '@angular/router';
 import {RisqueService} from '../../Services/Risque/risque.service';
 import {EnjeuRiqueComponent} from '../enjeu-rique/enjeu-rique.component';
 import {PIpertinanteComponent} from '../pipertinante/pipertinante.component';
+import {DefinitionRisqueComponent} from '../definition-risque/definition-risque.component';
+import {AideRisqueComponent} from '../aide-risque/aide-risque.component';
 
 @Component({
   selector: 'app-risque',
@@ -86,6 +88,32 @@ export class RisqueComponent implements OnInit {
       }, error => {
         console.log(false);
       });
+  }
+
+  definitionRisque(){
+    const dialogRef = this.dialog.open(DefinitionRisqueComponent, {
+      width: "300px",
+      height: "300px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
+  }
+
+  helpRisuqe(){
+    const dialogRef = this.dialog.open(AideRisqueComponent, {
+      width: "300px",
+      height: "300px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
   }
 }
 

@@ -47,6 +47,10 @@ import {StrategiqueOpportuniteComponent} from '../../Opportunite/strategique-opp
 import {ObjectifComponent} from '../../Objectif/objectif/objectif.component';
 import {CreateObjectifComponent} from '../../Objectif/create-objectif/create-objectif.component';
 import {HistoriqueObjectifComponent} from '../../Objectif/historique-objectif/historique-objectif.component';
+import {PlanDeActionComponent} from '../../PlanDeAction/plan-de-action/plan-de-action.component';
+import {CreatePlanDeActionComponent} from '../../PlanDeAction/create-plan-de-action/create-plan-de-action.component';
+import {DefinitionComponent} from '../../Definition/definition/definition.component';
+import {SyntheseComponent} from '../../Synthese/synthese/synthese.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -89,7 +93,11 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'StrategiqueOpportunite',  component: StrategiqueOpportuniteComponent },
     { path: 'ajouterOpportunite',  component: CreateOpportuniteComponent },
     { path: 'Objective',  component: ObjectifComponent },
+    { path: 'Plandeaction',  component: PlanDeActionComponent },
+    { path: 'CreatePlandeaction',  component: CreatePlanDeActionComponent },
     { path: 'ajouterObjective',  component: CreateObjectifComponent },
     { path: 'historiqueObjective',  component: HistoriqueObjectifComponent },
+    { path: 'definition',  component: DefinitionComponent },
+    { path: 'Synthese1',  component: SyntheseComponent },
     { path: 'upgrade',        component: UpgradeComponent }
 ];

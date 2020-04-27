@@ -11,6 +11,7 @@ import {CreateCategorieExternComponent} from '../create-categorie-extern/create-
 import {HelpProcessComponent} from '../help-process/help-process.component';
 import {DelatecategorieInternComponent} from '../delatecategorie-intern/delatecategorie-intern.component';
 import {DelateenjeuComponent} from '../delateenjeu/delateenjeu.component';
+import {DefinitionEnjeuxComponent} from '../definition-enjeux/definition-enjeux.component';
 
 @Component({
   selector: 'app-enjeu',
@@ -156,7 +157,16 @@ export class EnjeuComponent implements OnInit {
   }
 
   definition(){
-    alert('Un enjeu est un facteur positive ou négatif ou des condition à prendre en considération')
+    const dialogRef = this.dialog.open(DefinitionEnjeuxComponent, {
+      width: "500px",
+      height: "300px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
   }
 
 

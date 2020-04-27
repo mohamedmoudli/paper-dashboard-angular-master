@@ -6,6 +6,9 @@ import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
 import {AjouterCategoriesPIComponent} from '../Create-categories-pi/ajouter-categories-pi.component';
 import {MatDialog} from '@angular/material/dialog';
 import {AjouterPIComponent} from '../Create-pi/ajouter-pi.component';
+import {DefinitionPartieInteresseComponent} from '../definition-partie-interesse/definition-partie-interesse.component';
+import {AidePIPertinanteComponent} from '../aide-pipertinante/aide-pipertinante.component';
+import {DefinitionPIPertinanteComponent} from '../definition-pipertinante/definition-pipertinante.component';
 
 @Component({
   selector: 'app-partieinteresse',
@@ -270,6 +273,42 @@ export class PartieinteresseComponent implements OnInit {
   public Createpartieinteresse(): void {
 
     const dialogRef = this.dialog.open(AjouterPIComponent, {
+      width: "500px",
+      height: "300px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
+  }
+  definitionpartieinteresse(){
+    const dialogRef = this.dialog.open(DefinitionPartieInteresseComponent, {
+      width: "500px",
+      height: "300px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
+  }
+  definitionpiPertinante(){
+    const dialogRef = this.dialog.open(DefinitionPIPertinanteComponent, {
+      width: "500px",
+      height: "300px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
+  }
+  helppiPertinante(){
+    const dialogRef = this.dialog.open(AidePIPertinanteComponent, {
       width: "500px",
       height: "300px",
 
