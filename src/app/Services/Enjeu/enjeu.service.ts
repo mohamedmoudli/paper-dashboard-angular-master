@@ -11,36 +11,36 @@ export class EnjeuService {
   constructor(private http: HttpClient) { }
 
 
-  public getTypeEnjeu() {
-    return this.http.get(this.host+"/api/type_enjeus");
+  public getTypeStake() {
+    return this.http.get(this.host+"/api/type_stakes");
 
   }
-  public getCategoriesByEnjeu() {
-    return this.http.get(this.host+"/CategorieByEnjeu");
+  public getCategoryByStake() {
+    return this.http.get(this.host+"/GetCategoryInternalByStake");
 
   }
-  public getCategoriesIntern() {
-    return this.http.get(this.host+"/api/categories_enjeu_internes");
+  public getCategoryInternal() {
+    return this.http.get(this.host+"/api/category_stake_internals");
 
   }
-  public delateCategoriesIntern(id) {
-    return this.http.delete(this.host+"/api/categories_enjeu_internes/"+id);
+  public delateCategoryInternal(id) {
+    return this.http.delete(this.host+"/api/category_stake_internals/"+id);
 
   }
-  public getCategoriesExtern() {
-    return this.http.get(this.host+"/api/categories_enjeu_externes");
+  public getCategoryExternal() {
+    return this.http.get(this.host+"/api/category_stake_externals");
 
   }
-  public delateCategoriesExtern(id) {
-    return this.http.delete(this.host+"/api/categories_enjeu_externes/"+id);
+  public delateCategoryExternal(id) {
+    return this.http.delete(this.host+"/api/category_stake_externals/"+id);
 
   }
-  public CreateCategoriesintern(data) {
-    return this.http.post(this.host+"/api/categories_enjeu_internes" , data);
+  public CreateCategoryinternal(data) {
+    return this.http.post(this.host+"/api/category_stake_internals" , data);
 
   }
-  public CreateCategoriesExtern(data) {
-    return this.http.post(this.host+"/api/categories_enjeu_externes" , data);
+  public CreateCategoryExternal(data) {
+    return this.http.post(this.host+"/api/category_stake_externals" , data);
 
   }
 
@@ -50,20 +50,20 @@ export class EnjeuService {
   }
 
 
-  public getEnjeu() {
-    return this.http.get(this.host+"/api/enjeus");
+  public getStake() {
+    return this.http.get(this.host+"/api/stakes");
 
   }
-  public saveEnjeu(data) {
-    return this.http.post(this.host+"/api/enjeus" , data);
+  public saveStake(data) {
+    return this.http.post(this.host+"/api/stakes" , data);
 
   }
-  public delateEnjeu(id) {
-    return this.http.delete(this.host+"/api/enjeus/"+id);
+  public delateStake(id) {
+    return this.http.delete(this.host+"/api/stakes/"+id);
 
   }
-  public getCategoriesExternByEnjeu() {
-    return this.http.get(this.host+"/CategorieExternByEnjeu");
+  public getCategoryExternalByStake() {
+    return this.http.get(this.host+"/GetCategoryExternalByStake");
 
   }
 }

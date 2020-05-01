@@ -9,55 +9,55 @@ export class RisqueService {
   constructor(private http: HttpClient) { }
 
 
-  public getEtatRisque() {
-    return this.http.get(this.host+"/api/etat_risques");
+  public getStateRisk() {
+    return this.http.get(this.host+"/api/state_risks");
   }
 
-  public getRisque() {
-    return this.http.get(this.host+"/GetRisqueByAction");
+  public getRisk() {
+    return this.http.get(this.host+"/getRisk");
   }
 
-  public saveRisque(data) {
-    return this.http.post(this.host+"/getRisque" , data);
+  public saveRisk(data) {
+    return this.http.post(this.host+"/saveRisk" , data);
 
   }
-  public getCategoriesRisque() {
-    return this.http.get(this.host+"/api/categorie_risques");
+  public getCategoryRisk() {
+    return this.http.get(this.host+"/api/category_risks");
 
   }
-  public saveCategoriesRisque(data) {
-    return this.http.post(this.host+"/api/categorie_risques" , data);
+  public saveCategoryRisk(data) {
+    return this.http.post(this.host+"/api/category_risks" , data);
 
   }
-  public delateCategoriesRisque(id) {
-    return this.http.delete(this.host+"/api/categorie_risques/"+id );
+  public delateCategoryRisk(id) {
+    return this.http.delete(this.host+"/api/category_risks/"+id );
 
   }
-  public getStrategiqueRisque() {
-    return this.http.get(this.host+"/api/strategique_risques");
+  public getStrategicRisk() {
+    return this.http.get(this.host+"/api/strategic_risks");
 
   }
-  public saveStrategiqueRisque(data) {
-    return this.http.post(this.host+"/api/strategique_risques" , data);
+  public saveStrategicRisk(data) {
+    return this.http.post(this.host+"/api/strategic_risks" , data);
 
   }
-  public delateStrategiqueRisque(id) {
-    return this.http.delete(this.host+"/api/strategique_risques/"+id);
+  public delateStrategicRisk(id) {
+    return this.http.delete(this.host+"/api/strategic_risks/"+id);
 
   }
-  public getProcessRisque() {
-    return this.http.get(this.host+"/api/processuses");
+  public getProcessRisk() {
+    return this.http.get(this.host+"/api/processes");
 
   }
-  public getEnjeu() {
-    return this.http.get(this.host+"/api/enjeus");
+  public getstake() {
+    return this.http.get(this.host+"/api/stakes");
 
   }
-  public getHistoriqueRisque() {
-    return this.http.get(this.host+"/GethistoriqueRisque");
+  public gethistoricalRisk() {
+    return this.http.get(this.host+"/gethistoricalRisk");
   }
-  public saveHistoriqueRisque() {
-    return this.http.get(this.host+"/savehistoriqueRisque");
+  public savehistoricalRisk() {
+    return this.http.get(this.host+"/savehistoricalRisk");
   }
 
 }

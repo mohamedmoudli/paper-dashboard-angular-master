@@ -8,57 +8,57 @@ export class OpportuniteService {
   public host: string = "http://localhost:8000";
   constructor(private http: HttpClient) { }
 
-  public getEtatOpportunite() {
+  public getStateOpportunity() {
     return this.http.get(this.host+"/api/etat_opportunites");
   }
-  public getOpportunite() {
-    return this.http.get(this.host+"/GetOpportuniteByAction");
+  public getOpportunity() {
+    return this.http.get(this.host+"/GetOpportunityByAction");
   }
 
-  public saveOpportunite(data) {
+  public saveOpportunity(data) {
     return this.http.post(this.host+"/CreateOppOrtunite" , data);
 
   }
-  public getCategoriesOpportunite() {
+  public getCategoryOpportunity() {
     return this.http.get(this.host+"/api/categorie_opportunites");
 
   }
-  public saveCategoriesOpportunite(data) {
+  public saveCategoryOpportunity(data) {
     return this.http.post(this.host+"/api/categorie_opportunites" , data);
 
   }
-  public delateCategoriesOpportunite(id) {
+  public delateCategoryOpportunity(id) {
     return this.http.delete(this.host+"/api/categorie_opportunites/"+id );
 
   }
-  public getStrategiqueOpportunite() {
+  public getStrategicOpportunity() {
     return this.http.get(this.host+"/api/strategique_opportunites");
 
   }
-  public saveStrategiqueOpportunite(data) {
+  public saveStrategicOpportunity(data) {
     return this.http.post(this.host+"/api/strategique_opportunites" , data);
 
   }
-  public delateStrategiqueOpportunite(id) {
+  public delateStrategicOpportunity(id) {
     return this.http.delete(this.host+"/api/strategique_opportunites/"+id);
 
   }
-  public getProcessRisque() {
-    return this.http.get(this.host+"/api/processuses");
+  public getProcessRisk() {
+    return this.http.get(this.host+"/api/processes");
 
   }
-  public getEnjeu() {
-    return this.http.get(this.host+"/api/enjeus");
+  public getStake() {
+    return this.http.get(this.host+"/api/stakes");
 
   }
-  public reevaluationOpportinute(id , data) {
-    return this.http.post(this.host+"/UpdateOppOrtunite/"+id , data);
+  public reevaluationOpportinuty(id , data) {
+    return this.http.post(this.host+"/UpdateOppOrtunity/"+id , data);
 
   }
-  public getHistoriqueOpportunite() {
+  public gethistoricalOpportunite() {
     return this.http.get(this.host+"/GethistoriqueOpportunite");
   }
-  public saveHistoriqueOpportunite() {
+  public savehistoricalOpportunite() {
     return this.http.get(this.host+"/savehistoriqueOpportunite");
   }
 

@@ -9,21 +9,21 @@ export class PlandeactionService {
   constructor(private http: HttpClient) { }
 
   public getplandeaction() {
-    return this.http.get(this.host+"/GetPlanDeActionByAction");
+    return this.http.get(this.host+"/GetPlanActionByAction");
 
   }
   public getObjective() {
     return this.http.get(this.host+"/GetObjectiveByAction");
   }
-  public getOpportunite() {
-    return this.http.get(this.host+"/GetOpportuniteByAction");
+  public getOpportunity() {
+    return this.http.get(this.host+"/GetOpportunityByAction");
   }
-  public getExigencePI() {
-    return this.http.get(this.host+"/GetExigenceByAction");
+  public getExigencyIP() {
+    return this.http.get(this.host+"/GetExigencyByAction");
 
   }
-  public getRisque() {
-    return this.http.get(this.host+"/GetRisqueByAction");
+  public getRisk() {
+    return this.http.get(this.host+"/getRisk");
   }
 
   public delateplandeaction(id) {

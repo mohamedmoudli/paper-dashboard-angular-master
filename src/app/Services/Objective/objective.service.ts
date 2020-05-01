@@ -17,26 +17,26 @@ export class ObjectiveService {
     return this.http.post(this.host+"/CreateObjective" , data);
 
   }
-  public getAvencementObjective() {
+  public getAdvencementObjective() {
     return this.http.get(this.host+"/saveAvencementObjective");
 
   }
 
-  public getHistoriqueObjective() {
-    return this.http.get(this.host+"/GethistoriqueObjective");
+  public gethistoricalObjective() {
+    return this.http.get(this.host+"/GethistoricalObjective");
   }
 
-  public saveHistoriqueObjective() {
-    return this.http.get(this.host+"/savehistoriqueObjective");
+  public savehistoricalObjective() {
+    return this.http.get(this.host+"/savehistoricalObjective");
 
   }
 
   public getProcessRisque() {
-    return this.http.get(this.host+"/api/processuses");
+    return this.http.get(this.host+"/api/processes");
 
   }
-  public getEnjeu() {
-    return this.http.get(this.host+"/api/enjeus");
+  public getStake() {
+    return this.http.get(this.host+"/api/stakes");
 
   }
 
