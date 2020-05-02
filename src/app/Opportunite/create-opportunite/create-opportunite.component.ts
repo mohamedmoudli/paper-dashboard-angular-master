@@ -16,7 +16,7 @@ export class CreateOpportuniteComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.opportuniteService.getCategoriesOpportunite()
+    this.opportuniteService.getCategoryOpportunity()
       .subscribe((data) => {
 
         this.categorieOpportunite = data['hydra:member'];
@@ -26,7 +26,7 @@ export class CreateOpportuniteComponent implements OnInit {
         console.log(false);
       });
 
-    this.opportuniteService.getEtatOpportunite()
+    this.opportuniteService.getStateOpportunity()
       .subscribe((data) => {
 
         this.EtatOpportunite = data['hydra:member'];
@@ -36,7 +36,7 @@ export class CreateOpportuniteComponent implements OnInit {
         console.log(false);
       });
 
-    this.opportuniteService.getStrategiqueOpportunite()
+    this.opportuniteService.getStrategicOpportunity()
       .subscribe((data) => {
 
         this.Strategique = data['hydra:member'];
@@ -45,7 +45,7 @@ export class CreateOpportuniteComponent implements OnInit {
       },error => {
         console.log(false);
       });
-    this.opportuniteService.getProcessRisque()
+    this.opportuniteService.getProcessRisk()
       .subscribe((data) => {
 
         this.Process = data['hydra:member'];
@@ -58,7 +58,7 @@ export class CreateOpportuniteComponent implements OnInit {
 
   saveOpportunite(data){
     console.log(data);
-    this.opportuniteService.saveOpportunite(data).subscribe(
+    this.opportuniteService.saveOpportunity(data).subscribe(
       resp=>{
         console.log(resp);
         console.log(true);

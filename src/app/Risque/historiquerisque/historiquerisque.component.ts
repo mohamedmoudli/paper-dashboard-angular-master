@@ -14,7 +14,7 @@ export class HistoriquerisqueComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.risqueService.getHistoriqueRisque()
+    this.risqueService.gethistoricalRisk()
       .subscribe((data) => {
 
         console.log(data);

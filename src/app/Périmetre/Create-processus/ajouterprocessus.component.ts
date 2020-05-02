@@ -32,7 +32,7 @@ export class AjouterprocessusComponent implements OnInit {
   }
 
   CreateProcessus(){
-    this.processusService.postprocessus(this.data).subscribe(
+    this.processusService.postprocess(this.data).subscribe(
       resp=>{
         console.log(resp);
         console.log(true);

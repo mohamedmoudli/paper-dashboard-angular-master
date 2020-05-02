@@ -32,7 +32,7 @@ export class StrategiqueRisqueComponent implements OnInit {
 
 
   public ngOnInit() {
-    this.risqueService.getStrategiqueRisque()
+    this.risqueService.getStrategicRisk()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];

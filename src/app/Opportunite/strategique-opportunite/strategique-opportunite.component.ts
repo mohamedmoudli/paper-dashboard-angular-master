@@ -33,7 +33,7 @@ export class StrategiqueOpportuniteComponent implements OnInit {
 
 
   public ngOnInit() {
-    this.opportuniteService.getStrategiqueOpportunite()
+    this.opportuniteService.getStrategicOpportunity()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];

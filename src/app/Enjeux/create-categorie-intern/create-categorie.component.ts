@@ -13,13 +13,13 @@ export class CreateCategorieComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
   public data = {
-    NomCategories: ''
+    NameCategoryStakInternal: ''
   };
 
   constructor(private enjeuxservice : EnjeuService,
               private router: Router , private fb:FormBuilder , public dialogRef: MatDialogRef<CreateCategorieComponent>) {
     this.angForm = this.fb.group({
-      NomCategories: ['', [Validators.required]],
+      NameCategoryStakInternal: ['', [Validators.required]],
 
     });
   }
@@ -27,7 +27,7 @@ export class CreateCategorieComponent implements OnInit {
   ngOnInit(): void {
   }
   addcategorie(){
-    this.enjeuxservice.CreateCategoriesintern(this.data).subscribe(
+    this.enjeuxservice.CreateCategoryinternal(this.data).subscribe(
       resp=>{
         console.log(resp);
         return this.onNoClick();

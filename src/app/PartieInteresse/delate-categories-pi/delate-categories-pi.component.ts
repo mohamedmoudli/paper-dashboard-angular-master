@@ -19,7 +19,7 @@ export class DelateCategoriesPIComponent implements OnInit {
 
 
   public supp() {
-    this.partieinteresse.deletCategories(this.id).subscribe((data) => {
+    this.partieinteresse.deleteCategory(this.id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
      return this.onNoClick();

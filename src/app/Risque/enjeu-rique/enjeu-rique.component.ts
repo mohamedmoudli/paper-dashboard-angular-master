@@ -20,7 +20,7 @@ export class EnjeuRiqueComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.risqueService.getEnjeu()
+    this.risqueService.getstake()
       .subscribe((data) => {
 
         console.log(data);

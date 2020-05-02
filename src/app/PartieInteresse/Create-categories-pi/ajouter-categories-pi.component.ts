@@ -13,7 +13,7 @@ export class AjouterCategoriesPIComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
   public data = {
-    nomcat: ''
+    NameCategory: ''
   };
 
   id1: number;
@@ -30,7 +30,7 @@ export class AjouterCategoriesPIComponent implements OnInit {
   constructor( private partieinteresse: PartieinteresseService, private router: Router ,
   private fb:FormBuilder , public dialogRef: MatDialogRef<AjouterCategoriesPIComponent>) {
     this.angForm = this.fb.group({
-      nomcat: ['', [Validators.required]],
+      NameCategory: ['', [Validators.required]],
     });
   }
 
@@ -41,7 +41,7 @@ export class AjouterCategoriesPIComponent implements OnInit {
 
   ajoutercategorie(){
 
-    this.partieinteresse.postCategoriesPI(this.data).subscribe(
+    this.partieinteresse.saveCategoryInterestedParty(this.data).subscribe(
       resp=>{
         console.log(resp);
         return this.onNoClick();

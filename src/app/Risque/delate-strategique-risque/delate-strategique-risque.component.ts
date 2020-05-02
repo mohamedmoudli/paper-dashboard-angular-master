@@ -20,7 +20,7 @@ export class DelateStrategiqueRisqueComponent implements OnInit {
 
 
   public supp() {
-    this.risqueService.delateStrategiqueRisque(this.id).subscribe((data) => {
+    this.risqueService.delateStrategicRisk(this.id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
       return this.onNoClick();

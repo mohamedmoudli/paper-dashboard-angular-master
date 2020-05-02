@@ -21,7 +21,7 @@ export class DeleteCategorieOpportuniteComponent implements OnInit {
 
 
   public supp() {
-    this.opportuniteService.delateCategoriesOpportunite(this.id).subscribe((data) => {
+    this.opportuniteService.delateCategoryOpportunity(this.id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
       return this.onNoClick();

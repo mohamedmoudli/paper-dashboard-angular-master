@@ -37,7 +37,7 @@ export class CreatePlanDeActionComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.plandeactionService.getExigencePI()
+    this.plandeactionService.getExigencyIP()
       .subscribe((data) => {
         this.exigencepi = data;
       },error => {
@@ -45,7 +45,7 @@ export class CreatePlanDeActionComponent implements OnInit {
 
         return error;
       })
-    this.plandeactionService.getRisque()
+    this.plandeactionService.getRisk()
       .subscribe((data) => {
         this.risque = data;
       },error => {
@@ -53,7 +53,7 @@ export class CreatePlanDeActionComponent implements OnInit {
 
         return error;
       })
-    this.plandeactionService.getOpportunite()
+    this.plandeactionService.getOpportunity()
       .subscribe((data) => {
         this.opportunite = data;
       },error => {

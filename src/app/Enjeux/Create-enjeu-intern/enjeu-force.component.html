@@ -21,13 +21,13 @@
                 <div>
                   <label>le type d'enjeu</label>
                 </div>
-                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('typeEnjeu').errors && (angForm.get('typeEnjeu').touched || angForm.get('typeEnjeu').dirty ) }">
+                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Type').errors && (angForm.get('Type').touched || angForm.get('Type').dirty ) }">
 
-                <select name="typeEnjeu" placeholder="role" formControlName="typeEnjeu" [(ngModel)]="data.typeEnjeu">
+                <select name="Type" placeholder="role" formControlName="Type" [(ngModel)]="data.Type">
 
                   <option value="">--chnoisir type--</option>
-                  <option value="api/type_enjeus/1">force</option>
-                  <option value="api/type_enjeus/2">faiblesses</option>
+                  <option value="api/type_stakes/1">force</option>
+                  <option value="/api/type_stakes/2">faiblesses</option>
                 </select>
 
                 </div>
@@ -37,15 +37,15 @@
                 <div>
                 <label>la categorie :</label>
                 </div>
-                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('categorieEnjeu').errors && (angForm.get('categorieEnjeu').touched || angForm.get('categorieEnjeu').dirty ) }">
-                <select name="CategoriesEnjeu" placeholder="nom cat" formControlName="categorieEnjeu" id="pet-select" [(ngModel)]="data.CategoriesEnjeu" >
+                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('CategoryStakeInternal').errors && (angForm.get('CategoryStakeInternal').touched || angForm.get('CategoryStakeInternal').dirty ) }">
+                <select name="CategoryStakeInternal" placeholder="nom cat" formControlName="CategoryStakeInternal" id="pet-select" [(ngModel)]="data.CategoryStakeInternal" >
 
                   <option value="">--choisir la categories--</option>
-                  <option *ngFor="let c of users" value="api/categories_enjeu_internes/{{c.id}}">{{c.NomCategories}}</option>
+                  <option *ngFor="let c of users" value="api/category_stake_internals/{{c.id}}">{{c.NameCategoryStakInternal}}</option>
 
                 </select>
-                  <div *ngIf="angForm.get('categorieEnjeu').errors && (angForm.get('categorieEnjeu').touched || angForm.get('categorieEnjeu').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('categorieEnjeu').errors.required"></span>  description is required
+                  <div *ngIf="angForm.get('CategoryStakeInternal').errors && (angForm.get('CategoryStakeInternal').touched || angForm.get('CategoryStakeInternal').dirty )" class="alert alert-danger">
+                    <span *ngIf="angForm.get('CategoryStakeInternal').errors.required"></span>  description is required
                   </div>
                 </div>
               </div>

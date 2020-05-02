@@ -12,15 +12,15 @@ export class AjouterExigenceComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
   public data = {
-    EtatDeConfirmite: '',
-    Commantaire: ''
+    StateOfConfirmity: '',
+    Comment: ''
   };
 
   constructor(private partieinteresse: PartieinteresseService ,
               private fb:FormBuilder , public dialogRef: MatDialogRef<AjouterExigenceComponent>) {
     this.angForm = this.fb.group({
-      EtatDeConfirmite: ['', [Validators.required]],
-      Commantaire: ['', [Validators.required]],
+      StateOfConfirmity: ['', [Validators.required]],
+      Comment: ['', [Validators.required]],
 
     });
   }
@@ -28,7 +28,7 @@ export class AjouterExigenceComponent implements OnInit {
   ngOnInit(): void {
   }
   ajouterExigence(){
-    this.partieinteresse.postExigencePI(this.data).subscribe(
+    this.partieinteresse.SaveExigencyIP(this.data).subscribe(
       resp=>{
         console.log(resp);
         return this.onNoClick();

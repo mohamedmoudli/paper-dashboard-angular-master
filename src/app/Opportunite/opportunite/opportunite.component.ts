@@ -27,7 +27,7 @@ export class OpportuniteComponent implements OnInit {
               private router: Router , private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.opportuniteService.getOpportunite()
+    this.opportuniteService.getOpportunity()
       .subscribe((data) => {
 
         console.log(data);
@@ -36,7 +36,7 @@ export class OpportuniteComponent implements OnInit {
       }, error => {
         console.log(false);
       });
-    this.opportuniteService.getEnjeu()
+    this.opportuniteService.getStake()
       .subscribe((data) => {
 
         console.log(data);
@@ -76,7 +76,7 @@ export class OpportuniteComponent implements OnInit {
     });
   }
   saveHistoriqueOpportunite(){
-    this.opportuniteService.saveHistoriqueOpportunite()
+    this.opportuniteService.savehistoricalOpportunite()
       .subscribe((data) => {
 
         console.log(data);

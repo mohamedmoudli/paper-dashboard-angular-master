@@ -33,7 +33,7 @@ export class ExigenecesPIComponent implements OnInit {
               private router:Router , private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.partieinteresse.getExigencePI()
+    this.partieinteresse.getExigencyPI()
       .subscribe((data) => {
 
         this.users = data;
@@ -48,7 +48,7 @@ export class ExigenecesPIComponent implements OnInit {
 
   public supp(id) {
 
-    this.partieinteresse.deleteExigence(id).subscribe((data) => {
+    this.partieinteresse.deleteExigency(id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
 

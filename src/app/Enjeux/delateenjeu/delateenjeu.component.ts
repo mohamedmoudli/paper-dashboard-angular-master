@@ -20,7 +20,7 @@ export class DelateenjeuComponent implements OnInit {
 
 
   public supp() {
-    this.enjeuService.delateEnjeu(this.id).subscribe((data) => {
+    this.enjeuService.delateStake(this.id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
       return this.onNoClick();

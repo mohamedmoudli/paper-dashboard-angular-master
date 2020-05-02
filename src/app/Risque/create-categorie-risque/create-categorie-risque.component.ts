@@ -43,7 +43,7 @@ export class CreateCategorieRisqueComponent implements OnInit {
 
   ajoutercategorie(){
 console.log(this.data);
-    this.risqueService.saveCategoriesRisque(this.data).subscribe(
+    this.risqueService.saveCategoryRisk(this.data).subscribe(
       resp=>{
         console.log(resp);
         return this.onNoClick();

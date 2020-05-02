@@ -31,7 +31,7 @@ export class ObjectifComponent implements OnInit {
       }, error => {
         console.log(false);
       });
-    this.objectiveService.getEnjeu()
+    this.objectiveService.getStake()
       .subscribe((data) => {
 
         console.log(data);
@@ -44,7 +44,7 @@ export class ObjectifComponent implements OnInit {
   }
 
   saveHistoriqueOpportunite(){
-    this.objectiveService.saveHistoriqueObjective()
+    this.objectiveService.savehistoricalObjective()
       .subscribe((data) => {
 
         console.log(data);

@@ -37,7 +37,7 @@ export class CategoriesPIComponent implements OnInit {
 
 
   public ngOnInit() {
-    this.partieinteresse.getCategoriesPI()
+    this.partieinteresse.getCategoryInterestedParty()
       .subscribe((data) => {
 
        this.users = data['hydra:member'];

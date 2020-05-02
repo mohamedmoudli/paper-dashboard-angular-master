@@ -22,7 +22,7 @@ export class DelateStrategiqueOpportuniteComponent implements OnInit {
 
 
   public supp() {
-    this.opportuniteService.delateStrategiqueOpportunite(this.id).subscribe((data) => {
+    this.opportuniteService.delateStrategicOpportunity(this.id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
       return this.onNoClick();

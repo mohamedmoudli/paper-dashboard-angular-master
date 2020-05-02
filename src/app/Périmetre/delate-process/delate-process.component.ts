@@ -21,7 +21,7 @@ export class DelateProcessComponent implements OnInit {
 
 
   public supp() {
-    this.processusService.delateprocessus(this.id).subscribe((data) => {
+    this.processusService.delateprocess(this.id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
       return this.onNoClick();

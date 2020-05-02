@@ -44,7 +44,7 @@ export class EnjeuComponent implements OnInit {
               private router: Router , private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.enjeuxservice.getCategoriesByEnjeu()
+    this.enjeuxservice.getCategoryByStake()
       .subscribe((data) => {
 
         console.log(data);
@@ -54,7 +54,7 @@ export class EnjeuComponent implements OnInit {
         console.log(false);
       });
 
-    this.enjeuxservice.getCategoriesExternByEnjeu()
+    this.enjeuxservice.getCategoryExternalByStake()
       .subscribe((data) => {
 
         console.log(data);
@@ -80,7 +80,7 @@ export class EnjeuComponent implements OnInit {
       });
 
 
-    this.enjeuxservice.getEnjeu()
+    this.enjeuxservice.getStake()
       .subscribe((data) => {
 
         console.log(data);

@@ -26,7 +26,7 @@ export class ReevaluerOpportuniteComponent implements OnInit {
               @Inject(MAT_DIALOG_DATA) public id:number) { }
 
   ngOnInit(): void {
-    this.opportuniteService.getStrategiqueOpportunite()
+    this.opportuniteService.getStrategicOpportunity()
       .subscribe((data) => {
 
         this.Strategique = data['hydra:member'];
@@ -36,7 +36,7 @@ export class ReevaluerOpportuniteComponent implements OnInit {
         console.log(false);
       });
 
-    this.opportuniteService.getEtatOpportunite()
+    this.opportuniteService.getStateOpportunity()
       .subscribe((data) => {
 
         this.EtatOpportunite = data['hydra:member'];
@@ -46,7 +46,7 @@ export class ReevaluerOpportuniteComponent implements OnInit {
         console.log(false);
       });
 
-    this.opportuniteService.getProcessRisque()
+    this.opportuniteService.getProcessRisk()
       .subscribe((data) => {
 
         this.Process = data['hydra:member'];
@@ -59,7 +59,7 @@ export class ReevaluerOpportuniteComponent implements OnInit {
 
 
   public reevaluationOpportunite() {
-    this.opportuniteService.reevaluationOpportinute(this.id , this.data).subscribe((data) => {
+    this.opportuniteService.reevaluationOpportinuty(this.id , this.data).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
       return this.onNoClick();

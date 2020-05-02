@@ -42,7 +42,7 @@ export class CreateStrategiqueOpportuniteComponent implements OnInit {
 
   createStrategique(){
     console.log(this.data);
-    this.opportuniteService.saveStrategiqueOpportunite(this.data).subscribe(
+    this.opportuniteService.saveStrategicOpportunity(this.data).subscribe(
       resp=>{
         console.log(resp);
         return this.onNoClick();

@@ -41,7 +41,7 @@ export class CreateStrategiqueRisqueComponent implements OnInit {
 
   createStrategique(){
     console.log(this.data);
-    this.risqueService.saveStrategiqueRisque(this.data).subscribe(
+    this.risqueService.saveStrategicRisk(this.data).subscribe(
       resp=>{
         console.log(resp);
         return this.onNoClick();

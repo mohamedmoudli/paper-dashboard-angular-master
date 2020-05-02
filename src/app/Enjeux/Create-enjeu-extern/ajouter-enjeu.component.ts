@@ -14,8 +14,8 @@ export class AjouterEnjeuComponent implements OnInit {
   submitted = false;
   public data = {
     Description: '',
-    typeEnjeu: '',
-    categoriesEnjeuExterne: ''
+    Type: '',
+    CategoryStakeExternal: ''
   };
   public users = [];
   public Type = [];
@@ -33,7 +33,7 @@ export class AjouterEnjeuComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.enjeuService.getCategoriesExtern()
+    this.enjeuService.getCategoryExternal()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];
@@ -46,7 +46,7 @@ export class AjouterEnjeuComponent implements OnInit {
 
 
 
-    this.enjeuService.getTypeEnjeu()
+    this.enjeuService.getTypeStake()
       .subscribe((data) => {
 
         this.Type = data['hydra:member'];
@@ -59,7 +59,7 @@ export class AjouterEnjeuComponent implements OnInit {
 
 
   saveEnjeuForce(){
-    this.enjeuService.saveEnjeu(this.data).subscribe(
+    this.enjeuService.saveStake(this.data).subscribe(
       resp=>{
         console.log(resp);
         console.log(true);

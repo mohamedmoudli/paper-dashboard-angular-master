@@ -28,7 +28,7 @@ export class RisqueComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.risqueService.getRisque()
+    this.risqueService.getRisk()
       .subscribe((data) => {
 
         console.log(data);
@@ -37,7 +37,7 @@ export class RisqueComponent implements OnInit {
       }, error => {
         console.log(false);
       });
-    this.risqueService.getEnjeu()
+    this.risqueService.getstake()
       .subscribe((data) => {
 
         console.log(data);
@@ -79,7 +79,7 @@ export class RisqueComponent implements OnInit {
     });
   }
   saveHistoriqueRisque(){
-    this.risqueService.saveHistoriqueRisque()
+    this.risqueService.savehistoricalRisk()
       .subscribe((data) => {
 
         console.log(data);

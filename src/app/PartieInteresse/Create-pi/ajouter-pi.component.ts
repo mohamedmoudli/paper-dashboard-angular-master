@@ -14,7 +14,7 @@ export class AjouterPIComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.partieinteresse.getCategoriesPI()
+    this.partieinteresse.getCategoryInterestedParty()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];
@@ -28,7 +28,7 @@ export class AjouterPIComponent implements OnInit {
 
   ajouterpartieinteresse(data){
     console.log(data);
-    this.partieinteresse.postpartieinteresse(data).subscribe(
+    this.partieinteresse.SaveInterestedParty(data).subscribe(
       resp=>{
         console.log(resp);
        console.log(true)

@@ -33,7 +33,7 @@ export class CategorieRisqueComponent implements OnInit {
 
 
   public ngOnInit() {
-    this.risqueService.getCategoriesRisque()
+    this.risqueService.getCategoryRisk()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];

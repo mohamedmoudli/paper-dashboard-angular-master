@@ -15,7 +15,7 @@ export class HistoriquePIpertinanteComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.partieinteresse.gethistoriquePI()
+    this.partieinteresse.gethistoricalPI()
       .subscribe((data) => {
 
         console.log(data);
@@ -28,7 +28,7 @@ export class HistoriquePIpertinanteComponent implements OnInit {
 
   public supp(id) {
     console.log(id);
-    this.partieinteresse.deleteHistorique(id).subscribe((data) => {
+    this.partieinteresse.deletehistorical(id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
 

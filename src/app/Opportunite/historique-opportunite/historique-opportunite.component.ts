@@ -15,7 +15,7 @@ export class HistoriqueOpportuniteComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.opportuniteService.getHistoriqueOpportunite()
+    this.opportuniteService.gethistoricalOpportunite()
       .subscribe((data) => {
 
         console.log(data);

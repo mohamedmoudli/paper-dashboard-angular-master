@@ -33,7 +33,7 @@ export class CategorieInternComponent implements OnInit {
 
 
   public ngOnInit() {
-    this.enjeuService.getCategoriesIntern()
+    this.enjeuService.getCategoryInternal()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];

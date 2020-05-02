@@ -16,7 +16,7 @@ export class AjouterrisqueComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit(): void {
-    this.risqueService.getCategoriesRisque()
+    this.risqueService.getCategoryRisk()
       .subscribe((data) => {
 
         this.categorierisque = data['hydra:member'];
@@ -25,7 +25,7 @@ export class AjouterrisqueComponent implements OnInit {
       },error => {
         console.log(false);
       });
-    this.risqueService.getEtatRisque()
+    this.risqueService.getStateRisk()
       .subscribe((data) => {
 
         this.EtatRisque = data['hydra:member'];
@@ -35,7 +35,7 @@ export class AjouterrisqueComponent implements OnInit {
         console.log(false);
       });
 
-    this.risqueService.getStrategiqueRisque()
+    this.risqueService.getStrategicRisk()
       .subscribe((data) => {
 
         this.Strategique = data['hydra:member'];
@@ -44,7 +44,7 @@ export class AjouterrisqueComponent implements OnInit {
       },error => {
         console.log(false);
       });
-    this.risqueService.getProcessRisque()
+    this.risqueService.getProcessRisk()
       .subscribe((data) => {
 
         this.Process = data['hydra:member'];
@@ -57,7 +57,7 @@ export class AjouterrisqueComponent implements OnInit {
 
   ajouterrisque(data){
     console.log(data);
-    this.risqueService.saveRisque(data).subscribe(
+    this.risqueService.saveRisk(data).subscribe(
       resp=>{
         console.log(resp);
         console.log(true);

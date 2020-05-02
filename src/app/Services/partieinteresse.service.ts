@@ -48,7 +48,7 @@ export class PartieinteresseService {
 
   }
   public getExigencyPI() {
-    return this.http.get(this.host+"/GetExigenceByAction");
+    return this.http.get(this.host+"/GetExigencyByAction");
 
   }
 

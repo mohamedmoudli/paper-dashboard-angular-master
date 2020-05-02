@@ -46,7 +46,7 @@ export class CreateObjectifComponent implements OnInit {
       },error => {
         console.log(false);
       });
-    this.objectiveService.getEnjeu()
+    this.objectiveService.getStake()
       .subscribe((data) => {
 
         console.log(data);

@@ -30,7 +30,7 @@ export class ProcessusComponent implements OnInit {
     this.affichepolitique = localStorage.getItem('politique');
     this.afficheperimetre = localStorage.getItem('perimetre');
 
-    this.processusService.getprocessus()
+    this.processusService.getprocess()
       .subscribe((data) => {
 
         console.log(data);

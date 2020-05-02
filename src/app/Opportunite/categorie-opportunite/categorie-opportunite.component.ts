@@ -33,7 +33,7 @@ export class CategorieOpportuniteComponent implements OnInit {
 
 
   public ngOnInit() {
-    this.opportuniteService.getCategoriesOpportunite()
+    this.opportuniteService.getCategoryOpportunity()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];

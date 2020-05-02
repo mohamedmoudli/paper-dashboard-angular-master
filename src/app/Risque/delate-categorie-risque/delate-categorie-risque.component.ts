@@ -21,7 +21,7 @@ export class DelateCategorieRisqueComponent implements OnInit {
 
 
   public supp() {
-    this.risqueService.delateCategoriesRisque(this.id).subscribe((data) => {
+    this.risqueService.delateCategoryRisk(this.id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
       return this.onNoClick();

@@ -13,13 +13,13 @@ export class CreateCategorieExternComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
   public data = {
-    NomCategorie: ''
+    NameCategoryStakExternal: ''
   };
 
   constructor(private enjeuxservice : EnjeuService,
               private router: Router , private fb:FormBuilder , public dialogRef: MatDialogRef<CreateCategorieExternComponent>) {
     this.angForm = this.fb.group({
-      NomCategorie: ['', [Validators.required]],
+      NameCategoryStakExternal: ['', [Validators.required]],
 
     });
   }
@@ -27,7 +27,7 @@ export class CreateCategorieExternComponent implements OnInit {
   ngOnInit(): void {
   }
   addcategorie(){
-    this.enjeuxservice.CreateCategoriesExtern(this.data).subscribe(
+    this.enjeuxservice.CreateCategoryExternal(this.data).subscribe(
       resp=>{
         console.log(resp);
         return this.onNoClick();

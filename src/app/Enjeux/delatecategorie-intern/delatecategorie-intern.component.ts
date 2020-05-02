@@ -21,7 +21,7 @@ export class DelatecategorieInternComponent implements OnInit {
 
 
   public supp() {
-    this.enjeuService.delateCategoriesIntern(this.id).subscribe((data) => {
+    this.enjeuService.delateCategoryInternal(this.id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
       return this.onNoClick();

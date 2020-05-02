@@ -49,7 +49,7 @@
 
       <div class="med">
       <div class="card col-md-4" *ngFor="let c of users" >
-        <div class="navbar" ><h4>{{c.nomcat}}</h4></div>
+        <div class="navbar" ><h4>{{c.NameCategory}}</h4></div>
         <table class="table">
           <thead class=" text-primary">
           <tr>
@@ -57,10 +57,10 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let p of c.partieinteresses ">
+          <tr *ngFor="let p of c.intersetedParties ">
             <td>{{p.id}}</td>
-            <td>{{p.NomPI}}</td>
-            <td>{{p.Poids}}</td>
+            <td>{{p.NameInterestedParty}}</td>
+            <td>{{p.Weight}}</td>
 
             <td ></td>
 
@@ -91,7 +91,7 @@
 
           <select name="id" placeholder="nom cat" [(ngModel)]="id" >
 
-            <option *ngFor="let c of users1" value="{{c.id}}">{{c.NomPI}}</option>
+            <option *ngFor="let c of users1" value="{{c.id}}">{{c.NameInterestedParty}}</option>
 
           </select>
           <p>est_ce que vous voulez evaluer</p>
@@ -104,12 +104,12 @@
           </div>
           <div class="form-group" *ngIf="affiche()">
             <label class="control-label"> {{data.nom_champ}}</label>
-              <input type="number" name="data.interet"  [(ngModel)]="data.interet"   class="form-control">
+              <input type="number" name="data.Interest"  [(ngModel)]="data.Interest"   class="form-control">
 
           </div>
           <div class="form-group" *ngIf="affiche1()">
             <label class="control-label"> {{data.nom_champ}}</label>
-            <input type="number" name="data.pouvoir"  [(ngModel)]="data.pouvoir"  class="form-control">
+            <input type="number" name="data.Power"  [(ngModel)]="data.Power"  class="form-control">
 
           </div>
           <div class="form-group">
@@ -172,11 +172,10 @@
           <tbody >
           <tr *ngFor="let c of pipert " >
             <td>Pi{{c.id}}</td>
-            <td>{{c.NomPI}}</td>
-            <td >{{c.nomcat}}</td>
+            <td>{{c.NameInterestedParty}}</td>
             <td >{{c.Influence}}</td>
-            <td >{{c.Pouvoir}}</td>
-            <td >{{c.Poids}}</td>
+            <td >{{c.Power}}</td>
+            <td >{{c.Weight}}</td>
             <td></td>
 
           </tr>
@@ -193,11 +192,10 @@
           <tbody >
           <tr *ngFor="let c of pipert " >
             <td>Pi{{c.id}}</td>
-            <td>{{c.NomPI}}</td>
-            <td >{{c.nomcat}}</td>
+            <td>{{c.NameInterestedParty}}</td>
             <td >{{c.Influence}}</td>
-            <td >{{c.interet}}</td>
-            <td >{{c.Poids}}</td>
+            <td >{{c.Interest}}</td>
+            <td >{{c.Weight}}</td>
             <td></td>
 
           </tr>

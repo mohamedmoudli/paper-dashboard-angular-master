@@ -34,7 +34,7 @@
             <div class="med" style="float: left">
               <h1>--------------force/strenaths-------------------</h1>
               <div class="card" *ngFor="let p of users">
-                <div class="navbar" ><h2 class="text-danger">{{p.NomCategories}}</h2></div>
+                <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakInternal}}</h2></div>
                 <div>
                   <table class="table" >
                     <thead class=" text-primary">
@@ -43,10 +43,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor="let t of p.enjeus "  >
+                    <tr *ngFor="let t of p.stakes "  >
 
-                      <td *ngIf=" t.typeEnjeu.id == 1 ">E{{t.id}}</td>
-                      <td *ngIf=" t.typeEnjeu.id == 1 ">{{t.Description}}</td>
+                      <td *ngIf=" t.Type.id == 1 ">E{{t.id}}</td>
+                      <td *ngIf=" t.Type.id == 1 ">{{t.Description}}</td>
 
 
                       <td ></td>
@@ -63,7 +63,7 @@
       <div class="med" style="float: right"  >
         <h1>----------faiblesses/weaknesses--------</h1>
         <div class="card " *ngFor="let p of users">
-          <div class="navbar" ><h2 class="text-danger">{{p.NomCategories}}</h2></div>
+          <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakInternal}}</h2></div>
           <div>
             <table class="table" >
               <thead class=" text-primary">
@@ -74,8 +74,8 @@
               <tbody>
               <tr *ngFor="let t of p.enjeus "  >
 
-                <td *ngIf=" t.typeEnjeu.id == 2 ">E{{t.id}}</td>
-                <td *ngIf=" t.typeEnjeu.id == 2 ">{{t.Description}}</td>
+                <td *ngIf=" t.Type.id == 2 ">E{{t.id}}</td>
+                <td *ngIf=" t.Type.id == 2 ">{{t.Description}}</td>
 
 
                 <td ></td>
@@ -103,7 +103,7 @@
         <div style ="float: left">
           <h1>--------Opportunités/Opportunites-------</h1>
           <div class="card" *ngFor="let p of usersExtern">
-            <div class="navbar" ><h2 class="text-danger">{{p.NomCategorie}}</h2></div>
+            <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakExternal}}</h2></div>
             <div>
               <table class="table" >
                 <thead class=" text-primary">
@@ -112,10 +112,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let t of p.enjeus "  >
+                <tr *ngFor="let t of p.stakes "  >
 
-                  <td *ngIf="  t.typeEnjeu.id == 3 ">E{{t.id}}</td>
-                  <td *ngIf="  t.typeEnjeu.id == 3 ">{{t.Description}}</td>
+                  <td *ngIf="  t.Type.id == 3 ">E{{t.id}}</td>
+                  <td *ngIf="  t.Type.id == 3 ">{{t.Description}}</td>
 
 
                   <td ></td>
@@ -132,7 +132,7 @@
         <div class="med" style="float: right"  >
           <h1>--------------Menances/Threate------------</h1>
           <div class="card " *ngFor="let p of usersExtern">
-            <div class="navbar" ><h2 class="text-danger">{{p.NomCategorie}}</h2></div>
+            <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakExternal}}</h2></div>
             <div>
               <table class="table" >
                 <thead class=" text-primary">
@@ -141,10 +141,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr *ngFor="let t of p.enjeus "  >
+                <tr *ngFor="let t of p.stakes "  >
 
-                  <td *ngIf=" t.typeEnjeu.id == 4 ">E{{t.id}}</td>
-                  <td *ngIf=" t.typeEnjeu.id == 4 ">{{t.Description}}</td>
+                  <td *ngIf=" t.Type.id == 4 ">E{{t.id}}</td>
+                  <td *ngIf=" t.Type.id == 4 ">{{t.Description}}</td>
 
 
                   <td ></td>

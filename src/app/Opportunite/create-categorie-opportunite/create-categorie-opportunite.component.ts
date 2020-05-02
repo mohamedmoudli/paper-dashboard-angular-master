@@ -43,7 +43,7 @@ export class CreateCategorieOpportuniteComponent implements OnInit {
 
   ajoutercategorie(){
     console.log(this.data);
-    this.opportuniteService.saveCategoriesOpportunite(this.data).subscribe(
+    this.opportuniteService.saveCategoryOpportunity(this.data).subscribe(
       resp=>{
         console.log(resp);
         return this.onNoClick();

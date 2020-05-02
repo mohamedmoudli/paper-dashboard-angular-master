@@ -33,7 +33,7 @@ export class CategorieExternComponent implements OnInit {
 
 
   public ngOnInit() {
-    this.enjeuService.getCategoriesExtern()
+    this.enjeuService.getCategoryExternal()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];

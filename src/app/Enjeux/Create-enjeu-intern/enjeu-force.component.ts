@@ -15,8 +15,8 @@ export class EnjeuForceComponent implements OnInit {
   submitted = false;
   public data = {
     Description: '',
-    typeEnjeu: '',
-    CategoriesEnjeu: ''
+    Type: '',
+    CategoryStakeInternal: ''
   };
   public users = [];
   public Type = [];
@@ -24,8 +24,8 @@ export class EnjeuForceComponent implements OnInit {
               private router:Router , private fb:FormBuilder , public dialogRef: MatDialogRef<EnjeuForceComponent>) {
     this.angForm = this.fb.group({
       Description: ['', [Validators.required]],
-      typeEnjeu: ['', [Validators.required]],
-      categorieEnjeu: ['', [Validators.required]],
+      Type: ['', [Validators.required]],
+      CategoryStakeInternal: ['', [Validators.required]],
 
 
 
@@ -34,7 +34,7 @@ export class EnjeuForceComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.enjeuService.getCategoriesIntern()
+    this.enjeuService.getCategoryInternal()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];
@@ -47,7 +47,7 @@ export class EnjeuForceComponent implements OnInit {
 
 
 
-    this.enjeuService.getTypeEnjeu()
+    this.enjeuService.getTypeStake()
       .subscribe((data) => {
 
         this.Type = data['hydra:member'];
@@ -60,7 +60,7 @@ export class EnjeuForceComponent implements OnInit {
 
 
   saveEnjeuForce(){
-    this.enjeuService.saveEnjeu(this.data).subscribe(
+    this.enjeuService.saveStake(this.data).subscribe(
       resp=>{
         console.log(resp);
         console.log(true);

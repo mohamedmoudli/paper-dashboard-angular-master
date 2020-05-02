@@ -18,7 +18,7 @@ export class DelateExigencePIComponent implements OnInit {
   }
   public supp() {
 
-    this.partieinteresse.deleteExigence(this.id).subscribe((data) => {
+    this.partieinteresse.deleteExigency(this.id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
      return this.onNoClick();

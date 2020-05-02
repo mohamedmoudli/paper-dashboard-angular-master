@@ -96,10 +96,9 @@ export class PartieinteresseComponent implements OnInit {
 
   public data = {
     nom_champ: "",
-    pouvoir: "",
-    interet: "",
+    Power: "",
+    Interest: "",
     influence: ""
-
   };
 
 
@@ -122,7 +121,7 @@ export class PartieinteresseComponent implements OnInit {
     }
 
 
-    this.partieinteresse.getNbreCategories()
+    this.partieinteresse.getNbreCategory()
       .subscribe((data) => {
         this.catchartjs = data;
         console.log(data);
@@ -140,14 +139,14 @@ export class PartieinteresseComponent implements OnInit {
       });
 
 
-    this.partieinteresse.getCategoriesPI()
+    this.partieinteresse.getCategoryInterestedParty()
       .subscribe((data) => {
 
       }, error => {
         console.log(false);
       });
 
-    this.partieinteresse.getNomCategorie()
+    this.partieinteresse.getNameCategory()
       .subscribe((data) => {
 
 
@@ -156,7 +155,7 @@ export class PartieinteresseComponent implements OnInit {
       });
 
 
-    this.partieinteresse.getCategoriesparPI()
+    this.partieinteresse.getCategoryByInterestedParty()
       .subscribe((data) => {
 
         console.log(data);
@@ -167,7 +166,7 @@ export class PartieinteresseComponent implements OnInit {
       });
 
 
-    this.partieinteresse.getpartieinteresse()
+    this.partieinteresse.getInteresetedParty()
       .subscribe((data) => {
         this.users1 = data['hydra:member'];
         console.log(this.users1)
@@ -182,7 +181,7 @@ export class PartieinteresseComponent implements OnInit {
 
   affiche() {
     if (this.data.nom_champ == 'interet') {
-      this.interet = this.data.interet;
+      this.interet = this.data.Interest;
       return true;
     } else {
       return false;
@@ -193,7 +192,7 @@ export class PartieinteresseComponent implements OnInit {
 
   affiche1() {
     if (this.data.nom_champ == 'pouvoir') {
-      this.interet = this.data.interet;
+      this.interet = this.data.Interest;
       return true;
     } else {
       return false;
@@ -213,7 +212,7 @@ export class PartieinteresseComponent implements OnInit {
 
 
   aff(id) {
-    this.partieinteresse.getpartieinteressebyid(id)
+    this.partieinteresse.getInterestedPartybyid(id)
       .subscribe((data) => {
         this.users2 = data;
         console.log(this.users2);
@@ -230,7 +229,7 @@ export class PartieinteresseComponent implements OnInit {
   setpoid() {
     console.log(this.data);
     console.log(this.id);
-    this.partieinteresse.getpoidsbyid(this.id, this.data)
+    this.partieinteresse.getLoadsbyid(this.id, this.data)
       .subscribe(
         (data) => {
           console.log(data);
@@ -259,7 +258,7 @@ export class PartieinteresseComponent implements OnInit {
   savehistoriquepi() {
     for (let element of this.pipert) {
       console.log(element);
-      this.partieinteresse.savehistoriquePI(this.idseul)
+      this.partieinteresse.savehistoricalPI(this.idseul)
         .subscribe((data) => {
             console.log(data);
             this.pipert = data;

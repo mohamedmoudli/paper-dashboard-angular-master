@@ -20,15 +20,15 @@
                 <div>
                   <label>le type d'enjeu</label>
                 </div>
-                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('typeEnjeu').errors && (angForm.get('typeEnjeu').touched || angForm.get('typeEnjeu').dirty ) }">
-                <select name="typeEnjeu" placeholder="role"  formControlName="typeEnjeu" [(ngModel)]="data.typeEnjeu">
+                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Type').errors && (angForm.get('Type').touched || angForm.get('Type').dirty ) }">
+                <select name="Type" placeholder="role"  formControlName="Type" [(ngModel)]="data.Type">
 
                   <option value="">--chnoisir type--</option>
-                  <option value="api/type_enjeus/3">Opportunite</option>
-                  <option value="api/type_enjeus/4">Menaces</option>
+                  <option value="api/type_stakes/3">Opportunite</option>
+                  <option value="api/type_stakes/4">Menaces</option>
                 </select>
-                  <div *ngIf="angForm.get('typeEnjeu').errors && (angForm.get('typeEnjeu').touched || angForm.get('typeEnjeu').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('typeEnjeu').errors.required"></span>  type est obligatoire
+                  <div *ngIf="angForm.get('Type').errors && (angForm.get('Type').touched || angForm.get('Type').dirty )" class="alert alert-danger">
+                    <span *ngIf="angForm.get('Type').errors.required"></span>  type est obligatoire
                   </div>
                 </div>
               </div>
@@ -37,15 +37,15 @@
                 <div>
                   <label>la categorie :</label>
                 </div>
-                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('categorieEnjeu').errors && (angForm.get('categorieEnjeu').touched || angForm.get('categorieEnjeu').dirty ) }">
-                <select name="categoriesEnjeuExterne" placeholder="nom cat" formControlName="categorieEnjeu" id="pet-select" [(ngModel)]="data.categoriesEnjeuExterne" >
+                <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('CategoryStakeExternal').errors && (angForm.get('CategoryStakeExternal').touched || angForm.get('CategoryStakeExternal').dirty ) }">
+                <select name="CategoryStakeExternal" placeholder="nom cat" formControlName="CategoryStakeExternal" id="pet-select" [(ngModel)]="data.CategoryStakeExternal" >
 
                   <option value="">--choisir la categories--</option>
-                  <option *ngFor="let c of users" value="api/categories_enjeu_externes/{{c.id}}">{{c.NomCategorie}}</option>
+                  <option *ngFor="let c of users" value="api/category_stake_externals/{{c.id}}">{{c.NameCategoryStakExternal}}</option>
 
                 </select>
-                  <div *ngIf="angForm.get('categorieEnjeu').errors && (angForm.get('categorieEnjeu').touched || angForm.get('categorieEnjeu').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('categorieEnjeu').errors.required"></span>   categories est obligatoire
+                  <div *ngIf="angForm.get('CategoryStakeExternal').errors && (angForm.get('CategoryStakeExternal').touched || angForm.get('CategoryStakeExternal').dirty )" class="alert alert-danger">
+                    <span *ngIf="angForm.get('CategoryStakeExternal').errors.required"></span>   categories est obligatoire
                   </div>
                 </div>
               </div>

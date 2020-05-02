@@ -22,7 +22,7 @@ export class DelatecategorieExternComponent implements OnInit {
 
 
   public supp() {
-    this.enjeuService.delateCategoriesExtern(this.id).subscribe((data) => {
+    this.enjeuService.delateCategoryExternal(this.id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
       return this.onNoClick();

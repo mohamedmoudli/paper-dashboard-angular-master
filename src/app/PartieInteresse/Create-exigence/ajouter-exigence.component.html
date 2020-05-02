@@ -6,26 +6,26 @@
     <div class="card-body">
       <form [formGroup]="angForm" name="form" (ngSubmit)=" onSubmit() " >
         <div>
-          <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('EtatDeConfirmite').errors && (angForm.get('EtatDeConfirmite').touched || angForm.get('EtatDeConfirmite').dirty ) }">
-          <select name="EtatDeConfirmite"  id="pet-select" formControlName="EtatDeConfirmite" [(ngModel)]="data.EtatDeConfirmite">
+          <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('StateOfConfirmity').errors && (angForm.get('StateOfConfirmity').touched || angForm.get('StateOfConfirmity').dirty ) }">
+          <select name="StateOfConfirmity"  id="pet-select" formControlName="StateOfConfirmity" [(ngModel)]="data.StateOfConfirmity">
 
             <option value="">--Etat de confirmité--</option>
             <option>conforme</option>
             <option>partielement conforme</option>
             <option >non conforme</option>
           </select>
-            <div *ngIf="angForm.get('EtatDeConfirmite').errors && (angForm.get('EtatDeConfirmite').touched || angForm.get('EtatDeConfirmite').dirty )" class="alert alert-danger">
-              <span *ngIf="angForm.get('EtatDeConfirmite').errors.required"></span>  etat de confiirmite est obligatoire
+            <div *ngIf="angForm.get('StateOfConfirmity').errors && (angForm.get('StateOfConfirmity').touched || angForm.get('StateOfConfirmity').dirty )" class="alert alert-danger">
+              <span *ngIf="angForm.get('StateOfConfirmity').errors.required"></span>  etat de confiirmite est obligatoire
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Commantaire').errors && (angForm.get('Commantaire').touched || angForm.get('Commantaire').dirty ) }">
+          <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Comment').errors && (angForm.get('Comment').touched || angForm.get('Comment').dirty ) }">
           <label class="control-label">Commentaire:</label>
-          <input type="text" name="Commantaire"  formControlName="Commantaire" [(ngModel)]="data.Commantaire" class="form-control">
-            <div *ngIf="angForm.get('Commantaire').errors && (angForm.get('Commantaire').touched || angForm.get('Commantaire').dirty )" class="alert alert-danger">
-              <span *ngIf="angForm.get('Commantaire').errors.required"></span>  commentaire est obligatoire
+          <input type="text" name="Comment"  formControlName="Comment" [(ngModel)]="data.Comment" class="form-control">
+            <div *ngIf="angForm.get('Comment').errors && (angForm.get('Comment').touched || angForm.get('Comment').dirty )" class="alert alert-danger">
+              <span *ngIf="angForm.get('Comment').errors.required"></span>  commentaire est obligatoire
             </div>
           </div>
         </div>
