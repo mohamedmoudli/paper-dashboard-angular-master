@@ -17,10 +17,10 @@
                 <label>categorie de risque</label>
               </div>
               <div>
-                <select name="idcategorie" placeholder="nom cat"  ngModel type="number">
+                <select name="idcategory" placeholder="nom cat"  ngModel type="number">
 
                   <option value="">--choisir categories--</option>
-                  <option *ngFor="let c of categorierisque" value="{{c.id}}">{{c.NomCategorie}}</option>
+                  <option *ngFor="let c of categorierisque" value="{{c.id}}">{{c.NameCategoryRisk}}</option>
 
                 </select>
               </div>
@@ -32,10 +32,10 @@
 
               <p>durée</p>
               <div>
-                <input type="checkbox" name="CourtTerm"  value="*" ngModel>
+                <input type="checkbox" name="ShortTerm"  value="*" ngModel>
                 <label>court term</label><br>
 
-                <input type="checkbox" name="MoyenTerm" value="*" ngModel>
+                <input type="checkbox" name="MediumTerm" value="*" ngModel>
                 <label >moyen term</label><br>
                 <input type="checkbox" name="LongTerm" value="*" ngModel>
                 <label >long term</label>
@@ -55,15 +55,15 @@
               </div>
               <div class="form-group">
                 <label class="control-label">Gravite:</label>
-                <input type="number" name="Gravite"  ngModel class="form-control">
+                <input type="number" name="Gravity"  ngModel class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label">Probabilite:</label>
-                <input type="number" name="Probabilite"  ngModel class="form-control">
+                <input type="number" name="Probability"  ngModel class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label">Detectabilite:</label>
-                <input type="number" name="Detectabilite"  ngModel class="form-control">
+                <input type="number" name="Detectability"  ngModel class="form-control">
               </div>
               <div>
                 <label>processus lie au risque</label>
@@ -72,7 +72,7 @@
                 <select name="idprocess" placeholder="nom cat" id="pet-select" ngModel type="number" >
 
                   <option value="">--choisir votre role--</option>
-                  <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Processus}}</option>
+                  <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Process}}</option>
 
                 </select>
               </div>
@@ -82,10 +82,10 @@
               </div>
 
               <div>
-                <select  name="idstrategique" placeholder="nom cat" ngModel type="number" >
+                <select  name="idstrategic" placeholder="nom cat" ngModel type="number" >
 
                   <option value="">--choisir strategique--</option>
-                  <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NomSrategique}}</option>
+                  <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NameStrategicRisk}}</option>
 
                 </select>
               </div>
@@ -93,17 +93,17 @@
                 <label>etat de risque</label>
               </div>
               <div>
-                <select name="idEtatRisque" placeholder="nom cat"  ngModel type="number">
+                <select name="idStateRisk" placeholder="nom cat"  ngModel type="number">
 
                   <option value="">--choisir Etat de risque--</option>
-                  <option *ngFor="let c of EtatRisque" value="{{c.id}}">{{c.NomEtatRisque}}</option>
+                  <option *ngFor="let c of EtatRisque" value="{{c.id}}">{{c.NameStateRisk}}</option>
 
                 </select>
               </div>
 
               <div class="form-group">
                 <label class="control-label">Commentaire:</label>
-                <input type="text" name="Commentaire"  ngModel class="form-control">
+                <input type="text" name="Comment"  ngModel class="form-control">
               </div>
 
 

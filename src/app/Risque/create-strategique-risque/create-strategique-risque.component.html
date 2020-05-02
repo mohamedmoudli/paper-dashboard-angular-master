@@ -6,11 +6,11 @@
   <form [formGroup]="angForm" name="form" (ngSubmit)=" onSubmit() ">
 
     <div class="form-group">
-      <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('nomSrategique').errors && (angForm.get('nomSrategique').touched || angForm.get('nomSrategique').dirty ) }">
+      <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('NameStrategicRisk').errors && (angForm.get('NameStrategicRisk').touched || angForm.get('NameStrategicRisk').dirty ) }">
         <label class="control-label">nom categorie:</label>
-        <input type="text" name="NomSrategique"  [(ngModel)]="data.NomSrategique"  formControlName="nomSrategique" class="form-control">
-        <div *ngIf="angForm.get('nomSrategique').errors && (angForm.get('nomSrategique').touched || angForm.get('nomSrategique').dirty )" class="alert alert-danger">
-          <span *ngIf="angForm.get('nomSrategique').errors.required"></span>  categories est obligatoire
+        <input type="text" name="NameStrategicRisk"  [(ngModel)]="data.NameStrategicRisk"  formControlName="NameStrategicRisk" class="form-control">
+        <div *ngIf="angForm.get('NameStrategicRisk').errors && (angForm.get('NameStrategicRisk').touched || angForm.get('NameStrategicRisk').dirty )" class="alert alert-danger">
+          <span *ngIf="angForm.get('NameStrategicRisk').errors.required"></span>  categories est obligatoire
         </div>
       </div>
     </div>

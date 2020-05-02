@@ -16,9 +16,9 @@ export class ReevaluerOpportuniteComponent implements OnInit {
   public data = {
     EffortReevaluation: '',
     AventageReevaluation: '',
-    idstrategiqueReevaluation: '',
+    idstrategicReevaluation: '',
     idprocessReevaluation: '',
-    idEtatOpportuniteReevaluation: ''
+    idStateOpportunityReevaluation: ''
   };
 
   constructor(private opportuniteService: OpportuniteService,

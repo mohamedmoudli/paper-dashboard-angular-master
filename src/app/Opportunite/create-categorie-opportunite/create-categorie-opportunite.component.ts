@@ -15,7 +15,7 @@ export class CreateCategorieOpportuniteComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
   public data = {
-    NomCategorie: ''
+    NameCategoryOpportunity: ''
   };
 
   id1: number;
@@ -32,7 +32,7 @@ export class CreateCategorieOpportuniteComponent implements OnInit {
   constructor( private opportuniteService: OpportuniteService, private router: Router ,
                private fb:FormBuilder , public dialogRef: MatDialogRef<CreateCategorieOpportuniteComponent>) {
     this.angForm = this.fb.group({
-      NomCategorie: ['', [Validators.required]],
+      NameCategoryOpportunity: ['', [Validators.required]],
     });
   }
 
@@ -41,7 +41,7 @@ export class CreateCategorieOpportuniteComponent implements OnInit {
 
   }
 
-  ajoutercategorie(){
+  savecategory(){
     console.log(this.data);
     this.opportuniteService.saveCategoryOpportunity(this.data).subscribe(
       resp=>{

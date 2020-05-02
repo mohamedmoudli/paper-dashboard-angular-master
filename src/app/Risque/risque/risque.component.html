@@ -13,6 +13,9 @@
        <button class="btn btn-primary" routerLink="/RisqueCategories" style="float: left">gerer categorie</button>
         </div>
         <div style="float: left" >
+          <button class="btn btn-primary" routerLink="/historiqueRisque" style="float: left">historique</button>
+        </div>
+        <div style="float: left" >
        <button class="btn btn-primary" routerLink="/strategiqueRisque" style="float: left">gerer strategique</button>
         </div>
 
@@ -41,24 +44,24 @@
                   <tbody>
                   <tr *ngFor="let c of users">
                     <td>{{c.id}}</td>
-                    <td>{{c.CategorieRisque.nomCategorie}}</td>
+                    <td>{{c.CategoryRisk.nameCategoryRisk}}</td>
                     <td>{{c.Description}}</td>
-                    <td>{{c.CourtTerm}}</td>
-                    <td>{{c.MoyenTerm}}</td>
+                    <td>{{c.ShortTerm}}</td>
+                    <td>{{c.MediumTerm}}</td>
                     <td>{{c.LongTerm}}</td>
                     <td>{{c.DateIdentification}}</td>
                     <td>{{c.Causes}}</td>
                     <td>{{c.Censequence}}</td>
-                    <td>{{c.Gravite}}</td>
-                    <td>{{c.Probabilite}}</td>
-                    <td>{{c.detectabilite}}</td>
-                    <td>{{c.Criticite}}</td>
+                    <td>{{c.Gravity}}</td>
+                    <td>{{c.Probability}}</td>
+                    <td>{{c.detectability}}</td>
+                    <td>{{c.Criticality}}</td>
                     <td>{{c.Decision}}</td>
-                    <td>{{c.StrategiqueRisque.nomSrategique}}</td>
-                    <td>{{c.Processus.processus}}</td>
-                    <td>  <p *ngFor="let p of c.planDeActions "> {{ p.id}}</p> </td>
-                    <td>{{c.EtatRisque.nomEtatRisque}}</td>
-                    <td>{{c.Commentaire}}</td>
+                    <td>{{c.StrategicRisk.nameStrategicRisk}}</td>
+                    <td>{{c.Process.process}}</td>
+                    <td>  <p *ngFor="let p of c.actionPlans "> {{ p.id}}</p> </td>
+                    <td>{{c.StateRisk.nameStateRisk}}</td>
+                    <td>{{c.Comment}}</td>
 
                     <td>{{c.Pilote}}</td>
                     <td ></td>

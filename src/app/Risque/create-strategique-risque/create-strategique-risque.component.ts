@@ -13,7 +13,7 @@ export class CreateStrategiqueRisqueComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
   public data = {
-    NomSrategique: ''
+    NameStrategicRisk: ''
   };
 
   id1: number;
@@ -30,7 +30,7 @@ export class CreateStrategiqueRisqueComponent implements OnInit {
   constructor( private risqueService: RisqueService, private router: Router ,
                private fb:FormBuilder , public dialogRef: MatDialogRef<CreateStrategiqueRisqueComponent>) {
     this.angForm = this.fb.group({
-      nomSrategique: ['', [Validators.required]],
+      NameStrategicRisk: ['', [Validators.required]],
     });
   }
 

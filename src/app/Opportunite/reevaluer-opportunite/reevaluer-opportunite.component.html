@@ -11,7 +11,7 @@
     </select>
   </div>
   <div>
-    <select name="AventageReevaluation" placeholder="Aventage"  [(ngModel)]="data.AventageReevaluation">
+    <select name="AdvantageReevaluation" placeholder="Aventage"  [(ngModel)]="data.AventageReevaluation">
 
       <option value="">--choisir Aventage--</option>
       <option>1</option>
@@ -22,26 +22,26 @@
   </div>
 
   <div>
-    <select  name="idstrategiqueReevaluation" placeholder="nom cat" [(ngModel)]="data.idstrategiqueReevaluation" type="number" >
+    <select  name="idstrategicReevaluation" placeholder="nom cat" [(ngModel)]="data.idstrategicReevaluation" type="number" >
 
       <option value="">--choisir strategique--</option>
-      <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NomStrategique}}</option>
+      <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NameStrategicOpportunity}}</option>
 
     </select>
   </div>
   <div>
     <select name="idprocessReevaluation" placeholder="nom cat" id="pet-select" [(ngModel)]="data.idprocessReevaluation" type="number" >
 
-      <option value="">--choisir votre role--</option>
-      <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Processus}}</option>
+      <option value="">--choisir processus--</option>
+      <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Process}}</option>
 
     </select>
   </div>
 
   <div>
-    <select name="idEtatOpportuniteReevaluation" placeholder="Aventage"  [(ngModel)]="data.idEtatOpportuniteReevaluation">
+    <select name="idStateOpportunityReevaluation" placeholder="Aventage"  [(ngModel)]="data.idStateOpportunityReevaluation">
       <option value="">--choisir votre role--</option>
-      <option *ngFor="let c of EtatOpportunite" value="{{c.id}}" >{{c.NomEtatOpportunite}}</option>
+      <option *ngFor="let c of EtatOpportunite" value="{{c.id}}" >{{c.NameStateOpportunity}}</option>
 
     </select>
   </div>

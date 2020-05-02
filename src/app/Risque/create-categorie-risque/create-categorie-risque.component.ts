@@ -15,7 +15,7 @@ export class CreateCategorieRisqueComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
   public data = {
-    NomCategorie: ''
+    NameCategoryRisk: ''
   };
 
   id1: number;
@@ -32,7 +32,7 @@ export class CreateCategorieRisqueComponent implements OnInit {
   constructor( private risqueService: RisqueService, private router: Router ,
                private fb:FormBuilder , public dialogRef: MatDialogRef<CreateCategorieRisqueComponent>) {
     this.angForm = this.fb.group({
-      NomCategorie: ['', [Validators.required]],
+      NameCategoryRisk: ['', [Validators.required]],
     });
   }
 

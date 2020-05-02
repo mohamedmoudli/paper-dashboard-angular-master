@@ -14,7 +14,7 @@ export class CreateStrategiqueOpportuniteComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
   public data = {
-    NomStrategique: ''
+    NameStrategicOpportunity: ''
   };
 
   id1: number;
@@ -31,7 +31,7 @@ export class CreateStrategiqueOpportuniteComponent implements OnInit {
   constructor( private opportuniteService: OpportuniteService, private router: Router ,
                private fb:FormBuilder , public dialogRef: MatDialogRef<CreateStrategiqueOpportuniteComponent>) {
     this.angForm = this.fb.group({
-      nomSrategique: ['', [Validators.required]],
+      NameStrategicOpportunity: ['', [Validators.required]],
     });
   }
 

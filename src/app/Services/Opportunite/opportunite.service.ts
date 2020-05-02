@@ -9,7 +9,7 @@ export class OpportuniteService {
   constructor(private http: HttpClient) { }
 
   public getStateOpportunity() {
-    return this.http.get(this.host+"/api/etat_opportunites");
+    return this.http.get(this.host+"/api/state_opportunities");
   }
   public getOpportunity() {
     return this.http.get(this.host+"/GetOpportunityByAction");
@@ -20,27 +20,27 @@ export class OpportuniteService {
 
   }
   public getCategoryOpportunity() {
-    return this.http.get(this.host+"/api/categorie_opportunites");
+    return this.http.get(this.host+"/api/category_opportunities");
 
   }
   public saveCategoryOpportunity(data) {
-    return this.http.post(this.host+"/api/categorie_opportunites" , data);
+    return this.http.post(this.host+"/api/category_opportunities" , data);
 
   }
   public delateCategoryOpportunity(id) {
-    return this.http.delete(this.host+"/api/categorie_opportunites/"+id );
+    return this.http.delete(this.host+"/api/category_opportunities/"+id );
 
   }
   public getStrategicOpportunity() {
-    return this.http.get(this.host+"/api/strategique_opportunites");
+    return this.http.get(this.host+"/api/strategic_opportunities");
 
   }
   public saveStrategicOpportunity(data) {
-    return this.http.post(this.host+"/api/strategique_opportunites" , data);
+    return this.http.post(this.host+"/api/strategic_opportunities" , data);
 
   }
   public delateStrategicOpportunity(id) {
-    return this.http.delete(this.host+"/api/strategique_opportunites/"+id);
+    return this.http.delete(this.host+"/api/strategic_opportunities/"+id);
 
   }
   public getProcessRisk() {
@@ -56,10 +56,10 @@ export class OpportuniteService {
 
   }
   public gethistoricalOpportunite() {
-    return this.http.get(this.host+"/GethistoriqueOpportunite");
+    return this.http.get(this.host+"/GethistoricalOpportunity");
   }
   public savehistoricalOpportunite() {
-    return this.http.get(this.host+"/savehistoriqueOpportunite");
+    return this.http.get(this.host+"/savehistoricalOpportunity");
   }
 
 }

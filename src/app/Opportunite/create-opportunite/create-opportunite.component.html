@@ -14,10 +14,10 @@
             <form #f="ngForm" (ngSubmit)="saveOpportunite(f.value)">
 
               <div>
-                <select name="idcategorie" placeholder="nom cat"  ngModel type="number">
+                <select name="idcategory" placeholder="nom cat"  ngModel type="number">
 
                   <option value="">--choisir categories--</option>
-                  <option *ngFor="let c of categorieOpportunite" value="{{c.id}}">{{c.NomCategorie}}</option>
+                  <option *ngFor="let c of categoryOpportunity" value="{{c.id}}">{{c.NameCategoryOpportunity}}</option>
 
                 </select>
               </div>
@@ -29,10 +29,10 @@
 
               <p>durée</p>
               <div>
-                <input type="checkbox" name="CourtTerm"  value="*" ngModel>
+                <input type="checkbox" name="ShortTerm"  value="*" ngModel>
                 <label>court term</label><br>
 
-                <input type="checkbox" name="MoyenTerm" value="*" ngModel>
+                <input type="checkbox" name="MediumTerm" value="*" ngModel>
                 <label >moyen term</label><br>
                 <input type="checkbox" name="LongTerm" value="*" ngModel>
                 <label >long term</label>
@@ -45,11 +45,11 @@
               <h1>Qualification de l'opportunite</h1>
               <div>
                 <div>
-                <input type="checkbox" name="Coherence"  value="*" ngModel>
+                <input type="checkbox" name="Consistency"  value="*" ngModel>
                 <label>Coherence</label><br>
                 </div>
                 <div>
-                <input type="checkbox" name="Allignement" value="*" ngModel>
+                <input type="checkbox" name="Alignment" value="*" ngModel>
                 <label >Allignement</label><br>
                 </div>
                 <div>
@@ -57,11 +57,11 @@
                 <label >Presence</label>
                 </div>
                 <div>
-                <input type="checkbox" name="Competences" value="*" ngModel>
+                <input type="checkbox" name="Skills" value="*" ngModel>
                 <label >Competences</label><br>
                 </div>
                 <div>
-                <input type="checkbox" name="Continute" value="*" ngModel>
+                <input type="checkbox" name="Continuity" value="*" ngModel>
                 <label >Continute</label><br>
                 </div>
                 <div>
@@ -83,7 +83,7 @@
                     </select>
                   </div>
                   <div>
-                    <select name="Aventages" placeholder="Aventage"  ngModel>
+                    <select name="Advantage" placeholder="Aventage"  ngModel>
 
                       <option value="">--choisir Aventage--</option>
                       <option>1</option>
@@ -94,18 +94,18 @@
                   </div>
 
                   <div>
-                    <select  name="idstrategique" placeholder="nom cat" ngModel type="number" >
+                    <select  name="idstrategic" placeholder="nom cat" ngModel type="number" >
 
                       <option value="">--choisir strategique--</option>
-                      <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NomStrategique}}</option>
+                      <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NameStrategicOpportunity}}</option>
 
                     </select>
                   </div>
                   <div>
-                    <select name="idEtatOpportunite" placeholder="nom cat"  ngModel type="number" >
+                    <select name="idStateOpportunity" placeholder="nom cat"  ngModel type="number" >
 
                       <option value="">--choisir votre role--</option>
-                      <option *ngFor="let c of EtatOpportunite" value="{{c.id}}" >{{c.NomEtatOpportunite}}</option>
+                      <option *ngFor="let c of EtatOpportunite" value="{{c.id}}" >{{c.NameStateOpportunity}}</option>
 
                     </select>
                   </div>
@@ -113,7 +113,7 @@
                     <select name="idprocess" placeholder="nom cat"  ngModel type="number" >
 
                       <option value="">--choisir votre role--</option>
-                      <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Processus}}</option>
+                      <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Process}}</option>
 
                     </select>
                   </div>
@@ -125,7 +125,7 @@
 
               <div class="form-group">
                 <label class="control-label">Commentaire:</label>
-                <input type="text" name="Commentaire"  ngModel class="form-control">
+                <input type="text" name="Comment"  ngModel class="form-control">
               </div>
 
 

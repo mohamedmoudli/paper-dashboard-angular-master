@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./create-opportunite.component.css']
 })
 export class CreateOpportuniteComponent implements OnInit {
-  categorieOpportunite: any ;
+  categoryOpportunity: any ;
   Strategique: any ;
   Process: any ;
   EtatOpportunite: any;
@@ -19,8 +19,8 @@ export class CreateOpportuniteComponent implements OnInit {
     this.opportuniteService.getCategoryOpportunity()
       .subscribe((data) => {
 
-        this.categorieOpportunite = data['hydra:member'];
-        console.log(this.categorieOpportunite);
+        this.categoryOpportunity = data['hydra:member'];
+        console.log(this.categoryOpportunity);
 
       },error => {
         console.log(false);
