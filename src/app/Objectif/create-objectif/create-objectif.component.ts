@@ -15,22 +15,22 @@ export class CreateObjectifComponent implements OnInit {
   Enjeu: any;
   IndicateurPredefini: any;
   public data = {
-    idEnjeu: '',
+    idStake: '',
     idprocess: '',
     Description: '',
-    Temps1: '',
-    Temps2: '',
-    Temps3: '',
-    Temps4: '',
-    Temps2020: '',
-    Temps2021: '',
-    IndicateurPredefini: '',
-    IndicateurPerformance: '',
-    ObjectiveAAtendre: '',
-    EtatInitial: '',
-    EtatActuel: '',
-    EtatActuelIndiacteur: '',
-    Commentaire: ''
+    Time1: '',
+    Time2: '',
+    Time3: '',
+    Time4: '',
+    Time2020: '',
+    Time2021: '',
+    PredefinedIndicator: '',
+    PerformanceIndicator: '',
+    ObjectiveToWait: '',
+    InitialState: '',
+    CurrentState: '',
+    CurrentStateIndiactor: '',
+    Comment: ''
   };
   constructor(private objectiveService: ObjectiveService,
               private router: Router) { }

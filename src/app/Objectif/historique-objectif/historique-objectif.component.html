@@ -19,23 +19,21 @@
           <tr *ngFor="let c of historique">
             <td>{{c.id}}</td>
             <td>{{c.Description}}</td>
-            <td>{{c.Enjeux}}</td>
-            <td>{{c.Temps1}}</td>
-            <td>{{c.Temps2}}</td>
-            <td>{{c.Temps3}}</td>
-            <td>{{c.Temps4}}</td>
-            <td>{{c.Temps2020}}</td>
-            <td>{{c.Temps2021}}</td>
+            <td>{{c.Stake}}</td>
+            <td>{{c.Time1}}</td>
+            <td>{{c.Time2}}</td>
+            <td>{{c.Time3}}</td>
+            <td>{{c.Time4}}</td>
+            <td>{{c.Time2020}}</td>
+            <td>{{c.Time2021}}</td>
             <td>{{c.Processlie}}</td>
-            <td>{{c.IndicateurPredefini}}</td>
-            <td>{{c.IndicateurPerformance}}</td>
-            <td>{{c.ObjectiveAttendre}}</td>
-            <td>{{c.EtatInitial}}</td>
+            <td>{{c.PredefinedIndicator}}</td>
+            <td>{{c.PerformanceIndicator}}</td>
+            <td>{{c.ObjectiveToWait}}</td>
+            <td>{{c.InitialState}}</td>
             <td>  <p *ngFor="let p of c.NumAction "> {{ p.id}}</p> </td>
-            <td>{{c.EtatActuelIndicateur}}</td>
-            <td>{{c.Avencement}}</td>
-            <td>{{c.EtatActuel}}</td>
-            <td>{{c.Commentaire}}</td>
+            <td>{{c.Advencement}}</td>
+            <td>{{c.Comment}}</td>
             <td>{{c.Date }}</td>
             <td><button class="btn btn-danger" (click)="supp(c.id)">supp</button></td>
 

@@ -18,7 +18,7 @@
               </div>
 
               <div>
-                <select name="idEnjeu" placeholder="nom cat"  [(ngModel)]="data.idEnjeu"  type="number">
+                <select name="idStake" placeholder="nom cat"  [(ngModel)]="data.idStake"  type="number">
 
                   <option value="">--choisir enjeu--</option>
                   <option *ngFor="let c of Enjeu" value={{c.id}}>{{c.Description}}</option>
@@ -30,7 +30,7 @@
               <h1>Durée</h1>
               <div>
                 <label>temps 1</label>
-                <select name="Temps1" placeholder="role"  [(ngModel)]="data.Temps1" >
+                <select name="Time1" placeholder="role"  [(ngModel)]="data.Time1" >
 
                   <option value="">--choisir temps1--</option>
                   <option>X</option>
@@ -39,7 +39,7 @@
                 </select>
               </div>
               <div>
-              <select name="Temps2" placeholder="role"  [(ngModel)]="data.Temps2" >
+              <select name="Time2" placeholder="role"  [(ngModel)]="data.Time2" >
 
                 <option value="">--choisir temps3--</option>
                 <option>X</option>
@@ -48,7 +48,7 @@
               </select>
             </div>
               <div>
-                <select name="Temps3" placeholder="role"  [(ngModel)]="data.Temps3" >
+                <select name="Time3" placeholder="role"  [(ngModel)]="data.Time3" >
 
                   <option value="">--choisir temps3--</option>
                   <option>X</option>
@@ -57,7 +57,7 @@
                 </select>
               </div>
               <div>
-                <select name="Temps4" placeholder="role"  [(ngModel)]="data.Temps4" >
+                <select name="Time4" placeholder="role"  [(ngModel)]="data.Time4" >
 
                   <option value="">--choisir temps4--</option>
                   <option>X</option>
@@ -66,7 +66,7 @@
                 </select>
               </div>
               <div>
-                <select name="Temps2020" placeholder="role" [(ngModel)]="data.Temps2020" >
+                <select name="Time2020" placeholder="role" [(ngModel)]="data.Time2020" >
 
                   <option value="">--choisir temps2020--</option>
                   <option>X</option>
@@ -75,7 +75,7 @@
                 </select>
               </div>
               <div>
-                <select name="Temps2021" placeholder="role"  [(ngModel)]="data.Temps2021" >
+                <select name="Time2021" placeholder="role"  [(ngModel)]="data.Time2021" >
 
                   <option value="">--choisir temps2021 --</option>
                   <option>X</option>
@@ -87,39 +87,39 @@
                 <select name="idprocess" placeholder="nom cat"  [(ngModel)]="data.idprocess"  type="number" >
 
                   <option value="">--choisir process--</option>
-                  <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Processus}}</option>
+                  <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Process}}</option>
 
                 </select>
               </div>
               <div>
-                <input type="radio" name="IndicateurPredefini" value="*" [(ngModel)]="data.IndicateurPredefini" >
+                <input type="radio" name="PredefinedIndicator" value="*" [(ngModel)]="data.PredefinedIndicator" >
                 <label >IndicateurPredefini</label><br>
               </div>
 
 
-              <div class="form-group" *ngIf="!data.IndicateurPredefini">
+              <div class="form-group" *ngIf="!data.PredefinedIndicator">
                 <label class="control-label"> Indicateur Performance :</label>
-                <input type="text" name="IndicateurPerformance"  [(ngModel)]="data.IndicateurPerformance"  class="form-control">
+                <input type="text" name="IndicateurPerformance"  [(ngModel)]="data.PerformanceIndicator"  class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label"> Objective a Atendre :</label>
-                <input type="text" name="ObjectiveAAtendre"  [(ngModel)]="data.ObjectiveAAtendre"  class="form-control">
+                <input type="text" name="ObjectiveToWait"  [(ngModel)]="data.ObjectiveToWait"  class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label"> Etat Initial :</label>
-                <input type="text" name="EtatInitial" [(ngModel)]="data.EtatInitial"  class="form-control">
+                <input type="text" name="InitialState" [(ngModel)]="data.InitialState"  class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label"> Etat Actuel :</label>
-                <input type="text" name="EtatActuel"  [(ngModel)]="data.EtatActuel"  class="form-control">
+                <input type="text" name="CurrentState"  [(ngModel)]="data.CurrentState"  class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label"> Etat Actuel Indiacteur :</label>
-                <input type="text" name="EtatActuelIndiacteur"  [(ngModel)]="data.EtatActuelIndiacteur"  class="form-control">
+                <input type="text" name="CurrentStateIndiactor"  [(ngModel)]="data.CurrentStateIndiactor"  class="form-control">
               </div>
               <div class="form-group">
                 <label class="control-label"> Commentaire :</label>
-                <input type="text" name="Commentaire"  [(ngModel)]="data.Commentaire"  class="form-control">
+                <input type="text" name="Comment"  [(ngModel)]="data.Comment"  class="form-control">
               </div>
 
 

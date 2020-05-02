@@ -35,24 +35,23 @@
                   <tr *ngFor="let c of objective">
                     <td>{{c.id}}</td>
                     <td>{{c.Description}}</td>
-                    <td>{{c.Enjeu.description}}</td>
-                    <td>{{c.Temps1}}</td>
-                    <td>{{c.Temps2}}</td>
-                    <td>{{c.Temps3}}</td>
-                    <td>{{c.Temps4}}</td>
-                    <td>{{c.Temps2020}}</td>
-                    <td>{{c.Temps2021}}</td>
-                    <td>{{c.ProcessLie.processus}}</td>
-                    <td>{{c.IndicateurPredefini}}</td>
-                    <td>{{c.IndicateurPerformance}}</td>
-                    <td>{{c.ObjectiveAAtendre}}</td>
-                    <td>{{c.EtatInitial}}</td>
+                    <td>{{c.Stake.description}}</td>
+                    <td>{{c.Time1}}</td>
+                    <td>{{c.Time2}}</td>
+                    <td>{{c.Time3}}</td>
+                    <td>{{c.Time4}}</td>
+                    <td>{{c.Time2020}}</td>
+                    <td>{{c.Time2021}}</td>
+                    <td>{{c.ProcessLie.process}}</td>
+                    <td>{{c.PredefinedIndicator}}</td>
+                    <td>{{c.PerformanceIndicator}}</td>
+                    <td>{{c.ObjectiveToWait}}</td>
+                    <td>{{c.InitialState}}</td>
                     <td>  <p *ngFor="let p of c.NumAction "> {{ p.id}}</p> </td>
-                    <td>{{c.EtatActuelIndiacteur}}</td>
-                    <td>{{c.Avencement}}</td>
-                    <td>{{c.EtatActuel}}</td>
-                    <td>{{c.Commentaire}}</td>
-
+                    <td>{{c.CurrentStateIndiactor}}</td>
+                    <td>{{c.Advancement}}</td>
+                    <td>{{c.CurrentState}}</td>
+                    <td>{{c.Comment}}</td>
 
                   </tr>
 

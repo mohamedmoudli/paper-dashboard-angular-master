@@ -40,7 +40,13 @@ export class ObjectifComponent implements OnInit {
       }, error => {
         console.log(false);
       });
+    this.objectiveService.getAdvencementObjective()
+      .subscribe((data) => {
 
+        console.log(data);
+      }, error => {
+        console.log(false);
+      });
   }
 
   saveHistoriqueOpportunite(){

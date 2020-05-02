@@ -13,25 +13,25 @@ export class CreatePlanDeActionComponent implements OnInit {
   opportunite : any;
   objective : any;
   public data = {
-    Origine: '',
+    Origin: '',
     Action: '',
-    DateDebutPanifie: '',
+    StartDatePanifies: '',
     Delai: '',
-    Respensable: '',
-    Realisateur: '',
-    Consulter: '',
-    Avencement: '',
-    CritereDeCloture: '',
-    PreuveDeCloture: '',
-    CritaireEfficacite: '',
-    EtatDeEfficacite: '',
-    EtatActuel: '',
-    Commentaire: '',
-    idExigencepi: '',
-    idRisque: '',
+    Responsible: '',
+    Director: '',
+    Consult: '',
+    Advancement: '',
+    ClosingCriterion: '',
+    ProofOfClosure: '',
+    CriteriaEfficiency: '',
+    StateOfEfficacy: '',
+    CurrentState: '',
+    Comment: '',
+    idExigency: '',
+    idRisk: '',
     idObjective: '',
-    idOpportunite: '',
-    idOpportunitereevaluation: ''
+    idOpportunity: '',
+    idOpportunityreevaluation: ''
   };
   constructor(private plandeactionService: PlandeactionService,
               private router: Router) { }
