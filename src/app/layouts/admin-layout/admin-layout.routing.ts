@@ -51,6 +51,9 @@ import {PlanDeActionComponent} from '../../PlanDeAction/plan-de-action/plan-de-a
 import {CreatePlanDeActionComponent} from '../../PlanDeAction/create-plan-de-action/create-plan-de-action.component';
 import {DefinitionComponent} from '../../Definition/definition/definition.component';
 import {SyntheseComponent} from '../../Synthese/synthese/synthese.component';
+import {StakeComponent} from '../../Stakes/stake/stake.component';
+import {CategoryInternalComponent} from '../../Stakes/category-internal/category-internal.component';
+import {CategoryExternalComponent} from '../../Stakes/category-external/category-external.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -70,7 +73,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'historiqueExigPI',  component: HistoriqueExgPIComponent },
     { path: 'partieinteresse',  component: PartieinteresseComponent },
     { path: 'pipertinante',  component: PipertinanteComponent },
-    { path: 'enjeu',  component: EnjeuComponent },
+    { path: 'enjeu',  component: StakeComponent },
     { path: 'Syntheseenjeu',  component: SyntheseEnjeuComponent },
     { path: 'strategiqueRisque',  component: StrategiqueRisqueComponent },
     { path: 'CategorieEnjeuIntern',  component: CreateCategorieComponent },
@@ -82,8 +85,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'risque',  component: RisqueComponent },
     { path: 'ajouterRisque',  component: AjouterrisqueComponent },
     { path: 'historiqueRisque',  component: HistoriquerisqueComponent },
-    { path: 'CategoriesEnjeuIntern',  component: CategorieInternComponent},
-    { path: 'CategoriesEnjeuExtern',  component: CategorieExternComponent },
+    { path: 'CategoriesEnjeuIntern',  component: CategoryInternalComponent},
+    { path: 'CategoriesEnjeuExtern',  component: CategoryExternalComponent },
     { path: 'test5',  component: Test5Component },
     { path: 'ajouterguideUtilisation',  component: AjouterGuideUtilisationComponent },
     { path: 'historiquepipertinante',  component: HistoriquePIpertinanteComponent },

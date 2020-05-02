@@ -88,6 +88,17 @@ import { AidePIPertinanteComponent } from './PartieInteresse/aide-pipertinante/a
 import { DefinitionPartieInteresseComponent } from './PartieInteresse/definition-partie-interesse/definition-partie-interesse.component';
 import { DefinitionEnjeuxComponent } from './Enjeux/definition-enjeux/definition-enjeux.component';
 import { AideExigencePIComponent } from './PartieInteresse/aide-exigence-pi/aide-exigence-pi.component';
+import { StakeComponent } from './Stakes/stake/stake.component';
+import { CategoryInternalComponent } from './Stakes/category-internal/category-internal.component';
+import { CategoryExternalComponent } from './Stakes/category-external/category-external.component';
+import { CreateCategoryExternalComponent } from './Stakes/create-category-external/create-category-external.component';
+import { CreateCategoryInternalComponent } from './Stakes/create-category-internal/create-category-internal.component';
+import { CreateStakeComponent } from './Stakes/create-stake/create-stake.component';
+import { CreateStakeInternalComponent } from './Stakes/create-stake-internal/create-stake-internal.component';
+import { CreateStakeExternalComponent } from './Stakes/create-stake-external/create-stake-external.component';
+import { DelateCategoryExternalComponent } from './Stakes/delate-category-external/delate-category-external.component';
+import { DelateCategoryInternalComponent } from './Stakes/delate-category-internal/delate-category-internal.component';
+import { DelateStakeComponent } from './Stakes/delate-stake/delate-stake.component';
 
 
 
@@ -98,6 +109,9 @@ import { AideExigencePIComponent } from './PartieInteresse/aide-exigence-pi/aide
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+
+
+
 
 
 
