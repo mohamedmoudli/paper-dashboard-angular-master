@@ -1,0 +1,233 @@
+<ol>
+  <div class="wrapper">
+    <div class="sidebar" data-color="white" data-active-color="danger">
+      <sidebar-cmp></sidebar-cmp>
+    </div>
+    <div class="main-panel">
+      <navbar-cmp></navbar-cmp>
+
+      <div class="content">
+        <svg class="bi bi-search" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="help()">
+          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
+          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
+        </svg>
+        <button class="btn btn-simple" style="float: right" (click)="definition()">definition</button>
+
+        <ul class="nav nav-tabs ">
+          <li class="nav-item">
+            <button class="btn btn-success" (click)="ajouterEnjeuxintern()">ajouter enjeu intern</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-success" (click)="ajouterEnjeuxExtern()">ajouter enjeu extern</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-warning" style="float: left" routerLink="/CategoriesEnjeuIntern">ajouter Categorie Intern</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-warning" routerLink="/CategoriesEnjeuExtern">ajouter Categorie extern</button>
+          </li>
+        </ul>
+        <div class="bg-primary">
+          <h3> enjeu interne </h3>
+        </div>
+        <div class="container">
+          <div class="med" style="float: left">
+            <h1>--------------force/strenaths-------------------</h1>
+            <div class="card" *ngFor="let p of users">
+              <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakInternal}}</h2></div>
+              <div>
+                <table class="table" >
+                  <thead class=" text-primary">
+                  <tr>
+                    <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let t of p.stakes "  >
+
+                    <td *ngIf=" t.Type.id == 1 ">E{{t.id}}</td>
+                    <td *ngIf=" t.Type.id == 1 ">{{t.Description}}</td>
+
+
+                    <td ></td>
+
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="med" style="float: right"  >
+            <h1>----------faiblesses/weaknesses--------</h1>
+            <div class="card " *ngFor="let p of users">
+              <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakInternal}}</h2></div>
+              <div>
+                <table class="table" >
+                  <thead class=" text-primary">
+                  <tr>
+                    <th *ngFor="let c of hidder"><h4 >{{c}}</h4></th><td></td><td></td><td></td>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let t of p.stakes "  >
+
+                    <td *ngIf=" t.Type.id == 2 ">E{{t.id}}</td>
+                    <td *ngIf=" t.Type.id == 2 ">{{t.Description}}</td>
+
+
+                    <td ></td>
+
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="main-panel">
+
+      <div class="bg-primary " >
+        <h3> enjeu extern </h3>
+      </div>
+      <div class="container">
+        <div style ="float: left">
+          <h1>--------Opportunités/Opportunites-------</h1>
+          <div class="card" *ngFor="let p of usersExtern">
+            <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakExternal}}</h2></div>
+            <div>
+              <table class="table" >
+                <thead class=" text-primary">
+                <tr>
+                  <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let t of p.stakes "  >
+
+                  <td *ngIf="  t.Type.id == 3 ">E{{t.id}}</td>
+                  <td *ngIf="  t.Type.id == 3 ">{{t.Description}}</td>
+
+
+                  <td ></td>
+
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="med" style="float: right"  >
+          <h1>--------------Menances/Threate------------</h1>
+          <div class="card " *ngFor="let p of usersExtern">
+            <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakExternal}}</h2></div>
+            <div>
+              <table class="table" >
+                <thead class=" text-primary">
+                <tr>
+                  <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let t of p.stakes "  >
+
+                  <td *ngIf=" t.Type.id == 4 ">E{{t.id}}</td>
+                  <td *ngIf=" t.Type.id == 4 ">{{t.Description}}</td>
+
+
+                  <td ></td>
+
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+    <div class="main-panel">
+      <div class="bg-primary " >
+        <h3> Synthèse </h3>
+      </div>
+      <div class="card col-md-5"  style="float: left">
+        <table class="table" >
+          <thead class=" text-primary">
+          <tr>
+            <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let t of Enjeu "  >
+
+            <td >E{{t.id}}</td>
+            <td >{{t.Description}}</td>
+            <td><button class="btn btn-danger" (click)="delateCategorie(t.id)">supp</button></td>
+
+            <td ></td>
+
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <div class="card col-md-4" style="float: right">
+        <table class="table" >
+          <thead class=" text-primary">
+          <tr>
+            <th *ngFor="let c of hidderType"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let t of Type "  >
+
+            <td >{{t.Type}}</td>
+            <td >{{t.nbre}}</td>
+
+
+            <td ></td>
+
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-8 card" style="float: right">
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType">
+          </canvas>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <fixedplugin-cmp></fixedplugin-cmp>
+</ol>
