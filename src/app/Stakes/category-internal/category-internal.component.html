@@ -5,7 +5,7 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content" >
-      <button class="btn btn-primary " (click)="ajouterCategoriedialog()">ajouter categories</button>
+      <button class="btn btn-primary " (click)="CreateCategoryInternal()">ajouter categories</button>
       <div class="card col-md-6">
 
         <table class="table">
@@ -19,7 +19,7 @@
             <td>{{c.id}}</td>
             <td>{{c.NameCategoryStakInternal}}</td>
             <td></td>
-            <td><button class="btn btn-danger" (click)="delateCategorie(c.id)">supp</button></td>
+            <td><button class="btn btn-danger" (click)="delateCategoryInternal(c.id)">supp</button></td>
           </tr>
           </tbody>
         </table>

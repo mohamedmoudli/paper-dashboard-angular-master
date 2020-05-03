@@ -1,0 +1,79 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+      <svg class="bi bi-search" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+           style="float: right" (click)="afficher()">
+        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
+        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
+      </svg>
+      <div >
+
+        <div class="bg-primary">
+          <h3> Périmètre d'application de managment </h3>
+        </div>
+        <form >
+          <div>
+            <textarea name="perimetre" [(ngModel)]="perimetre" class="col-md-10"> </textarea>
+          </div>
+          <button (click)="saveperimetre()" class="btn bg-primary">ok</button>
+        </form>
+
+
+        <div class="card">
+          <h2>{{ afficheperimetre }}</h2>
+        </div>
+
+        <div class=" bg-primary">
+          <h3> Politique </h3>
+        </div>
+        <form >
+          <div>
+            <textarea name="politique" [(ngModel)]="politique" class="col-md-10"> </textarea>
+          </div>
+          <button (click)="savepolitique()" class="btn bg-primary">ok</button>
+        </form>
+
+
+        <div class="card">
+          <h2>{{ affichepolitique }}</h2>
+        </div>
+      </div>
+      <button class="btn btn-primary " (click)="CreateProcess()">ajouter processus</button>
+      <div class="card col-md-10">
+        <table class="table" >
+          <thead class=" text-primary">
+          <tr>
+            <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+          </tr>
+          </thead>
+          <tbody >
+          <tr *ngFor="let c of users">
+            <td>{{c.Process}}</td>
+            <td>{{c.PerformanceIndicator}}</td>
+            <td>{{c.Pilot}}</td>
+            <td><button class="btn btn-danger" (click)="delateProcess(c.id)">supp</button></td>
+
+            <td ></td>
+
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>
+
+
+
+
+
+

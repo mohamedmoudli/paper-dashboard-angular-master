@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-import {EnjeuService} from '../../Services/Enjeu/enjeu.service';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-import {CreateCategorieComponent} from '../../Enjeux/create-categorie-intern/create-categorie.component';
-import {DelatecategorieInternComponent} from '../../Enjeux/delatecategorie-intern/delatecategorie-intern.component';
+
 import {CreateCategoryInternalComponent} from '../create-category-internal/create-category-internal.component';
+import {DelateCategoryRiskComponent} from '../../Risk/delate-category-risk/delate-category-risk.component';
+import {DelateCategoryInternalComponent} from '../delate-category-internal/delate-category-internal.component';
+import {StakeService} from '../../Services/Stake/stake.service';
 
 @Component({
   selector: 'app-category-internal',
@@ -25,13 +26,13 @@ export class CategoryInternalComponent implements OnInit {
   public data = {
     nomcat: ""
   };
-  constructor( private enjeuService: EnjeuService,
+  constructor( private stakeService: StakeService,
                private router:Router , private dialog: MatDialog) {}
 
 
 
   public ngOnInit() {
-    this.enjeuService.getCategoryInternal()
+    this.stakeService.getCategoryInternal()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];
@@ -59,7 +60,7 @@ export class CategoryInternalComponent implements OnInit {
 
 
 
-  public ajouterCategoriedialog(): void {
+  public CreateCategoryInternal(): void {
 
     const dialogRef = this.dialog.open(CreateCategoryInternalComponent, {
       width: "500px",
@@ -74,9 +75,9 @@ export class CategoryInternalComponent implements OnInit {
   }
 
 
-  public delateCategorie(id): void {
+  public delateCategoryInternal(id): void {
 
-    const dialogRef = this.dialog.open(DelatecategorieInternComponent, {
+    const dialogRef = this.dialog.open(DelateCategoryInternalComponent, {
       width: "500px",
       height: "150px",
       data:id

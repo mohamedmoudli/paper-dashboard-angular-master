@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {EnjeuService} from '../../Services/Enjeu/enjeu.service';
 import {Router} from '@angular/router';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {StakeService} from '../../Services/Stake/stake.service';
 
 @Component({
   selector: 'app-delate-stake',
@@ -11,7 +11,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 export class DelateStakeComponent implements OnInit {
 
 
-  constructor(private enjeuService: EnjeuService,
+  constructor(private stakeService: StakeService,
               private router:Router ,  public dialogRef: MatDialogRef<DelateStakeComponent>,
               @Inject(MAT_DIALOG_DATA) public id:number) { }
 
@@ -20,7 +20,7 @@ export class DelateStakeComponent implements OnInit {
 
 
   public supp() {
-    this.enjeuService.delateStake(this.id).subscribe((data) => {
+    this.stakeService.delateStake(this.id).subscribe((data) => {
       console.log("ffffffffff");
       this.ngOnInit();
       return this.onNoClick();

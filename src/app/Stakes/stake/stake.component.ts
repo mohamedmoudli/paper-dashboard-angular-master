@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {EnjeuService} from '../../Services/Enjeu/enjeu.service';
+
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-import {EnjeuForceComponent} from '../../Enjeux/Create-enjeu-intern/enjeu-force.component';
-import {AjouterEnjeuComponent} from '../../Enjeux/Create-enjeu-extern/ajouter-enjeu.component';
-import {CreateCategorieComponent} from '../../Enjeux/create-categorie-intern/create-categorie.component';
-import {CreateCategorieExternComponent} from '../../Enjeux/create-categorie-extern/create-categorie-extern.component';
-import {HelpProcessComponent} from '../../Enjeux/help-process/help-process.component';
-import {DefinitionEnjeuxComponent} from '../../Enjeux/definition-enjeux/definition-enjeux.component';
-import {DelateenjeuComponent} from '../../Enjeux/delateenjeu/delateenjeu.component';
 import {CreateCategoryExternalComponent} from '../create-category-external/create-category-external.component';
 import {CreateCategoryInternalComponent} from '../create-category-internal/create-category-internal.component';
 import {CreateStakeInternalComponent} from '../create-stake-internal/create-stake-internal.component';
 import {CreateStakeExternalComponent} from '../create-stake-external/create-stake-external.component';
+import {HelpProcessComponent} from '../../Process/help-process/help-process.component';
+import {HelpStakeComponent} from '../help-stake/help-stake.component';
+import {DefinitionStakeComponent} from '../definition-stake/definition-stake.component';
+import {DelateStakeComponent} from '../delate-stake/delate-stake.component';
+import {StakeService} from '../../Services/Stake/stake.service';
 
 @Component({
   selector: 'app-stake',
@@ -42,11 +40,11 @@ export class StakeComponent implements OnInit {
   Type : any ;
   public hidder = ["id", "description" ];
   public hidderType = ["type", "nombre" ];
-  constructor(private enjeuxservice : EnjeuService,
+  constructor(private stakeService : StakeService,
               private router: Router , private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.enjeuxservice.getCategoryByStake()
+    this.stakeService.getCategoryByStake()
       .subscribe((data) => {
 
         console.log(data);
@@ -56,7 +54,7 @@ export class StakeComponent implements OnInit {
         console.log(false);
       });
 
-    this.enjeuxservice.getCategoryExternalByStake()
+    this.stakeService.getCategoryExternalByStake()
       .subscribe((data) => {
 
         console.log(data);
@@ -66,7 +64,7 @@ export class StakeComponent implements OnInit {
         console.log(false);
       });
 
-    this.enjeuxservice.getCountType()
+    this.stakeService.getCountType()
       .subscribe((data) => {
 
         this.Type = data;
@@ -82,7 +80,7 @@ export class StakeComponent implements OnInit {
       });
 
 
-    this.enjeuxservice.getStake()
+    this.stakeService.getStake()
       .subscribe((data) => {
 
         console.log(data);
@@ -93,7 +91,7 @@ export class StakeComponent implements OnInit {
       });
   }
 
-  public ajouterEnjeuxintern(): void {
+  public CreateStakeInternal(): void {
 
     const dialogRef = this.dialog.open(CreateStakeInternalComponent, {
       width: "500px",
@@ -106,7 +104,7 @@ export class StakeComponent implements OnInit {
       this.animal = result;
     });
   }
-  public ajouterEnjeuxExtern(): void {
+  public CreateStakeExternal(): void {
 
     const dialogRef = this.dialog.open(CreateStakeExternalComponent, {
       width: "500px",
@@ -121,7 +119,7 @@ export class StakeComponent implements OnInit {
   }
   public ajouterCategoriesIntern(): void {
 
-    const dialogRef = this.dialog.open(CreateCategorieComponent, {
+    const dialogRef = this.dialog.open(CreateCategoryInternalComponent, {
       width: "500px",
       height: "300px",
 
@@ -134,7 +132,7 @@ export class StakeComponent implements OnInit {
   }
   public ajouterCategoriesExtern(): void {
 
-    const dialogRef = this.dialog.open(CreateCategorieExternComponent, {
+    const dialogRef = this.dialog.open(CreateCategoryExternalComponent, {
       width: "500px",
       height: "300px",
 
@@ -146,7 +144,7 @@ export class StakeComponent implements OnInit {
     });
   }
   help(){
-    const dialogRef = this.dialog.open(HelpProcessComponent, {
+    const dialogRef = this.dialog.open(HelpStakeComponent, {
       width: "500px",
       height: "300px",
 
@@ -159,7 +157,7 @@ export class StakeComponent implements OnInit {
   }
 
   definition(){
-    const dialogRef = this.dialog.open(DefinitionEnjeuxComponent, {
+    const dialogRef = this.dialog.open(DefinitionStakeComponent, {
       width: "500px",
       height: "300px",
 
@@ -175,7 +173,7 @@ export class StakeComponent implements OnInit {
 
   public delateCategorie(id): void {
 
-    const dialogRef = this.dialog.open(DelateenjeuComponent, {
+    const dialogRef = this.dialog.open(DelateStakeComponent, {
       width: "500px",
       height: "150px",
       data:id

@@ -1,0 +1,45 @@
+
+<div class="card-header panel-heading bg-primary ">
+  <h5 class="card-title "> ajouter processus </h5>
+</div>
+<div class="card-body">
+  <form  [formGroup]="angForm" name="form"  (ngSubmit)=" onSubmit() " >
+
+    <div class="form-group">
+      <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Process').errors && (angForm.get('Process').touched || angForm.get('Process').dirty ) }">
+        <label class="control-label"> process:</label>
+        <input type="text" name="Process" formControlName="Process" [(ngModel)]="data.Process" class="form-control">
+        <div *ngIf="angForm.get('Process').errors && (angForm.get('Process').touched || angForm.get('Process').dirty )" class="alert alert-danger">
+          <span *ngIf="angForm.get('Process').errors.required"></span>  processus est obligatoire
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('PerformanceIndicator').errors && (angForm.get('PerformanceIndicator').touched || angForm.get('PerformanceIndicator').dirty ) }">
+        <label class="control-label"> indicateur de performance :</label>
+        <input type="text" name="PerformanceIndicator" formControlName="PerformanceIndicator" [(ngModel)]="data.PerformanceIndicator" class="form-control">
+        <div *ngIf="angForm.get('PerformanceIndicator').errors && (angForm.get('PerformanceIndicator').touched || angForm.get('PerformanceIndicator').dirty )" class="alert alert-danger">
+          <span *ngIf="angForm.get('PerformanceIndicator').errors.required"></span>  indicateur est obligatoire
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Pilot').errors && (angForm.get('Pilot').touched || angForm.get('Pilot').dirty ) }">
+        <label class="control-label">pilote :</label>
+        <input type="text" name="Pilot" formControlName="Pilot" [(ngModel)]="data.Pilot" class="form-control">
+        <div *ngIf="angForm.get('Pilot').errors && (angForm.get('Pilot').touched || angForm.get('Pilot').dirty )" class="alert alert-danger">
+          <span *ngIf="angForm.get('Pilot').errors.required"></span>  pilote est obligatoire
+        </div>
+      </div>
+    </div>
+
+
+    <button class="btn btn-danger"  style="float: left">Annuler</button>
+
+    <button class="btn btn-primary " [disabled]="angForm.invalid" style="float: right"  (click)="CreateProcess()" >create</button>
+  </form>
+
+</div>
+
+
+

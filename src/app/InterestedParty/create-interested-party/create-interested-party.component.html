@@ -1,0 +1,29 @@
+
+<div class="card-header panel-heading bg-primary ">
+  <h5 class="card-title "> ajouter partie interesse </h5>
+</div>
+<div class="card-body">
+  <form #f="ngForm" (ngSubmit)="CreateInterestedParty(f.value)">
+
+    <div class="form-group">
+      <label class="control-label">nom partie interesse:</label>
+      <input type="text" name="NameInterestedParty"  ngModel class="form-control">
+    </div>
+    <div>
+      <select name="CategoryInterestedParty" placeholder="nom cat" id="pet-select" ngModel >
+
+        <option value="">--choisir votre role--</option>
+        <option *ngFor="let c of users" value="api/categorye_interested_parties/{{c.id}}">{{c.NameCategory}}</option>
+
+      </select>
+    </div>
+
+    <button class="btn btn-danger" routerLink="/categoriesPI" style="float: left">Annuler</button>
+
+    <button class="btn btn-primary "  style="float: right"  >create</button>
+  </form>
+
+</div>
+
+
+

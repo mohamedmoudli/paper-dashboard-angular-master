@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {EnjeuService} from '../../Services/Enjeu/enjeu.service';
+
 import {Router} from '@angular/router';
 import {MatDialogRef} from '@angular/material/dialog';
+import {StakeService} from '../../Services/Stake/stake.service';
 
 @Component({
   selector: 'app-create-category-internal',
@@ -17,7 +18,7 @@ export class CreateCategoryInternalComponent implements OnInit {
     NameCategoryStakeInternal: ''
   };
 
-  constructor(private enjeuxservice : EnjeuService,
+  constructor(private stakeService : StakeService,
               private router: Router , private fb:FormBuilder , public dialogRef: MatDialogRef<CreateCategoryInternalComponent>) {
     this.angForm = this.fb.group({
       NameCategoryStakeInternal: ['', [Validators.required]],
@@ -27,8 +28,8 @@ export class CreateCategoryInternalComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addcategorie(){
-    this.enjeuxservice.CreateCategoryinternal(this.data).subscribe(
+  CreatecategoryInternal(){
+    this.stakeService.CreateCategoryinternal(this.data).subscribe(
       resp=>{
         console.log(resp);
         return this.onNoClick();

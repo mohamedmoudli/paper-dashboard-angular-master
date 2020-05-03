@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {PartieinteresseService} from '../../Services/partieinteresse.service';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {SyntheseService} from '../../Services/Synthese/synthese.service';

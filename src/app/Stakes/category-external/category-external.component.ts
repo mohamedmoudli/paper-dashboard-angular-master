@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-import {EnjeuService} from '../../Services/Enjeu/enjeu.service';
+
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-import {CreateCategorieExternComponent} from '../../Enjeux/create-categorie-extern/create-categorie-extern.component';
-import {DelatecategorieExternComponent} from '../../Enjeux/delatecategorie-extern/delatecategorie-extern.component';
+
 import {CreateCategoryExternalComponent} from '../create-category-external/create-category-external.component';
+import {DelateCategoryRiskComponent} from '../../Risk/delate-category-risk/delate-category-risk.component';
+import {DelateCategoryExternalComponent} from '../delate-category-external/delate-category-external.component';
+import {StakeService} from '../../Services/Stake/stake.service';
 
 @Component({
   selector: 'app-category-external',
@@ -24,13 +26,13 @@ export class CategoryExternalComponent implements OnInit {
   public data = {
     nomcat: ""
   };
-  constructor( private enjeuService: EnjeuService,
+  constructor( private stakeService: StakeService,
                private router:Router , private dialog: MatDialog) {}
 
 
 
   public ngOnInit() {
-    this.enjeuService.getCategoryExternal()
+    this.stakeService.getCategoryExternal()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];
@@ -75,7 +77,7 @@ export class CategoryExternalComponent implements OnInit {
 
   public delateCategorie(id): void {
 
-    const dialogRef = this.dialog.open(DelatecategorieExternComponent, {
+    const dialogRef = this.dialog.open(DelateCategoryExternalComponent, {
       width: "500px",
       height: "150px",
       data:id

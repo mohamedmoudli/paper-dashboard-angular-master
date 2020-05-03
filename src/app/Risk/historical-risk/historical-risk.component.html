@@ -1,0 +1,42 @@
+<div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+      <button class="btn btn-primary " routerLink="/ajouterguideUtilisation">ajouter </button>
+      <h4>historique</h4>
+      <div class="card col-md-10">
+        <table class="table" >
+          <thead class=" text-primary">
+          <tr>
+            <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+          </tr>
+          </thead>
+          <tbody >
+          <tr *ngFor="let c of historique">
+            <td>{{c.id}}</td>
+            <td>{{c.Criticite}}</td>
+            <td>{{c.Decision}}</td>
+            <td>{{c.Strategique}}</td>
+            <td>{{c.Processlie}}</td>
+            <td>{{c.EtatRisque}}</td>
+            <td>{{c.Commentaires}}</td>
+            <td><p *ngFor="let p of c.NumeroAction "> {{ p.id}}</p> </td>
+            <td>{{c.Date}}</td>
+
+            <td><button class="btn btn-danger" (click)="supp(c.id)">supp</button></td>
+
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>
+
+
+

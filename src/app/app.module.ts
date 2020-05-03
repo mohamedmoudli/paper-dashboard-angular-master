@@ -17,76 +17,14 @@ import { LoginComponent } from './pages/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateRegisterComponent } from './pages/create-register/create-register.component';
 import { HomeComponent } from './pages/home/home.component';
-import { PartieinteresseComponent } from './PartieInteresse/partieinteresse/partieinteresse.component';
-import { CategoriesPIComponent } from './PartieInteresse/categories-pi/categories-pi.component';
-import { ExigenecesPIComponent } from './PartieInteresse/exigeneces-pi/exigeneces-pi.component';
-import { HistoriqueExgPIComponent } from './PartieInteresse/historique-exg-pi/historique-exg-pi.component';
-import { AjouterPIComponent } from './PartieInteresse/Create-pi/ajouter-pi.component';
-import { AjouterCategoriesPIComponent } from './PartieInteresse/Create-categories-pi/ajouter-categories-pi.component';
-import { PipertinanteComponent } from './PartieInteresse/pipertinante/pipertinante.component';
 import {MatDialogModule} from '@angular/material/dialog';
-
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { GuideutilisationComponent } from './GuideUtilisation/guideutilisation/guideutilisation.component';
-
-import { AjouterGuideUtilisationComponent } from './GuideUtilisation/ajouter-guide-utilisation/ajouter-guide-utilisation.component';
-import { HistoriquePIpertinanteComponent } from './PartieInteresse/historique-pipertinante/historique-pipertinante.component';
-import { CreateCategorieComponent } from './Enjeux/create-categorie-intern/create-categorie.component';
-import { CreateCategorieExternComponent } from './Enjeux/create-categorie-extern/create-categorie-extern.component';
-import { SyntheseEnjeuComponent } from './Enjeux/synthese-enjeu/synthese-enjeu.component';
-import { RisqueComponent } from './Risque/risque/risque.component';
-import { HistoriquerisqueComponent } from './Risque/historiquerisque/historiquerisque.component';
-import { AjouterrisqueComponent } from './Risque/Create-risque/ajouterrisque.component';
 import { Test5Component } from './test5/test5.component';
 import { Test6Component } from './test6/test6.component';
-import { EnjeuRiqueComponent } from './Risque/enjeu-rique/enjeu-rique.component';
-import { AjouterExigenceComponent } from './PartieInteresse/Create-exigence/ajouter-exigence.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { DelateCategoriesPIComponent } from './PartieInteresse/delate-categories-pi/delate-categories-pi.component';
-
-import { CategorieRisqueComponent } from './Risque/categorie-risque/categorie-risque.component';
-import { CreateCategorieRisqueComponent } from './Risque/create-categorie-risque/create-categorie-risque.component';
-import { StrategiqueRisqueComponent } from './Risque/strategique-risque/strategique-risque.component';
-import { CreateStrategiqueRisqueComponent } from './Risque/create-strategique-risque/create-strategique-risque.component';
-
-import { HelpProcessComponent } from './Enjeux/help-process/help-process.component';
-import { DelateCategorieRisqueComponent } from './Risque/delate-categorie-risque/delate-categorie-risque.component';
-import { DelateStrategiqueRisqueComponent } from './Risque/delate-strategique-risque/delate-strategique-risque.component';
-import { CategorieInternComponent } from './Enjeux/categorie-intern/categorie-intern.component';
-import { CategorieExternComponent } from './Enjeux/categorie-extern/categorie-extern.component';
-import { DelatecategorieExternComponent } from './Enjeux/delatecategorie-extern/delatecategorie-extern.component';
-import { DelatecategorieInternComponent } from './Enjeux/delatecategorie-intern/delatecategorie-intern.component';
-import { DelateenjeuComponent } from './Enjeux/delateenjeu/delateenjeu.component';
-import { DelateGuideComponent } from './GuideUtilisation/delate-guide/delate-guide.component';
-
-import { OpportuniteComponent } from './Opportunite/opportunite/opportunite.component';
-import { CreateOpportuniteComponent } from './Opportunite/create-opportunite/create-opportunite.component';
-import { ReevaluerOpportuniteComponent } from './Opportunite/reevaluer-opportunite/reevaluer-opportunite.component';
-import { CategorieOpportuniteComponent } from './Opportunite/categorie-opportunite/categorie-opportunite.component';
-import { StrategiqueOpportuniteComponent } from './Opportunite/strategique-opportunite/strategique-opportunite.component';
-import { CreateStrategiqueOpportuniteComponent } from './Opportunite/create-strategique-opportunite/create-strategique-opportunite.component';
-import { CreateCategorieOpportuniteComponent } from './Opportunite/create-categorie-opportunite/create-categorie-opportunite.component';
-import { HistoriqueOpportuniteComponent } from './Opportunite/historique-opportunite/historique-opportunite.component';
-import { DeleteCategorieOpportuniteComponent } from './Opportunite/delete-categorie-opportunite/delete-categorie-opportunite.component';
-import { DelateStrategiqueOpportuniteComponent } from './Opportunite/delate-strategique-opportunite/delate-strategique-opportunite.component';
-import { PIpertinanteComponent } from './Risque/pipertinante/pipertinante.component';
-import { ObjectifComponent } from './Objectif/objectif/objectif.component';
-import { CreateObjectifComponent } from './Objectif/create-objectif/create-objectif.component';
-import { HistoriqueObjectifComponent } from './Objectif/historique-objectif/historique-objectif.component';
-import { PlanDeActionComponent } from './PlanDeAction/plan-de-action/plan-de-action.component';
-import { CreatePlanDeActionComponent } from './PlanDeAction/create-plan-de-action/create-plan-de-action.component';
 import { SyntheseComponent } from './Synthese/synthese/synthese.component';
 import { DefinitionComponent } from './Definition/definition/definition.component';
-import { DefinitionRisqueComponent } from './Risque/definition-risque/definition-risque.component';
-import { AideRisqueComponent } from './Risque/aide-risque/aide-risque.component';
-import { DefinitionOpportuniteComponent } from './Opportunite/definition-opportunite/definition-opportunite.component';
-import { AideOpportuniteComponent } from './Opportunite/aide-opportunite/aide-opportunite.component';
-import { AideObjectifComponent } from './Objectif/aide-objectif/aide-objectif.component';
-import { DefinitionPIPertinanteComponent } from './PartieInteresse/definition-pipertinante/definition-pipertinante.component';
-import { AidePIPertinanteComponent } from './PartieInteresse/aide-pipertinante/aide-pipertinante.component';
-import { DefinitionPartieInteresseComponent } from './PartieInteresse/definition-partie-interesse/definition-partie-interesse.component';
-import { DefinitionEnjeuxComponent } from './Enjeux/definition-enjeux/definition-enjeux.component';
-import { AideExigencePIComponent } from './PartieInteresse/aide-exigence-pi/aide-exigence-pi.component';
+
 import { StakeComponent } from './Stakes/stake/stake.component';
 import { CategoryInternalComponent } from './Stakes/category-internal/category-internal.component';
 import { CategoryExternalComponent } from './Stakes/category-external/category-external.component';
@@ -127,8 +65,29 @@ import { HistoricalRiskComponent } from './Risk/historical-risk/historical-risk.
 import { PIRelevantComponent } from './Risk/pirelevant/pirelevant.component';
 import { RiskComponent } from './Risk/risk/risk.component';
 import { StrategicRiskComponent } from './Risk/strategic-risk/strategic-risk.component';
-import { DefinitionStakeComponent } from './Stake/definition-stake/definition-stake.component';
+
 import { HelpStakeComponent } from './Stakes/help-stake/help-stake.component';
+import { HelpObjectiveComponent } from './Objective/help-objective/help-objective.component';
+import { CreateObjectiveComponent } from './Objective/create-objective/create-objective.component';
+import { HistoricalObjectiveComponent } from './Objective/historical-objective/historical-objective.component';
+import { ObjectiveComponent } from './Objective/objective/objective.component';
+import { UtilizationGuideComponent } from './UtilizationGuide/utilization-guide/utilization-guide.component';
+import { CreateUtilizationGuideComponent } from './UtilizationGuide/create-utilization-guide/create-utilization-guide.component';
+import { DelateUtilizationGuideComponent } from './UtilizationGuide/delate-utilization-guide/delate-utilization-guide.component';
+import { HelpOpportunityComponent } from './Opportunity/help-opportunity/help-opportunity.component';
+import { CategoryOpportunityComponent } from './Opportunity/category-opportunity/category-opportunity.component';
+import { CreateCategoryOpportunityComponent } from './Opportunity/create-category-opportunity/create-category-opportunity.component';
+import { CreateOpportunityComponent } from './Opportunity/create-opportunity/create-opportunity.component';
+import { DefinitionOpportunityComponent } from './Opportunity/definition-opportunity/definition-opportunity.component';
+import { CreateStrategicOpportunityComponent } from './Opportunity/create-strategic-opportunity/create-strategic-opportunity.component';
+import { DelateStrategicOpportunityComponent } from './Opportunity/delate-strategic-opportunity/delate-strategic-opportunity.component';
+import { DelateCategoryOpportunityComponent } from './Opportunity/delate-category-opportunity/delate-category-opportunity.component';
+import { HistoricalOpportunityComponent } from './Opportunity/historical-opportunity/historical-opportunity.component';
+import { OpportunityComponent } from './Opportunity/opportunity/opportunity.component';
+import { ReevaluateOpportunityComponent } from './Opportunity/reevaluate-opportunity/reevaluate-opportunity.component';
+import { StrategicOpportunityComponent } from './Opportunity/strategic-opportunity/strategic-opportunity.component';
+import { ActionPlanComponent } from './ActionPlan/action-plan/action-plan.component';
+import { CreateActionPlanComponent } from './ActionPlan/create-action-plan/create-action-plan.component';
 
 
 
@@ -139,8 +98,11 @@ import { HelpStakeComponent } from './Stakes/help-stake/help-stake.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    DefinitionStakeComponent,
-    HelpStakeComponent,
+
+
+
+
+
 
 
 

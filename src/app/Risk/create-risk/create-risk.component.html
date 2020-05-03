@@ -1,0 +1,125 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+      <div class="col-md-6 container    my-5">
+        <div class="card card-user  panel">
+          <div class="card-header panel-heading bg-primary ">
+            <h5 class="card-title "> ajouter risque </h5>
+          </div>
+          <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="ajouterrisque(f.value)">
+
+              <div>
+                <label>categorie de risque</label>
+              </div>
+              <div>
+                <select name="idcategory" placeholder="nom cat"  ngModel type="number">
+
+                  <option value="">--choisir categories--</option>
+                  <option *ngFor="let c of categorierisque" value="{{c.id}}">{{c.NameCategoryRisk}}</option>
+
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label"> description :</label>
+                <input type="text" name="Description"  ngModel class="form-control">
+              </div>
+
+              <p>durée</p>
+              <div>
+                <input type="checkbox" name="ShortTerm"  value="*" ngModel>
+                <label>court term</label><br>
+
+                <input type="checkbox" name="MediumTerm" value="*" ngModel>
+                <label >moyen term</label><br>
+                <input type="checkbox" name="LongTerm" value="*" ngModel>
+                <label >long term</label>
+              </div>
+              <div class="form-group">
+                <label class="control-label"> date:</label>
+                <input type="date" name="DateIdentification"  ngModel class="form-control">
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Causes:</label>
+                <input type="text" name="Causes"  ngModel class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Censequence:</label>
+                <input type="text" name="Censequence"  ngModel class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Gravite:</label>
+                <input type="number" name="Gravity"  ngModel class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Probabilite:</label>
+                <input type="number" name="Probability"  ngModel class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Detectabilite:</label>
+                <input type="number" name="Detectability"  ngModel class="form-control">
+              </div>
+              <div>
+                <label>processus lie au risque</label>
+              </div>
+              <div>
+                <select name="idprocess" placeholder="nom cat" id="pet-select" ngModel type="number" >
+
+                  <option value="">--choisir votre role--</option>
+                  <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Process}}</option>
+
+                </select>
+              </div>
+
+              <div>
+                <label>strategique de risque</label>
+              </div>
+
+              <div>
+                <select  name="idstrategic" placeholder="nom cat" ngModel type="number" >
+
+                  <option value="">--choisir strategique--</option>
+                  <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NameStrategicRisk}}</option>
+
+                </select>
+              </div>
+              <div>
+                <label>etat de risque</label>
+              </div>
+              <div>
+                <select name="idStateRisk" placeholder="nom cat"  ngModel type="number">
+
+                  <option value="">--choisir Etat de risque--</option>
+                  <option *ngFor="let c of EtatRisque" value="{{c.id}}">{{c.NameStateRisk}}</option>
+
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Commentaire:</label>
+                <input type="text" name="Comment"  ngModel class="form-control">
+              </div>
+
+
+
+
+              <button class="btn btn-danger" routerLink="/categoriesPI" style="float: left">Annuler</button>
+
+              <button class="btn btn-primary "  style="float: right"  >create</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>
+

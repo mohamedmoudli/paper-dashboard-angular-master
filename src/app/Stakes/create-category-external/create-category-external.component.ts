@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {EnjeuService} from '../../Services/Enjeu/enjeu.service';
+
 import {Router} from '@angular/router';
 import {MatDialogRef} from '@angular/material/dialog';
+import {StakeService} from '../../Services/Stake/stake.service';
 
 @Component({
   selector: 'app-create-category-external',
@@ -16,7 +17,7 @@ export class CreateCategoryExternalComponent implements OnInit {
     NameCategoryStakExternal: ''
   };
 
-  constructor(private enjeuxservice : EnjeuService,
+  constructor(private stakeService : StakeService,
               private router: Router , private fb:FormBuilder , public dialogRef: MatDialogRef<CreateCategoryExternalComponent>) {
     this.angForm = this.fb.group({
       NameCategoryStakExternal: ['', [Validators.required]],
@@ -26,8 +27,8 @@ export class CreateCategoryExternalComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addcategorie(){
-    this.enjeuxservice.CreateCategoryExternal(this.data).subscribe(
+   CreatecategoryExternal(){
+    this.stakeService.CreateCategoryExternal(this.data).subscribe(
       resp=>{
         console.log(resp);
         return this.onNoClick();

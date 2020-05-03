@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {EnjeuService} from '../../Services/Enjeu/enjeu.service';
+
 import {Router} from '@angular/router';
 import {MatDialogRef} from '@angular/material/dialog';
+import {StakeService} from '../../Services/Stake/stake.service';
 
 @Component({
   selector: 'app-create-stake-external',
@@ -19,7 +20,7 @@ export class CreateStakeExternalComponent implements OnInit {
   };
   public users = [];
   public Type = [];
-  constructor(private enjeuService: EnjeuService,
+  constructor(private stakeService: StakeService,
               private router:Router , private fb:FormBuilder , public dialogRef: MatDialogRef<CreateStakeExternalComponent>) {
     this.angForm = this.fb.group({
       Description: ['', [Validators.required]],
@@ -33,7 +34,7 @@ export class CreateStakeExternalComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.enjeuService.getCategoryExternal()
+    this.stakeService.getCategoryExternal()
       .subscribe((data) => {
 
         this.users = data['hydra:member'];
@@ -46,7 +47,7 @@ export class CreateStakeExternalComponent implements OnInit {
 
 
 
-    this.enjeuService.getTypeStake()
+    this.stakeService.getTypeStake()
       .subscribe((data) => {
 
         this.Type = data['hydra:member'];
@@ -58,8 +59,8 @@ export class CreateStakeExternalComponent implements OnInit {
   }
 
 
-  saveEnjeuForce(){
-    this.enjeuService.saveStake(this.data).subscribe(
+  CreateStakeExternal(){
+    this.stakeService.saveStake(this.data).subscribe(
       resp=>{
         console.log(resp);
         console.log(true);

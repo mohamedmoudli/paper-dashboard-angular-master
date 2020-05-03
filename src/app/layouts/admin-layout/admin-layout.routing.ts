@@ -12,42 +12,9 @@ import {LoginComponent} from '../../pages/login/login.component';
 import {CreateRegisterComponent} from '../../pages/create-register/create-register.component';
 import {HomeComponent} from '../../pages/home/home.component';
 import {LoginGuard} from '../../Guard/login.guard';
-import {AjouterCategoriesPIComponent} from '../../PartieInteresse/Create-categories-pi/ajouter-categories-pi.component';
-import {AjouterPIComponent} from '../../PartieInteresse/Create-pi/ajouter-pi.component';
-import {CategoriesPIComponent} from '../../PartieInteresse/categories-pi/categories-pi.component';
-import {ExigenecesPIComponent} from '../../PartieInteresse/exigeneces-pi/exigeneces-pi.component';
-import {HistoriqueExgPIComponent} from '../../PartieInteresse/historique-exg-pi/historique-exg-pi.component';
-import {PartieinteresseComponent} from '../../PartieInteresse/partieinteresse/partieinteresse.component';
-import {PipertinanteComponent} from '../../PartieInteresse/pipertinante/pipertinante.component';
-import {EnjeuComponent} from '../../Enjeux/enjeu/enjeu.component';
-import {AjouterEnjeuComponent} from '../../Enjeux/Create-enjeu-extern/ajouter-enjeu.component';
-import {GuideutilisationComponent} from '../../GuideUtilisation/guideutilisation/guideutilisation.component';
-
-import {AjouterGuideUtilisationComponent} from '../../GuideUtilisation/ajouter-guide-utilisation/ajouter-guide-utilisation.component';
-import {HistoriquePIpertinanteComponent} from '../../PartieInteresse/historique-pipertinante/historique-pipertinante.component';
-import {EnjeuForceComponent} from '../../Enjeux/Create-enjeu-intern/enjeu-force.component';
-import {CreateCategorieComponent} from '../../Enjeux/create-categorie-intern/create-categorie.component';
-import {CreateCategorieExternComponent} from '../../Enjeux/create-categorie-extern/create-categorie-extern.component';
-import {SyntheseEnjeuComponent} from '../../Enjeux/synthese-enjeu/synthese-enjeu.component';
-import {RisqueComponent} from '../../Risque/risque/risque.component';
-import {AjouterrisqueComponent} from '../../Risque/Create-risque/ajouterrisque.component';
-import {HistoriquerisqueComponent} from '../../Risque/historiquerisque/historiquerisque.component';
 import {Test5Component} from '../../test5/test5.component';
 import {Test6Component} from '../../test6/test6.component';
-import {CategorieRisqueComponent} from '../../Risque/categorie-risque/categorie-risque.component';
-import {StrategiqueRisqueComponent} from '../../Risque/strategique-risque/strategique-risque.component';
-import {CategorieInternComponent} from '../../Enjeux/categorie-intern/categorie-intern.component';
-import {CategorieExternComponent} from '../../Enjeux/categorie-extern/categorie-extern.component';
-import {OpportuniteComponent} from '../../Opportunite/opportunite/opportunite.component';
-import {CreateOpportuniteComponent} from '../../Opportunite/create-opportunite/create-opportunite.component';
-import {HistoriqueOpportuniteComponent} from '../../Opportunite/historique-opportunite/historique-opportunite.component';
-import {CategorieOpportuniteComponent} from '../../Opportunite/categorie-opportunite/categorie-opportunite.component';
-import {StrategiqueOpportuniteComponent} from '../../Opportunite/strategique-opportunite/strategique-opportunite.component';
-import {ObjectifComponent} from '../../Objectif/objectif/objectif.component';
-import {CreateObjectifComponent} from '../../Objectif/create-objectif/create-objectif.component';
-import {HistoriqueObjectifComponent} from '../../Objectif/historique-objectif/historique-objectif.component';
-import {PlanDeActionComponent} from '../../PlanDeAction/plan-de-action/plan-de-action.component';
-import {CreatePlanDeActionComponent} from '../../PlanDeAction/create-plan-de-action/create-plan-de-action.component';
+
 import {DefinitionComponent} from '../../Definition/definition/definition.component';
 import {SyntheseComponent} from '../../Synthese/synthese/synthese.component';
 import {StakeComponent} from '../../Stakes/stake/stake.component';
@@ -62,6 +29,19 @@ import {RiskComponent} from '../../Risk/risk/risk.component';
 import {CreateRiskComponent} from '../../Risk/create-risk/create-risk.component';
 import {StrategicRiskComponent} from '../../Risk/strategic-risk/strategic-risk.component';
 import {CategoryRiskComponent} from '../../Risk/category-risk/category-risk.component';
+import {HistoricalRiskComponent} from '../../Risk/historical-risk/historical-risk.component';
+import {ObjectiveComponent} from '../../Objective/objective/objective.component';
+import {CreateObjectiveComponent} from '../../Objective/create-objective/create-objective.component';
+import {HistoricalObjectiveComponent} from '../../Objective/historical-objective/historical-objective.component';
+import {UtilizationGuideComponent} from '../../UtilizationGuide/utilization-guide/utilization-guide.component';
+import {OpportunityService} from '../../Services/Opportunity/opportunity.service';
+import {CategoryOpportunityComponent} from '../../Opportunity/category-opportunity/category-opportunity.component';
+import {StrategicOpportunityComponent} from '../../Opportunity/strategic-opportunity/strategic-opportunity.component';
+import {CreateOpportunityComponent} from '../../Opportunity/create-opportunity/create-opportunity.component';
+import {OpportunityComponent} from '../../Opportunity/opportunity/opportunity.component';
+import {HistoricalOpportunityComponent} from '../../Opportunity/historical-opportunity/historical-opportunity.component';
+import {ActionPlanComponent} from '../../ActionPlan/action-plan/action-plan.component';
+import {CreateActionPlanComponent} from '../../ActionPlan/create-action-plan/create-action-plan.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -75,39 +55,31 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
-    { path: 'ajouterPI',  component: AjouterPIComponent },
     { path: 'categoriesPI',  component: CategoryInterestedPartyComponent },
     { path: 'exigencesPI',  component: ExigencyInterestedPartyComponent },
-    { path: 'historiqueExigPI',  component: HistoriqueExgPIComponent },
     { path: 'partieinteresse',  component: InterestedPartyComponent },
-    { path: 'pipertinante',  component: PipertinanteComponent },
     { path: 'enjeu',  component: StakeComponent },
-    { path: 'Syntheseenjeu',  component: SyntheseEnjeuComponent },
     { path: 'strategiqueRisque',  component: StrategicRiskComponent },
-    { path: 'CategorieEnjeuIntern',  component: CreateCategorieComponent },
-    { path: 'CategorieEnjeuextern',  component: CreateCategorieExternComponent },
-    { path: 'guideutlisation',  component: GuideutilisationComponent },
+    { path: 'guideutlisation',  component: UtilizationGuideComponent },
     { path: 'processus',  component: ProcessComponent },
     { path: 'RisqueCategories',  component: CategoryRiskComponent },
-    { path: 'ajouterForce',  component: EnjeuForceComponent },
     { path: 'risque',  component: RiskComponent },
     { path: 'ajouterRisque',  component: CreateRiskComponent },
-    { path: 'historiqueRisque',  component: HistoriquerisqueComponent },
+    { path: 'historiqueRisque',  component: HistoricalRiskComponent },
     { path: 'CategoriesEnjeuIntern',  component: CategoryInternalComponent},
     { path: 'CategoriesEnjeuExtern',  component: CategoryExternalComponent },
     { path: 'test5',  component: Test5Component },
-    { path: 'ajouterguideUtilisation',  component: AjouterGuideUtilisationComponent },
     { path: 'historiquepipertinante',  component: HistoricalInterestedPartyComponent },
-    { path: 'historiqueOpportunite',  component: HistoriqueOpportuniteComponent },
-    { path: 'Opportunite',  component: OpportuniteComponent },
-    { path: 'CategoriesOpportunite',  component: CategorieOpportuniteComponent },
-    { path: 'StrategiqueOpportunite',  component: StrategiqueOpportuniteComponent },
-    { path: 'ajouterOpportunite',  component: CreateOpportuniteComponent },
-    { path: 'Objective',  component: ObjectifComponent },
-    { path: 'Plandeaction',  component: PlanDeActionComponent },
-    { path: 'CreatePlandeaction',  component: CreatePlanDeActionComponent },
-    { path: 'ajouterObjective',  component: CreateObjectifComponent },
-    { path: 'historiqueObjective',  component: HistoriqueObjectifComponent },
+    { path: 'historiqueOpportunite',  component: HistoricalOpportunityComponent },
+    { path: 'Opportunite',  component: OpportunityComponent },
+    { path: 'CategoriesOpportunite',  component: CategoryOpportunityComponent },
+    { path: 'StrategiqueOpportunite',  component: StrategicOpportunityComponent },
+    { path: 'ajouterOpportunite',  component: CreateOpportunityComponent },
+    { path: 'Objective',  component: ObjectiveComponent },
+    { path: 'Plandeaction',  component: ActionPlanComponent },
+    { path: 'CreatePlandeaction',  component: CreateActionPlanComponent },
+    { path: 'ajouterObjective',  component: CreateObjectiveComponent },
+    { path: 'historiqueObjective',  component: HistoricalObjectiveComponent },
     { path: 'definition',  component: DefinitionComponent },
     { path: 'Synthese1',  component: SyntheseComponent },
     { path: 'upgrade',        component: UpgradeComponent }

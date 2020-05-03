@@ -1,0 +1,135 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+      <div class="col-md-6 container    my-5">
+        <div class="card card-user  panel">
+          <div class="card-header panel-heading bg-primary ">
+            <h5 class="card-title "> ajouter opportunite </h5>
+          </div>
+          <div class="card-body">
+            <form>
+
+              <div>
+                <select name="Origin" placeholder="nom cat"  [(ngModel)]="data.Origin" type="number">
+
+                  <option value="">--choisir categories--</option>
+                  <option value="Exigence pi">Exigence pi</option>
+                  <option value="Risque">Risque</option>
+                  <option value="Opportunite">Opportunite</option>
+                  <option value="OpportuniteReevaaluation">Opportunite reevaluation</option>
+                  <option value="Objective" >Objective</option>
+
+                </select>
+              </div>
+
+              <div *ngIf="data.Origin == 'Exigence pi'">
+                <select  name="idExigency" placeholder="nom cat" [(ngModel)]="data.idExigency" type="number" >
+
+                  <option value="">--choisir strategique--</option>
+                  <option *ngFor="let c of exigencepi" value="{{c.id}}">{{c.id}}</option>
+
+                </select>
+              </div>
+              <div *ngIf="data.Origin == 'Risque'">
+                <select  name="idRisk" placeholder="nom cat" [(ngModel)]="data.idRisk" type="number" >
+
+                  <option value="">--choisir strategique--</option>
+                  <option *ngFor="let c of risque" value="{{c.id}}">{{c.id}}</option>
+
+                </select>
+              </div>
+              <div *ngIf="data.Origin == 'Objective'">
+                <select  name="idObjective" placeholder="nom cat" [(ngModel)]="data.idObjective" type="number" >
+
+                  <option value="">--choisir strategique--</option>
+                  <option *ngFor="let c of objective" value="{{c.id}}">{{c.id}}</option>
+
+                </select>
+              </div>
+              <div *ngIf="data.Origin == 'Opportunite'">
+                <select  name="idOpportunity" placeholder="nom cat" [(ngModel)]="data.idOpportunity" type="number" >
+
+                  <option value="">--choisir strategique--</option>
+                  <option *ngFor="let c of opportunite" value="{{c.id}}">{{c.id}}</option>
+
+                </select>
+              </div>
+              <div *ngIf="data.Origin == 'OpportuniteReevaaluation'">
+                <select  name="idOpportunityreevaluation" placeholder="nom cat" [(ngModel)]="data.idOpportunityreevaluation" type="number" >
+
+                  <option value="">--choisir strategique--</option>
+                  <option *ngFor="let c of opportunite" value="{{c.id}}">{{c.id}}</option>
+
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="control-label">Action:</label>
+                <input type="text" name="Action"  [(ngModel)]="data.Action" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Date Debut Panifie:</label>
+                <input type="date" name="StartDatePanifies"  [(ngModel)]="data.StartDatePanifies" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Delai:</label>
+                <input type="text" name="Delai"  [(ngModel)]="data.Delai" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Respensable:</label>
+                <input type="text" name="Responsible"  [(ngModel)]="data.Responsible" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Realisateur:</label>
+                <input type="text" name="Director"  [(ngModel)]="data.Director" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Consulter:</label>
+                <input type="text" name="Consult"  [(ngModel)]="data.Consult" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Avencement:</label>
+                <input type="number" name="Advancement"  [(ngModel)]="data.Advancement" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Critere De Cloture:</label>
+                <input type="text" name="ClosingCriterion"  [(ngModel)]="data.ClosingCriterion" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Preuve De Cloture:</label>
+                <input type="text" name="ProofOfClosure"  [(ngModel)]="data.ProofOfClosure" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">CritaireEfficacite:</label>
+                <input type="text" name="CriteriaEfficiency"  [(ngModel)]="data.CriteriaEfficiency" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">EtatDeEfficacite:</label>
+                <input type="text" name="StateOfEfficacy"  [(ngModel)]="data.StateOfEfficacy" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">EtatActuel:</label>
+                <input type="text" name="CurrentState"  [(ngModel)]="data.CurrentState" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Commentaire:</label>
+                <input type="text" name="Comment"  [(ngModel)]="data.Comment" class="form-control">
+              </div>
+
+
+              <button class="btn btn-danger" routerLink="/categoriesPI" style="float: left">Annuler</button>
+
+              <button class="btn btn-primary "  style="float: right"  (click)="CreateActionPlan()">create</button>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>

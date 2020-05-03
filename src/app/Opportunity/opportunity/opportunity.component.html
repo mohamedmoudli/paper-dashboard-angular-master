@@ -1,0 +1,95 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content">
+      <div class="row">
+        <svg class="bi bi-search" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helpOpportunite()">
+          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
+          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
+        </svg>
+        <button class="btn btn-simple" (click)="definitionOpportunity()" style="float: right">definition</button>
+
+        <div  >
+          <button class="btn btn-primary" routerLink="/historiqueOpportunite" style="float: left">historique</button>
+        </div>
+        <button routerLink="/ajouterOpportunite" class="btn btn-success">ajouter un opportunite</button>
+        <button (click)="DisplayStake()"  class="btn btn-warning" >enjeux</button>
+        <button (click)="DisplayPIpertinante()" class="btn btn-warning">pipertinante</button>
+        <div >
+          <button class="btn btn-primary" routerLink="/CategoriesOpportunite" style="float: left">gerer categorie</button>
+        </div>
+        <div style="float: left" >
+          <button class="btn btn-primary" routerLink="/StrategiqueOpportunite" style="float: left">gerer strategique</button>
+        </div>
+        <div style="float: left" >
+          <button class="btn btn-primary" (click)="saveHistoricalOpportunity()" style="float: left">Enregister etat</button>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title"> Risque</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary" >
+                  <tr>
+                    <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+                  </tr>
+
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let c of opportunite">
+                    <td>{{c.id}}</td>
+                    <td>{{c.CategoryOpportunity.nameCategoryOpportunity}}</td>
+                    <td>{{c.Description}}</td>
+                    <td>{{c.ShortTerm}}</td>
+                    <td>{{c.MediumTerm}}</td>
+                    <td>{{c.LongTerm}}</td>
+                    <td>{{c.DateIdentification}}</td>
+                    <td>{{c.Consistency}}</td>
+                    <td>{{c.Alignment}}</td>
+                    <td>{{c.Presence}}</td>
+                    <td>{{c.Skills}}</td>
+                    <td>{{c.Continuity}}</td>
+                    <td>{{c.Gain}}</td>
+                    <td>{{c.Efforts}}</td>
+                    <td>{{c.Advantage}}</td>
+                    <td>{{c.Weight}}</td>
+                    <td>{{c.Decision}}</td>
+                    <td>{{c.StrategicOpportunity.nameStrategicOpportunity}}</td>
+                    <td>{{c.ProcessLie.process}}</td>
+                    <td>  <p *ngFor="let p of c.NumAction "> {{ p.id}}</p> </td>
+                    <td>{{c.StateOpportunity.nameStateOpportunity}}</td>
+                    <td>{{c.EffortReevaluation}}</td>
+                    <td>{{c.AdvantageReevaluation}}</td>
+                    <td>{{c.LoadReevaluation}}</td>
+                    <td>{{c.DecisionReevaluation}}</td>
+                    <td *ngIf="c.StrategicReevaluation !== null">{{c.StrategicReevaluation.nameStrategicOpportunity}}</td>
+                    <td *ngIf="c.ProcessLieReevaluation !== null">{{c.ProcessLieReevaluation.process}}</td>
+                    <td>  <p *ngFor="let p of c.NumActionReevaluation "> {{ p.id}}</p> </td>
+                    <td *ngIf="c.StateOpportunityReevaluation !== null">{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
+                    <td>{{c.Comment}}</td>
+                    <td><button class="btn btn-success" (click)="reevaluateOpportunity(c.id)">reevaluer</button></td>
+                    <td>{{c.Pilote}}</td>
+                    <td ></td>
+
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer-cmp></footer-cmp>
+  </div>
+</div>
+<fixedplugin-cmp></fixedplugin-cmp>
+
+
