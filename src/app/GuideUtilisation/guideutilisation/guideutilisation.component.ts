@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EnjeuService} from '../../Services/Enjeu/enjeu.service';
 import {Router} from '@angular/router';
 import {GuideutilisationService} from '../../Services/guideUtilisation/guideutilisation.service';
-import {AjouterprocessusComponent} from '../../Périmetre/Create-processus/ajouterprocessus.component';
+
 import {MatDialog} from '@angular/material/dialog';
 import {AjouterGuideUtilisationComponent} from '../ajouter-guide-utilisation/ajouter-guide-utilisation.component';
 import {DelatecategorieExternComponent} from '../../Enjeux/delatecategorie-extern/delatecategorie-extern.component';

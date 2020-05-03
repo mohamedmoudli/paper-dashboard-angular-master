@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PartieinteresseService} from '../../Services/partieinteresse.service';
 import {Router} from '@angular/router';
 import {MatTableDataSource} from '@angular/material/table';
-import {AjouterprocessusComponent} from '../../Périmetre/Create-processus/ajouterprocessus.component';
+
 import {MatDialog} from '@angular/material/dialog';
 import {AjouterExigenceComponent} from '../Create-exigence/ajouter-exigence.component';
 import {DelateExigencePIComponent} from '../delate-exigence-pi/delate-exigence-pi.component';

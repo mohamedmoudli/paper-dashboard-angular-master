@@ -28,8 +28,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { GuideutilisationComponent } from './GuideUtilisation/guideutilisation/guideutilisation.component';
-import { ProcessusComponent } from './Périmetre/processus/processus.component';
-import { AjouterprocessusComponent } from './Périmetre/Create-processus/ajouterprocessus.component';
+
 import { AjouterGuideUtilisationComponent } from './GuideUtilisation/ajouter-guide-utilisation/ajouter-guide-utilisation.component';
 import { HistoriquePIpertinanteComponent } from './PartieInteresse/historique-pipertinante/historique-pipertinante.component';
 import { CreateCategorieComponent } from './Enjeux/create-categorie-intern/create-categorie.component';
@@ -44,12 +43,12 @@ import { EnjeuRiqueComponent } from './Risque/enjeu-rique/enjeu-rique.component'
 import { AjouterExigenceComponent } from './PartieInteresse/Create-exigence/ajouter-exigence.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DelateCategoriesPIComponent } from './PartieInteresse/delate-categories-pi/delate-categories-pi.component';
-import { PerimtrepolitiqueComponent } from './Périmetre/perimtrepolitique/perimtrepolitique.component';
+
 import { CategorieRisqueComponent } from './Risque/categorie-risque/categorie-risque.component';
 import { CreateCategorieRisqueComponent } from './Risque/create-categorie-risque/create-categorie-risque.component';
 import { StrategiqueRisqueComponent } from './Risque/strategique-risque/strategique-risque.component';
 import { CreateStrategiqueRisqueComponent } from './Risque/create-strategique-risque/create-strategique-risque.component';
-import { AideProcessComponent } from './Périmetre/aide-process/aide-process.component';
+
 import { HelpProcessComponent } from './Enjeux/help-process/help-process.component';
 import { DelateCategorieRisqueComponent } from './Risque/delate-categorie-risque/delate-categorie-risque.component';
 import { DelateStrategiqueRisqueComponent } from './Risque/delate-strategique-risque/delate-strategique-risque.component';
@@ -59,7 +58,7 @@ import { DelatecategorieExternComponent } from './Enjeux/delatecategorie-extern/
 import { DelatecategorieInternComponent } from './Enjeux/delatecategorie-intern/delatecategorie-intern.component';
 import { DelateenjeuComponent } from './Enjeux/delateenjeu/delateenjeu.component';
 import { DelateGuideComponent } from './GuideUtilisation/delate-guide/delate-guide.component';
-import { DelateProcessComponent } from './Périmetre/delate-process/delate-process.component';
+
 import { OpportuniteComponent } from './Opportunite/opportunite/opportunite.component';
 import { CreateOpportuniteComponent } from './Opportunite/create-opportunite/create-opportunite.component';
 import { ReevaluerOpportuniteComponent } from './Opportunite/reevaluer-opportunite/reevaluer-opportunite.component';
@@ -99,6 +98,37 @@ import { CreateStakeExternalComponent } from './Stakes/create-stake-external/cre
 import { DelateCategoryExternalComponent } from './Stakes/delate-category-external/delate-category-external.component';
 import { DelateCategoryInternalComponent } from './Stakes/delate-category-internal/delate-category-internal.component';
 import { DelateStakeComponent } from './Stakes/delate-stake/delate-stake.component';
+import { InterestedPartyComponent } from './InterestedParty/interested-party/interested-party.component';
+import { HelpExigencyIpComponent } from './InterestedParty/help-exigency-ip/help-exigency-ip.component';
+import { HelpPiRelevantComponent } from './InterestedParty/help-pi-relevant/help-pi-relevant.component';
+import { CategoryInterestedPartyComponent } from './InterestedParty/category-interested-party/category-interested-party.component';
+import { CreateCategoryInterestedPartyComponent } from './InterestedParty/create-category-interested-party/create-category-interested-party.component';
+import { CreateExigencyInterestedPartyComponent } from './InterestedParty/create-exigency-interested-party/create-exigency-interested-party.component';
+import { CreateInterestedPartyComponent } from './InterestedParty/create-interested-party/create-interested-party.component';
+import { DefinitionInterestedPartyComponent } from './InterestedParty/definition-interested-party/definition-interested-party.component';
+import { DefinitionPIRelevantComponent } from './InterestedParty/definition-pirelevant/definition-pirelevant.component';
+import { DelateCategoryInterestedPartyComponent } from './InterestedParty/delate-category-interested-party/delate-category-interested-party.component';
+import { DelateExigencyInterestedPartyComponent } from './InterestedParty/delate-exigency-interested-party/delate-exigency-interested-party.component';
+import { ExigencyInterestedPartyComponent } from './InterestedParty/exigency-interested-party/exigency-interested-party.component';
+import { HistoricalInterestedPartyComponent } from './InterestedParty/historical-interested-party/historical-interested-party.component';
+import { ProcessComponent } from './Process/process/process.component';
+import { CreateProcessComponent } from './Process/create-process/create-process.component';
+
+import { HelpRiskComponent } from './Risk/help-risk/help-risk.component';
+import { CategoryRiskComponent } from './Risk/category-risk/category-risk.component';
+import { CreateCategoryRiskComponent } from './Risk/create-category-risk/create-category-risk.component';
+import { CreateRiskComponent } from './Risk/create-risk/create-risk.component';
+import { CreateStrategicRiskComponent } from './Risk/create-strategic-risk/create-strategic-risk.component';
+import { DefinionRiskComponent } from './Risk/definion-risk/definion-risk.component';
+import { DelateCategoryRiskComponent } from './Risk/delate-category-risk/delate-category-risk.component';
+import { DelateStrategicRiskComponent } from './Risk/delate-strategic-risk/delate-strategic-risk.component';
+import { StakeRiskComponent } from './Risk/stake-risk/stake-risk.component';
+import { HistoricalRiskComponent } from './Risk/historical-risk/historical-risk.component';
+import { PIRelevantComponent } from './Risk/pirelevant/pirelevant.component';
+import { RiskComponent } from './Risk/risk/risk.component';
+import { StrategicRiskComponent } from './Risk/strategic-risk/strategic-risk.component';
+import { DefinitionStakeComponent } from './Stake/definition-stake/definition-stake.component';
+import { HelpStakeComponent } from './Stakes/help-stake/help-stake.component';
 
 
 
@@ -109,6 +139,11 @@ import { DelateStakeComponent } from './Stakes/delate-stake/delate-stake.compone
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    DefinitionStakeComponent,
+    HelpStakeComponent,
+
+
+
 
 
 

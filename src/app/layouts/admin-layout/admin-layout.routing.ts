@@ -22,8 +22,7 @@ import {PipertinanteComponent} from '../../PartieInteresse/pipertinante/pipertin
 import {EnjeuComponent} from '../../Enjeux/enjeu/enjeu.component';
 import {AjouterEnjeuComponent} from '../../Enjeux/Create-enjeu-extern/ajouter-enjeu.component';
 import {GuideutilisationComponent} from '../../GuideUtilisation/guideutilisation/guideutilisation.component';
-import {ProcessusComponent} from '../../Périmetre/processus/processus.component';
-import {AjouterprocessusComponent} from '../../Périmetre/Create-processus/ajouterprocessus.component';
+
 import {AjouterGuideUtilisationComponent} from '../../GuideUtilisation/ajouter-guide-utilisation/ajouter-guide-utilisation.component';
 import {HistoriquePIpertinanteComponent} from '../../PartieInteresse/historique-pipertinante/historique-pipertinante.component';
 import {EnjeuForceComponent} from '../../Enjeux/Create-enjeu-intern/enjeu-force.component';
@@ -54,6 +53,15 @@ import {SyntheseComponent} from '../../Synthese/synthese/synthese.component';
 import {StakeComponent} from '../../Stakes/stake/stake.component';
 import {CategoryInternalComponent} from '../../Stakes/category-internal/category-internal.component';
 import {CategoryExternalComponent} from '../../Stakes/category-external/category-external.component';
+import {CategoryInterestedPartyComponent} from '../../InterestedParty/category-interested-party/category-interested-party.component';
+import {ExigencyInterestedPartyComponent} from '../../InterestedParty/exigency-interested-party/exigency-interested-party.component';
+import {InterestedPartyComponent} from '../../InterestedParty/interested-party/interested-party.component';
+import {HistoricalInterestedPartyComponent} from '../../InterestedParty/historical-interested-party/historical-interested-party.component';
+import {ProcessComponent} from '../../Process/process/process.component';
+import {RiskComponent} from '../../Risk/risk/risk.component';
+import {CreateRiskComponent} from '../../Risk/create-risk/create-risk.component';
+import {StrategicRiskComponent} from '../../Risk/strategic-risk/strategic-risk.component';
+import {CategoryRiskComponent} from '../../Risk/category-risk/category-risk.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -68,28 +76,28 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'ajouterPI',  component: AjouterPIComponent },
-    { path: 'categoriesPI',  component: CategoriesPIComponent },
-    { path: 'exigencesPI',  component: ExigenecesPIComponent },
+    { path: 'categoriesPI',  component: CategoryInterestedPartyComponent },
+    { path: 'exigencesPI',  component: ExigencyInterestedPartyComponent },
     { path: 'historiqueExigPI',  component: HistoriqueExgPIComponent },
-    { path: 'partieinteresse',  component: PartieinteresseComponent },
+    { path: 'partieinteresse',  component: InterestedPartyComponent },
     { path: 'pipertinante',  component: PipertinanteComponent },
     { path: 'enjeu',  component: StakeComponent },
     { path: 'Syntheseenjeu',  component: SyntheseEnjeuComponent },
-    { path: 'strategiqueRisque',  component: StrategiqueRisqueComponent },
+    { path: 'strategiqueRisque',  component: StrategicRiskComponent },
     { path: 'CategorieEnjeuIntern',  component: CreateCategorieComponent },
     { path: 'CategorieEnjeuextern',  component: CreateCategorieExternComponent },
     { path: 'guideutlisation',  component: GuideutilisationComponent },
-    { path: 'processus',  component: ProcessusComponent },
-    { path: 'RisqueCategories',  component: CategorieRisqueComponent },
+    { path: 'processus',  component: ProcessComponent },
+    { path: 'RisqueCategories',  component: CategoryRiskComponent },
     { path: 'ajouterForce',  component: EnjeuForceComponent },
-    { path: 'risque',  component: RisqueComponent },
-    { path: 'ajouterRisque',  component: AjouterrisqueComponent },
+    { path: 'risque',  component: RiskComponent },
+    { path: 'ajouterRisque',  component: CreateRiskComponent },
     { path: 'historiqueRisque',  component: HistoriquerisqueComponent },
     { path: 'CategoriesEnjeuIntern',  component: CategoryInternalComponent},
     { path: 'CategoriesEnjeuExtern',  component: CategoryExternalComponent },
     { path: 'test5',  component: Test5Component },
     { path: 'ajouterguideUtilisation',  component: AjouterGuideUtilisationComponent },
-    { path: 'historiquepipertinante',  component: HistoriquePIpertinanteComponent },
+    { path: 'historiquepipertinante',  component: HistoricalInterestedPartyComponent },
     { path: 'historiqueOpportunite',  component: HistoriqueOpportuniteComponent },
     { path: 'Opportunite',  component: OpportuniteComponent },
     { path: 'CategoriesOpportunite',  component: CategorieOpportuniteComponent },
