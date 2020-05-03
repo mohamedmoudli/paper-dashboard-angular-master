@@ -59,19 +59,33 @@
                     <td>{{c.Efforts}}</td>
                     <td>{{c.Advantage}}</td>
                     <td>{{c.Weight}}</td>
-                    <td>{{c.Decision}}</td>
-                    <td>{{c.StrategicOpportunity.nameStrategicOpportunity}}</td>
+                    <td *ngIf="c.Decision == 'opportunité moderéé a reflechir'" class="text-warning">{{c.Decision}}</td>
+                    <td *ngIf="c.Decision == 'opportunité negligable a ignorer'" class="text-success">{{c.Decision}}</td>
+                    <td *ngIf="c.Decision == 'opportunité interssésante a saisir'" class="text-success">{{c.Decision}}</td>
+                    <td *ngIf="c.StrategicOpportunity.nameStrategicOpportunity == 'Saisir'">{{c.StrategicOpportunity.nameStrategicOpportunity}}</td>
+                    <td *ngIf="c.StrategicOpportunity.nameStrategicOpportunity == 'Ingorer'">{{c.StrategicOpportunity.nameStrategicOpportunity}}</td>
+                    <td *ngIf="c.StrategicOpportunity.nameStrategicOpportunity == 'Reporter'">{{c.StrategicOpportunity.nameStrategicOpportunity}}</td>
                     <td>{{c.ProcessLie.process}}</td>
                     <td>  <p *ngFor="let p of c.NumAction "> {{ p.id}}</p> </td>
-                    <td>{{c.StateOpportunity.nameStateOpportunity}}</td>
+                    <td *ngIf="c.StateOpportunity.nameStateOpportunity == 'Cloturé'" class="bg-success">{{c.StateOpportunity.nameStateOpportunity}}</td>
+                    <td *ngIf="c.StateOpportunity.nameStateOpportunity == 'Ouvert'" class="text-danger">{{c.StateOpportunity.nameStateOpportunity}}</td>
+                    <td *ngIf="c.StateOpportunity.nameStateOpportunity == 'Fermé'" class="bg-warning">{{c.StateOpportunity.nameStateOpportunity}}</td>
+                    <td *ngIf="c.StateOpportunity.nameStateOpportunity == 'En cours de selection'" class="text-success">{{c.StateOpportunity.nameStateOpportunity}}</td>
                     <td>{{c.EffortReevaluation}}</td>
                     <td>{{c.AdvantageReevaluation}}</td>
                     <td>{{c.LoadReevaluation}}</td>
-                    <td>{{c.DecisionReevaluation}}</td>
-                    <td *ngIf="c.StrategicReevaluation !== null">{{c.StrategicReevaluation.nameStrategicOpportunity}}</td>
+                    <td *ngIf=" c.DecisionReevaluation == 'opportunité moderéé a reflechir'" class="text-warning">{{c.DecisionReevaluation}}</td>
+                    <td *ngIf=" c.DecisionReevaluation == 'opportunité negligable a ignorer'" class="text-warning">{{c.DecisionReevaluation}}</td>
+                    <td *ngIf=" c.DecisionReevaluation == 'opportunité interssésante a saisir'" class="text-warning">{{c.DecisionReevaluation}}</td>
+                    <td *ngIf=" c.StrategicReevaluation.nameStrategicOpportunity == 'Saisir' && c.StrategicReevaluation !== null">{{c.StrategicReevaluation.nameStrategicOpportunity}}</td>
+                    <td *ngIf=" c.StrategicReevaluation.nameStrategicOpportunity == 'Ingorer' && c.StrategicReevaluation !== null">{{c.StrategicReevaluation.nameStrategicOpportunity}}</td>
+                    <td *ngIf=" c.StrategicReevaluation.nameStrategicOpportunity == 'Reporter' && c.StrategicReevaluation !== null">{{c.StrategicReevaluation.nameStrategicOpportunity}}</td>
                     <td *ngIf="c.ProcessLieReevaluation !== null">{{c.ProcessLieReevaluation.process}}</td>
                     <td>  <p *ngFor="let p of c.NumActionReevaluation "> {{ p.id}}</p> </td>
-                    <td *ngIf="c.StateOpportunityReevaluation !== null">{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
+                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'Cloturé' && c.StateOpportunityReevaluation !== null" class="bg-success" >{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
+                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'Ouvert' && c.StateOpportunityReevaluation !== null" class="text-danger">{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
+                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'Fermé' && c.StateOpportunityReevaluation !== null" class="bg-warning" >{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
+                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'En cours de selection' && c.StateOpportunityReevaluation !== null" class="text-success">{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
                     <td>{{c.Comment}}</td>
                     <td><button class="btn btn-success" (click)="reevaluateOpportunity(c.id)">reevaluer</button></td>
                     <td>{{c.Pilote}}</td>

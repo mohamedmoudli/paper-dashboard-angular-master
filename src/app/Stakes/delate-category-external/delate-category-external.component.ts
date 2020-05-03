@@ -10,7 +10,7 @@ import {StakeService} from '../../Services/Stake/stake.service';
   styleUrls: ['./delate-category-external.component.css']
 })
 export class DelateCategoryExternalComponent implements OnInit {
-
+  categoryExtern : any;
 
   constructor(private stakeService: StakeService,
               private router:Router ,  public dialogRef: MatDialogRef<DelateCategoryExternalComponent>,
@@ -23,8 +23,7 @@ export class DelateCategoryExternalComponent implements OnInit {
   public delate() {
     this.stakeService.delateCategoryExternal(this.id).subscribe((data) => {
       console.log("ffffffffff");
-      this.ngOnInit();
-      return this.onNoClick();
+      this.onNoClick();
     }), (error) => {
 
       console.log("Error", error);
@@ -33,5 +32,16 @@ export class DelateCategoryExternalComponent implements OnInit {
   }
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  getCategoryExternal(){
+    this.stakeService.getCategoryExternal().subscribe((data) => {
+      this.categoryExtern = data;
+
+      console.log("ffffffffff");
+    }), (error) => {
+
+      console.log("Error", error);
+    };
   }
 }

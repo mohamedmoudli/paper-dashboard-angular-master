@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {ProcessusService} from '../../Services/Périmetre/processus.service';
-import {Router} from '@angular/router';
-import {GuideutilisationService} from '../../Services/guideUtilisation/guideutilisation.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {GuideutilisationService} from '../../Services/guideUtilisation/guideutilisation.service';
+import {Router} from '@angular/router';
 import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-ajouter-guide-utilisation',
-  templateUrl: './ajouter-guide-utilisation.component.html',
-  styleUrls: ['./ajouter-guide-utilisation.component.css']
+  selector: 'app-create-utilization-guide',
+  templateUrl: './create-utilization-guide.component.html',
+  styleUrls: ['./create-utilization-guide.component.css']
 })
-export class AjouterGuideUtilisationComponent implements OnInit {
+export class CreateUtilizationGuideComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
   public data = {
@@ -22,7 +21,7 @@ export class AjouterGuideUtilisationComponent implements OnInit {
   };
 
   constructor(private guideutilisationService: GuideutilisationService,
-              private router:Router , private fb:FormBuilder ,  public dialogRef: MatDialogRef<AjouterGuideUtilisationComponent>) {
+              private router:Router , private fb:FormBuilder ,  public dialogRef: MatDialogRef<CreateUtilizationGuideComponent>) {
     this.angForm = this.fb.group({
       nom: ['', [Validators.required]],
       role: ['', [Validators.required]],

@@ -56,11 +56,16 @@
                     <td>{{c.Probability}}</td>
                     <td>{{c.detectability}}</td>
                     <td>{{c.Criticality}}</td>
-                    <td>{{c.Decision}}</td>
+                    <td *ngIf="c.Decision == 'stop'" class="bg-danger">{{c.Decision}}</td>
+                    <td *ngIf="c.Decision == 'Attention !!'" class="text-warning">{{c.Decision}}</td>
+                    <td *ngIf="c.Decision == 'Ok'" class="bg-success">{{c.Decision}}</td>
                     <td>{{c.StrategicRisk.nameStrategicRisk}}</td>
                     <td>{{c.Process.process}}</td>
                     <td>  <p *ngFor="let p of c.actionPlans "> {{ p.id}}</p> </td>
-                    <td>{{c.StateRisk.nameStateRisk}}</td>
+                    <td  *ngIf="c.StateRisk.nameStateRisk == 'Fermé'" class="bg-warning" >{{c.StateRisk.nameStateRisk}}</td>
+                    <td  *ngIf="c.StateRisk.nameStateRisk == 'Ouvert'" class="text-danger" >{{c.StateRisk.nameStateRisk}}</td>
+                    <td  *ngIf="c.StateRisk.nameStateRisk == 'Cloturé'" class="bg-success" >{{c.StateRisk.nameStateRisk}}</td>
+                    <td  *ngIf="c.StateRisk.nameStateRisk == 'En cours de traitement'" class="text-success" >{{c.StateRisk.nameStateRisk}}</td>
                     <td>{{c.Comment}}</td>
 
                     <td>{{c.Pilote}}</td>
