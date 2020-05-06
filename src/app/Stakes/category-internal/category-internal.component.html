@@ -15,11 +15,11 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of users">
+          <tr *ngFor="let c of CatstakeInternal">
             <td>{{c.id}}</td>
             <td>{{c.NameCategoryStakInternal}}</td>
             <td></td>
-            <td><button class="btn btn-danger" (click)="delateCategoryInternal(c.id)">supp</button></td>
+            <td><button class="btn btn-danger" (click)="delateCategoryInternal(c)">supp</button></td>
           </tr>
           </tbody>
         </table>

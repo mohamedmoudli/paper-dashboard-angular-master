@@ -17,14 +17,14 @@
         </div>
         <form >
           <div>
-            <textarea name="perimetre" [(ngModel)]="perimetre" class="col-md-10"> </textarea>
+            <textarea name="perimetre" [(ngModel)]="perimeter" class="col-md-10"> </textarea>
           </div>
           <button (click)="saveperimetre()" class="btn bg-primary">ok</button>
         </form>
 
 
         <div class="card">
-          <h2>{{ afficheperimetre }}</h2>
+          <h2>{{ displayperimeter }}</h2>
         </div>
 
         <div class=" bg-primary">
@@ -32,14 +32,14 @@
         </div>
         <form >
           <div>
-            <textarea name="politique" [(ngModel)]="politique" class="col-md-10"> </textarea>
+            <textarea name="politique" [(ngModel)]="Politics" class="col-md-10"> </textarea>
           </div>
           <button (click)="savepolitique()" class="btn bg-primary">ok</button>
         </form>
 
 
         <div class="card">
-          <h2>{{ affichepolitique }}</h2>
+          <h2>{{ displayPolitics }}</h2>
         </div>
       </div>
       <button class="btn btn-primary " (click)="CreateProcess()">ajouter processus</button>
@@ -51,7 +51,7 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of users">
+          <tr *ngFor="let c of Process">
             <td>{{c.Process}}</td>
             <td>{{c.PerformanceIndicator}}</td>
             <td>{{c.Pilot}}</td>

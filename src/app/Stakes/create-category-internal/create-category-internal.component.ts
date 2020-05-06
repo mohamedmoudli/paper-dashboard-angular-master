@@ -14,24 +14,30 @@ export class CreateCategoryInternalComponent implements OnInit {
 
   angForm: FormGroup;
   submitted = false;
+  CatstakeInternal:any;
+  itemCategory:any;
   public data = {
-    NameCategoryStakeInternal: ''
+    NameCategoryStakInternal: ''
   };
 
   constructor(private stakeService : StakeService,
               private router: Router , private fb:FormBuilder , public dialogRef: MatDialogRef<CreateCategoryInternalComponent>) {
     this.angForm = this.fb.group({
-      NameCategoryStakeInternal: ['', [Validators.required]],
+      NameCategoryStakInternal: ['', [Validators.required]],
 
     });
   }
 
   ngOnInit(): void {
+    this.stakeService.cast.subscribe(user=> this.CatstakeInternal = user);
+    console.log(this.CatstakeInternal);
   }
   CreatecategoryInternal(){
     this.stakeService.CreateCategoryinternal(this.data).subscribe(
       resp=>{
-        console.log(resp);
+        console.log(this.CatstakeInternal);
+        this.CatstakeInternal = this.CatstakeInternal.push(this.data);
+        console.log(this.CatstakeInternal);
         return this.onNoClick();
       },error => {
 
@@ -55,5 +61,9 @@ export class CreateCategoryInternalComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+  editTheUser(){
+    this.stakeService.editUser(this.CatstakeInternal);
+
   }
 }

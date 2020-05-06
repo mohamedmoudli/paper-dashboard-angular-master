@@ -89,6 +89,7 @@ export class StakeComponent implements OnInit {
       }, error => {
         console.log(false);
       });
+    this.stakeService.cast.subscribe(user => this.usersExtern = user);
   }
 
   public CreateStakeInternal(): void {
@@ -105,7 +106,7 @@ export class StakeComponent implements OnInit {
     });
   }
   public CreateStakeExternal(): void {
-
+    this.editTheUser();
     const dialogRef = this.dialog.open(CreateStakeExternalComponent, {
       width: "500px",
       height: "400px",
@@ -184,5 +185,10 @@ export class StakeComponent implements OnInit {
       console.log("The dialog was closed");
       this.animal = result;
     });
+  }
+
+  editTheUser(){
+    this.stakeService.editUser(this.usersExtern);
+
   }
 }

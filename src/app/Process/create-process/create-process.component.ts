@@ -12,6 +12,7 @@ import {ProcessService} from '../../Services/Process/process.service';
 export class CreateProcessComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
+  Process:any;
   public data = {
     Process: '',
     PerformanceIndicator: '',
@@ -28,13 +29,17 @@ export class CreateProcessComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.processService.castProcess.subscribe(Process=> this.Process = Process);
+    console.log(this.Process);
   }
 
   CreateProcess(){
+    this.charingTheProcess();
     this.processService.postprocess(this.data).subscribe(
       resp=>{
-        console.log(resp);
-        console.log(true);
+        console.log(this.Process);
+        this.Process = this.Process.push(this.data);
+        console.log(this.Process);
         return this.onNoClick();
       },error => {
 
@@ -59,5 +64,10 @@ export class CreateProcessComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  charingTheProcess(){
+    this.processService.charingProcess(this.Process);
+
   }
 }

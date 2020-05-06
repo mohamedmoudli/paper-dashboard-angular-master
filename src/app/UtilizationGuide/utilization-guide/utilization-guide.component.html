@@ -15,11 +15,11 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of users">
+          <tr *ngFor="let c of guide">
             <td>{{c.Nom}}</td>
             <td>{{c.Role}}</td>
             <td>{{c.Organisation}}</td>
-            <td><button class="btn btn-danger" (click)="DelateUtilizationGuideComponent(c.id)">supp</button></td>
+            <td><button class="btn btn-danger" (click)="DelateUtilizationGuideComponent(c)">supp</button></td>
 
             <td ></td>
 

@@ -88,6 +88,8 @@ import { ReevaluateOpportunityComponent } from './Opportunity/reevaluate-opportu
 import { StrategicOpportunityComponent } from './Opportunity/strategic-opportunity/strategic-opportunity.component';
 import { ActionPlanComponent } from './ActionPlan/action-plan/action-plan.component';
 import { CreateActionPlanComponent } from './ActionPlan/create-action-plan/create-action-plan.component';
+import { StakeInternalComponent } from './Stakes/stake-internal/stake-internal.component';
+import { StakeExternalComponent } from './Stakes/stake-external/stake-external.component';
 
 
 
@@ -98,6 +100,8 @@ import { CreateActionPlanComponent } from './ActionPlan/create-action-plan/creat
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    StakeInternalComponent,
+    StakeExternalComponent,
 
 
 

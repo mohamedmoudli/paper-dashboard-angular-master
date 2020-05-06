@@ -28,14 +28,20 @@
           <button class="btn btn-primary" (click)="saveHistoricalOpportunity()" style="float: left">Enregister etat</button>
         </div>
         <div class="col-md-12">
-          <div class="card">
+          <div class="">
             <div class="card-header">
               <h4 class="card-title"> Risque</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body card">
               <div class="table-responsive">
-                <table class="table">
+                <table mdbTable class="table">
                   <thead class=" text-primary" >
+                  <tr>
+                    <td colspan="3"></td>
+                    <td colspan="10" class="text-success">identification du Opportunite</td>
+                    <td colspan="8" class="text-success">evaluation</td>
+                    <td colspan="8" class="text-success">reevaluation</td>
+                  </tr>
                   <tr>
                     <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
                   </tr>

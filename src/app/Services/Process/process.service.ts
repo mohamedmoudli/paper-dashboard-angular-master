@@ -1,10 +1,34 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProcessService {
+  res: string;
+  private Perimeter = new BehaviorSubject<any>(this.res);
+  castPerimeter = this.Perimeter.asObservable();
+
+  res1: string;
+  private Politics = new BehaviorSubject<any>(this.res1);
+  castPolitics = this.Politics.asObservable();
+  charingPerimeter(newUser){
+    this.Perimeter.next(newUser);
+    this.res = newUser ;
+  }
+  charingPolitics(newUser){
+    this.Politics.next(newUser);
+    this.res1 = newUser ;
+  }
+
+  resultat: string;
+  private Process = new BehaviorSubject<any>(this.resultat);
+  castProcess = this.Process.asObservable();
+  charingProcess(newUser){
+    this.Process.next(newUser);
+    this.resultat = newUser ;
+  }
   public host: string = "http://localhost:8000";
 
   constructor(private http: HttpClient) { }

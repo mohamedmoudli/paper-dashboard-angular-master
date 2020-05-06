@@ -12,7 +12,7 @@ import {CreateUtilizationGuideComponent} from '../create-utilization-guide/creat
 })
 export class UtilizationGuideComponent implements OnInit {
   public animal: string;
-  users: any ;
+  guide: any ;
   public hidder = ["nom", "role" , "organisation"];
   constructor(private guideutilisation : GuideutilisationService,
               private router: Router , private dialog: MatDialog ) { }
@@ -22,15 +22,16 @@ export class UtilizationGuideComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.guide = data['hydra:member'];
+        console.log(this.guide);
       }, error => {
         console.log(false);
       });
+    this.guideutilisation.cast.subscribe(user => this.guide = user);
   }
 
   public CreateUtilizationGuideComponent(): void {
-
+    this.charingThedata();
     const dialogRef = this.dialog.open(CreateUtilizationGuideComponent , {
       width: "500px",
       height: "450px",
@@ -44,12 +45,12 @@ export class UtilizationGuideComponent implements OnInit {
   }
 
 
-  public DelateUtilizationGuideComponent(id): void {
-
+  public DelateUtilizationGuideComponent(data): void {
+    this.charingThedata();
     const dialogRef = this.dialog.open(DelateUtilizationGuideComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data ,
 
     });
 
@@ -57,5 +58,9 @@ export class UtilizationGuideComponent implements OnInit {
       console.log("The dialog was closed");
       this.animal = result;
     });
+  }
+  charingThedata(){
+    this.guideutilisation.charingdata(this.guide);
+
   }
 }

@@ -13,26 +13,27 @@ import {ProcessService} from '../../Services/Process/process.service';
 })
 export class ProcessComponent implements OnInit {
   public animal: string;
-  perimetre : any;
-  politique: any;
-  affichepolitique : any;
-  afficheperimetre : any;
-  users: any ;
+  perimeter : any;
+  Politics: any;
+  displayPolitics : any;
+  displayperimeter : any;
+  Process: any ;
   perimetre1: any ;
   public hidder = ["Processus", "indicateur de performance" , "pilote"];
   constructor(private processService : ProcessService,
               private router: Router , private dialog: MatDialog ) { }
 
   ngOnInit(): void {
-    this.affichepolitique = localStorage.getItem('politique');
-    this.afficheperimetre = localStorage.getItem('perimetre');
+    this.displayPolitics = localStorage.getItem('politique');
+    this.displayperimeter = localStorage.getItem('perimetre');
+
 
     this.processService.getprocess()
       .subscribe((data) => {
 
         console.log(data);
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.Process = data['hydra:member'];
+        console.log(this.Process);
       }, error => {
         console.log(false);
       });
@@ -47,10 +48,11 @@ export class ProcessComponent implements OnInit {
       }, error => {
         console.log(false);
       });
+    this.processService.castProcess.subscribe(Process => this.Process = Process);
   }
 
   public CreateProcess(): void {
-
+    this.charingTheProcess();
     const dialogRef = this.dialog.open(CreateProcessComponent, {
       width: "500px",
       height: "450px",
@@ -89,9 +91,25 @@ export class ProcessComponent implements OnInit {
   }
 
   savepolitique(){
-    localStorage.setItem('politique' , this.politique)
+    this.charingThePolitics();
+    this.processService.castPolitics.subscribe(Politics => this.displayPolitics = Politics);
+    localStorage.setItem('politique' , this.displayPolitics)
   }
   saveperimetre(){
-    localStorage.setItem('perimetre' , this.perimetre)
+    this.charingThePerimeter();
+    this.processService.castPerimeter.subscribe(Perimeter => this.displayperimeter = Perimeter);
+    localStorage.setItem('perimetre' , this.displayperimeter);
+  }
+  charingThePerimeter(){
+    this.processService.charingPerimeter(this.perimeter);
+
+  }
+  charingThePolitics(){
+    this.processService.charingPolitics(this.Politics);
+
+  }
+  charingTheProcess(){
+    this.processService.charingProcess(this.Process);
+
   }
 }

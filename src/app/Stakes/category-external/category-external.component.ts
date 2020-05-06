@@ -15,11 +15,13 @@ import {StakeService} from '../../Services/Stake/stake.service';
   styleUrls: ['./category-external.component.css']
 })
 export class CategoryExternalComponent implements OnInit {
+
+  editUser:any;
   med: any;
   public animal: string;
   public name: string;
   public fisrtname;
-  public users = [];
+  public users : any;
   public dataSource = new MatTableDataSource(this.users);
   public hidder = ["id" , "nom categories"];
   public test = false;
@@ -40,8 +42,12 @@ export class CategoryExternalComponent implements OnInit {
       },error => {
         console.log(false);
       });
+    this.stakeService.cast.subscribe(user => this.users = user);
   }
+  editTheUser(){
+    this.stakeService.editUser(this.users);
 
+  }
 
   public applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -61,7 +67,7 @@ export class CategoryExternalComponent implements OnInit {
 
 
   public ajouterCategoriedialog(): void {
-
+    this.editTheUser();
     const dialogRef = this.dialog.open(CreateCategoryExternalComponent, {
       width: "500px",
       height: "300px",
@@ -75,12 +81,14 @@ export class CategoryExternalComponent implements OnInit {
   }
 
 
-  public delateCategorie(id): void {
+  public delateCategorie(data): void {
+    this.editTheUser();
 
     const dialogRef = this.dialog.open(DelateCategoryExternalComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data ,
+
 
     });
 

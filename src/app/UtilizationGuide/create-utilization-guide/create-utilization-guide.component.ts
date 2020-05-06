@@ -12,6 +12,7 @@ import {MatDialogRef} from '@angular/material/dialog';
 export class CreateUtilizationGuideComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
+  guide:any;
   public data = {
     Nom: '',
     Role: '',
@@ -33,13 +34,17 @@ export class CreateUtilizationGuideComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.guideutilisationService.cast.subscribe(user=> this.guide = user);
+    console.log(this.guide);
   }
   ajouterGuideUtilisation(){
+    this.charingThedata();
     console.log(this.data);
     this.guideutilisationService.postGuideUtilisation(this.data).subscribe(
       resp=>{
-        console.log(resp);
-        console.log(true);
+        console.log(this.guide);
+        this.guide = this.guide.push(this.data);
+        console.log(this.guide);
         return this.onNoClick();
       },error => {
 
@@ -62,5 +67,9 @@ export class CreateUtilizationGuideComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+  charingThedata(){
+    this.guideutilisationService.charingdata(this.guide);
+
   }
 }

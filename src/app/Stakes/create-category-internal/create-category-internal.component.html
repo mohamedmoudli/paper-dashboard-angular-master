@@ -6,11 +6,11 @@
   <form [formGroup]="angForm" name="form"  (ngSubmit)=" onSubmit() ">
 
     <div class="form-group">
-      <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('NameCategoryStakeInternal').errors && (angForm.get('NameCategoryStakeInternal').touched || angForm.get('NameCategoryStakeInternal').dirty ) }">
+      <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('NameCategoryStakInternal').errors && (angForm.get('NameCategoryStakInternal').touched || angForm.get('NameCategoryStakInternal').dirty ) }">
         <label class="control-label">nom categorie:</label>
-        <input type="text" name="NameCategoryStakeInternal"  formControlName="NameCategoryStakeInternal" [(ngModel)]="data.NameCategoryStakeInternal" class="form-control">
-        <div *ngIf="angForm.get('NameCategoryStakeInternal').errors && (angForm.get('NameCategoryStakeInternal').touched || angForm.get('NameCategoryStakeInternal').dirty )" class="alert alert-danger">
-          <span *ngIf="angForm.get('NameCategoryStakeInternal').errors.required"></span>  nom de categories est obligatoire
+        <input type="text" name="NameCategoryStakInternal"  formControlName="NameCategoryStakInternal" [(ngModel)]="data.NameCategoryStakInternal" class="form-control">
+        <div *ngIf="angForm.get('NameCategoryStakInternal').errors && (angForm.get('NameCategoryStakInternal').touched || angForm.get('NameCategoryStakInternal').dirty )" class="alert alert-danger">
+          <span *ngIf="angForm.get('NameCategoryStakInternal').errors.required"></span>  nom de categories est obligatoire
         </div>
       </div>
     </div>

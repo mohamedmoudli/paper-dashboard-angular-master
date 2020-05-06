@@ -15,12 +15,13 @@ import {StakeService} from '../../Services/Stake/stake.service';
 })
 export class CategoryInternalComponent implements OnInit {
 
+  editUser:any;
   med: any;
   public animal: string;
   public name: string;
   public fisrtname;
-  public users = [];
-  public dataSource = new MatTableDataSource(this.users);
+  public CatstakeInternal = [];
+  public dataSource = new MatTableDataSource(this.CatstakeInternal);
   public hidder = ["id" , "nom categories"];
   public test = false;
   public data = {
@@ -35,11 +36,16 @@ export class CategoryInternalComponent implements OnInit {
     this.stakeService.getCategoryInternal()
       .subscribe((data) => {
 
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.CatstakeInternal = data['hydra:member'];
+        console.log(this.CatstakeInternal);
       },error => {
         console.log(false);
       });
+    this.stakeService.cast.subscribe(user => this.CatstakeInternal = user);
+  }
+  editTheUser(){
+    this.stakeService.editUser(this.CatstakeInternal);
+
   }
 
 
@@ -52,7 +58,7 @@ export class CategoryInternalComponent implements OnInit {
     } else if (this.fisrtname == "") {
       this.ngOnInit();
     }
-    this.users = this.users.filter( (res) => {
+    this.CatstakeInternal = this.CatstakeInternal.filter( (res) => {
       return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
     });
   }
@@ -61,7 +67,7 @@ export class CategoryInternalComponent implements OnInit {
 
 
   public CreateCategoryInternal(): void {
-
+    this.editTheUser();
     const dialogRef = this.dialog.open(CreateCategoryInternalComponent, {
       width: "500px",
       height: "300px",
@@ -75,12 +81,12 @@ export class CategoryInternalComponent implements OnInit {
   }
 
 
-  public delateCategoryInternal(id): void {
-
+  public delateCategoryInternal(data): void {
+    this.editTheUser();
     const dialogRef = this.dialog.open(DelateCategoryInternalComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data ,
 
     });
 

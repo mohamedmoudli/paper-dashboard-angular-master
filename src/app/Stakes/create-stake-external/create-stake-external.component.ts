@@ -13,6 +13,8 @@ import {StakeService} from '../../Services/Stake/stake.service';
 export class CreateStakeExternalComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
+  stake : any;
+  itemCategory:any;
   public data = {
     Description: '',
     Type: '',
@@ -33,6 +35,8 @@ export class CreateStakeExternalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.stakeService.cast.subscribe(user=> this.stake = user);
+    console.log(this.stake);
 
     this.stakeService.getCategoryExternal()
       .subscribe((data) => {
@@ -60,10 +64,16 @@ export class CreateStakeExternalComponent implements OnInit {
 
 
   CreateStakeExternal(){
+    this.editTheUser();
     this.stakeService.saveStake(this.data).subscribe(
       resp=>{
         console.log(resp);
-        console.log(true);
+        console.log(this.users);
+
+        console.log(this.stake);
+        this.stake = this.stake.push( { id: 28 , Description: "ddddddd"} );
+        console.log(this.stake);
+
         return this.onNoClick();
       },error => {
 
@@ -85,5 +95,9 @@ export class CreateStakeExternalComponent implements OnInit {
   }
   onNoClick(): void {
     this.dialogRef.close();
+  }
+  editTheUser(){
+    this.stakeService.editUser(this.stake);
+
   }
 }
