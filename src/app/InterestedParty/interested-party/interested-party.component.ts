@@ -268,19 +268,7 @@ export class InterestedPartyComponent implements OnInit {
     }
   }
 
-  public Createpartieinteresse(): void {
 
-    const dialogRef = this.dialog.open(CreateInterestedPartyComponent, {
-      width: "500px",
-      height: "300px",
-
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed");
-      this.animal = result;
-    });
-  }
   definitionpartieinteresse(){
     const dialogRef = this.dialog.open(DefinitionInterestedPartyComponent, {
       width: "500px",

@@ -42,6 +42,7 @@ import {OpportunityComponent} from '../../Opportunity/opportunity/opportunity.co
 import {HistoricalOpportunityComponent} from '../../Opportunity/historical-opportunity/historical-opportunity.component';
 import {ActionPlanComponent} from '../../ActionPlan/action-plan/action-plan.component';
 import {CreateActionPlanComponent} from '../../ActionPlan/create-action-plan/create-action-plan.component';
+import {ListInterestedPartyComponent} from '../../InterestedParty/list-interested-party/list-interested-party.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -57,6 +58,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'categoriesPI',  component: CategoryInterestedPartyComponent },
     { path: 'exigencesPI',  component: ExigencyInterestedPartyComponent },
+    { path: 'listePartieinteresse',  component: ListInterestedPartyComponent },
     { path: 'partieinteresse',  component: InterestedPartyComponent },
     { path: 'enjeu',  component: StakeComponent },
     { path: 'strategiqueRisque',  component: StrategicRiskComponent },

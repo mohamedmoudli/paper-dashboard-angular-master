@@ -112,6 +112,10 @@ import {ReevaluateOpportunityComponent} from '../../Opportunity/reevaluate-oppor
 import {StrategicOpportunityComponent} from '../../Opportunity/strategic-opportunity/strategic-opportunity.component';
 import {ActionPlanComponent} from '../../ActionPlan/action-plan/action-plan.component';
 import {CreateActionPlanComponent} from '../../ActionPlan/create-action-plan/create-action-plan.component';
+import {StakeInternalComponent} from '../../Stakes/stake-internal/stake-internal.component';
+import {StakeExternalComponent} from '../../Stakes/stake-external/stake-external.component';
+import {ListInterestedPartyComponent} from '../../InterestedParty/list-interested-party/list-interested-party.component';
+import {DelateInterestedPartyComponent} from '../../InterestedParty/delate-interested-party/delate-interested-party.component';
 
 
 @NgModule({
@@ -225,6 +229,10 @@ import {CreateActionPlanComponent} from '../../ActionPlan/create-action-plan/cre
     StrategicOpportunityComponent,
     ActionPlanComponent,
     CreateActionPlanComponent,
+    StakeInternalComponent,
+    StakeExternalComponent,
+    ListInterestedPartyComponent,
+    DelateInterestedPartyComponent,
     HelpStakeComponent
   ]
 })

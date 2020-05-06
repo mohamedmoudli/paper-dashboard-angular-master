@@ -1,10 +1,18 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InterestedPartyService {
+  val: string;
+  private interestedParty = new BehaviorSubject<any>(this.val);
+  castinterestedParty = this.interestedParty.asObservable();
+  charingInterestedParty(newUser){
+    this.interestedParty.next(newUser);
+    this.val = newUser ;
+  }
   public host: string = "http://localhost:8000";
   public host1: string = "http://localhost:8080/api/savecustumer";
   public host8: string = "http://localhost:8080/api/custumers/";

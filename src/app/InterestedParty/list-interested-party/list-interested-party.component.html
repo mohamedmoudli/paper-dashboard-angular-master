@@ -1,0 +1,43 @@
+
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content" >
+      <button class="btn btn-primary " (click)="CreateInterestedParty()">ajouter partie interesse</button>
+      <div class="card col-md-6">
+
+        <table class="table">
+          <thead class=" text-primary">
+          <tr>
+            <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+          </tr>
+          </thead>
+          <tbody >
+          <tr *ngFor="let c of interestedParty">
+            <td>Pi{{c.id}}</td>
+            <td>{{c.NameInterestedParty}}</td>
+            <td >{{c.Influence}}</td>
+            <td >{{c.Interest}}</td>
+            <td >{{c.Power}}</td>
+            <td >{{c.Weight}}</td>
+            <td></td>
+            <td><button class="btn btn-danger" (click)="delateInterestedParty(c)">supp</button></td>
+          </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <fixedplugin-cmp></fixedplugin-cmp>
+
+
+
+
