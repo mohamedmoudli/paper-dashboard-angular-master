@@ -116,6 +116,12 @@ import {StakeInternalComponent} from '../../Stakes/stake-internal/stake-internal
 import {StakeExternalComponent} from '../../Stakes/stake-external/stake-external.component';
 import {ListInterestedPartyComponent} from '../../InterestedParty/list-interested-party/list-interested-party.component';
 import {DelateInterestedPartyComponent} from '../../InterestedParty/delate-interested-party/delate-interested-party.component';
+import {StateOpportunityComponent} from '../../Opportunity/state-opportunity/state-opportunity.component';
+import {StateRiskComponent} from '../../Risk/state-risk/state-risk.component';
+import {CreateStateOpportunityComponent} from '../../Opportunity/create-state-opportunity/create-state-opportunity.component';
+import {DeleteStateOpportunityComponent} from '../../Opportunity/delete-state-opportunity/delete-state-opportunity.component';
+import {CreateStateRiskComponent} from '../../Risk/create-state-risk/create-state-risk.component';
+import {DelateStateRiskComponent} from '../../Risk/delate-state-risk/delate-state-risk.component';
 
 
 @NgModule({
@@ -233,6 +239,12 @@ import {DelateInterestedPartyComponent} from '../../InterestedParty/delate-inter
     StakeExternalComponent,
     ListInterestedPartyComponent,
     DelateInterestedPartyComponent,
+    StateOpportunityComponent,
+    StateRiskComponent,
+    CreateStateOpportunityComponent,
+    DeleteStateOpportunityComponent,
+    CreateStateRiskComponent,
+    DelateStateRiskComponent,
     HelpStakeComponent
   ]
 })

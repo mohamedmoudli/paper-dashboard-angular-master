@@ -11,6 +11,12 @@ export class OpportunityService {
   public getStateOpportunity() {
     return this.http.get(this.host+"/api/state_opportunities");
   }
+  public saveStateOpportunity(data) {
+    return this.http.post(this.host+"/api/state_opportunities" , data);
+  }
+  public delateStateOpportunity(id) {
+    return this.http.delete(this.host+"/api/state_opportunities/"+id );
+  }
   public getOpportunity() {
     return this.http.get(this.host+"/GetOpportunityByAction");
   }

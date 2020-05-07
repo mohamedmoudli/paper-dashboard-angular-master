@@ -43,6 +43,8 @@ import {HistoricalOpportunityComponent} from '../../Opportunity/historical-oppor
 import {ActionPlanComponent} from '../../ActionPlan/action-plan/action-plan.component';
 import {CreateActionPlanComponent} from '../../ActionPlan/create-action-plan/create-action-plan.component';
 import {ListInterestedPartyComponent} from '../../InterestedParty/list-interested-party/list-interested-party.component';
+import {StateOpportunityComponent} from '../../Opportunity/state-opportunity/state-opportunity.component';
+import {StateRiskComponent} from '../../Risk/state-risk/state-risk.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -67,6 +69,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'RisqueCategories',  component: CategoryRiskComponent },
     { path: 'risque',  component: RiskComponent },
     { path: 'ajouterRisque',  component: CreateRiskComponent },
+    { path: 'etatRisque',  component: StateRiskComponent },
     { path: 'historiqueRisque',  component: HistoricalRiskComponent },
     { path: 'CategoriesEnjeuIntern',  component: CategoryInternalComponent},
     { path: 'CategoriesEnjeuExtern',  component: CategoryExternalComponent },
@@ -76,6 +79,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'Opportunite',  component: OpportunityComponent },
     { path: 'CategoriesOpportunite',  component: CategoryOpportunityComponent },
     { path: 'StrategiqueOpportunite',  component: StrategicOpportunityComponent },
+    { path: 'etatOpportunite',  component: StateOpportunityComponent },
     { path: 'ajouterOpportunite',  component: CreateOpportunityComponent },
     { path: 'Objective',  component: ObjectiveComponent },
     { path: 'Plandeaction',  component: ActionPlanComponent },

@@ -1,26 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {OpportunityService} from '../../Services/Opportunity/opportunity.service';
 import {Router} from '@angular/router';
 import {MatDialogRef} from '@angular/material/dialog';
-import {RiskService} from '../../Services/Risk/risk.service';
 
 @Component({
-  selector: 'app-create-strategic-risk',
-  templateUrl: './create-strategic-risk.component.html',
-  styleUrls: ['./create-strategic-risk.component.css']
+  selector: 'app-create-state-opportunity',
+  templateUrl: './create-state-opportunity.component.html',
+  styleUrls: ['./create-state-opportunity.component.css']
 })
-export class CreateStrategicRiskComponent implements OnInit {
+export class CreateStateOpportunityComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
   public data = {
-    NameStateRisk: ''
+    NameStateOpportunity: ''
   };
 
+  id1: number;
 
-  constructor( private riskService: RiskService, private router: Router ,
-               private fb:FormBuilder , public dialogRef: MatDialogRef<CreateStrategicRiskComponent>) {
+
+  constructor( private opportunityService: OpportunityService, private router: Router ,
+               private fb:FormBuilder , public dialogRef: MatDialogRef<CreateStateOpportunityComponent>) {
     this.angForm = this.fb.group({
-      NameStateRisk: ['', [Validators.required]],
+      NameStateOpportunity: ['', [Validators.required]],
     });
   }
 
@@ -29,9 +31,9 @@ export class CreateStrategicRiskComponent implements OnInit {
 
   }
 
-  createStrategic(){
+  createState(){
     console.log(this.data);
-    this.riskService.saveStrategicRisk(this.data).subscribe(
+    this.opportunityService.saveStateOpportunity(this.data).subscribe(
       resp=>{
         console.log(resp);
         return this.onNoClick();

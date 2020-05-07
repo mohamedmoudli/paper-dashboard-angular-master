@@ -12,7 +12,12 @@ export class RiskService {
   public getStateRisk() {
     return this.http.get(this.host+"/api/state_risks");
   }
-
+  public saveStateRisk(data) {
+    return this.http.post(this.host+"/api/state_risks" , data);
+  }
+  public delateStateRisk(id) {
+    return this.http.delete(this.host+"/api/state_risks/"+id);
+  }
   public getRisk() {
     return this.http.get(this.host+"/getRisk");
   }
