@@ -10,17 +10,25 @@ import {InterestedPartyService} from '../../Services/InterestedParty/interested-
 })
 export class DelateExigencyInterestedPartyComponent implements OnInit {
 
-
+  exigency: any;
+  itemexigency: any;
   constructor(private interestedPartyService: InterestedPartyService,
               private router:Router ,  public dialogRef: MatDialogRef<DelateExigencyInterestedPartyComponent>,
-              @Inject(MAT_DIALOG_DATA) public id:number) { }
+              @Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
+    this.interestedPartyService.castinterestedParty.subscribe(interestedParty=> this.exigency = interestedParty);
+    console.log(this.exigency);
   }
   public delate() {
 
-    this.interestedPartyService.deleteExigency(this.id).subscribe((data) => {
+    this.interestedPartyService.deleteExigency(this.data.id).subscribe((data) => {
       console.log("ffffffffff");
+      console.log("ffffffffff");
+      const index: number = this.exigency.indexOf(this.data);
+      console.log(index);
+      this.itemexigency = this.exigency.splice(index ,1);
+      this.exigency = this.exigency.filter(user => user !== this.itemexigency);
       this.ngOnInit();
       return this.onNoClick();
     }), (error) => {

@@ -16,7 +16,7 @@ export class ExigencyInterestedPartyComponent implements OnInit {
   public animal: string;
   public name: string;
   public fisrtname;
-  public users: Object = [];
+  public exigency: any;
 
   public hidder = ["id" , "nom categories"];
   public test = false;
@@ -35,28 +35,14 @@ export class ExigencyInterestedPartyComponent implements OnInit {
     this.interestedPartyService.getExigencyPI()
       .subscribe((data) => {
 
-        this.users = data;
-        console.log(this.users);
+        this.exigency = data;
+        console.log(this.exigency);
       },error => {
         console.log(false);
       });
+    this.interestedPartyService.castinterestedParty.subscribe(interestedParty => this.exigency = interestedParty);
   }
 
-
-
-
-  public supp(id) {
-
-    this.interestedPartyService.deleteExigency(id).subscribe((data) => {
-      console.log("ffffffffff");
-      this.ngOnInit();
-
-    }), (error) => {
-
-      console.log("Error", error);
-    };
-
-  }
 
   public afficher() {
     this.med = !this.med;
@@ -65,7 +51,7 @@ export class ExigencyInterestedPartyComponent implements OnInit {
 
 
   public CreateExigency(): void {
-
+    this.charingTheExigency();
     const dialogRef = this.dialog.open(CreateExigencyInterestedPartyComponent, {
       width: "500px",
       height: "450px",
@@ -77,12 +63,12 @@ export class ExigencyInterestedPartyComponent implements OnInit {
       this.animal = result;
     });
   }
-  public delateExigency(id): void {
-
+  public delateExigency(data): void {
+    this.charingTheExigency();
     const dialogRef = this.dialog.open(DelateExigencyInterestedPartyComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data ,
 
     });
 
@@ -90,5 +76,8 @@ export class ExigencyInterestedPartyComponent implements OnInit {
       console.log("The dialog was closed");
       this.animal = result;
     });
+  }
+  charingTheExigency(){
+    this.interestedPartyService.charingInterestedParty(this.exigency);
   }
 }

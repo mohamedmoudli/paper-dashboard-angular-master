@@ -11,19 +11,24 @@ import {InterestedPartyService} from '../../Services/InterestedParty/interested-
 })
 export class DelateCategoryInterestedPartyComponent implements OnInit {
 
-
+ categoryinterestedparty: any;
+ itemcategory: any;
   constructor(private interestedPartyService: InterestedPartyService,
               private router:Router ,  public dialogRef: MatDialogRef<DelateCategoryInterestedPartyComponent>,
-              @Inject(MAT_DIALOG_DATA) public id:number) { }
+              @Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
+    this.interestedPartyService.castinterestedParty.subscribe(interestedParty=> this.categoryinterestedparty = interestedParty);
+    console.log(this.categoryinterestedparty);
   }
 
 
   public delate() {
-    this.interestedPartyService.deleteCategory(this.id).subscribe((data) => {
-      console.log("ffffffffff");
-      this.ngOnInit();
+    this.interestedPartyService.deleteCategory(this.data.id).subscribe((data) => {
+      const index: number = this.categoryinterestedparty.indexOf(this.data);
+      console.log(index);
+      this.itemcategory = this.categoryinterestedparty.splice(index ,1);
+      this.categoryinterestedparty = this.categoryinterestedparty.filter(user => user !== this.itemcategory);
       return this.onNoClick();
     }), (error) => {
 

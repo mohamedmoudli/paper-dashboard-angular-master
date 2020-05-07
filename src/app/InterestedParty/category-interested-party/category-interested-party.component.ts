@@ -17,8 +17,8 @@ export class CategoryInterestedPartyComponent implements OnInit {
   public animal: string;
   public name: string;
   public fisrtname;
-  public users = [];
-  public dataSource = new MatTableDataSource(this.users);
+  public CategoryinterestedParty = [];
+  public dataSource = new MatTableDataSource(this.CategoryinterestedParty);
   public hidder = ["id" , "nom categories"];
   public test = false;
   public data = {
@@ -37,11 +37,12 @@ export class CategoryInterestedPartyComponent implements OnInit {
     this.interestedPartyService.getCategoryInterestedParty()
       .subscribe((data) => {
 
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.CategoryinterestedParty = data['hydra:member'];
+        console.log(this.CategoryinterestedParty);
       },error => {
         console.log(false);
       });
+    this.interestedPartyService.castinterestedParty.subscribe(interestedParty => this.CategoryinterestedParty = interestedParty);
   }
 
 
@@ -54,7 +55,7 @@ export class CategoryInterestedPartyComponent implements OnInit {
     } else if (this.fisrtname == "") {
       this.ngOnInit();
     }
-    this.users = this.users.filter( (res) => {
+    this.CategoryinterestedParty = this.CategoryinterestedParty.filter( (res) => {
       return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
     });
   }
@@ -63,7 +64,7 @@ export class CategoryInterestedPartyComponent implements OnInit {
 
 
   public CreateCategory(): void {
-
+this.charingTheCategoryInterestedParty();
     const dialogRef = this.dialog.open(CreateCategoryInterestedPartyComponent, {
       width: "500px",
       height: "300px",
@@ -77,12 +78,12 @@ export class CategoryInterestedPartyComponent implements OnInit {
   }
 
 
-  public delateCategory(id): void {
-
+  public delateCategory(data): void {
+    this.charingTheCategoryInterestedParty();
     const dialogRef = this.dialog.open(DelateCategoryInterestedPartyComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data ,
 
     });
 
@@ -90,5 +91,8 @@ export class CategoryInterestedPartyComponent implements OnInit {
       console.log("The dialog was closed");
       this.animal = result;
     });
+  }
+  charingTheCategoryInterestedParty(){
+    this.interestedPartyService.charingInterestedParty(this.CategoryinterestedParty);
   }
 }

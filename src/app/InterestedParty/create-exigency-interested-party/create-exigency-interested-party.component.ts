@@ -9,6 +9,7 @@ import {InterestedPartyService} from '../../Services/InterestedParty/interested-
   styleUrls: ['./create-exigency-interested-party.component.css']
 })
 export class CreateExigencyInterestedPartyComponent implements OnInit {
+  Exigencyinterestedparty: any;
   angForm: FormGroup;
   submitted = false;
   public data = {
@@ -26,10 +27,16 @@ export class CreateExigencyInterestedPartyComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.interestedPartyService.castinterestedParty.subscribe(interestedParty=> this.Exigencyinterestedparty = interestedParty);
+    console.log(this.Exigencyinterestedparty);
   }
   CreateExigency(){
+    this.charingTheExigency();
     this.interestedPartyService.SaveExigencyIP(this.data).subscribe(
       resp=>{
+        console.log(this.Exigencyinterestedparty);
+        this.Exigencyinterestedparty = this.Exigencyinterestedparty.push(this.data);
+        console.log(this.Exigencyinterestedparty);
         console.log(resp);
         return this.onNoClick();
       },error => {
@@ -53,5 +60,9 @@ export class CreateExigencyInterestedPartyComponent implements OnInit {
   }
   onNoClick(): void {
     this.dialogRef.close();
+  }
+  charingTheExigency(){
+    this.interestedPartyService.charingInterestedParty(this.Exigencyinterestedparty);
+
   }
 }

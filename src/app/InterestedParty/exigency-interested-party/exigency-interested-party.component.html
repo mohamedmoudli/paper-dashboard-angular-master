@@ -15,13 +15,13 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of users">
+          <tr *ngFor="let c of exigency">
             <td>{{c.id}}</td>
             <td>{{c.StateOfConfirmity}}</td>
             <td>{{c.Comment}}</td>
             <td>  <p *ngFor="let p of c.planDeActions "> {{ p.id}}</p> </td>
 
-            <td><button class="btn btn-primary "  style="float: right" (click)="delateExigency(c.id)">supp</button></td>
+            <td><button class="btn btn-primary "  style="float: right" (click)="delateExigency(c)">supp</button></td>
           </tr>
           </tbody>
         </table>

@@ -11,6 +11,7 @@ import {InterestedPartyService} from '../../Services/InterestedParty/interested-
   styleUrls: ['./create-category-interested-party.component.css']
 })
 export class CreateCategoryInterestedPartyComponent implements OnInit {
+  Categoryinterestedparty: any;
   angForm: FormGroup;
   submitted = false;
   public data = {
@@ -37,13 +38,18 @@ export class CreateCategoryInterestedPartyComponent implements OnInit {
 
 
   public ngOnInit() {
+    this.interestedPartyService.castinterestedParty.subscribe(interestedParty=> this.Categoryinterestedparty = interestedParty);
+    console.log(this.Categoryinterestedparty);
 
   }
 
   Createcategory(){
-
+    this.charingTheCategoryInterestedParty();
     this.interestedPartyService.saveCategoryInterestedParty(this.data).subscribe(
       resp=>{
+        console.log(this.Categoryinterestedparty);
+        this.Categoryinterestedparty = this.Categoryinterestedparty.push(this.data);
+        console.log(this.Categoryinterestedparty);
         console.log(resp);
         return this.onNoClick();
       },error => {
@@ -53,6 +59,7 @@ export class CreateCategoryInterestedPartyComponent implements OnInit {
         return error;
       }
     )
+
   }
 
   get f() {
@@ -68,6 +75,9 @@ export class CreateCategoryInterestedPartyComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+  charingTheCategoryInterestedParty(){
+    this.interestedPartyService.charingInterestedParty(this.Categoryinterestedparty);
 
+  }
 
 }
