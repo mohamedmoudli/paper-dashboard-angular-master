@@ -45,6 +45,8 @@ import {CreateActionPlanComponent} from '../../ActionPlan/create-action-plan/cre
 import {ListInterestedPartyComponent} from '../../InterestedParty/list-interested-party/list-interested-party.component';
 import {StateOpportunityComponent} from '../../Opportunity/state-opportunity/state-opportunity.component';
 import {StateRiskComponent} from '../../Risk/state-risk/state-risk.component';
+import {CurrentStateplanactionComponent} from '../../ActionPlan/current-stateplanaction/current-stateplanaction.component';
+import {StateEfficacityActionPlanComponent} from '../../ActionPlan/state-efficacity-action-plan/state-efficacity-action-plan.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -84,6 +86,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'Objective',  component: ObjectiveComponent },
     { path: 'Plandeaction',  component: ActionPlanComponent },
     { path: 'CreatePlandeaction',  component: CreateActionPlanComponent },
+    { path: 'etatEfficacite',  component: StateEfficacityActionPlanComponent },
+    { path: 'etatactuel',  component: CurrentStateplanactionComponent },
     { path: 'ajouterObjective',  component: CreateObjectiveComponent },
     { path: 'historiqueObjective',  component: HistoricalObjectiveComponent },
     { path: 'definition',  component: DefinitionComponent },

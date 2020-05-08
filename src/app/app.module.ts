@@ -98,6 +98,12 @@ import { CreateStateOpportunityComponent } from './Opportunity/create-state-oppo
 import { DeleteStateOpportunityComponent } from './Opportunity/delete-state-opportunity/delete-state-opportunity.component';
 import { CreateStateRiskComponent } from './Risk/create-state-risk/create-state-risk.component';
 import { DelateStateRiskComponent } from './Risk/delate-state-risk/delate-state-risk.component';
+import { CurrentStateplanactionComponent } from './ActionPlan/current-stateplanaction/current-stateplanaction.component';
+import { CreateCurrentStateplanactionComponent } from './ActionPlan/create-current-stateplanaction/create-current-stateplanaction.component';
+import { DelateCurrentStateplanactionComponent } from './ActionPlan/delate-current-stateplanaction/delate-current-stateplanaction.component';
+import { StateEfficacityActionPlanComponent } from './ActionPlan/state-efficacity-action-plan/state-efficacity-action-plan.component';
+import { CreateStateEfficacityActionPlanComponent } from './ActionPlan/create-state-efficacity-action-plan/create-state-efficacity-action-plan.component';
+import { DelateStateEfficacityActionPlanComponent } from './ActionPlan/delate-state-efficacity-action-plan/delate-state-efficacity-action-plan.component';
 
 
 
@@ -108,6 +114,7 @@ import { DelateStateRiskComponent } from './Risk/delate-state-risk/delate-state-
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+
 
 
 

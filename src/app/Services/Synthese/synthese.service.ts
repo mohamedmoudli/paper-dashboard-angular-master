@@ -24,4 +24,12 @@ export class SyntheseService {
     return this.http.get(this.host+"/GetNbreCategorieOpportunite");
 
   }
+  public GetNbreCurrentStateActionPlan() {
+    return this.http.get(this.host+"/nembreCurrentState");
+
+  }
+  public GetNbreStateEfficacityActionPlan() {
+    return this.http.get(this.host+"/nembreStateEfficacity");
+
+  }
 }

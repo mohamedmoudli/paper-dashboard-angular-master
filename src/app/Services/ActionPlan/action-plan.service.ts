@@ -36,4 +36,29 @@ export class ActionPlanService {
     return this.http.post(this.host+"/CreatePlandeAction", data1);
 
   }
+  public getCurrentStateplanaction() {
+    return this.http.get(this.host+"/api/current_state_action_plans");
+
+  }
+  public saveCurrentStateplanaction(data) {
+    return this.http.post(this.host+"/api/current_state_action_plans", data);
+
+  }
+  public delateCurrentStateplanaction(id) {
+    return this.http.delete(this.host+"/api/current_state_action_plans/"+id);
+
+  }
+  public getStateEfficacityActionPlan() {
+    return this.http.get(this.host+"/api/state_efficacy_action_plans");
+
+  }
+  public saveStateEfficacityActionPlan(data) {
+    return this.http.post(this.host+"/api/state_efficacy_action_plans" , data);
+
+  }
+  public delateStateEfficacityActionPlan(id) {
+    return this.http.delete(this.host+"/api/state_efficacy_action_plans/"+id);
+
+  }
+
 }
