@@ -33,7 +33,7 @@ export class ActionPlanService {
 
   public saveplandeaction(data1) {
     console.log(data1);
-    return this.http.post(this.host+"/CreatePlandeAction", data1);
+    return this.http.post(this.host+"/CreatePlanAction", data1);
 
   }
   public getCurrentStateplanaction() {

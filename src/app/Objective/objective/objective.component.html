@@ -18,40 +18,39 @@
           <button class="btn btn-primary" (click)="saveHistoriqueOpportunite()" style="float: left">Enregister etat</button>
         </div>
         <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title"> Risque</h4>
+          <div >
+            <div class="card-header couleurObjective">
+              <h4 class="card-title"> Objective</h4>
             </div>
-            <div class="card-body">
-              <div class="table-responsive">
+            <div >
+              <div class=" card table-responsive">
                 <table class="table">
-                  <thead class=" text-primary" >
+                  <thead>
                   <tr>
-                    <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+                    <th *ngFor="let c of hidder" class="bordertd bg-primary">{{c}}</th><td></td><td></td><td></td>
                   </tr>
-
                   </thead>
                   <tbody>
                   <tr *ngFor="let c of objective">
-                    <td>{{c.id}}</td>
-                    <td>{{c.Description}}</td>
-                    <td>{{c.DescriptionStake}}</td>
-                    <td>{{c.Time1}}</td>
-                    <td>{{c.Time2}}</td>
-                    <td>{{c.Time3}}</td>
-                    <td>{{c.Time4}}</td>
-                    <td>{{c.Time2020}}</td>
-                    <td>{{c.Time2021}}</td>
-                    <td>{{c.ProcessLie.process}}</td>
-                    <td>{{c.PredefinedIndicator}}</td>
-                    <td>{{c.PerformanceIndicator}}</td>
-                    <td>{{c.ObjectiveToWait}}</td>
-                    <td>{{c.InitialState}}</td>
-                    <td>  <p *ngFor="let p of c.NumAction "> {{ p.id}}</p> </td>
-                    <td>{{c.CurrentStateIndiactor}}</td>
-                    <td>{{c.Advancement}}</td>
-                    <td>{{c.CurrentState}}</td>
-                    <td>{{c.Comment}}</td>
+                    <td class="bordertd">{{c.id}}</td>
+                    <td class="bordertd">{{c.Description}}</td>
+                    <td class="bordertd">{{c.DescriptionStake}}</td>
+                    <td class="bordertd">{{c.Time1}}</td>
+                    <td class="bordertd">{{c.Time2}}</td>
+                    <td class="bordertd">{{c.Time3}}</td>
+                    <td class="bordertd">{{c.Time4}}</td>
+                    <td class="bordertd">{{c.Time2020}}</td>
+                    <td class="bordertd">{{c.Time2021}}</td>
+                    <td class="bordertd">{{c.ProcessLie.process}}</td>
+                    <td class="bordertd">{{c.PredefinedIndicator}}</td>
+                    <td class="bordertd">{{c.PerformanceIndicator}}</td>
+                    <td class="bordertd">{{c.ObjectiveToWait}}</td>
+                    <td class="bordertd">{{c.InitialState}}</td>
+                    <td class="bordertd">  <p *ngFor="let p of c.NumAction "> {{ p.id}}</p> </td>
+                    <td class="bordertd">{{c.CurrentStateIndiactor}}</td>
+                    <td class="bordertd">{{c.Advancement}}</td>
+                    <td class="bordertd">{{c.CurrentState}}</td>
+                    <td class="bordertd">{{c.Comment}}</td>
 
                   </tr>
 
