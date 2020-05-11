@@ -12,20 +12,11 @@ import {MatDialogRef} from '@angular/material/dialog';
 export class CreateStrategicOpportunityComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
+  StrategicOpportunity: any;
   public data = {
     NameStrategicOpportunity: ''
   };
 
-  id1: number;
-  public data2: any = [];
-  public data1: any = {
-    id: "",
-    fisrtname: "",
-    lastename: "",
-    adresse: "",
-    city: "",
-    state: "",
-  };
 
   constructor( private opportunityService: OpportunityService, private router: Router ,
                private fb:FormBuilder , public dialogRef: MatDialogRef<CreateStrategicOpportunityComponent>) {
@@ -36,13 +27,18 @@ export class CreateStrategicOpportunityComponent implements OnInit {
 
 
   public ngOnInit() {
-
+    this.opportunityService.castOpportunity.subscribe(Opportunity=> this.StrategicOpportunity = Opportunity);
+    console.log(this.StrategicOpportunity);
   }
 
   createStrategic(){
+    this.charingTheStrategicOpportunity();
     console.log(this.data);
     this.opportunityService.saveStrategicOpportunity(this.data).subscribe(
       resp=>{
+        console.log(this.StrategicOpportunity);
+        this.StrategicOpportunity = this.StrategicOpportunity.push(this.data);
+        console.log(this.StrategicOpportunity);
         console.log(resp);
         return this.onNoClick();
       },error => {
@@ -68,4 +64,7 @@ export class CreateStrategicOpportunityComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  charingTheStrategicOpportunity(){
+    this.opportunityService.charingOpportunity(this.StrategicOpportunity);
+  }
 }

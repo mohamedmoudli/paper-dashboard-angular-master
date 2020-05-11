@@ -1,10 +1,18 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OpportunityService {
+  val: string;
+  private Opportunity = new BehaviorSubject<any>(this.val);
+  castOpportunity = this.Opportunity.asObservable();
+  charingOpportunity(newUser){
+    this.Opportunity.next(newUser);
+    this.val = newUser ;
+  }
   public host: string = "http://localhost:8000";
   constructor(private http: HttpClient) { }
 

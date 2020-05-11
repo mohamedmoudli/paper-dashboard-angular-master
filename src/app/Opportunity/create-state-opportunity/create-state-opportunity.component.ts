@@ -12,6 +12,7 @@ import {MatDialogRef} from '@angular/material/dialog';
 export class CreateStateOpportunityComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
+  StateOpportunity: any;
   public data = {
     NameStateOpportunity: ''
   };
@@ -28,13 +29,19 @@ export class CreateStateOpportunityComponent implements OnInit {
 
 
   public ngOnInit() {
+    this.opportunityService.castOpportunity.subscribe(Opportunity=> this.StateOpportunity = Opportunity);
+    console.log(this.StateOpportunity);
 
   }
 
   createState(){
+    this.charingTheStateOpportunity();
     console.log(this.data);
     this.opportunityService.saveStateOpportunity(this.data).subscribe(
       resp=>{
+        console.log(this.StateOpportunity);
+        this.StateOpportunity = this.StateOpportunity.push(this.data);
+        console.log(this.StateOpportunity);
         console.log(resp);
         return this.onNoClick();
       },error => {
@@ -60,4 +67,7 @@ export class CreateStateOpportunityComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  charingTheStateOpportunity(){
+    this.opportunityService.charingOpportunity(this.StateOpportunity);
+  }
 }

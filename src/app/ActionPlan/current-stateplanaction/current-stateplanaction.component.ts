@@ -20,7 +20,7 @@ export class CurrentStateplanactionComponent implements OnInit {
   public fisrtname;
   public CurrentState: any;
   public dataSource = new MatTableDataSource(this.CurrentState);
-  public hidder = ["id" , "nom categories"];
+  public hidder : string[] = [ 'id', 'NameCategory'];
   public test = false;
 
   constructor( private actionPlanService : ActionPlanService,

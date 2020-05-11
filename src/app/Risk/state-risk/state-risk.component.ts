@@ -19,6 +19,7 @@ export class StateRiskComponent implements OnInit {
   public name: string;
   public fisrtname;
   public stateRisk = [];
+  StateRisk: any;
   public dataSource = new MatTableDataSource(this.stateRisk);
   public hidder = ["id" , "nom categories"];
   public test = false;
@@ -39,6 +40,7 @@ export class StateRiskComponent implements OnInit {
       },error => {
         console.log(false);
       });
+    this.riskService.castRisk.subscribe(Risk => this.stateRisk = Risk);
   }
 
 
@@ -60,7 +62,7 @@ export class StateRiskComponent implements OnInit {
 
 
   public CreateStateRisk(): void {
-
+    this.charingTheStateRisk();
     const dialogRef = this.dialog.open(CreateStateRiskComponent, {
       width: "500px",
       height: "300px",
@@ -74,12 +76,12 @@ export class StateRiskComponent implements OnInit {
   }
 
 
-  public delateStateRisk(id): void {
-
+  public delateStateRisk(data): void {
+    this.charingTheStateRisk();
     const dialogRef = this.dialog.open(DelateStateRiskComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data
 
     });
 
@@ -88,4 +90,8 @@ export class StateRiskComponent implements OnInit {
       this.animal = result;
     });
   }
+  charingTheStateRisk(){
+    this.riskService.charingRisk(this.stateRisk);
+  }
+
 }

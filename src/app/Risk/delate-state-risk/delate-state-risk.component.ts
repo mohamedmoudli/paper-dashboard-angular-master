@@ -9,20 +9,26 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
   styleUrls: ['./delate-state-risk.component.css']
 })
 export class DelateStateRiskComponent implements OnInit {
-
+  itemState : any;
+  StateRisk : any;
 
 
   constructor(private riskService: RiskService,
               private router:Router ,  public dialogRef: MatDialogRef<DelateStateRiskComponent>,
-              @Inject(MAT_DIALOG_DATA) public id:number) { }
+              @Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
+    this.riskService.castRisk.subscribe(Risk=> this.StateRisk = Risk);
+    console.log(this.StateRisk);
   }
 
 
   public delate() {
-    this.riskService.delateStateRisk(this.id).subscribe((data) => {
-      console.log("ffffffffff");
+    this.riskService.delateStateRisk(this.data.id).subscribe((data) => {
+      const index: number = this.StateRisk.indexOf(this.data);
+      console.log(index);
+      this.itemState  = this.StateRisk.splice(index ,1);
+      this.StateRisk = this.StateRisk.filter(user => user !== this.itemState );
       this.ngOnInit();
       return this.onNoClick();
     }), (error) => {

@@ -10,6 +10,8 @@ import {ActionPlanService} from '../../Services/ActionPlan/action-plan.service';
 export class CreateActionPlanComponent implements OnInit {
   exigencepi : any;
   risque : any;
+  CurrentState: any;
+  StateEfficacity: any;
   opportunite : any;
   objective : any;
   public data = {
@@ -69,6 +71,23 @@ export class CreateActionPlanComponent implements OnInit {
 
         return error;
       })
+
+    this.actionPlanService.getCurrentStateplanaction()
+      .subscribe((data) => {
+
+        this.CurrentState = data['hydra:member'];
+        console.log(this.CurrentState);
+      },error => {
+        console.log(false);
+      });
+    this.actionPlanService.getStateEfficacityActionPlan()
+      .subscribe((data) => {
+
+        this.StateEfficacity = data['hydra:member'];
+        console.log(this.StateEfficacity);
+      },error => {
+        console.log(false);
+      });
   }
   CreateActionPlan(){
     console.log(this.data);

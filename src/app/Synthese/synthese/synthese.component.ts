@@ -12,8 +12,12 @@ export class SyntheseComponent implements OnInit {
   catchartjs : any;
   catchartjsCategorie : any;
   catchartjsCategorieOpportunite : any;
+  catchartjsCurrentState : any;
+  catchartjsCurrentStateByProcess : any;
+  catchartjsStateEfficacity : any;
   catchartjsEtatOpportunite : any;
   public Nbre: Object = [];
+  public Process: Object = [];
   public NbreCategorie : Object = [];
 
   public pieChartLabels = [];
@@ -64,6 +68,43 @@ export class SyntheseComponent implements OnInit {
   public chartLabelsCategorieOpportunite = [];
 
   public chartColorsCategorieOpportunite : Array<any> = [
+    {
+      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
+      hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
+      borderWidth: 2,
+    }
+  ];
+
+  public pieChartLabelsCurrentState = [];
+  public pieChartDataCurrentState = [];
+  public pieChartTypeCurrentState = 'pie';
+  public chartLabelsCurrentState = [];
+
+  public chartColorsCurrentState : Array<any> = [
+    {
+      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
+      hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
+      borderWidth: 2,
+    }
+  ];
+  public pieChartLabelsStateEfficacity = [];
+  public pieChartDataStateEfficacity = [];
+  public pieChartTypeStateEfficacity = 'pie';
+  public chartLabelsStateEfficacity = [];
+
+  public chartColorsStateEfficacity : Array<any> = [
+    {
+      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
+      hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
+      borderWidth: 2,
+    }
+  ];
+  public pieChartLabelsCurrentStateByProcess = [];
+  public pieChartDataCurrentStateByProcess = [];
+  public pieChartTypeCurrentStateByProcess = 'pie';
+  public chartLabelsCurrentStateByProcess = [];
+
+  public chartColorsCurrentStateByProcess : Array<any> = [
     {
       backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
       hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
@@ -146,6 +187,62 @@ export class SyntheseComponent implements OnInit {
           this.pieChartDataCategorieOpportunite.push(element.nbre);
 
           console.log(this.pieChartDataCategorieOpportunite);
+          console.log(data);
+        }
+
+        this.NbreCategorie = data;
+      }, error => {
+        console.log('gggggg');
+      });
+
+    this.syntheseService.GetNbreCurrentStateActionPlan()
+      .subscribe((data) => {
+
+        this.catchartjsCurrentState = data;
+        console.log(data);
+        for (let element of this.catchartjsCurrentState ) {
+          this.pieChartLabelsCurrentState.push(element.Type);
+          this.chartLabelsCurrentState.push(element.Type);
+          this.pieChartDataCurrentState.push(element.nbre);
+
+          console.log(this.pieChartDataCurrentState);
+          console.log(data);
+        }
+
+        this.NbreCategorie = data;
+      }, error => {
+        console.log('gggggg');
+      });
+    this.syntheseService.GetNbreStateEfficacityActionPlan()
+      .subscribe((data) => {
+
+        this.catchartjsStateEfficacity = data;
+        console.log(data);
+        for (let element of this.catchartjsStateEfficacity ) {
+          this.pieChartLabelsStateEfficacity.push(element.Type);
+          this.chartLabelsStateEfficacity.push(element.Type);
+          this.pieChartDataStateEfficacity.push(element.nbre);
+
+          console.log(this.pieChartDataCategorieOpportunite);
+          console.log(data);
+        }
+
+        this.NbreCategorie = data;
+      }, error => {
+        console.log('gggggg');
+      });
+
+    this.syntheseService.GetNbreCurrentStateActionPlanbyProcess()
+      .subscribe((data) => {
+
+        this.catchartjsCurrentStateByProcess = data;
+        console.log(data);
+        for (let element of this.catchartjsCurrentStateByProcess ) {
+          this.pieChartLabelsCurrentStateByProcess.push(element.Type);
+          this.chartColorsCurrentStateByProcess.push(element.Type);
+          this.pieChartDataCurrentStateByProcess.push(element.nbre);
+
+          console.log(this.pieChartDataCurrentStateByProcess);
           console.log(data);
         }
 

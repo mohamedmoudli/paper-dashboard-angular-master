@@ -10,20 +10,26 @@ import {RiskService} from '../../Services/Risk/risk.service';
   styleUrls: ['./delate-strategic-risk.component.css']
 })
 export class DelateStrategicRiskComponent implements OnInit {
-
+  itemStrategic : any;
+  StrategicRisk : any;
 
 
   constructor(private riskService: RiskService,
               private router:Router ,  public dialogRef: MatDialogRef<DelateStrategicRiskComponent>,
-              @Inject(MAT_DIALOG_DATA) public id:number) { }
+              @Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
+    this.riskService.castRisk.subscribe(Risk=> this.StrategicRisk = Risk);
+    console.log(this.StrategicRisk);
   }
 
 
   public delate() {
-    this.riskService.delateStrategicRisk(this.id).subscribe((data) => {
-      console.log("ffffffffff");
+    this.riskService.delateStrategicRisk(this.data.id).subscribe((data) => {
+      const index: number = this.StrategicRisk.indexOf(this.data);
+      console.log(index);
+      this.itemStrategic  = this.StrategicRisk.splice(index ,1);
+      this.StrategicRisk = this.StrategicRisk.filter(user => user !== this.itemStrategic );
       this.ngOnInit();
       return this.onNoClick();
     }), (error) => {

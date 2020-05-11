@@ -10,29 +10,35 @@ import {RiskService} from '../../Services/Risk/risk.service';
   styleUrls: ['./create-strategic-risk.component.css']
 })
 export class CreateStrategicRiskComponent implements OnInit {
+  StrategicRisk: any;
   angForm: FormGroup;
   submitted = false;
   public data = {
-    NameStateRisk: ''
+    NameStrategicRisk: ''
   };
 
 
   constructor( private riskService: RiskService, private router: Router ,
                private fb:FormBuilder , public dialogRef: MatDialogRef<CreateStrategicRiskComponent>) {
     this.angForm = this.fb.group({
-      NameStateRisk: ['', [Validators.required]],
+      NameStrategicRisk: ['', [Validators.required]],
     });
   }
 
 
   public ngOnInit() {
-
+    this.riskService.castRisk.subscribe(Risk=> this.StrategicRisk = Risk);
+    console.log(this.StrategicRisk);
   }
 
   createStrategic(){
+    this.charingTheStrategicRisk();
     console.log(this.data);
     this.riskService.saveStrategicRisk(this.data).subscribe(
       resp=>{
+        console.log(this.StrategicRisk);
+        this.StrategicRisk = this.StrategicRisk.push(this.data);
+        console.log(this.StrategicRisk);
         console.log(resp);
         return this.onNoClick();
       },error => {
@@ -57,5 +63,8 @@ export class CreateStrategicRiskComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+  charingTheStrategicRisk(){
+    this.riskService.charingRisk(this.StrategicRisk);
 
+  }
 }

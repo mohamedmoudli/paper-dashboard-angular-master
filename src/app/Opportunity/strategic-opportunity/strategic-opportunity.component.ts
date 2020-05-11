@@ -17,8 +17,8 @@ export class StrategicOpportunityComponent implements OnInit {
   public animal: string;
   public name: string;
   public fisrtname;
-  public users = [];
-  public dataSource = new MatTableDataSource(this.users);
+  public StrategicOpportunity = [];
+  public dataSource = new MatTableDataSource(this.StrategicOpportunity);
   public hidder = ["id" , "nom categories"];
   public test = false;
   public data = {
@@ -33,11 +33,12 @@ export class StrategicOpportunityComponent implements OnInit {
     this.opportunityService.getStrategicOpportunity()
       .subscribe((data) => {
 
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.StrategicOpportunity = data['hydra:member'];
+        console.log(this.StrategicOpportunity);
       },error => {
         console.log(false);
       });
+    this.opportunityService.castOpportunity.subscribe( Opportunity => this.StrategicOpportunity = Opportunity);
   }
 
 
@@ -50,7 +51,7 @@ export class StrategicOpportunityComponent implements OnInit {
     } else if (this.fisrtname == "") {
       this.ngOnInit();
     }
-    this.users = this.users.filter( (res) => {
+    this.StrategicOpportunity = this.StrategicOpportunity.filter( (res) => {
       return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
     });
   }
@@ -59,7 +60,7 @@ export class StrategicOpportunityComponent implements OnInit {
 
 
   public CreateStrategicOpportunity(): void {
-
+    this.charingTheStrategicOpportunity();
     const dialogRef = this.dialog.open(CreateStrategicOpportunityComponent, {
       width: "500px",
       height: "300px",
@@ -73,12 +74,12 @@ export class StrategicOpportunityComponent implements OnInit {
   }
 
 
-  public delateStrategic(id): void {
-
+  public delateStrategic(data): void {
+    this.charingTheStrategicOpportunity();
     const dialogRef = this.dialog.open(DelateStrategicOpportunityComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data
 
     });
 
@@ -86,6 +87,10 @@ export class StrategicOpportunityComponent implements OnInit {
       console.log("The dialog was closed");
       this.animal = result;
     });
+  }
+
+  charingTheStrategicOpportunity(){
+    this.opportunityService.charingOpportunity(this.StrategicOpportunity);
   }
 
 }

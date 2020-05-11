@@ -27,7 +27,7 @@ export class StateOpportunityComponent implements OnInit {
     nomcat: ""
   };
   constructor( private opportunityService: OpportunityService,
-               private router:Router , private dialog: MatDialog) {}
+               private router:Router , private dialog: MatDialog ) {}
 
 
 
@@ -40,6 +40,7 @@ export class StateOpportunityComponent implements OnInit {
       },error => {
         console.log(false);
       });
+    this.opportunityService.castOpportunity.subscribe( Opportunity => this.stateOpportunity = Opportunity);
   }
 
 
@@ -61,7 +62,7 @@ export class StateOpportunityComponent implements OnInit {
 
 
   public CreateStateOpportunity(): void {
-
+    this.charingTheStateOpportunity();
     const dialogRef = this.dialog.open(CreateStateOpportunityComponent, {
       width: "500px",
       height: "300px",
@@ -75,12 +76,12 @@ export class StateOpportunityComponent implements OnInit {
   }
 
 
-  public delateStateOpportunity(id): void {
-
+  public delateStateOpportunity(data): void {
+    this.charingTheStateOpportunity();
     const dialogRef = this.dialog.open(DeleteStateOpportunityComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data
 
     });
 
@@ -88,6 +89,10 @@ export class StateOpportunityComponent implements OnInit {
       console.log("The dialog was closed");
       this.animal = result;
     });
+  }
+
+  charingTheStateOpportunity(){
+    this.opportunityService.charingOpportunity(this.stateOpportunity);
   }
 
 }

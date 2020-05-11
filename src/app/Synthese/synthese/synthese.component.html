@@ -39,6 +39,28 @@
                 [labels]="pieChartLabelsCategorieOpportunite" [colors]="chartColorsCategorieOpportunite"
                 [labels]="chartLabelsCategorieOpportunite" [colors]="chartColorsCategorieOpportunite" [chartType]="pieChartTypeCategorieOpportunite"></canvas>
       </div>
+      <div class="bg-primary">
+        <h1>plan d'action</h1>
+      </div>
+      <h3 class="text-success">etat actuel</h3>
+      <div style="display: block">
+        <canvas baseChart [data]="pieChartDataCurrentState"
+                [labels]="pieChartLabelsCurrentState" [colors]="chartColorsCurrentState"
+                [labels]="chartLabelsCurrentState" [colors]="chartColorsCurrentState" [chartType]="pieChartTypeCurrentState"></canvas>
+      </div>
+      <h3 class="text-success">etat d'efficacité</h3>
+      <div style="display: block">
+        <canvas baseChart [data]="pieChartDataStateEfficacity"
+                [labels]="pieChartLabelsStateEfficacity" [colors]="chartColorsStateEfficacity"
+                [labels]="chartLabelsStateEfficacity" [colors]="chartColorsStateEfficacity" [chartType]="pieChartTypeStateEfficacity"></canvas>
+      </div>
+
+      <h3 class="text-success">etat par process</h3>
+      <div style="display: block">
+        <canvas baseChart [data]="pieChartDataCurrentStateByProcess"
+                [labels]="pieChartLabelsCurrentStateByProcess" [colors]="chartColorsCurrentStateByProcess"
+                [labels]="chartLabelsCurrentStateByProcess" [colors]="chartColorsCurrentStateByProcess" [chartType]="pieChartTypeCurrentStateByProcess"></canvas>
+      </div>
     </div>
     <footer-cmp></footer-cmp>
   </div>

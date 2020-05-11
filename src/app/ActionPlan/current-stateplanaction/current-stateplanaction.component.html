@@ -6,24 +6,27 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content" >
-      <button class="btn btn-primary " (click)="CreateCurrentState()">ajouter categories</button>
-      <div class="card col-md-6">
 
-        <table class="table">
-          <thead class=" text-primary">
-          <tr>
-            <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
-          </tr>
-          </thead>
-          <tbody >
-          <tr *ngFor="let c of CurrentState">
-            <td>{{c.id}}</td>
-            <td>{{c.NameCurrentState}}</td>
-            <td></td>
-            <td><button class="btn btn-danger" (click)="delateCurrentState(c.id)">supp</button></td>
-          </tr>
-          </tbody>
-        </table>
+      <div class="col-md-6">
+        <button class="btn btn-primary " (click)="CreateCurrentState()">ajouter categories</button>
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="CurrentState" class="example-table table"
+                 matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
+
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef>id</th>
+              <td mat-cell *matCellDef="let row">{{row.id}}</td>
+            </ng-container>
+
+            <!-- Product Price Column -->
+            <ng-container matColumnDef="NameCategory">
+              <th mat-header-cell *matHeaderCellDef>Nom Catégories </th>
+              <td mat-cell *matCellDef="let row">{{row.NameCurrentState}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="hidder"></tr>
+            <tr mat-row *matRowDef="let row; columns: hidder;" ></tr>
+            </table>
 
       </div>
 

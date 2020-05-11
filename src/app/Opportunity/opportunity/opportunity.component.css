@@ -1,0 +1,37 @@
+.couleurEvaluation{
+  background-color: #3fc3ee;
+  text-align: center;
+}
+
+.couleurReevaluation{
+  background-color: #4CD964;
+  text-align: center;
+}
+.couleurIdentification{
+  background-color: #7a9e9f;
+  text-align: center;
+}
+.couleurOpportunite{
+  background-color: #05AE0E;
+  text-align: center;
+}
+.couleur{
+  background-color:#2ba9cd;
+}
+.tableau{
+  border-style: solid;
+  border-width: 5px;
+}
+.bordertd{
+  border-style: solid;
+  border-width: 1px;
+}
+.borderth{
+  border-style: solid;
+  border-width: 1px;
+
+}
+.couleurth{
+  background-color: #1F77D0;
+}
+

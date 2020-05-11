@@ -1,12 +1,12 @@
 
-<div class="wrapper">
+<div class="wrapper couleur">
   <div class="sidebar" data-color="white" data-active-color="danger">
     <sidebar-cmp></sidebar-cmp>
   </div>
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
-    <div class="content" >
-      <button class="btn btn-primary " (click)="CreateStateRisk()">ajouter categories</button>
+    <div class="content couleur" >
+      <button class="btn btn-success " (click)="CreateStateRisk()">ajouter categories</button>
       <div class="card col-md-6">
 
         <table class="table">
@@ -20,7 +20,7 @@
             <td>{{c.id}}</td>
             <td>{{c.NameStateRisk}}</td>
             <td></td>
-            <td><button class="btn btn-danger" (click)="delateStateRisk(c.id)">supp</button></td>
+            <td><button class="btn btn-danger" (click)="delateStateRisk(c)">supp</button></td>
           </tr>
           </tbody>
         </table>

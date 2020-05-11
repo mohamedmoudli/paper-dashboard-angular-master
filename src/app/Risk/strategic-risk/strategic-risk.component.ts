@@ -18,8 +18,8 @@ export class StrategicRiskComponent implements OnInit {
   public animal: string;
   public name: string;
   public fisrtname;
-  public users = [];
-  public dataSource = new MatTableDataSource(this.users);
+  public StrategicRisk = [];
+  public dataSource = new MatTableDataSource(this.StrategicRisk);
   public hidder = ["id" , "nom categories"];
   public test = false;
   public data = {
@@ -34,11 +34,12 @@ export class StrategicRiskComponent implements OnInit {
     this.riskService.getStrategicRisk()
       .subscribe((data) => {
 
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.StrategicRisk = data['hydra:member'];
+        console.log(this.StrategicRisk);
       },error => {
         console.log(false);
       });
+    this.riskService.castRisk.subscribe(Risk => this.StrategicRisk = Risk);
   }
 
 
@@ -51,7 +52,7 @@ export class StrategicRiskComponent implements OnInit {
     } else if (this.fisrtname == "") {
       this.ngOnInit();
     }
-    this.users = this.users.filter( (res) => {
+    this.StrategicRisk = this.StrategicRisk.filter( (res) => {
       return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
     });
   }
@@ -60,7 +61,7 @@ export class StrategicRiskComponent implements OnInit {
 
 
   public CreateStrategicRisk(): void {
-
+    this.charingTheStrategicRisk();
     const dialogRef = this.dialog.open(CreateStrategicRiskComponent, {
       width: "500px",
       height: "300px",
@@ -74,12 +75,12 @@ export class StrategicRiskComponent implements OnInit {
   }
 
 
-  public delateStrategic(id): void {
-
+  public delateStrategic(data): void {
+    this.charingTheStrategicRisk();
     const dialogRef = this.dialog.open(DelateStrategicRiskComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data
 
     });
 
@@ -88,5 +89,7 @@ export class StrategicRiskComponent implements OnInit {
       this.animal = result;
     });
   }
-
+  charingTheStrategicRisk(){
+    this.riskService.charingRisk(this.StrategicRisk);
+  }
 }

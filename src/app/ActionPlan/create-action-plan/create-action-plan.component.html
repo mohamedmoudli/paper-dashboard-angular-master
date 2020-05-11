@@ -106,13 +106,22 @@
                 <label class="control-label">CritaireEfficacite:</label>
                 <input type="text" name="CriteriaEfficiency"  [(ngModel)]="data.CriteriaEfficiency" class="form-control">
               </div>
-              <div class="form-group">
-                <label class="control-label">EtatDeEfficacite:</label>
-                <input type="text" name="StateOfEfficacy"  [(ngModel)]="data.StateOfEfficacy" class="form-control">
+              <label>etat d'efficacité</label>
+              <div >
+                <select  name="StateOfEfficacy" placeholder="nom cat" [(ngModel)]="data.StateOfEfficacy" type="number" >
+                  <option value="">--choisir etate de efficacité--</option>
+                  <option *ngFor="let c of StateEfficacity" value="{{c.id}}">{{c.id}}</option>
+
+                </select>
               </div>
-              <div class="form-group">
-                <label class="control-label">EtatActuel:</label>
-                <input type="text" name="CurrentState"  [(ngModel)]="data.CurrentState" class="form-control">
+              <label>etat actuel</label>
+              <div>
+                <select  name="CurrentState" placeholder="nom cat" [(ngModel)]="data.CurrentState" type="number" >
+
+                  <option value="">--choisir etat actuel--</option>
+                  <option *ngFor="let c of CurrentState" value="{{c.id}}">{{c.id}}</option>
+
+                </select>
               </div>
               <div class="form-group">
                 <label class="control-label">Commentaire:</label>

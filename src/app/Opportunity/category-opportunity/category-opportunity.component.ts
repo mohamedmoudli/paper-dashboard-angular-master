@@ -18,13 +18,11 @@ export class CategoryOpportunityComponent implements OnInit {
   public animal: string;
   public name: string;
   public fisrtname;
-  public users = [];
-  public dataSource = new MatTableDataSource(this.users);
+  public CategoryOpportunity = [];
+  public dataSource = new MatTableDataSource(this.CategoryOpportunity);
   public hidder = ["id" , "nom categories"];
   public test = false;
-  public data = {
-    nomcat: ""
-  };
+
   constructor( private opportunityService: OpportunityService,
                private router:Router , private dialog: MatDialog) {}
 
@@ -34,11 +32,12 @@ export class CategoryOpportunityComponent implements OnInit {
     this.opportunityService.getCategoryOpportunity()
       .subscribe((data) => {
 
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.CategoryOpportunity = data['hydra:member'];
+        console.log(this.CategoryOpportunity);
       },error => {
         console.log(false);
       });
+    this.opportunityService.castOpportunity.subscribe( Opportunity => this.CategoryOpportunity = Opportunity);
   }
 
 
@@ -51,7 +50,7 @@ export class CategoryOpportunityComponent implements OnInit {
     } else if (this.fisrtname == "") {
       this.ngOnInit();
     }
-    this.users = this.users.filter( (res) => {
+    this.CategoryOpportunity = this.CategoryOpportunity.filter( (res) => {
       return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
     });
   }
@@ -60,7 +59,7 @@ export class CategoryOpportunityComponent implements OnInit {
 
 
   public CreateCategoryOpportunity(): void {
-
+    this.charingTheCategoryOpportunity();
     const dialogRef = this.dialog.open(CreateCategoryOpportunityComponent, {
       width: "500px",
       height: "300px",
@@ -74,12 +73,12 @@ export class CategoryOpportunityComponent implements OnInit {
   }
 
 
-  public delateCategory(id): void {
-
+  public delateCategory(data): void {
+   this.charingTheCategoryOpportunity();
     const dialogRef = this.dialog.open(DelateCategoryOpportunityComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data
 
     });
 
@@ -87,5 +86,9 @@ export class CategoryOpportunityComponent implements OnInit {
       console.log("The dialog was closed");
       this.animal = result;
     });
+  }
+
+  charingTheCategoryOpportunity(){
+    this.opportunityService.charingOpportunity(this.CategoryOpportunity);
   }
 }

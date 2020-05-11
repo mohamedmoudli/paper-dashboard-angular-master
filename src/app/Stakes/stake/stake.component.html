@@ -33,27 +33,26 @@
         <div class="container">
           <div class="med" style="float: left">
             <h1>--------------force/strenaths-------------------</h1>
-            <div class="card" *ngFor="let p of users">
-              <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakInternal}}</h2></div>
+            <div  *ngFor="let p of users">
+              <div class="navbar bg-success" ><h2 class="text-danger">{{p.NameCategoryStakInternal}}</h2></div>
               <div>
-                <table class="table" >
-                  <thead class=" text-primary">
-                  <tr>
-                    <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr *ngFor="let t of p.stakes "  >
+                <table mat-table [dataSource]="p.stakes" class="example-table table card"
+                       matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
 
-                    <td *ngIf=" t.Type.id == 1 ">E{{t.id}}</td>
-                    <td *ngIf=" t.Type.id == 1 ">{{t.Description}}</td>
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef>id</th>
+                    <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 1 ">{{row.id}}</p></td>
+                  </ng-container>
+
+                  <!-- Product Price Column -->
+                  <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef>Description </th>
+                    <td mat-cell *matCellDef="let row"> <p *ngIf=" row.Type.id == 1 "> {{row.Description}}</p> </td>
+                  </ng-container>
 
 
-                    <td ></td>
-
-                  </tr>
-
-                  </tbody>
+                  <tr mat-header-row *matHeaderRowDef="hidder"></tr>
+                  <tr mat-row *matRowDef="let row; columns: hidder;" ></tr>
                 </table>
               </div>
 
@@ -62,27 +61,26 @@
           </div>
           <div class="med" style="float: right"  >
             <h1>----------faiblesses/weaknesses--------</h1>
-            <div class="card " *ngFor="let p of users">
-              <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakInternal}}</h2></div>
+            <div  *ngFor="let p of users">
+              <div class="navbar  bg-success" ><h2 class="text-danger">{{p.NameCategoryStakInternal}}</h2></div>
               <div>
-                <table class="table" >
-                  <thead class=" text-primary">
-                  <tr>
-                    <th *ngFor="let c of hidder"><h4 >{{c}}</h4></th><td></td><td></td><td></td>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr *ngFor="let t of p.stakes "  >
+                <table mat-table [dataSource]="p.stakes" class="example-table table card"
+                       matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
 
-                    <td *ngIf=" t.Type.id == 2 ">E{{t.id}}</td>
-                    <td *ngIf=" t.Type.id == 2 ">{{t.Description}}</td>
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef>id</th>
+                    <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 2 ">{{row.id}}</p></td>
+                  </ng-container>
+
+                  <!-- Product Price Column -->
+                  <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef>Description </th>
+                    <td mat-cell *matCellDef="let row"> <p *ngIf=" row.Type.id == 2 "> {{row.Description}}</p> </td>
+                  </ng-container>
 
 
-                    <td ></td>
-
-                  </tr>
-
-                  </tbody>
+                  <tr mat-header-row *matHeaderRowDef="hidder"></tr>
+                  <tr mat-row *matRowDef="let row; columns: hidder;" ></tr>
                 </table>
               </div>
 
@@ -102,27 +100,26 @@
       <div class="container">
         <div style ="float: left">
           <h1>--------Opportunités/Opportunites-------</h1>
-          <div class="card" *ngFor="let p of usersExtern">
-            <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakExternal}}</h2></div>
+          <div  *ngFor="let p of usersExtern">
+            <div class="navbar  bg-success" ><h2 class="text-danger">{{p.NameCategoryStakExternal}}</h2></div>
             <div>
-              <table class="table" >
-                <thead class=" text-primary">
-                <tr>
-                  <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let t of p.stakes "  >
+              <table mat-table [dataSource]="p.stakes" class="example-table table card"
+                     matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
 
-                  <td *ngIf="  t.Type.id == 3 ">E{{t.id}}</td>
-                  <td *ngIf="  t.Type.id == 3 ">{{t.Description}}</td>
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef>id</th>
+                  <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 3 ">{{row.id}}</p></td>
+                </ng-container>
+
+                <!-- Product Price Column -->
+                <ng-container matColumnDef="description">
+                  <th mat-header-cell *matHeaderCellDef>Description </th>
+                  <td mat-cell *matCellDef="let row"> <p *ngIf=" row.Type.id == 3 "> {{row.Description}}</p> </td>
+                </ng-container>
 
 
-                  <td ></td>
-
-                </tr>
-
-                </tbody>
+                <tr mat-header-row *matHeaderRowDef="hidder"></tr>
+                <tr mat-row *matRowDef="let row; columns: hidder;" ></tr>
               </table>
             </div>
 
@@ -131,27 +128,26 @@
         </div>
         <div class="med" style="float: right"  >
           <h1>--------------Menances/Threate------------</h1>
-          <div class="card " *ngFor="let p of usersExtern">
-            <div class="navbar" ><h2 class="text-danger">{{p.NameCategoryStakExternal}}</h2></div>
+          <div  *ngFor="let p of usersExtern">
+            <div class="navbar  bg-success" ><h2 class="text-danger">{{p.NameCategoryStakExternal}}</h2></div>
             <div>
-              <table class="table" >
-                <thead class=" text-primary">
-                <tr>
-                  <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let t of p.stakes "  >
+              <table mat-table [dataSource]="p.stakes" class="example-table table card"
+                     matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
 
-                  <td *ngIf=" t.Type.id == 4 ">E{{t.id}}</td>
-                  <td *ngIf=" t.Type.id == 4 ">{{t.Description}}</td>
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef>id</th>
+                  <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 4 ">{{row.id}}</p></td>
+                </ng-container>
+
+                <!-- Product Price Column -->
+                <ng-container matColumnDef="description">
+                  <th mat-header-cell *matHeaderCellDef>Description </th>
+                  <td mat-cell *matCellDef="let row"> <p *ngIf=" row.Type.id == 4 "> {{row.Description}}</p> </td>
+                </ng-container>
 
 
-                  <td ></td>
-
-                </tr>
-
-                </tbody>
+                <tr mat-header-row *matHeaderRowDef="hidder"></tr>
+                <tr mat-row *matRowDef="let row; columns: hidder;" ></tr>
               </table>
             </div>
 
@@ -170,26 +166,27 @@
       <div class="bg-primary " >
         <h3> Synthèse </h3>
       </div>
-      <div class="card col-md-5"  style="float: left">
-        <table class="table" >
-          <thead class=" text-primary">
-          <tr>
-            <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let t of Enjeu "  >
+      <div class=" col-md-5"  style="float: left">
+        <table mat-table [dataSource]="Enjeu" class="example-table table card "
+               matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
 
-            <td >E{{t.id}}</td>
-            <td >{{t.Description}}</td>
-            <td><button class="btn btn-danger" (click)="delateCategorie(t.id)">supp</button></td>
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>id</th>
+            <td mat-cell *matCellDef="let row" > {{row.id}}</td>
+          </ng-container>
 
-            <td ></td>
+          <!-- Product Price Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Description </th>
+            <td mat-cell *matCellDef="let row"> {{row.Description}} </td>
+          </ng-container>
 
-          </tr>
 
-          </tbody>
+          <tr mat-header-row *matHeaderRowDef="hidder"></tr>
+          <tr mat-row *matRowDef="let row; columns: hidder;" ></tr>
+
         </table>
+
       </div>
       <div class="card col-md-4" style="float: right">
         <table class="table" >

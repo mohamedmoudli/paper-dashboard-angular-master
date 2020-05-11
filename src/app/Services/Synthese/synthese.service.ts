@@ -32,4 +32,9 @@ export class SyntheseService {
     return this.http.get(this.host+"/nembreStateEfficacity");
 
   }
+
+  public GetNbreCurrentStateActionPlanbyProcess() {
+    return this.http.get(this.host+"/nembreCurrentStatebyProcess");
+
+  }
 }

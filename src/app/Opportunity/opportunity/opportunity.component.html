@@ -1,10 +1,11 @@
-<div class="wrapper">
+<div class="wrapper ">
   <div class="sidebar" data-color="white" data-active-color="danger">
     <sidebar-cmp></sidebar-cmp>
   </div>
-  <div class="main-panel">
+
+  <div class="main-panel ">
     <navbar-cmp></navbar-cmp>
-    <div class="content">
+    <div class="content couleur">
       <div class="row">
         <svg class="bi bi-search" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helpOpportunite()">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
@@ -18,82 +19,76 @@
         <button routerLink="/ajouterOpportunite" class="btn btn-success">ajouter un opportunite</button>
         <button (click)="DisplayStake()"  class="btn btn-warning" >enjeux</button>
         <button (click)="DisplayPIpertinante()" class="btn btn-warning">pipertinante</button>
-        <div >
-          <button class="btn btn-primary" routerLink="/CategoriesOpportunite" style="float: left">gerer categorie</button>
-          <button class="btn btn-primary" routerLink="/etatOpportunite" style="float: left">gerer etat</button>
-        </div>
-        <div style="float: left" >
-          <button class="btn btn-primary" routerLink="/StrategiqueOpportunite" style="float: left">gerer strategique</button>
-        </div>
+
         <div style="float: left" >
           <button class="btn btn-primary" (click)="saveHistoricalOpportunity()" style="float: left">Enregister etat</button>
         </div>
         <div class="col-md-12">
           <div class="">
-            <div class="card-header">
-              <h4 class="card-title"> Risque</h4>
+            <div class="card-header couleurOpportunite">
+              <h4 class="card-title "> Opportunite</h4>
             </div>
-            <div class="card-body card">
-              <div class="table-responsive">
-                <table mdbTable class="table">
-                  <thead class=" text-primary" >
+            <div>
+              <div class=" card table-responsive">
+                <table  class=" table">
+                  <thead >
                   <tr>
                     <td colspan="3"></td>
-                    <td colspan="10" class="text-success">identification du Opportunite</td>
-                    <td colspan="8" class="text-success">evaluation</td>
-                    <td colspan="8" class="text-success">reevaluation</td>
+                    <td colspan="10" class="couleurIdentification">identification du Opportunite</td>
+                    <td colspan="8" class=" couleurEvaluation">evaluation</td>
+                    <td colspan="8" class="couleurReevaluation ">reevaluation</td>
                   </tr>
                   <tr>
-                    <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+                    <th *ngFor="let c of hidder" class="bordertd bg-primary">{{c}}</th><td></td><td></td><td></td>
                   </tr>
 
                   </thead>
-                  <tbody>
-                  <tr *ngFor="let c of opportunite">
-                    <td>{{c.id}}</td>
-                    <td>{{c.CategoryOpportunity.nameCategoryOpportunity}}</td>
-                    <td>{{c.Description}}</td>
-                    <td>{{c.ShortTerm}}</td>
-                    <td>{{c.MediumTerm}}</td>
-                    <td>{{c.LongTerm}}</td>
-                    <td>{{c.DateIdentification}}</td>
-                    <td>{{c.Consistency}}</td>
-                    <td>{{c.Alignment}}</td>
-                    <td>{{c.Presence}}</td>
-                    <td>{{c.Skills}}</td>
-                    <td>{{c.Continuity}}</td>
-                    <td>{{c.Gain}}</td>
-                    <td>{{c.Efforts}}</td>
-                    <td>{{c.Advantage}}</td>
-                    <td>{{c.Weight}}</td>
-                    <td *ngIf="c.Decision == 'opportunité moderéé a reflechir'" class="text-warning">{{c.Decision}}</td>
-                    <td *ngIf="c.Decision == 'opportunité negligable a ignorer'" class="text-success">{{c.Decision}}</td>
-                    <td *ngIf="c.Decision == 'opportunité interssésante a saisir'" class="text-success">{{c.Decision}}</td>
-                    <td *ngIf="c.StrategicOpportunity.nameStrategicOpportunity == 'Saisir'">{{c.StrategicOpportunity.nameStrategicOpportunity}}</td>
-                    <td *ngIf="c.StrategicOpportunity.nameStrategicOpportunity == 'Ingorer'">{{c.StrategicOpportunity.nameStrategicOpportunity}}</td>
-                    <td *ngIf="c.StrategicOpportunity.nameStrategicOpportunity == 'Reporter'">{{c.StrategicOpportunity.nameStrategicOpportunity}}</td>
-                    <td>{{c.ProcessLie.process}}</td>
-                    <td>  <p *ngFor="let p of c.NumAction "> {{ p.id}}</p> </td>
-                    <td *ngIf="c.StateOpportunity.nameStateOpportunity == 'Cloturé'" class="bg-success">{{c.StateOpportunity.nameStateOpportunity}}</td>
-                    <td *ngIf="c.StateOpportunity.nameStateOpportunity == 'Ouverte'" class="text-danger">{{c.StateOpportunity.nameStateOpportunity}}</td>
-                    <td *ngIf="c.StateOpportunity.nameStateOpportunity == 'Fermé'" class="bg-warning">{{c.StateOpportunity.nameStateOpportunity}}</td>
+                  <tbody class="bordertd">
+                  <tr *ngFor="let c of opportunite" >
+                    <td class="bordertd">{{c.id}}</td>
+                    <td class="bordertd" >{{c.CategoryOpportunity.nameCategoryOpportunity}}</td>
+                    <td class="bordertd">{{c.Description}}</td>
+                    <td class="bordertd">{{c.ShortTerm}}</td>
+                    <td class="bordertd">{{c.MediumTerm}}</td>
+                    <td class="bordertd">{{c.LongTerm}}</td>
+                    <td class="bordertd">{{c.DateIdentification}}</td>
+                    <td class="bordertd">{{c.Consistency}}</td>
+                    <td class="bordertd">{{c.Alignment}}</td>
+                    <td class="bordertd">{{c.Presence}}</td>
+                    <td class="bordertd">{{c.Skills}}</td>
+                    <td class="bordertd">{{c.Continuity}}</td>
+                    <td class="bordertd">{{c.Gain}}</td>
+                    <td class="bordertd">{{c.Efforts}}</td>
+                    <td class="bordertd">{{c.Advantage}}</td>
+                    <td class="bordertd">{{c.Weight}}</td>
+                    <td *ngIf="c.Decision == 'opportunité moderéé a reflechir'" class="text-warning bordertd">{{c.Decision}}</td>
+                    <td *ngIf="c.Decision == 'opportunité negligable a ignorer'" class="text-success bordertd">{{c.Decision}}</td>
+                    <td *ngIf="c.Decision == 'opportunité interssésante a saisir'" class="text-success bordertd">{{c.Decision}}</td>
+                    <td *ngIf="c.StrategicOpportunity.nameStrategicOpportunity == 'Saisir'" class="bordertd">{{c.StrategicOpportunity.nameStrategicOpportunity}}</td>
+                    <td *ngIf="c.StrategicOpportunity.nameStrategicOpportunity == 'Ingorer'" class="bordertd">{{c.StrategicOpportunity.nameStrategicOpportunity}}</td>
+                    <td *ngIf="c.StrategicOpportunity.nameStrategicOpportunity == 'Reporter'" class="bordertd">{{c.StrategicOpportunity.nameStrategicOpportunity}}</td>
+                    <td class="bordertd">{{c.ProcessLie.process}}</td>
+                    <td class="bordertd">  <p *ngFor="let p of c.NumAction "> {{ p.id}}</p> </td>
+                    <td *ngIf="c.StateOpportunity.nameStateOpportunity == 'Cloturé'" class="bg-success bordertd">{{c.StateOpportunity.nameStateOpportunity}}</td>
+                    <td *ngIf="c.StateOpportunity.nameStateOpportunity == 'Ouverte'" class="text-danger bordertd">{{c.StateOpportunity.nameStateOpportunity}}</td>
+                    <td *ngIf="c.StateOpportunity.nameStateOpportunity == 'Fermé'" class="bg-warning bordertd">{{c.StateOpportunity.nameStateOpportunity}}</td>
                     <td *ngIf="c.StateOpportunity.nameStateOpportunity == 'En cours de selection'" class="text-success">{{c.StateOpportunity.nameStateOpportunity}}</td>
                     <td>{{c.EffortReevaluation}}</td>
                     <td>{{c.AdvantageReevaluation}}</td>
                     <td>{{c.LoadReevaluation}}</td>
-                    <td *ngIf=" c.DecisionReevaluation == 'opportunité moderéé a reflechir'" class="text-warning">{{c.DecisionReevaluation}}</td>
-                    <td *ngIf=" c.DecisionReevaluation == 'opportunité negligable a ignorer'" class="text-warning">{{c.DecisionReevaluation}}</td>
-                    <td *ngIf=" c.DecisionReevaluation == 'opportunité interssésante a saisir'" class="text-warning">{{c.DecisionReevaluation}}</td>
-                    <td *ngIf=" c.StrategicReevaluation.nameStrategicOpportunity == 'Saisir' && c.StrategicReevaluation !== null">{{c.StrategicReevaluation.nameStrategicOpportunity}}</td>
-                    <td *ngIf=" c.StrategicReevaluation.nameStrategicOpportunity == 'Ingorer' && c.StrategicReevaluation !== null">{{c.StrategicReevaluation.nameStrategicOpportunity}}</td>
-                    <td *ngIf=" c.StrategicReevaluation.nameStrategicOpportunity == 'Reporter' && c.StrategicReevaluation !== null">{{c.StrategicReevaluation.nameStrategicOpportunity}}</td>
-                    <td *ngIf="c.ProcessLieReevaluation !== null">{{c.ProcessLieReevaluation.process}}</td>
-                    <td>  <p *ngFor="let p of c.NumActionReevaluation "> {{ p.id}}</p> </td>
-                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'Cloturé' && c.StateOpportunityReevaluation !== null" class="bg-success" >{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
-                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'Ouverte' && c.StateOpportunityReevaluation !== null" class="text-danger">{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
-                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'Fermé' && c.StateOpportunityReevaluation !== null" class="bg-warning" >{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
-                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'En cours de selection' && c.StateOpportunityReevaluation !== null" class="text-success">{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
-                    <td>{{c.Comment}}</td>
+                    <td *ngIf=" c.DecisionReevaluation == 'opportunité moderéé a reflechir'" class="text-warning bordertd">{{c.DecisionReevaluation}}</td>
+                    <td *ngIf=" c.DecisionReevaluation == 'opportunité negligable a ignorer'" class="text-warning bordertd">{{c.DecisionReevaluation}}</td>
+                    <td *ngIf=" c.DecisionReevaluation == 'opportunité interssésante a saisir'" class="text-warning bordertd">{{c.DecisionReevaluation}}</td>
+                    <td *ngIf=" c.StrategicReevaluation.nameStrategicOpportunity == 'Saisir' && c.StrategicReevaluation !== null" class="bordertd">{{c.StrategicReevaluation.nameStrategicOpportunity}}</td>
+                    <td *ngIf=" c.StrategicReevaluation.nameStrategicOpportunity == 'Ingorer' && c.StrategicReevaluation !== null" class="bordertd">{{c.StrategicReevaluation.nameStrategicOpportunity}}</td>
+                    <td *ngIf=" c.StrategicReevaluation.nameStrategicOpportunity == 'Reporter' && c.StrategicReevaluation !== null" class="bordertd">{{c.StrategicReevaluation.nameStrategicOpportunity}}</td>
+                    <td *ngIf="c.ProcessLieReevaluation !== null" class="bordertd">{{c.ProcessLieReevaluation.process}}</td>
+                    <td>  <p *ngFor="let p of c.NumActionReevaluation " class="bordertd"> {{ p.id}}</p> </td>
+                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'Cloturé' && c.StateOpportunityReevaluation !== null" class="bg-success bordertd" >{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
+                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'Ouverte' && c.StateOpportunityReevaluation !== null" class="text-danger bordertd">{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
+                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'Fermé' && c.StateOpportunityReevaluation !== null" class="bg-warning bordertd" >{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
+                    <td *ngIf=" c.StateOpportunityReevaluation.nameStateOpportunity == 'En cours de selection' && c.StateOpportunityReevaluation !== null" class="text-success bordertd">{{c.StateOpportunityReevaluation.nameStateOpportunity}}</td>
+                    <td class="bordertd">{{c.Comment}}</td>
                     <td><button class="btn btn-success" (click)="reevaluateOpportunity(c.id)">reevaluer</button></td>
                     <td>{{c.Pilote}}</td>
                     <td ></td>
@@ -107,10 +102,17 @@
           </div>
         </div>
       </div>
+      <div >
+        <button class="btn btn-danger" routerLink="/CategoriesOpportunite" style="float: left">gerer categorie</button>
+
+        <button class="btn btn-danger" routerLink="/etatOpportunite" style="float: left">gerer etat</button>
+
+        <button class="btn btn-danger" routerLink="/StrategiqueOpportunite" style="float: left">gerer strategique</button>
+      </div>
     </div>
-    <footer-cmp></footer-cmp>
+
   </div>
 </div>
-<fixedplugin-cmp></fixedplugin-cmp>
+
 
 

@@ -6,7 +6,7 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content" >
-      <button class="btn btn-primary " (click)="CreateStrategicRisk()">ajouter categories</button>
+      <button class="btn btn-primary " (click)="CreateStrategicRisk()">ajouter strategique</button>
       <div class="card col-md-6">
 
         <table class="table">
@@ -16,11 +16,11 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of users">
+          <tr *ngFor="let c of StrategicRisk">
             <td>{{c.id}}</td>
             <td>{{c.NameStrategicRisk}}</td>
             <td></td>
-            <td><button class="btn btn-danger" (click)="delateStrategic(c.id)">supp</button></td>
+            <td><button class="btn btn-danger" (click)="delateStrategic(c)">supp</button></td>
           </tr>
           </tbody>
         </table>

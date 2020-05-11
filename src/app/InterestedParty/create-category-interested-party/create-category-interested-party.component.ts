@@ -18,17 +18,6 @@ export class CreateCategoryInterestedPartyComponent implements OnInit {
     NameCategory: ''
   };
 
-  id1: number;
-  public data2: any = [];
-  public data1: any = {
-    id: "",
-    fisrtname: "",
-    lastename: "",
-    adresse: "",
-    city: "",
-    state: "",
-  };
-
   constructor( private interestedPartyService: InterestedPartyService, private router: Router ,
                private fb:FormBuilder , public dialogRef: MatDialogRef<CreateCategoryInterestedPartyComponent>) {
     this.angForm = this.fb.group({

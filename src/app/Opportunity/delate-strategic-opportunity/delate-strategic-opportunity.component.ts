@@ -10,19 +10,26 @@ import {DelateStrategicRiskComponent} from '../../Risk/delate-strategic-risk/del
   styleUrls: ['./delate-strategic-opportunity.component.css']
 })
 export class DelateStrategicOpportunityComponent implements OnInit {
-
+  StrategicOpportunity: any;
+  itemStrategic: any;
 
   constructor(private opportunityService: OpportunityService,
               private router:Router ,  public dialogRef: MatDialogRef<DelateStrategicOpportunityComponent>,
-              @Inject(MAT_DIALOG_DATA) public id:number) { }
+              @Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
+    this.opportunityService.castOpportunity.subscribe(Opportunity=> this.StrategicOpportunity = Opportunity);
+    console.log(this.StrategicOpportunity);
   }
 
 
   public delate() {
-    this.opportunityService.delateStrategicOpportunity(this.id).subscribe((data) => {
+    this.opportunityService.delateStrategicOpportunity(this.data.id).subscribe((data) => {
       console.log("ffffffffff");
+      const index: number = this.StrategicOpportunity.indexOf(this.data);
+      console.log(index);
+      this.itemStrategic  = this.StrategicOpportunity.splice(index ,1);
+      this.StrategicOpportunity = this.StrategicOpportunity.filter(user => user !== this.itemStrategic );
       this.ngOnInit();
       return this.onNoClick();
     }), (error) => {

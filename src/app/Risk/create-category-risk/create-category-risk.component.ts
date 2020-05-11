@@ -11,23 +11,14 @@ import {RiskService} from '../../Services/Risk/risk.service';
   styleUrls: ['./create-category-risk.component.css']
 })
 export class CreateCategoryRiskComponent implements OnInit {
-
+  CategoryRisk: any;
   angForm: FormGroup;
   submitted = false;
   public data = {
     NameCategoryRisk: ''
   };
 
-  id1: number;
-  public data2: any = [];
-  public data1: any = {
-    id: "",
-    fisrtname: "",
-    lastename: "",
-    adresse: "",
-    city: "",
-    state: "",
-  };
+
 
   constructor( private riskService: RiskService, private router: Router ,
                private fb:FormBuilder , public dialogRef: MatDialogRef<CreateCategoryRiskComponent>) {
@@ -38,13 +29,19 @@ export class CreateCategoryRiskComponent implements OnInit {
 
 
   public ngOnInit() {
+    this.riskService.castRisk.subscribe(Risk=> this.CategoryRisk = Risk);
+    console.log(this.CategoryRisk);
 
   }
 
   CreateCategory(){
+    this.charingTheRisk();
     console.log(this.data);
     this.riskService.saveCategoryRisk(this.data).subscribe(
       resp=>{
+        console.log(this.CategoryRisk);
+        this.CategoryRisk = this.CategoryRisk.push(this.data);
+        console.log(this.CategoryRisk);
         console.log(resp);
         return this.onNoClick();
       },error => {
@@ -70,4 +67,7 @@ export class CreateCategoryRiskComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  charingTheRisk(){
+    this.riskService.charingRisk(this.CategoryRisk);
+  }
 }

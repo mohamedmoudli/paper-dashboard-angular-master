@@ -13,6 +13,7 @@ export class CreateCategoryOpportunityComponent implements OnInit {
 
   angForm: FormGroup;
   submitted = false;
+  CategoryOpportunity: any;
   public data = {
     NameCategoryOpportunity: ''
   };
@@ -37,13 +38,19 @@ export class CreateCategoryOpportunityComponent implements OnInit {
 
 
   public ngOnInit() {
+    this.opportunityService.castOpportunity.subscribe(Opportunity=> this.CategoryOpportunity = Opportunity);
+    console.log(this.CategoryOpportunity);
 
   }
 
   savecategory(){
+    this.charingTheCategoryOpportunity();
     console.log(this.data);
     this.opportunityService.saveCategoryOpportunity(this.data).subscribe(
       resp=>{
+        console.log(this.CategoryOpportunity);
+        this.CategoryOpportunity = this.CategoryOpportunity.push(this.data);
+        console.log(this.CategoryOpportunity);
         console.log(resp);
         return this.onNoClick();
       },error => {
@@ -67,6 +74,10 @@ export class CreateCategoryOpportunityComponent implements OnInit {
   }
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  charingTheCategoryOpportunity(){
+    this.opportunityService.charingOpportunity(this.CategoryOpportunity);
   }
 
 }

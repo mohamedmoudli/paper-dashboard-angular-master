@@ -10,19 +10,24 @@ import {RiskService} from '../../Services/Risk/risk.service';
   styleUrls: ['./delate-category-risk.component.css']
 })
 export class DelateCategoryRiskComponent implements OnInit {
-
+  categoryRisk: any;
+  itemcategory: any;
 
   constructor(private riskService: RiskService,
               private router:Router ,  public dialogRef: MatDialogRef<DelateCategoryRiskComponent>,
-              @Inject(MAT_DIALOG_DATA) public id:number) { }
+              @Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
+    this.riskService.castRisk.subscribe(Risk=> this.categoryRisk = Risk);
+    console.log(this.categoryRisk);
   }
 
-
   public delate() {
-    this.riskService.delateCategoryRisk(this.id).subscribe((data) => {
-      console.log("ffffffffff");
+    this.riskService.delateCategoryRisk(this.data.id).subscribe((data) => {
+      const index: number = this.categoryRisk.indexOf(this.data);
+      console.log(index);
+      this.itemcategory = this.categoryRisk.splice(index ,1);
+      this.categoryRisk = this.categoryRisk.filter(user => user !== this.itemcategory);
       this.ngOnInit();
       return this.onNoClick();
     }), (error) => {

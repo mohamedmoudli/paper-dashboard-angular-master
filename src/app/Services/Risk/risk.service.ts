@@ -1,10 +1,19 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RiskService {
+  val: string;
+  private Risk = new BehaviorSubject<any>(this.val);
+  castRisk = this.Risk.asObservable();
+  charingRisk(newUser){
+    this.Risk.next(newUser);
+    this.val = newUser ;
+  }
+
   public host: string = "http://localhost:8000";
   constructor(private http: HttpClient) { }
 

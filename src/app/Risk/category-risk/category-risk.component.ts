@@ -18,8 +18,8 @@ export class CategoryRiskComponent implements OnInit {
   public animal: string;
   public name: string;
   public fisrtname;
-  public users = [];
-  public dataSource = new MatTableDataSource(this.users);
+  public CategoryRisk = [];
+  public dataSource = new MatTableDataSource(this.CategoryRisk);
   public hidder = ["id" , "nom categories"];
   public test = false;
   public data = {
@@ -34,11 +34,13 @@ export class CategoryRiskComponent implements OnInit {
     this.riskService.getCategoryRisk()
       .subscribe((data) => {
 
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.CategoryRisk = data['hydra:member'];
+        console.log(this.CategoryRisk);
       },error => {
         console.log(false);
       });
+
+    this.riskService.castRisk.subscribe(Risk => this.CategoryRisk = Risk);
   }
 
 
@@ -51,7 +53,7 @@ export class CategoryRiskComponent implements OnInit {
     } else if (this.fisrtname == "") {
       this.ngOnInit();
     }
-    this.users = this.users.filter( (res) => {
+    this.CategoryRisk = this.CategoryRisk.filter( (res) => {
       return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
     });
   }
@@ -60,7 +62,7 @@ export class CategoryRiskComponent implements OnInit {
 
 
   public CreateCategory(): void {
-
+    this.charingTheCategoryRisk();
     const dialogRef = this.dialog.open(CreateCategoryRiskComponent, {
       width: "500px",
       height: "300px",
@@ -74,12 +76,12 @@ export class CategoryRiskComponent implements OnInit {
   }
 
 
-  public delateCategory(id): void {
-
+  public delateCategory(data): void {
+    this.charingTheCategoryRisk();
     const dialogRef = this.dialog.open(DelateCategoryRiskComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data
 
     });
 
@@ -89,4 +91,7 @@ export class CategoryRiskComponent implements OnInit {
     });
   }
 
+  charingTheCategoryRisk(){
+    this.riskService.charingRisk(this.CategoryRisk);
+  }
 }

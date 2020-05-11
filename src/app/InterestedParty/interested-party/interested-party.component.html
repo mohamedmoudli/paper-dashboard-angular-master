@@ -30,51 +30,53 @@
       <div>
         <button routerLink="/categoriesPI"  class="btn btn-warning">gérer les categories</button>
         <button class="btn btn-danger" routerLink="/listePartieinteresse">ajouter partie interesse</button>
-        <div class="card col-md-3">
-          <table class="table">
-            <thead class=" text-primary">
-            <tr>
-              <th *ngFor="let c of listeCat"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
-            </tr>
-            </thead>
-            <tbody >
-            <tr *ngFor="let c of Nbre">
-              <td> {{c.Nom}}</td>
-              <td> {{c.nbre}}</td>
-            </tr>
-            </tbody>
+        <div class=" col-md-3">
+          <table mat-table [dataSource]="Nbre" class="example-table table card "
+                 matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
+            <!-- Product Price Column -->
+            <ng-container matColumnDef="categorie">
+              <th mat-header-cell *matHeaderCellDef>categorie </th>
+              <td mat-cell *matCellDef="let row"> {{row.Nom}} </td>
+            </ng-container>
+            <ng-container matColumnDef="nbre" class="distance">
+              <th mat-header-cell *matHeaderCellDef >nbre </th>
+              <td mat-cell *matCellDef="let row"> {{row.nbre}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="listeCat"></tr>
+            <tr mat-row *matRowDef="let row; columns: listeCat;" ></tr>
           </table>
         </div>
       </div>
+
+
 
       <div class="med">
-        <div class="card col-md-4" *ngFor="let c of users" >
-          <div class="navbar" ><h4>{{c.NameCategory}}</h4></div>
-          <table class="table">
-            <thead class=" text-primary">
-            <tr>
-              <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
-            </tr>
-            </thead>
-            <tbody >
-            <tr *ngFor="let p of c.intersetedParties ">
-              <td>{{p.id}}</td>
-              <td>{{p.NameInterestedParty}}</td>
-              <td>{{p.Weight}}</td>
+        <div class=" col-md-4" *ngFor="let c of users" >
+          <div class="navbar bg-success" ><h4>{{c.NameCategory}}</h4></div>
+          <table mat-table [dataSource]="c.intersetedParties" class="example-table table card"
+                 matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
 
-              <td ></td>
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef>id</th>
+              <td mat-cell *matCellDef="let row" > {{row.id}}</td>
+            </ng-container>
 
-            </tr>
+            <!-- Product Price Column -->
+            <ng-container matColumnDef="pi">
+              <th mat-header-cell *matHeaderCellDef>partie interessé </th>
+              <td mat-cell *matCellDef="let row"> {{row.NameInterestedParty}} </td>
+            </ng-container>
+            <ng-container matColumnDef="poids">
+              <th mat-header-cell *matHeaderCellDef>poids </th>
+              <td mat-cell *matCellDef="let row"> {{row.Weight}} </td>
+            </ng-container>
 
-            </tbody>
+
+            <tr mat-header-row *matHeaderRowDef="hidder"></tr>
+            <tr mat-row *matRowDef="let row; columns: hidder;" ></tr>
           </table>
         </div>
       </div>
-
-
-
-
-
       <div class=" bg-primary">
         <h1>partie intéressé pertinante </h1>
       </div>
@@ -212,7 +214,98 @@
     </div>
     <footer-cmp></footer-cmp>
 
+    <div >
+      <div class="col-md-4" >
+        <table class="table card">
+          <thead>
+          <th colspan="2">pouvoir</th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>1</td>
+            <td>La PI a un pouvoir infinitisimale sur l'activité de l'entreprise </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>La PI a un pouvoir mineur sur l'activité de l'entreprise  </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>La PI a un pouvoir moyen sur l'activité de l'entreprise  </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>La PI a un pouvoir élevé sur l'activité de l'entreprise </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>La PI est indisponsable pour l'activité de l'entreprise </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
 
+
+      <div class="col-md-4" >
+        <table class="table card">
+          <thead>
+          <th colspan="2">intéret</th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>1</td>
+            <td>Non intéressée </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Légérement intéressée  </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Moyennement intéressée</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Intéressée</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Fortement intéressée  </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-4" >
+        <table class="table card">
+          <thead>
+          <th colspan="2">Influence</th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>1</td>
+            <td>Non influant </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Légérement influant  </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Moyennement influant  </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Influant </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Fortement influant  </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
   </div>
   <fixedplugin-cmp></fixedplugin-cmp>

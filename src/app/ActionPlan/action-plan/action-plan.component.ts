@@ -10,6 +10,7 @@ import {ActionPlanService} from '../../Services/ActionPlan/action-plan.service';
 })
 export class ActionPlanComponent implements OnInit {
   plandeaction : any;
+
   Enjeu : any;
   animal : any;
   public hidder = ["id", "Origine"  , "id declenche" , "description" , "Action" , "DateDebutPanifie" , "Delai" ,
@@ -28,6 +29,7 @@ export class ActionPlanComponent implements OnInit {
       }, error => {
         console.log(false);
       });
+
   }
 
 }
