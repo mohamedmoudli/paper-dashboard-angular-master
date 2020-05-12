@@ -10,6 +10,7 @@ import {InterestedPartyService} from '../../Services/InterestedParty/interested-
 })
 export class HistoricalInterestedPartyComponent implements OnInit {
   users: any ;
+  p:number = 1;
   public hidder = ["nomPI", "poids" , "date"];
 
   constructor(private interestedPartyService: InterestedPartyService,

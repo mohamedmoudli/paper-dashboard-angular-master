@@ -128,6 +128,8 @@ import {DelateCurrentStateplanactionComponent} from '../../ActionPlan/delate-cur
 import {StateEfficacityActionPlanComponent} from '../../ActionPlan/state-efficacity-action-plan/state-efficacity-action-plan.component';
 import {CreateStateEfficacityActionPlanComponent} from '../../ActionPlan/create-state-efficacity-action-plan/create-state-efficacity-action-plan.component';
 import {DelateStateEfficacityActionPlanComponent} from '../../ActionPlan/delate-state-efficacity-action-plan/delate-state-efficacity-action-plan.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -152,6 +154,8 @@ import {DelateStateEfficacityActionPlanComponent} from '../../ActionPlan/delate-
     MatPaginatorModule,
     MatTableModule,
     ChartsModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
     ReactiveFormsModule,
     NgbModule
   ],

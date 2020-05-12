@@ -5,9 +5,13 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content">
-      <button class="btn btn-primary " routerLink="/ajouterguideUtilisation">ajouter </button>
+
       <h4>historique</h4>
       <div class="card col-md-10">
+        <div class="row">
+          <h3>chercher : </h3>
+          <input type="text" placeholder="search" [(ngModel)]="users.NomPI">
+        </div>
         <table class="table" >
           <thead class=" text-primary">
           <tr>
@@ -15,7 +19,7 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of users">
+          <tr *ngFor="let c of users | filter: users.NomPI | paginate: { itemsPerPage : 5 , currentPage:p }">
             <td>{{c.NomPI}}</td>
             <td>{{c.Poids}}</td>
             <td>{{c.Date}}</td>
@@ -25,6 +29,7 @@
           </tr>
 
           </tbody>
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
         </table>
       </div>
 

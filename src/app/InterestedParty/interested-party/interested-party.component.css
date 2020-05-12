@@ -3,3 +3,13 @@
   padding-right: 80px;
   margin-left: 100px;
 }
+.alignement{
+padding-left: 50px;
+}
+.alignementPI{
+  padding-left: 50px;
+}
+.bordertd{
+  border-style: solid;
+  border-width: 1px;
+}
