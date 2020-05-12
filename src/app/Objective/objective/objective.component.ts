@@ -15,7 +15,8 @@ export class ObjectiveComponent implements OnInit {
   Enjeu : any;
   animal : any;
   public hidder = ["id", "Description"  , "Enjeu", "Temps1" , "Temps2" , "Temps3" , "Temps4" ,
-    "Temps2020" , "Temps2021" , "ProcessLie" , "IndicateurPredefini" , "IndicateurPerformance" , "ObjectiveAAtendre" , "EtatInitial" ,  "NumAction" , "EtatActuelIndiacteur" , "Avencement" , "EtatActuel" ,
+    "Temps2020" , "Temps2021" , "ProcessLie" , "IndicateurPredefini" , "IndicateurPerformance" , "ObjectiveAAtendre" ,
+    "EtatInitial" ,  "NumAction" , "EtatActuelIndiacteur" , "Avencement" , "EtatActuel" ,
     "Commentaire" ];
   constructor(private objectiveService: ObjectiveService,
               private router: Router , private dialog: MatDialog) { }

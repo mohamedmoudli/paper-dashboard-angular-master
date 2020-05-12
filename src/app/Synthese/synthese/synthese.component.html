@@ -61,6 +61,12 @@
                 [labels]="pieChartLabelsCurrentStateByProcess" [colors]="chartColorsCurrentStateByProcess"
                 [labels]="chartLabelsCurrentStateByProcess" [colors]="chartColorsCurrentStateByProcess" [chartType]="pieChartTypeCurrentStateByProcess"></canvas>
       </div>
+      <h3 class="text-success">avencement par process</h3>
+      <div style="display: block">
+        <canvas baseChart [data]="pieChartDataAdvencementByProcess"
+                [labels]="pieChartLabelsAdvencementByProcess" [colors]="chartColorsAdvencementByProcess"
+                [labels]="chartLabelsAdvencementByProcess" [colors]="chartColorsAdvencementByProcess" [chartType]="pieChartTypeAdvencementByProcess"></canvas>
+      </div>
     </div>
     <footer-cmp></footer-cmp>
   </div>

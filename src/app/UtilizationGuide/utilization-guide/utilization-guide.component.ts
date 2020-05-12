@@ -13,7 +13,9 @@ import {CreateUtilizationGuideComponent} from '../create-utilization-guide/creat
 export class UtilizationGuideComponent implements OnInit {
   public animal: string;
   guide: any ;
-  public hidder = ["nom", "role" , "organisation"];
+
+  public hidder = ["version", "Modification" , "Nom" ,"data"];
+  public hidder1 = ["Nom", "Role" , "Organisation" ];
   constructor(private guideutilisation : GuideutilisationService,
               private router: Router , private dialog: MatDialog ) { }
 

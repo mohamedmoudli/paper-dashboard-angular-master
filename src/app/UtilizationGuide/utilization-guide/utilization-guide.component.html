@@ -8,14 +8,14 @@
       <button class="btn btn-primary " (click)="CreateUtilizationGuideComponent()">ajouter </button>
       <h4>liste de diffusion</h4>
       <div class="card col-md-10">
-        <table class="table" >
+        <table mdbTable class="table" >
           <thead class=" text-primary">
           <tr>
-            <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+            <th *ngFor="let c of hidder1"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of guide">
+          <tr mdbTableRow *ngFor="let c of guide">
             <td>{{c.Nom}}</td>
             <td>{{c.Role}}</td>
             <td>{{c.Organisation}}</td>
@@ -28,32 +28,34 @@
           </tbody>
 
         </table>
-        <mat-paginator  [length]="100"
-                        [pageSize]="2"
-                        [pageSizeOptions]="[1, 2, 3]" showFirstLastButtons></mat-paginator>
+
       </div>
+      <div class="text-break">
       <h2>
         historique de modification
       </h2>
-      <table class="table card col-md-6">
+      </div>
+      <div class="card col-md-6">
+      <table class="table  ">
         <thead>
-        <th>version</th> <th></th> <th></th><th>Modification</th><th>Nom</th> <th></th> <th></th><th>data</th>
+        <th *ngFor="let c of hidder">{{c}}</th>
         </thead>
         <tbody>
         <tr>
-          <td>1</td><td></td><td></td> <td></td> <td></td><td></td> <td></td> <td></td>
-          <td>Creation</td> <td></td> <td></td>
+          <td>1</td>
+          <td>Creation</td>
           <td><p>Auteur</p> <p>verificateur</p> <p>Approbateur</p></td>
           <td></td>
         </tr>
         <tr>
-          <td>2</td><td></td> <td></td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td>
+          <td>2</td>
+          <td></td>
 
           <td><p>Auteur</p> <p>verificateur</p> <p>Approbateur</p></td>
         </tr>
         </tbody>
       </table>
-
+      </div>
 
       <div>
         <h2>

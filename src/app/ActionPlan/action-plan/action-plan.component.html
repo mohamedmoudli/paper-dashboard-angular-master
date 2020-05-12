@@ -14,42 +14,42 @@
         </div>
 
         <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title"> Risque</h4>
+          <div >
+            <div class="card-header couleurObjective">
+              <h4 class="card-title"> plan de action</h4>
             </div>
-            <div class="card-body">
-              <div class="table-responsive">
+            <div>
+              <div class="card table-responsive">
                 <table class="table">
-                  <thead class=" text-primary" >
+                  <thead >
                   <tr>
-                    <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+                    <th *ngFor="let c of hidder" class="bordertd bg-primary">{{c}}</th><td></td><td></td><td></td>
                   </tr>
 
                   </thead>
                   <tbody>
                   <tr *ngFor="let c of plandeaction">
-                    <td>{{c.id}}</td>
-                    <td>{{c.Origin}}</td>
-                    <td *ngIf="c.ExigencyInterestedParty !== null">{{c.ExigencyInterestedParty.id}}</td>
-                    <td *ngIf="c.Risk !== null">{{c.Risk.id}}</td>
-                    <td *ngIf="c.Opportunity !== null">{{c.Opportunity.id}}</td>
-                    <td *ngIf="c.OpportunityReevalution !== null">{{c.OpportunityReevalution.id}}</td>
-                    <td *ngIf="c.Objective !== null">{{c.Objective.id}}</td>
-                    <td>{{c.Description}}</td>
-                    <td>{{c.Action}}</td>
-                    <td>{{c.StartDatePanifies}}</td>
-                    <td>{{c.Delai}}</td>
-                    <td>{{c.Responsible}}</td>
-                    <td>{{c.Director}}</td>
-                    <td>{{c.Consult}}</td>
-                    <td>{{c.Advancement}}</td>
-                    <td>{{c.ClosingCriterion}}</td>
-                    <td>{{c.ProofOfClosure}}</td>
-                    <td>{{c.CriteriaEfficiency}}</td>
-                    <td>{{c.stateEfficacyActionPlan.nameStateEfficacy}}</td>
-                    <td>{{c.currentStateActionPlan.nameCurrentState}}</td>
-                    <td>{{c.Comment}}</td>
+                    <td class="bordertd">{{c.id}}</td>
+                    <td class="bordertd">{{c.Origin}}</td>
+                    <td *ngIf="c.ExigencyInterestedParty !== null" class="bordertd">{{c.ExigencyInterestedParty.id}}</td>
+                    <td *ngIf="c.Risk !== null" class="bordertd">{{c.Risk.id}}</td>
+                    <td *ngIf="c.Opportunity !== null" class="bordertd">{{c.Opportunity.id}}</td>
+                    <td *ngIf="c.OpportunityReevalution !== null" class="bordertd">{{c.OpportunityReevalution.id}}</td>
+                    <td *ngIf="c.Objective !== null" class="bordertd">{{c.Objective.id}}</td>
+                    <td class="bordertd">{{c.Description}}</td>
+                    <td class="bordertd">{{c.Action}}</td>
+                    <td class="bordertd">{{c.StartDatePanifies}}</td>
+                    <td class="bordertd">{{c.Delai}}</td>
+                    <td class="bordertd">{{c.Responsible}}</td>
+                    <td class="bordertd">{{c.Director}}</td>
+                    <td class="bordertd">{{c.Consult}}</td>
+                    <td class="bordertd">{{c.Advancement}}</td>
+                    <td class="bordertd">{{c.ClosingCriterion}}</td>
+                    <td class="bordertd">{{c.ProofOfClosure}}</td>
+                    <td class="bordertd">{{c.CriteriaEfficiency}}</td>
+                    <td class="bordertd">{{c.stateEfficacyActionPlan.nameStateEfficacy}}</td>
+                    <td class="bordertd">{{c.currentStateActionPlan.nameCurrentState}}</td>
+                    <td class="bordertd">{{c.Comment}}</td>
 
 
                   </tr>

@@ -27,7 +27,35 @@
                 <table class="table">
                   <thead>
                   <tr>
-                    <th *ngFor="let c of hidder" class="bordertd bg-primary">{{c}}</th><td></td><td></td><td></td>
+                    <th colspan="15" class="couleurIdentification">description et planification</th>
+                    <th colspan="4" class="couleurEvaluation">Avencement et evaluation</th>
+                  </tr>
+                  <tr>
+                    <th colspan="3"></th>
+                    <th colspan="6" class="couleurIdentification">delai</th>
+                  </tr>
+
+                  <tr>
+                    <th rowspan="2" class="bordertd bg-primary">id</th>
+                    <th rowspan="2" class="bordertd bg-primary">Description</th>
+                    <th rowspan="2" class="bordertd bg-primary">Enjeu</th>
+                    <th  class="bordertd bg-primary">Temps1</th>
+                    <th  class="bordertd bg-primary">Temps2</th>
+                    <th  class="bordertd bg-primary">Temps3</th>
+                    <th  class="bordertd bg-primary">Temps4</th>
+                    <th  class="bordertd bg-primary">Temps2020</th>
+                    <th  class="bordertd bg-primary">Temps2021</th>
+                    <th rowspan="2" class="bordertd bg-primary">ProcessLie</th>
+                    <th rowspan="2" class="bordertd bg-primary">IndicateurPredefini</th>
+                    <th rowspan="2" class="bordertd bg-primary">IndicateurPerformance</th>
+                    <th rowspan="2" class="bordertd bg-primary">ObjectiveAAtendre</th>
+                    <th rowspan="2" class="bordertd bg-primary">EtatInitial</th>
+                    <th rowspan="2" class="bordertd bg-primary">NumAction</th>
+                    <th rowspan="2" class="bordertd bg-primary">EtatActuelIndiacteur</th>
+                    <th rowspan="2" class="bordertd bg-primary">Avencement</th>
+                    <th rowspan="2" class="bordertd bg-primary">EtatActuel</th>
+                    <th rowspan="2" class="bordertd bg-primary">Commentaire</th>
+
                   </tr>
                   </thead>
                   <tbody>
@@ -35,12 +63,24 @@
                     <td class="bordertd">{{c.id}}</td>
                     <td class="bordertd">{{c.Description}}</td>
                     <td class="bordertd">{{c.DescriptionStake}}</td>
-                    <td class="bordertd">{{c.Time1}}</td>
-                    <td class="bordertd">{{c.Time2}}</td>
-                    <td class="bordertd">{{c.Time3}}</td>
-                    <td class="bordertd">{{c.Time4}}</td>
-                    <td class="bordertd">{{c.Time2020}}</td>
-                    <td class="bordertd">{{c.Time2021}}</td>
+                    <td *ngIf="c.Time1 == 'R'" class="bg-danger bordertd">{{c.Time1}}</td>
+                    <td *ngIf="c.Time1 == 'V'" class="bg-success bordertd">{{c.Time1}}</td>
+                    <td *ngIf="c.Time1 == 'X'" class="bordertd">{{c.Time1}}</td>
+                    <td *ngIf="c.Time2 == 'R'" class=" bg-danger bordertd">{{c.Time2}}</td>
+                    <td *ngIf="c.Time2 == 'V'" class=" bg-success bordertd">{{c.Time2}}</td>
+                    <td *ngIf="c.Time2 == 'X'" class="bordertd">{{c.Time2}}</td>
+                    <td *ngIf="c.Time3 == 'R'" class=" bg-danger bordertd">{{c.Time3}}</td>
+                    <td *ngIf="c.Time3 == 'V'" class="bg-success bordertd">{{c.Time3}}</td>
+                    <td *ngIf="c.Time3 == 'X'" class="bordertd">{{c.Time3}}</td>
+                    <td *ngIf="c.Time4 == 'R'" class=" bg-danger bordertd">{{c.Time4}}</td>
+                    <td *ngIf="c.Time4 == 'V'" class=" bg-success bordertd">{{c.Time4}}</td>
+                    <td *ngIf="c.Time4 == 'X'" class="bordertd">{{c.Time4}}</td>
+                    <td *ngIf="c.Time2020 == 'R'" class="bg-danger bordertd">{{c.Time2020}}</td>
+                    <td *ngIf="c.Time2020 == 'V'" class=" bg-success bordertd">{{c.Time2020}}</td>
+                    <td *ngIf="c.Time2020 == 'X'" class="bordertd">{{c.Time2020}}</td>
+                    <td *ngIf="c.Time2021 == 'R'" class="bg-danger bordertd">{{c.Time2021}}</td>
+                    <td *ngIf="c.Time2021 == 'V'" class=" bg-success bordertd">{{c.Time2021}}</td>
+                    <td *ngIf="c.Time2021 == 'X'" class="bordertd">{{c.Time2021}}</td>
                     <td class="bordertd">{{c.ProcessLie.process}}</td>
                     <td class="bordertd">{{c.PredefinedIndicator}}</td>
                     <td class="bordertd">{{c.PerformanceIndicator}}</td>

@@ -14,6 +14,7 @@ export class SyntheseComponent implements OnInit {
   catchartjsCategorieOpportunite : any;
   catchartjsCurrentState : any;
   catchartjsCurrentStateByProcess : any;
+  catchartjsAdvencementByProcess : any;
   catchartjsStateEfficacity : any;
   catchartjsEtatOpportunite : any;
   public Nbre: Object = [];
@@ -105,6 +106,19 @@ export class SyntheseComponent implements OnInit {
   public chartLabelsCurrentStateByProcess = [];
 
   public chartColorsCurrentStateByProcess : Array<any> = [
+    {
+      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
+      hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
+      borderWidth: 2,
+    }
+  ];
+
+  public pieChartLabelsAdvencementByProcess = [];
+  public pieChartDataAdvencementByProcess = [];
+  public pieChartTypeAdvencementByProcess = 'bar';
+  public chartLabelsAdvencementByProcess = [];
+
+  public chartColorsAdvencementByProcess : Array<any> = [
     {
       backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
       hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
@@ -244,6 +258,26 @@ export class SyntheseComponent implements OnInit {
 
           console.log(this.pieChartDataCurrentStateByProcess);
           console.log(data);
+        }
+
+        this.NbreCategorie = data;
+      }, error => {
+        console.log('gggggg');
+      });
+
+
+    this.syntheseService.GetNbreAdvencementActionPlanbyProcess()
+      .subscribe((data) => {
+
+        this.catchartjsAdvencementByProcess = data;
+        console.log(data);
+        for (let element of this.catchartjsAdvencementByProcess ) {
+          this.pieChartLabelsAdvencementByProcess.push(element.process);
+          this.chartLabelsAdvencementByProcess.push(element.process);
+          this.pieChartDataAdvencementByProcess.push(element.avencement);
+
+          console.log(this.pieChartLabelsAdvencementByProcess);
+
         }
 
         this.NbreCategorie = data;

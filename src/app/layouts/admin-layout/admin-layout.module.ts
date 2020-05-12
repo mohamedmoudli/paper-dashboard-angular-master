@@ -130,6 +130,7 @@ import {CreateStateEfficacityActionPlanComponent} from '../../ActionPlan/create-
 import {DelateStateEfficacityActionPlanComponent} from '../../ActionPlan/delate-state-efficacity-action-plan/delate-state-efficacity-action-plan.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MDBBootstrapModule} from 'angular-bootstrap-md';
 
 
 @NgModule({
@@ -156,6 +157,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ChartsModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
+    MDBBootstrapModule.forRoot(),
     ReactiveFormsModule,
     NgbModule
   ],
