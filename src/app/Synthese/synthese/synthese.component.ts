@@ -14,6 +14,8 @@ export class SyntheseComponent implements OnInit {
   catchartjsCategorieOpportunite : any;
   catchartjsCurrentState : any;
   catchartjsCurrentStateByProcess : any;
+  advencementbytimelimit : any;
+  timelimit : any;
   catchartjsAdvencementByProcess : any;
   catchartjsStateEfficacity : any;
   catchartjsEtatOpportunite : any;
@@ -284,6 +286,15 @@ export class SyntheseComponent implements OnInit {
       }, error => {
         console.log('gggggg');
       });
+    this.syntheseService.GetTimeLimitAdvencementbyProcess()
+      .subscribe(
+        (data)=>{
+         this.advencementbytimelimit = data;
+         console.log(this.advencementbytimelimit);
+        },error => {
+          console.log(false);
+        }
+      )
   }
 
 }

@@ -69,11 +69,14 @@ export class OpportunityService {
     return this.http.post(this.host+"/UpdateOppOrtunity/"+id , data);
 
   }
-  public gethistoricalOpportunite() {
-    return this.http.get(this.host+"/GethistoricalOpportunity");
+  public gethistoricalOpportunity() {
+    return this.http.get(this.host+"/api/historical_opportunities");
   }
   public savehistoricalOpportunite() {
     return this.http.get(this.host+"/savehistoricalOpportunity");
+  }
+  public delatehistoricalOpportunity(id) {
+    return this.http.delete(this.host+"/api/historical_opportunities/"+id);
   }
 
 }

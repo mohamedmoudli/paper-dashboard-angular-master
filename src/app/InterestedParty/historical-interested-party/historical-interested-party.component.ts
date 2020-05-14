@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import {Router} from '@angular/router';
 import {InterestedPartyService} from '../../Services/InterestedParty/interested-party.service';
+import {DelateHistoricalRiskComponent} from '../../Risk/delate-historical-risk/delate-historical-risk.component';
+import {MatDialog} from '@angular/material/dialog';
+import {DelateHistoricalInterestedPartyComponent} from '../delate-historical-interested-party/delate-historical-interested-party.component';
 
 @Component({
   selector: 'app-historical-interested-party',
@@ -9,35 +12,43 @@ import {InterestedPartyService} from '../../Services/InterestedParty/interested-
   styleUrls: ['./historical-interested-party.component.css']
 })
 export class HistoricalInterestedPartyComponent implements OnInit {
-  users: any ;
+  historical: any ;
   p:number = 1;
+  public animal: string;
   public hidder = ["nomPI", "poids" , "date"];
 
   constructor(private interestedPartyService: InterestedPartyService,
-              private router: Router) { }
+              private router: Router , private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.interestedPartyService.gethistoricalPI()
       .subscribe((data) => {
 
         console.log(data);
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.historical = data['hydra:member'];
+        console.log(this.historical);
       }, error => {
         console.log(false);
       });
+    this.interestedPartyService.castinterestedParty.subscribe( interestedParty => this.historical = interestedParty);
   }
 
-  public delate(id) {
-    console.log(id);
-    this.interestedPartyService.deletehistorical(id).subscribe((data) => {
-      console.log("ffffffffff");
-      this.ngOnInit();
+  public delateHistoricalInterestedParty(data): void {
+    this.charingTheHistoricalInterestedParty();
+    const dialogRef = this.dialog.open(DelateHistoricalInterestedPartyComponent, {
+      width: "500px",
+      height: "150px",
+      data:data
 
-    }), (error) => {
+    });
 
-      console.log("Error", error);
-    };
-
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
   }
+  charingTheHistoricalInterestedParty(){
+    this.interestedPartyService.charingInterestedParty(this.historical);
+  }
+
 }

@@ -131,6 +131,10 @@ import {DelateStateEfficacityActionPlanComponent} from '../../ActionPlan/delate-
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MDBBootstrapModule} from 'angular-bootstrap-md';
+import {DelateHistoricalInterestedPartyComponent} from '../../InterestedParty/delate-historical-interested-party/delate-historical-interested-party.component';
+import {DelateHistoricalRiskComponent} from '../../Risk/delate-historical-risk/delate-historical-risk.component';
+import {DelateHistoricalOpportunityComponent} from '../../Opportunity/delate-historical-opportunity/delate-historical-opportunity.component';
+import {DelateHistoricalObjectiveComponent} from '../../Objective/delate-historical-objective/delate-historical-objective.component';
 
 
 @NgModule({
@@ -263,6 +267,10 @@ import {MDBBootstrapModule} from 'angular-bootstrap-md';
     StateEfficacityActionPlanComponent,
     CreateStateEfficacityActionPlanComponent,
     DelateStateEfficacityActionPlanComponent,
+    DelateHistoricalInterestedPartyComponent,
+    DelateHistoricalRiskComponent,
+    DelateHistoricalOpportunityComponent,
+    DelateHistoricalObjectiveComponent,
     HelpStakeComponent
   ]
 })

@@ -10,7 +10,7 @@
       <div class="card col-md-10">
         <div class="row">
           <h3>chercher : </h3>
-          <input type="text" placeholder="search" [(ngModel)]="users.NomPI">
+          <input type="text" placeholder="search" [(ngModel)]="historical.NomPI">
         </div>
         <table class="table" >
           <thead class=" text-primary">
@@ -19,20 +19,20 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of users | filter: users.NomPI | paginate: { itemsPerPage : 5 , currentPage:p }">
+          <tr *ngFor="let c of historical | filter: historical.NomPI | paginate: { itemsPerPage : 5 , currentPage:p }">
             <td>{{c.NomPI}}</td>
             <td>{{c.Poids}}</td>
-            <td>{{c.Date}}</td>
+            <td>{{c.Date | date}}</td>
 
-            <td><button class="btn btn-danger" (click)="delate(c.id)">supp</button></td>
+            <td><button class="btn btn-danger" (click)="delateHistoricalInterestedParty(c)">supp</button></td>
 
           </tr>
 
           </tbody>
-          <pagination-controls (pageChange)="p = $event"></pagination-controls>
-        </table>
-      </div>
 
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
 
     </div>
     <footer-cmp></footer-cmp>

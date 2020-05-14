@@ -67,6 +67,23 @@
                 [labels]="pieChartLabelsAdvencementByProcess" [colors]="chartColorsAdvencementByProcess"
                 [labels]="chartLabelsAdvencementByProcess" [colors]="chartColorsAdvencementByProcess" [chartType]="pieChartTypeAdvencementByProcess"></canvas>
       </div>
+
+      <h3 class="text-success">avencement par délai</h3>
+      <div class="card">
+      <table class="table ">
+        <thead>
+        <tr>
+         <th></th> <th *ngFor="let p of advencementbytimelimit"> {{p.Delai}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let c of advencementbytimelimit">
+          <td>{{c.Process.process}}</td>
+          <td>{{c.Advancement}}</td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
     </div>
     <footer-cmp></footer-cmp>
   </div>

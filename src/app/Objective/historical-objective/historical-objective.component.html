@@ -6,9 +6,14 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content">
-      <button class="btn btn-primary " routerLink="/ajouterguideUtilisation">ajouter </button>
-      <h4>historique</h4>
-      <div class="card col-md-10">
+      <div class="card-header couleurHistoricalObjective">
+        <h2 class="card-title"> historique Objective</h2>
+      </div>
+      <div class="card table-responsive">
+        <div>
+          <label>chercher : </label>
+          <input type="text" placeholder="search" [(ngModel)]="historique.Description">
+        </div>
         <table class="table" >
           <thead class=" text-primary">
           <tr>
@@ -16,7 +21,7 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of historique">
+          <tr *ngFor="let c of historique | filter: historique.Description | paginate: { itemsPerPage : 5 , currentPage:p }">
             <td>{{c.id}}</td>
             <td>{{c.Description}}</td>
             <td>{{c.Stake}}</td>
@@ -34,13 +39,14 @@
             <td>  <p *ngFor="let p of c.NumAction "> {{ p.id}}</p> </td>
             <td>{{c.Advencement}}</td>
             <td>{{c.Comment}}</td>
-            <td>{{c.Date }}</td>
-            <td><button class="btn btn-danger" (click)="supp(c.id)">supp</button></td>
+            <td>{{c.Date | date }}</td>
+            <td><button class="btn btn-danger" (click)="delateHistoricalOjective(c)">supp</button></td>
 
           </tr>
 
           </tbody>
         </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
 
 

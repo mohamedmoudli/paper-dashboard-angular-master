@@ -1,10 +1,18 @@
-<div>
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content">
-      <button class="btn btn-primary " routerLink="/ajouterguideUtilisation">ajouter </button>
-      <h4>historique</h4>
-      <div class="card col-md-10">
+      <div class="card-header couleurHistoricalRisk">
+        <h2 class="card-title"> historique Risque</h2>
+      </div>
+      <div class="card table-responsive">
+        <div>
+          <label>chercher : </label>
+          <input type="text" placeholder="search" [(ngModel)]="historique.Strategique">
+        </div>
         <table class="table" >
           <thead class=" text-primary">
           <tr>
@@ -12,7 +20,7 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of historique">
+          <tr *ngFor="let c of historique | filter: historique.Strategique | paginate: { itemsPerPage : 5 , currentPage:p }">
             <td>{{c.id}}</td>
             <td>{{c.Criticite}}</td>
             <td>{{c.Decision}}</td>
@@ -21,14 +29,15 @@
             <td>{{c.EtatRisque}}</td>
             <td>{{c.Commentaires}}</td>
             <td><p *ngFor="let p of c.NumeroAction "> {{ p.id}}</p> </td>
-            <td>{{c.Date}}</td>
+            <td>{{c.Date | date}}</td>
 
-            <td><button class="btn btn-danger" (click)="supp(c.id)">supp</button></td>
+            <td><button class="btn btn-danger" (click)="delateHistoricalRisk(c)">supp</button></td>
 
           </tr>
 
           </tbody>
         </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
 
 

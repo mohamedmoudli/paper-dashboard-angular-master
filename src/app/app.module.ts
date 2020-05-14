@@ -104,6 +104,10 @@ import { DelateCurrentStateplanactionComponent } from './ActionPlan/delate-curre
 import { StateEfficacityActionPlanComponent } from './ActionPlan/state-efficacity-action-plan/state-efficacity-action-plan.component';
 import { CreateStateEfficacityActionPlanComponent } from './ActionPlan/create-state-efficacity-action-plan/create-state-efficacity-action-plan.component';
 import { DelateStateEfficacityActionPlanComponent } from './ActionPlan/delate-state-efficacity-action-plan/delate-state-efficacity-action-plan.component';
+import { DelateHistoricalInterestedPartyComponent } from './InterestedParty/delate-historical-interested-party/delate-historical-interested-party.component';
+import { DelateHistoricalRiskComponent } from './Risk/delate-historical-risk/delate-historical-risk.component';
+import { DelateHistoricalOpportunityComponent } from './Opportunity/delate-historical-opportunity/delate-historical-opportunity.component';
+import { DelateHistoricalObjectiveComponent } from './Objective/delate-historical-objective/delate-historical-objective.component';
 
 
 
@@ -114,6 +118,7 @@ import { DelateStateEfficacityActionPlanComponent } from './ActionPlan/delate-st
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+
 
 
 

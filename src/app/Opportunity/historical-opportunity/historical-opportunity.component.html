@@ -6,9 +6,15 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content">
-      <button class="btn btn-primary " routerLink="/ajouterguideUtilisation">ajouter </button>
-      <h4>historique</h4>
-      <div class="card col-md-10">
+
+      <div class="card-header couleurHistoricalOpportunity">
+        <h2 class="card-title"> historique Opportunite</h2>
+      </div>
+      <div class="card table-responsive">
+        <div>
+          <h3>chercher : </h3>
+          <input type="text" placeholder="search" [(ngModel)]="historique.Etat">
+        </div>
         <table class="table" >
           <thead class=" text-primary">
           <tr>
@@ -16,18 +22,20 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of historique">
+          <tr *ngFor="let c of historique | filter: historique.Etat | paginate: { itemsPerPage : 5 , currentPage:p }">
             <td>{{c.id}}</td>
             <td>{{c.Etat}}</td>
             <td>{{c.Commentaire}}</td>
             <td>  <p *ngFor="let p of c.NumeroAction "> {{ p.id}}</p> </td>
-            <td>{{c.Date }}</td>
-            <td><button class="btn btn-danger" (click)="supp(c.id)">supp</button></td>
+            <td>{{c.Date | date}}</td>
+            <td><button class="btn btn-danger" (click)="delateHistoricalOpportunity(c)">supp</button></td>
 
           </tr>
 
           </tbody>
+
         </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
 
 
