@@ -42,7 +42,6 @@ export class SyntheseService {
 
   }
   public GetTimeLimitAdvencementbyProcess() {
-    return this.http.get(this.host+"/GetProcessByTimeLimit");
-
+    return this.http.get(this.host+"/nembreAvencementbyProcessbyTimeLimit");
   }
 }

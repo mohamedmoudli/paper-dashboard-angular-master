@@ -41,7 +41,16 @@ export class DefinitionComponent implements OnInit {
   saveaideExigencepi(){
     localStorage.setItem('aideExigencepi' , this.aideExigencepi)
   }
-  savedefinitionRisque(){
+  savedefinitionRisk(){
+    localStorage.setItem('definitionRisque' , this.definitionRisque)
+  }
+  savedefinitionGravity(){
+    localStorage.setItem('definitionRisque' , this.definitionRisque)
+  }
+  savedefinitionProbability(){
+    localStorage.setItem('definitionRisque' , this.definitionRisque)
+  }
+  savedefinitionDetectability(){
     localStorage.setItem('definitionRisque' , this.definitionRisque)
   }
   saveaideRisque(){

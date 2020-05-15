@@ -17,10 +17,20 @@ export class DefinionRiskComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
-  DefinitionRisque(){}
-  DefinitionGravite(){}
-  DefinitionProbabilite(){}
-  DefinitionDetectabilite(){}
-  DefinitionCriticite(){}
+  DefinitionRisk(){
+    alert('possibilité de survenance d un dommage résultant d une exposition à un phénomène dangereux')
+  }
+  DefinitionGravity(){
+    alert('l impact des conséquences')
+  }
+  DefinitionProbability(){
+    alert('la probabilté d apparition du risque')
+  }
+  DefinitionDetectability(){
+    alert('la capacité de détecter le risque avant son apparition')
+  }
+  DefinitionCriticity(){
+    alert('la criticité est une échelle de mesure du risque permettant de décider à propos l acceptabilité du risque')
+  }
 
 }

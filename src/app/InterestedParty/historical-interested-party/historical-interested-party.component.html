@@ -22,7 +22,7 @@
           <tr *ngFor="let c of historical | filter: historical.NomPI | paginate: { itemsPerPage : 5 , currentPage:p }">
             <td>{{c.NomPI}}</td>
             <td>{{c.Poids}}</td>
-            <td>{{c.Date | date}}</td>
+            <td>{{c.Date | date: 'short'}}</td>
 
             <td><button class="btn btn-danger" (click)="delateHistoricalInterestedParty(c)">supp</button></td>
 
