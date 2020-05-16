@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {MatDialogRef} from '@angular/material/dialog';
+
 import {StakeService} from '../../Services/Stake/stake.service';
 
 @Component({
@@ -20,7 +20,7 @@ export class CreateStakeInternalComponent implements OnInit {
   public users = [];
   public Type = [];
   constructor(private stakeService: StakeService,
-              private router:Router , private fb:FormBuilder , public dialogRef: MatDialogRef<CreateStakeInternalComponent>) {
+              private router:Router , private fb:FormBuilder) {
     this.angForm = this.fb.group({
       Description: ['', [Validators.required]],
       Type: ['', [Validators.required]],
@@ -62,8 +62,7 @@ export class CreateStakeInternalComponent implements OnInit {
     this.stakeService.saveStake(this.data).subscribe(
       resp=>{
         console.log(resp);
-        console.log(true);
-        return this.onNoClick();
+        this.router.navigate(['enjeu'])
       },error => {
 
         console.log(error);
@@ -83,7 +82,5 @@ export class CreateStakeInternalComponent implements OnInit {
     }
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+
 }

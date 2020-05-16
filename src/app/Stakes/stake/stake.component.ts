@@ -92,32 +92,7 @@ export class StakeComponent implements OnInit {
     this.stakeService.cast.subscribe(user => this.usersExtern = user);
   }
 
-  public CreateStakeInternal(): void {
 
-    const dialogRef = this.dialog.open(CreateStakeInternalComponent, {
-      width: "500px",
-      height: "400px",
-
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed");
-      this.animal = result;
-    });
-  }
-  public CreateStakeExternal(): void {
-    this.editTheUser();
-    const dialogRef = this.dialog.open(CreateStakeExternalComponent, {
-      width: "500px",
-      height: "400px",
-
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed");
-      this.animal = result;
-    });
-  }
   public ajouterCategoriesIntern(): void {
 
     const dialogRef = this.dialog.open(CreateCategoryInternalComponent, {
@@ -160,7 +135,7 @@ export class StakeComponent implements OnInit {
   definition(){
     const dialogRef = this.dialog.open(DefinitionStakeComponent, {
       width: "500px",
-      height: "300px",
+      height: "150px",
 
     });
 

@@ -47,6 +47,8 @@ import {StateOpportunityComponent} from '../../Opportunity/state-opportunity/sta
 import {StateRiskComponent} from '../../Risk/state-risk/state-risk.component';
 import {CurrentStateplanactionComponent} from '../../ActionPlan/current-stateplanaction/current-stateplanaction.component';
 import {StateEfficacityActionPlanComponent} from '../../ActionPlan/state-efficacity-action-plan/state-efficacity-action-plan.component';
+import {CreateStakeInternalComponent} from '../../Stakes/create-stake-internal/create-stake-internal.component';
+import {CreateStakeExternalComponent} from '../../Stakes/create-stake-external/create-stake-external.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -65,6 +67,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'listePartieinteresse',  component: ListInterestedPartyComponent },
     { path: 'partieinteresse',  component: InterestedPartyComponent },
     { path: 'enjeu',  component: StakeComponent },
+    { path: 'enjeuIntern',  component: CreateStakeInternalComponent },
+    { path: 'enjeuExtern',  component: CreateStakeExternalComponent },
     { path: 'strategiqueRisque',  component: StrategicRiskComponent },
     { path: 'guideutlisation',  component: UtilizationGuideComponent },
     { path: 'processus',  component: ProcessComponent },

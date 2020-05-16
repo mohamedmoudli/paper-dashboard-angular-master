@@ -1,13 +1,13 @@
 
-<div class="card-header panel-heading bg-primary ">
-  <h5 class="card-title "> ajouter Strategique </h5>
+<div >
+  <h1 class="card-title "> Ajouter etat d'efficacité </h1>
 </div>
 <div class="card-body">
   <form [formGroup]="angForm" name="form" (ngSubmit)=" onSubmit() ">
 
     <div class="form-group">
       <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('NameStateEfficacy').errors && (angForm.get('NameStateEfficacy').touched || angForm.get('NameStateEfficacy').dirty ) }">
-        <label class="control-label">nom categorie:</label>
+        <label class="control-label">Etat d'efficacité:</label>
         <input type="text" name="NameStateEfficacy"  [(ngModel)]="data.NameStateEfficacy"  formControlName="NameStateEfficacy" class="form-control">
         <div *ngIf="angForm.get('NameStateEfficacy').errors && (angForm.get('NameStateEfficacy').touched || angForm.get('NameStateEfficacy').dirty )" class="alert alert-danger">
           <span *ngIf="angForm.get('NameStateEfficacy').errors.required"></span>  categories est obligatoire

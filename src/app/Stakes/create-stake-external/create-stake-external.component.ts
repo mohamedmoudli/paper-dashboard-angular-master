@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import {Router} from '@angular/router';
-import {MatDialogRef} from '@angular/material/dialog';
+
 import {StakeService} from '../../Services/Stake/stake.service';
 
 @Component({
@@ -23,7 +23,7 @@ export class CreateStakeExternalComponent implements OnInit {
   public users = [];
   public Type = [];
   constructor(private stakeService: StakeService,
-              private router:Router , private fb:FormBuilder , public dialogRef: MatDialogRef<CreateStakeExternalComponent>) {
+              private router:Router , private fb:FormBuilder ) {
     this.angForm = this.fb.group({
       Description: ['', [Validators.required]],
       Type: ['', [Validators.required]],
@@ -35,8 +35,7 @@ export class CreateStakeExternalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.stakeService.cast.subscribe(user=> this.stake = user);
-    console.log(this.stake);
+
 
     this.stakeService.getCategoryExternal()
       .subscribe((data) => {
@@ -64,17 +63,13 @@ export class CreateStakeExternalComponent implements OnInit {
 
 
   CreateStakeExternal(){
-    this.editTheUser();
+
     this.stakeService.saveStake(this.data).subscribe(
       resp=>{
         console.log(resp);
         console.log(this.users);
+        this.router.navigate(['enjeu'])
 
-        console.log(this.stake);
-        this.stake = this.stake.push( { id: 28 , Description: "ddddddd"} );
-        console.log(this.stake);
-
-        return this.onNoClick();
       },error => {
 
         console.log(error);
@@ -93,11 +88,6 @@ export class CreateStakeExternalComponent implements OnInit {
       return;
     }
   }
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-  editTheUser(){
-    this.stakeService.editUser(this.stake);
 
-  }
+
 }

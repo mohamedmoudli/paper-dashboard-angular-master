@@ -29,7 +29,7 @@
 
       <div>
         <button routerLink="/categoriesPI"  class="btn btn-warning">gérer les categories</button>
-        <button class="btn btn-danger" routerLink="/listePartieinteresse">ajouter partie interesse</button>
+        <button class="btn btn-success" routerLink="/listePartieinteresse">ajouter partie interesse</button>
         <div class=" col-md-3">
           <table mat-table [dataSource]="Nbre" class="example-table table  "
                  matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
@@ -208,14 +208,14 @@
 
       </div>
 
-      <button class=" btn bg-success" (click)="savehistoriquepi()" >sauvgarde historique</button>
+      <button class=" btn bg-default" (click)="savehistoriquepi()" >Enregistrer Etat</button>
 
 
     </div>
     <footer-cmp></footer-cmp>
 
     <div >
-      <div class="col-md-4" >
+      <div class="col-md-4 " >
         <table class="table card">
           <thead>
           <th colspan="2">pouvoir</th>
