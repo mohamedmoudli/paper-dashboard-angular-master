@@ -272,7 +272,7 @@ export class InterestedPartyComponent implements OnInit {
   definitionpartieinteresse(){
     const dialogRef = this.dialog.open(DefinitionInterestedPartyComponent, {
       width: "500px",
-      height: "300px",
+      height: "260px",
 
     });
 

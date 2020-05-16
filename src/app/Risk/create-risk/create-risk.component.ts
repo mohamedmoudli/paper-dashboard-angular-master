@@ -62,6 +62,7 @@ export class CreateRiskComponent implements OnInit {
       resp=>{
         console.log(resp);
         console.log(true);
+        this.router.navigate(['risque'])
       },error => {
 
         console.log(error);

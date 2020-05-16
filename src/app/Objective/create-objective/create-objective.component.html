@@ -5,137 +5,160 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content">
-      <div class="col-md-6 container    my-5">
-        <div class="card card-user  panel">
-          <div class="card-header panel-heading bg-primary ">
-            <h5 class="card-title "> ajouter opportunite </h5>
-          </div>
+<h1>Objective</h1>
           <div class="card-body">
             <form >
-              <div class="form-group">
-                <label class="control-label"> description :</label>
-                <input type="text" name="Description"  [(ngModel)]="data.Description" class="form-control">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-6">
+                  <input type="text" name="Description"  [(ngModel)]="data.Description" class="form-control">
+                </div>
               </div>
 
-              <div>
-                <select name="idStake" placeholder="nom cat"  [(ngModel)]="data.idStake"  type="number">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Enjeu:</label>
+                <div class="col-sm-6">
+                  <select name="idStake" placeholder="nom cat"  [(ngModel)]="data.idStake" type="number" class="form-control" >
+                    <option value="">--choisir enjeu--</option>
 
-                  <option value="">--choisir enjeu--</option>
-                  <option *ngFor="let c of Enjeu" value={{c.id}}>{{c.Description}}</option>
+                    <option *ngFor="let c of Enjeu" value="{{c.id}}">{{c.Description}}</option>
 
-                </select>
+                  </select>
+                </div>
               </div>
 
 
               <h1>Durée</h1>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">temps 1 :</label>
+                <div class="col-sm-6">
+                  <select name="Time1" placeholder="nom cat"  [(ngModel)]="data.Time1" type="number" class="form-control" >
+                    <option value="">--Temps 1--</option>
+                    <option>X</option>
+                    <option>V</option>
+                    <option>R</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">temps 2 :</label>
+                <div class="col-sm-6">
+                  <select name="Time2" placeholder="nom cat"  [(ngModel)]="data.Time2" type="number" class="form-control" >
+                    <option value="">--Temps 2--</option>
+                    <option>X</option>
+                    <option>V</option>
+                    <option>R</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">temps 3 :</label>
+                <div class="col-sm-6">
+                  <select name="Time3" placeholder="nom cat"  [(ngModel)]="data.Time3" type="number" class="form-control" >
+                    <option value="">--Temps 3--</option>
+                    <option>X</option>
+                    <option>V</option>
+                    <option>R</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">temps 4 :</label>
+                <div class="col-sm-6">
+                  <select name="Time4" placeholder="nom cat"  [(ngModel)]="data.Time4" type="number" class="form-control" >
+                    <option value="">--Temps 4--</option>
+                    <option>X</option>
+                    <option>V</option>
+                    <option>R</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">temps 2020 :</label>
+                <div class="col-sm-6">
+                  <select name="Time2020" placeholder="nom cat"  [(ngModel)]="data.Time2020" type="number" class="form-control" >
+                    <option value="">--Temps 2020--</option>
+                    <option>X</option>
+                    <option>V</option>
+                    <option>R</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">temps 2021 :</label>
+                <div class="col-sm-6">
+                  <select name="Time2021" placeholder="nom cat"  [(ngModel)]="data.Time2021" type="number" class="form-control" >
+                    <option value="">--Gravité--</option>
+                    <option>X</option>
+                    <option>V</option>
+                    <option>R</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">processus</label>
+                <div class="col-sm-6">
+                  <select name="idprocess" placeholder="nom cat"  [(ngModel)]="data.idprocess" type="number" class="form-control" >
+                    <option value="">--choisir processus--</option>
+                    <option *ngFor="let c of Process" value="{{c.id}}">{{c.Process}}</option>
+                  </select>
+                </div>
+              </div>
+
               <div>
-                <label>temps 1</label>
-                <select name="Time1" placeholder="role"  [(ngModel)]="data.Time1" >
-
-                  <option value="">--choisir temps1--</option>
-                  <option>X</option>
-                  <option>V</option>
-                  <option>R</option>
-                </select>
+                <input class="form-check-input" type="radio" name="PredefinedIndicator" value="*" [(ngModel)]="data.PredefinedIndicator" >
+                <label class="form-check-label">IndicateurPredefini</label><br>
               </div>
-              <div>
-                <select name="Time2" placeholder="role"  [(ngModel)]="data.Time2" >
 
-                  <option value="">--choisir temps3--</option>
-                  <option>X</option>
-                  <option>V</option>
-                  <option>R</option>
-                </select>
+              <div class="form-group row" *ngIf="!data.PredefinedIndicator">
+                <label class="col-sm-2 col-form-label">Indicateur de Performance</label>
+                <div class="col-sm-6">
+                  <input type="text" name="IndicateurPerformance"  [(ngModel)]="data.PerformanceIndicator" class="form-control">
+                </div>
               </div>
-              <div>
-                <select name="Time3" placeholder="role"  [(ngModel)]="data.Time3" >
 
-                  <option value="">--choisir temps3--</option>
-                  <option>X</option>
-                  <option>V</option>
-                  <option>R</option>
-                </select>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Objective a Atendre :</label>
+                <div class="col-sm-6">
+                  <input type="text" name="ObjectiveToWait"  [(ngModel)]="data.ObjectiveToWait" class="form-control">
+                </div>
               </div>
-              <div>
-                <select name="Time4" placeholder="role"  [(ngModel)]="data.Time4" >
-
-                  <option value="">--choisir temps4--</option>
-                  <option>X</option>
-                  <option>V</option>
-                  <option>R</option>
-                </select>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Etat Initial :</label>
+                <div class="col-sm-6">
+                  <input type="text" name="InitialState"  [(ngModel)]="data.InitialState" class="form-control">
+                </div>
               </div>
-              <div>
-                <select name="Time2020" placeholder="role" [(ngModel)]="data.Time2020" >
-
-                  <option value="">--choisir temps2020--</option>
-                  <option>X</option>
-                  <option>V</option>
-                  <option>R</option>
-                </select>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> Etat Actuel :</label>
+                <div class="col-sm-6">
+                  <input type="text" name="CurrentState"  [(ngModel)]="data.CurrentState" class="form-control">
+                </div>
               </div>
-              <div>
-                <select name="Time2021" placeholder="role"  [(ngModel)]="data.Time2021" >
-
-                  <option value="">--choisir temps2021 --</option>
-                  <option>X</option>
-                  <option>V</option>
-                  <option>R</option>
-                </select>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> Etat Actuel Indiacteur :</label>
+                <div class="col-sm-6">
+                  <input type="text" name="CurrentStateIndiactor"  [(ngModel)]="data.CurrentStateIndiactor" class="form-control">
+                </div>
               </div>
-              <div>
-                <select name="idprocess" placeholder="nom cat"  [(ngModel)]="data.idprocess"  type="number" >
 
-                  <option value="">--choisir process--</option>
-                  <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Process}}</option>
-
-                </select>
-              </div>
-              <div>
-                <input type="radio" name="PredefinedIndicator" value="*" [(ngModel)]="data.PredefinedIndicator" >
-                <label >IndicateurPredefini</label><br>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> Commentaire :</label>
+                <div class="col-sm-6">
+                  <input type="text" name="Comment"  [(ngModel)]="data.Comment" class="form-control">
+                </div>
               </div>
 
 
-              <div class="form-group" *ngIf="!data.PredefinedIndicator">
-                <label class="control-label"> Indicateur Performance :</label>
-                <input type="text" name="IndicateurPerformance"  [(ngModel)]="data.PerformanceIndicator"  class="form-control">
-              </div>
-              <div class="form-group">
-                <label class="control-label"> Objective a Atendre :</label>
-                <input type="text" name="ObjectiveToWait"  [(ngModel)]="data.ObjectiveToWait"  class="form-control">
-              </div>
-              <div class="form-group">
-                <label class="control-label"> Etat Initial :</label>
-                <input type="text" name="InitialState" [(ngModel)]="data.InitialState"  class="form-control">
-              </div>
-              <div class="form-group">
-                <label class="control-label"> Etat Actuel :</label>
-                <input type="text" name="CurrentState"  [(ngModel)]="data.CurrentState"  class="form-control">
-              </div>
-              <div class="form-group">
-                <label class="control-label"> Etat Actuel Indiacteur :</label>
-                <input type="text" name="CurrentStateIndiactor"  [(ngModel)]="data.CurrentStateIndiactor"  class="form-control">
-              </div>
-              <div class="form-group">
-                <label class="control-label"> Commentaire :</label>
-                <input type="text" name="Comment"  [(ngModel)]="data.Comment"  class="form-control">
-              </div>
-
-
-
-
-
-              <button class="btn btn-danger"  style="float: left">Annuler</button>
-
+              <button class="btn btn-danger distance"  style="float: left">Annuler</button>
+              <div class="col-sm-8">
               <button class="btn btn-primary "  style="float: right"   (click)="saveObjective()">create</button>
+              </div>
             </form>
 
           </div>
-        </div>
-      </div>
-    </div>
-    <footer-cmp></footer-cmp>
+
   </div>
 </div>
 <fixedplugin-cmp></fixedplugin-cmp>

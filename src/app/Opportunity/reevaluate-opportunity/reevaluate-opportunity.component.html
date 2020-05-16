@@ -1,49 +1,65 @@
 <div>
   <form>
-    <div>
-      <select name="EffortReevaluation" placeholder="role"  [(ngModel)]="data.EffortReevaluation">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Effort Reevaluation:</label>
+      <div class="col-sm-6">
+        <select name="EffortReevaluation" placeholder="nom cat"  [(ngModel)]="data.EffortReevaluation" type="number" class="form-control" >
+          <option value="">--Gravité--</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
 
-        <option value="">--choisir efforts--</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
+        </select>
+      </div>
     </div>
-    <div>
-      <select name="AdvantageReevaluation" placeholder="Aventage"  [(ngModel)]="data.AventageReevaluation">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Aventage Reevaluation:</label>
+      <div class="col-sm-6">
+        <select name="AdvantageReevaluation" placeholder="nom cat"  [(ngModel)]="data.AventageReevaluation" type="number" class="form-control" >
+          <option value="">--Aventage Reevaluation--</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
 
-        <option value="">--choisir Aventage--</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-      </select>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Strategique Reevaluation:</label>
+      <div class="col-sm-6">
+        <select name="idstrategicReevaluation" placeholder="nom cat"  [(ngModel)]="data.idstrategicReevaluation" type="number" class="form-control" >
+          <option value="">--Strategique--</option>
+
+          <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NameStrategicOpportunity}}</option>
+
+        </select>
+      </div>
     </div>
 
-    <div>
-      <select  name="idstrategicReevaluation" placeholder="nom cat" [(ngModel)]="data.idstrategicReevaluation" type="number" >
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Strategique Reevaluation:</label>
+      <div class="col-sm-6">
+        <select name="idprocessReevaluation" placeholder="nom cat"  [(ngModel)]="data.idprocessReevaluation" type="number" class="form-control" >
+          <option value="">--Processus--</option>
 
-        <option value="">--choisir strategique--</option>
-        <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NameStrategicOpportunity}}</option>
+          <option *ngFor="let c of Process" value="{{c.id}}">{{c.Process}}</option>
 
-      </select>
-    </div>
-    <div>
-      <select name="idprocessReevaluation" placeholder="nom cat" id="pet-select" [(ngModel)]="data.idprocessReevaluation" type="number" >
-
-        <option value="">--choisir processus--</option>
-        <option *ngFor="let c of Process" value="{{c.id}}" >{{c.Process}}</option>
-
-      </select>
+        </select>
+      </div>
     </div>
 
-    <div>
-      <select name="idStateOpportunityReevaluation" placeholder="Aventage"  [(ngModel)]="data.idStateOpportunityReevaluation">
-        <option value="">--choisir votre role--</option>
-        <option *ngFor="let c of EtatOpportunite" value="{{c.id}}" >{{c.NameStateOpportunity}}</option>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Etat Reevaluation:</label>
+      <div class="col-sm-6">
+        <select name="idStateOpportunityReevaluation" placeholder="nom cat"  [(ngModel)]="data.idStateOpportunityReevaluation" type="number" class="form-control" >
+          <option value="">--Etat --</option>
 
-      </select>
+          <option *ngFor="let c of EtatOpportunite" value="{{c.id}}">{{c.NameStateOpportunity}}</option>
+
+        </select>
+      </div>
     </div>
 
     <button class="btn btn-danger" (click)="onNoClick()" style="float: left">Annuler</button>

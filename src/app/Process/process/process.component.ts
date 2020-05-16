@@ -4,6 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {CreateProcessComponent} from '../create-process/create-process.component';
 import {DelateProcessComponent} from '../delate-process/delate-process.component';
 import {ProcessService} from '../../Services/Process/process.service';
+import {HelpProcessComponent} from '../help-process/help-process.component';
 
 
 @Component({
@@ -66,12 +67,18 @@ export class ProcessComponent implements OnInit {
   }
 
 
+  public DisplaiHelp(): void {
 
+    const dialogRef = this.dialog.open(HelpProcessComponent, {
+      width: "500px",
+      height: "250px",
 
-  afficher(){
-    alert('A prendre en compte :' +
-      '-Prendre en compte les enjeu intern et externes'
-    )
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+    });
   }
 
 

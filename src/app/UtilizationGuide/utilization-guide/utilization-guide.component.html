@@ -4,9 +4,9 @@
   </div>
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
-    <div class="content bg-warning">
+    <div class="content">
       <button class="btn btn-primary " (click)="CreateUtilizationGuideComponent()">ajouter </button>
-      <h4>liste de diffusion</h4>
+      <h1>Liste de diffusion</h1>
       <div class="card col-md-10">
         <table mdbTable class="table" >
           <thead class=" text-primary">
@@ -62,15 +62,26 @@
           Objectif et mode d'emploi
         </h2>
       </div>
-      <div>
-        <h4 class="bg-primary">
-          objectif
-        </h4>
-        <p class="card col-md-7">Pilótos est votre outil de gestion lors de la planification de votre système management.
-          Pilótos va vous aider à identifier les différents éléments que vous devez traiter lors de la mise en place
-          de votre système de  management et lors de son maintien. Non seulement ça, Pilótos va visualiser
-          les résultats obtenus en les synthètisant, vous aurez également une vision claire sur ce que vous
-          devez faire, ce que vous avez fait et quelle est l'étape suivante.</p>
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Objectif
+              </button>
+            </h2>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              Pilótos est votre outil de gestion lors de la planification de votre système management.
+              Pilótos va vous aider à identifier les différents éléments que vous devez traiter lors de la mise en place
+              de votre système de  management et lors de son maintien. Non seulement ça, Pilótos va visualiser
+              les résultats obtenus en les synthètisant, vous aurez également une vision claire sur ce que vous
+              devez faire, ce que vous avez fait et quelle est l'étape suivante.
+            </div>
+          </div>
+        </div>
       </div>
 
       <div>

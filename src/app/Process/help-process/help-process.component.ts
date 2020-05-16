@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-help-process',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpProcessComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<HelpProcessComponent>) { }
 
   ngOnInit(): void {
   }
 
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }
