@@ -35,7 +35,7 @@ export class ListInterestedPartyComponent implements OnInit {
     this.charingTheInterestedParty();
     const dialogRef = this.dialog.open(CreateInterestedPartyComponent, {
       width: "500px",
-      height: "300px",
+      height: "370px",
 
     });
 

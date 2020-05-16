@@ -1,6 +1,6 @@
 
-<div class="card-header panel-heading bg-primary ">
-  <h5 class="card-title "> ajouter partie interesse </h5>
+<div >
+  <h1 class="card-title "> ajouter partie interesse </h1>
 </div>
 <div class="card-body">
   <form #f="ngForm" (ngSubmit)="CreateInterestedParty(f.value)">
@@ -10,9 +10,10 @@
       <input type="text" name="NameInterestedParty"  ngModel class="form-control">
     </div>
     <div>
-      <select name="CategoryInterestedParty" placeholder="nom cat" id="pet-select" ngModel >
+      <label>Catégorie partie interessé</label>
+      <select name="CategoryInterestedParty" placeholder="nom cat" id="pet-select" ngModel class="form-control" >
 
-        <option value="">--choisir votre role--</option>
+        <option value="">--choisir categories--</option>
         <option *ngFor="let c of users" value="api/categorye_interested_parties/{{c.id}}">{{c.NameCategory}}</option>
 
       </select>

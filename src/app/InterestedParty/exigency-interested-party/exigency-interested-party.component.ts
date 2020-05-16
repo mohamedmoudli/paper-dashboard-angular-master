@@ -26,7 +26,7 @@ export class ExigencyInterestedPartyComponent implements OnInit {
 
   };
 
-  public listeExigence = [ "id" , "etat de confirmité" , "commentaire" , "N action" , "supprime"];
+  public listeExigence = [ "id" , "etat de confirmité" , "commentaire" , "N action" ];
 
   constructor(private interestedPartyService: InterestedPartyService,
               private router:Router , private dialog: MatDialog) { }

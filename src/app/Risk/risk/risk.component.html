@@ -9,16 +9,11 @@
         <button routerLink="/ajouterRisque" class="btn btn-success">ajouter un risque</button>
         <button (click)="DisplayStake()" class="btn btn-warning" >enjeux</button>
         <button (click)="DisplayPIpertinante()" class="btn btn-warning">pipertinante</button>
-        <div style="float: left" >
-          <button class="btn btn-primary" routerLink="/RisqueCategories" style="float: left">gerer categorie</button>
-        </div>
+
         <div style="float: left" >
           <button class="btn btn-primary" routerLink="/historiqueRisque" style="float: left">historique</button>
         </div>
-        <div style="float: left" >
-          <button class="btn btn-primary" routerLink="/strategiqueRisque" style="float: left">gerer strategique</button>
-          <button class="btn btn-primary" routerLink="/etatRisque" style="float: left">gerer etat</button>
-        </div>
+
 
         <svg class="bi bi-search" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helpRisuqe()">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
@@ -84,8 +79,15 @@
           </div>
         </div>
       </div>
+      <div class="form">
+      <button class="btn btn-danger" routerLink="/RisqueCategories" >gerer categorie</button>
+      <button class="btn btn-danger" routerLink="/strategiqueRisque" >gerer strategique</button>
+      <button class="btn btn-danger" routerLink="/etatRisque" style="float: left">gerer etat</button>
+      </div>
+      <div class="card col-md-6">
       <h3 class="text-break">Seul d'acceptance : 16</h3>
       <h3 class="text-break">Seul d'attention : 32</h3>
+      </div>
       <div class="col-md-4" >
         <table class="table card">
           <thead>

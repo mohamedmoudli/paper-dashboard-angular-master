@@ -5,12 +5,13 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content">
-
-      <h4>historique</h4>
+      <div class="card-header colorHistoricalInteretedParty col-md-10">
+        <h2 class="card-title"> historique partie interessé</h2>
+      </div>
       <div class="card col-md-10">
         <div class="row">
           <h3>chercher : </h3>
-          <input type="text" placeholder="search" [(ngModel)]="historical.NomPI">
+          <input type="text" placeholder="search" [(ngModel)]="historical.NomPI" class="form-control col-md-4">
         </div>
         <table class="table" >
           <thead class=" text-primary">
@@ -22,7 +23,7 @@
           <tr *ngFor="let c of historical | filter: historical.NomPI | paginate: { itemsPerPage : 5 , currentPage:p }">
             <td>{{c.NomPI}}</td>
             <td>{{c.Poids}}</td>
-            <td>{{c.Date | date: 'short'}}</td>
+            <td>{{c.Date | date}}</td>
 
             <td><button class="btn btn-danger" (click)="delateHistoricalInterestedParty(c)">supp</button></td>
 
@@ -35,7 +36,6 @@
       </div>
 
     </div>
-    <footer-cmp></footer-cmp>
   </div>
 </div>
 <fixedplugin-cmp></fixedplugin-cmp>
