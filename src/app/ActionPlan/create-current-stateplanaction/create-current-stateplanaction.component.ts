@@ -13,6 +13,7 @@ import {ActionPlanService} from '../../Services/ActionPlan/action-plan.service';
 export class CreateCurrentStateplanactionComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
+  CurrentState: any;
   public data = {
     NameCurrentState: ''
   };
@@ -27,14 +28,19 @@ export class CreateCurrentStateplanactionComponent implements OnInit {
 
 
   public ngOnInit() {
-
+    this.actionPlanService.castPlanAction.subscribe(PlanAction=> this.CurrentState = PlanAction);
+    console.log(this.CurrentState);
   }
 
   createCurrentState(){
+    this.charingTheCurrentState();
     console.log(this.data);
     this.actionPlanService.saveCurrentStateplanaction(this.data).subscribe(
       resp=>{
         console.log(resp);
+        console.log(this.CurrentState);
+        this.CurrentState = this.CurrentState.push(this.data);
+        console.log(this.CurrentState);
         return this.onNoClick();
       },error => {
 
@@ -58,5 +64,7 @@ export class CreateCurrentStateplanactionComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
+  charingTheCurrentState(){
+    this.actionPlanService.charingPlanAction(this.CurrentState);
+  }
 }

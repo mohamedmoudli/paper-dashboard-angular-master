@@ -82,12 +82,12 @@ export class ProcessComponent implements OnInit {
   }
 
 
-  public delateProcess(id): void {
-
+  public delateProcess(data): void {
+    this.charingTheProcess();
     const dialogRef = this.dialog.open(DelateProcessComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data
 
     });
 

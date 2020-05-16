@@ -20,7 +20,7 @@ export class CurrentStateplanactionComponent implements OnInit {
   public fisrtname;
   public CurrentState: any;
   public dataSource = new MatTableDataSource(this.CurrentState);
-  public hidder : string[] = [ 'id', 'NameCategory'];
+  public hidder : string[] = [ 'id', 'NomCategories'];
   public test = false;
 
   constructor( private actionPlanService : ActionPlanService,
@@ -37,6 +37,7 @@ export class CurrentStateplanactionComponent implements OnInit {
       },error => {
         console.log(false);
       });
+    this.actionPlanService.castPlanAction.subscribe(PlanAction => this.CurrentState = PlanAction);
   }
 
 
@@ -58,7 +59,7 @@ export class CurrentStateplanactionComponent implements OnInit {
 
 
   public CreateCurrentState(): void {
-
+    this.charingTheCurrentState();
     const dialogRef = this.dialog.open(CreateCurrentStateplanactionComponent, {
       width: "500px",
       height: "300px",
@@ -72,12 +73,12 @@ export class CurrentStateplanactionComponent implements OnInit {
   }
 
 
-  public delateCurrentState(id): void {
-
+  public delateCurrentState(data): void {
+   this.charingTheCurrentState();
     const dialogRef = this.dialog.open(DelateCurrentStateplanactionComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data
 
     });
 
@@ -87,4 +88,7 @@ export class CurrentStateplanactionComponent implements OnInit {
     });
   }
 
+  charingTheCurrentState(){
+    this.actionPlanService.charingPlanAction(this.CurrentState);
+  }
 }

@@ -31,14 +31,14 @@
         <button routerLink="/categoriesPI"  class="btn btn-warning">gérer les categories</button>
         <button class="btn btn-danger" routerLink="/listePartieinteresse">ajouter partie interesse</button>
         <div class=" col-md-3">
-          <table mat-table [dataSource]="Nbre" class="example-table table card "
+          <table mat-table [dataSource]="Nbre" class="example-table table  "
                  matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
             <!-- Product Price Column -->
             <ng-container matColumnDef="categorie">
               <th mat-header-cell *matHeaderCellDef>categorie </th>
               <td mat-cell *matCellDef="let row"> {{row.Nom}} </td>
             </ng-container>
-            <ng-container matColumnDef="nbre" class="alignement">
+            <ng-container matColumnDef="nbre" >
               <th mat-header-cell *matHeaderCellDef  >nbre </th>
               <td mat-cell *matCellDef="let row" > {{row.nbre}} </td>
             </ng-container>
@@ -52,8 +52,8 @@
 
       <div class="med">
         <div class=" col-md-4" *ngFor="let c of users" >
-          <div class="navbar bg-success" ><h4>{{c.NameCategory}}</h4></div>
-          <table mat-table [dataSource]="c.intersetedParties" class="example-table table card"
+          <div class="navbar colorInterestedParty" ><h4>{{c.NameCategory}}</h4></div>
+          <table mat-table [dataSource]="c.intersetedParties" class="example-table table "
                  matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
 
             <ng-container matColumnDef="id">
@@ -68,7 +68,7 @@
             </ng-container>
             <ng-container matColumnDef="poids"  >
               <th mat-header-cell *matHeaderCellDef>poids </th>
-              <td mat-cell *matCellDef="let row" class="alignementPI " > {{row.Weight}} </td>
+              <td mat-cell *matCellDef="let row" > {{row.Weight}} </td>
             </ng-container>
 
 

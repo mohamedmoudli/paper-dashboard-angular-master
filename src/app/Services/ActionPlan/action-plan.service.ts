@@ -1,11 +1,20 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ActionPlanService {
   public host: string = "http://localhost:8000";
+
+  val: string;
+  private PlanAction = new BehaviorSubject<any>(this.val);
+  castPlanAction = this.PlanAction.asObservable();
+  charingPlanAction(newUser){
+    this.PlanAction.next(newUser);
+    this.val = newUser ;
+  }
   constructor(private http: HttpClient) { }
 
   public getplandeaction() {

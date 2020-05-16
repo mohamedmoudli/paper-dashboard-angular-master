@@ -9,20 +9,27 @@ import {ProcessService} from '../../Services/Process/process.service';
   styleUrls: ['./delate-process.component.css']
 })
 export class DelateProcessComponent implements OnInit {
-
+  Process:any;
+  itemProcess:any;
 
 
   constructor(private processService: ProcessService,
               private router:Router ,  public dialogRef: MatDialogRef<DelateProcessComponent>,
-              @Inject(MAT_DIALOG_DATA) public id:number) { }
+              @Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
+    this.processService.castProcess.subscribe(Process=> this.Process = Process);
+    console.log(this.Process);
   }
 
 
   public delate() {
-    this.processService.delateprocess(this.id).subscribe((data) => {
+    this.processService.delateprocess(this.data.id).subscribe((data) => {
       console.log("ffffffffff");
+      const index: number = this.Process.indexOf(this.data);
+      console.log(index);
+      this.itemProcess = this.Process.splice(index ,1);
+      this.Process = this.Process.filter(user => user !== this.itemProcess);
       this.ngOnInit();
       return this.onNoClick();
     }), (error) => {

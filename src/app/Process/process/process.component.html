@@ -13,8 +13,8 @@
       </svg>
       </div>
 
-        <div class="bg-primary">
-          <h3> Périmètre d'application de managment </h3>
+        <div >
+          <h1> Périmètre d'application de managment </h1>
         </div>
         <form >
           <div>
@@ -28,8 +28,8 @@
           <h2>{{ displayperimeter }}</h2>
         </div>
 
-        <div class=" bg-primary">
-          <h3> Politique </h3>
+        <div >
+          <h1> Politique </h1>
         </div>
         <form >
           <div>
@@ -56,7 +56,7 @@
             <td>{{c.Process}}</td>
             <td>{{c.PerformanceIndicator}}</td>
             <td>{{c.Pilot}}</td>
-            <td><button class="btn btn-danger" (click)="delateProcess(c.id)">supp</button></td>
+            <td><button class="btn btn-danger" (click)="delateProcess(c)">supp</button></td>
 
             <td ></td>
 
@@ -68,7 +68,6 @@
 
 
     </div>
-    <footer-cmp></footer-cmp>
   </div>
 </div>
 <fixedplugin-cmp></fixedplugin-cmp>

@@ -11,6 +11,7 @@ import {MatDialogRef} from '@angular/material/dialog';
 })
 export class CreateStateEfficacityActionPlanComponent implements OnInit {
   angForm: FormGroup;
+  StateEfficacy: any;
   submitted = false;
   public data = {
     NameStateEfficacy: ''
@@ -26,14 +27,19 @@ export class CreateStateEfficacityActionPlanComponent implements OnInit {
 
 
   public ngOnInit() {
-
+    this.actionPlanService.castPlanAction.subscribe(PlanAction=> this.StateEfficacy = PlanAction);
+    console.log(this.StateEfficacy);
   }
 
   createNameStateEfficacity(){
+    this.charingTheStateEfficacity();
     console.log(this.data);
     this.actionPlanService.saveStateEfficacityActionPlan(this.data).subscribe(
       resp=>{
         console.log(resp);
+        console.log(this.StateEfficacy);
+        this.StateEfficacy = this.StateEfficacy.push(this.data);
+        console.log(this.StateEfficacy);
         return this.onNoClick();
       },error => {
 
@@ -57,5 +63,7 @@ export class CreateStateEfficacityActionPlanComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
+  charingTheStateEfficacity(){
+    this.actionPlanService.charingPlanAction(this.StateEfficacy);
+  }
 }

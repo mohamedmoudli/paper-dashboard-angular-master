@@ -7,7 +7,7 @@
     <navbar-cmp></navbar-cmp>
     <div class="content couleur">
       <div class="row">
-        <svg class="bi bi-search" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helpOpportunite()">
+        <svg class="bi bi-search" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helpOpportunity()">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
           <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
         </svg>
@@ -45,7 +45,7 @@
                   </thead>
                   <tbody class="bordertd">
                   <tr *ngFor="let c of opportunite" >
-                    <td class="bordertd">{{c.id}}</td>
+                    <td class="bordertd">Opp{{c.id}}</td>
                     <td class="bordertd" >{{c.CategoryOpportunity.nameCategoryOpportunity}}</td>
                     <td class="bordertd">{{c.Description}}</td>
                     <td class="bordertd">{{c.ShortTerm}}</td>
@@ -112,6 +112,37 @@
         <button class="btn btn-danger" routerLink="/etatOpportunite" style="float: left">gerer etat</button>
 
         <button class="btn btn-danger" routerLink="/StrategiqueOpportunite" style="float: left">gerer strategique</button>
+      </div>
+      <div class="card ">
+      <h3 class="text-break">Seul de reflextion : 4</h3>
+      <h3 class="text-break">Seul de reaction : 9</h3>
+      </div>
+      <div class="col-md-4 card" >
+        <table class="table ">
+          <thead>
+          <th>Etat de l'opportunité</th>
+          <th>Explication</th>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Ouvert</td>
+            <td>Cette opportunité existe toujours mais on n'a pas encore décidé d'agir face à elle</td>
+          </tr>
+          <tr>
+            <td>En cours de sélection </td>
+            <td>Action face à l'opportunité en cours d'évolution  </td>
+          </tr>
+          <tr>
+            <td>Fermé</td>
+            <td>Il n'y aura aucune information supplémentaire face à cette opportunité </td>
+          </tr>
+          <tr>
+            <td>Clôturé</td>
+            <td>L'opportunité n'est plus revue</td>
+          </tr>
+
+          </tbody>
+        </table>
       </div>
     </div>
 

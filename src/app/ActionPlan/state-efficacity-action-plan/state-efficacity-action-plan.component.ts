@@ -39,6 +39,7 @@ export class StateEfficacityActionPlanComponent implements OnInit {
       },error => {
         console.log(false);
       });
+    this.actionPlanService.castPlanAction.subscribe(PlanAction => this.StateEfficacity = PlanAction);
   }
 
 
@@ -60,7 +61,7 @@ export class StateEfficacityActionPlanComponent implements OnInit {
 
 
   public CreateStateEfficacity(): void {
-
+    this.charingTheStateEfficacity();
     const dialogRef = this.dialog.open(CreateStateEfficacityActionPlanComponent, {
       width: "500px",
       height: "300px",
@@ -74,12 +75,12 @@ export class StateEfficacityActionPlanComponent implements OnInit {
   }
 
 
-  public delateStateEfficacity(id): void {
-
+  public delateStateEfficacity(data): void {
+    this.charingTheStateEfficacity();
     const dialogRef = this.dialog.open(DelateStateEfficacityActionPlanComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:data
 
     });
 
@@ -87,5 +88,9 @@ export class StateEfficacityActionPlanComponent implements OnInit {
       console.log("The dialog was closed");
       this.animal = result;
     });
+  }
+
+  charingTheStateEfficacity(){
+    this.actionPlanService.charingPlanAction(this.StateEfficacity);
   }
 }

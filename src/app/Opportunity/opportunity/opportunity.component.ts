@@ -86,7 +86,7 @@ export class OpportunityComponent implements OnInit {
   }
   reevaluateOpportunity(id){
     const dialogRef = this.dialog.open(ReevaluateOpportunityComponent, {
-      width: "300px",
+      width: "500px",
       height: "300px",
       data:id
     });

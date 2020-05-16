@@ -61,7 +61,7 @@
                   </thead>
                   <tbody>
                   <tr *ngFor="let c of objective">
-                    <td class="bordertd">{{c.id}}</td>
+                    <td class="bordertd">Obj{{c.id}}</td>
                     <td class="bordertd">{{c.Description}}</td>
                     <td class="bordertd">{{c.DescriptionStake}}</td>
                     <td *ngIf="c.Time1 == 'R'" class="bg-danger bordertd">{{c.Time1}}</td>
@@ -89,7 +89,8 @@
                     <td class="bordertd">{{c.InitialState}}</td>
                     <td class="bordertd">  <p *ngFor="let p of c.NumAction "> {{ p.id}}</p> </td>
                     <td class="bordertd">{{c.CurrentStateIndiactor}}</td>
-                    <td class="bordertd">{{c.Advancement}}</td>
+                    <td *ngIf="c.Advancement !== null" class="bordertd">{{c.Advancement}}%</td>
+                    <td *ngIf="c.Advancement == null" class="bordertd"></td>
                     <td class="bordertd">{{c.CurrentState}}</td>
                     <td class="bordertd">{{c.Comment}}</td>
 

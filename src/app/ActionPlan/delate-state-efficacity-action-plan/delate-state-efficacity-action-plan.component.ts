@@ -10,18 +10,25 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 })
 export class DelateStateEfficacityActionPlanComponent implements OnInit {
 
-
+  StateEfficacy:any;
+  itemStateEfficacy:any;
   constructor(private actionPlanService: ActionPlanService,
               private router:Router ,  public dialogRef: MatDialogRef<DelateStateEfficacityActionPlanComponent>,
-              @Inject(MAT_DIALOG_DATA) public id:number) { }
+              @Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
+    this.actionPlanService.castPlanAction.subscribe(PlanAction=> this.StateEfficacy = PlanAction);
+    console.log(this.StateEfficacy);
   }
 
 
   public delate() {
-    this.actionPlanService.delateStateEfficacityActionPlan(this.id).subscribe((data) => {
+    this.actionPlanService.delateStateEfficacityActionPlan(this.data.id).subscribe((data) => {
       console.log("ffffffffff");
+      const index: number = this.StateEfficacy.indexOf(this.data);
+      console.log(index);
+      this.itemStateEfficacy = this.StateEfficacy.splice(index ,1);
+      this.StateEfficacy = this.StateEfficacy.filter(user => user !== this.itemStateEfficacy);
       this.ngOnInit();
       return this.onNoClick();
     }), (error) => {

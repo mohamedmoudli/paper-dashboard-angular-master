@@ -10,18 +10,25 @@ import {ActionPlanService} from '../../Services/ActionPlan/action-plan.service';
   styleUrls: ['./delate-current-stateplanaction.component.css']
 })
 export class DelateCurrentStateplanactionComponent implements OnInit {
-
+  CurrentState:any;
+  itemCurrentState:any;
   constructor(private actionPlanService: ActionPlanService,
               private router:Router ,  public dialogRef: MatDialogRef<DelateCurrentStateplanactionComponent>,
-              @Inject(MAT_DIALOG_DATA) public id:number) { }
+              @Inject(MAT_DIALOG_DATA) public data :any) { }
 
   ngOnInit(): void {
+    this.actionPlanService.castPlanAction.subscribe(PlanAction=> this.CurrentState = PlanAction);
+    console.log(this.CurrentState);
   }
 
 
   public delate() {
-    this.actionPlanService.delateCurrentStateplanaction(this.id).subscribe((data) => {
+    this.actionPlanService.delateCurrentStateplanaction(this.data.id).subscribe((data) => {
       console.log("ffffffffff");
+      const index: number = this.CurrentState.indexOf(this.data);
+      console.log(index);
+      this.itemCurrentState = this.CurrentState.splice(index ,1);
+      this.CurrentState = this.CurrentState.filter(user => user !== this.itemCurrentState);
       this.ngOnInit();
       return this.onNoClick();
     }), (error) => {
