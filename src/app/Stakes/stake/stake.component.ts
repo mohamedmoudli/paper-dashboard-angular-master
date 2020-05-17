@@ -20,6 +20,7 @@ import {StakeService} from '../../Services/Stake/stake.service';
 export class StakeComponent implements OnInit {
 
   public animal: string;
+  p:number = 1;
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
@@ -36,9 +37,10 @@ export class StakeComponent implements OnInit {
 
   users: any ;
   usersExtern: any ;
-  Enjeu: any ;
+  Stake: any ;
   Type : any ;
   public hidder = ["id", "description" ];
+  public hidder1 = ["id", "description" , "actions"];
   public hidderType = ["type", "nombre" ];
   constructor(private stakeService : StakeService,
               private router: Router , private dialog: MatDialog) { }
@@ -84,12 +86,12 @@ export class StakeComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.Enjeu = data['hydra:member'];
-        console.log(this.Enjeu);
+        this.Stake = data['hydra:member'];
+        console.log(this.Stake);
       }, error => {
         console.log(false);
       });
-    this.stakeService.cast.subscribe(user => this.usersExtern = user);
+    this.stakeService.cast.subscribe(user => this.Stake = user);
   }
 
 
@@ -147,12 +149,13 @@ export class StakeComponent implements OnInit {
 
 
 
-  public delateCategorie(id): void {
-
+  public delateStake(row): void {
+    this.charingTheStake();
+    console.log(row);
     const dialogRef = this.dialog.open(DelateStakeComponent, {
       width: "500px",
       height: "150px",
-      data:id
+      data:row
 
     });
 
@@ -162,8 +165,9 @@ export class StakeComponent implements OnInit {
     });
   }
 
-  editTheUser(){
-    this.stakeService.editUser(this.usersExtern);
+  charingTheStake(){
+    this.stakeService.editUser(this.Stake);
 
   }
+
 }

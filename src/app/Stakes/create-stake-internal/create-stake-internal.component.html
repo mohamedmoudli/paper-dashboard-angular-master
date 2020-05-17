@@ -34,6 +34,9 @@
                 <option value="api/type_stakes/1">force</option>
                 <option value="/api/type_stakes/2">faiblesses</option>
               </select>
+              <div *ngIf="angForm.get('Type').errors && (angForm.get('Type').touched || angForm.get('Type').dirty )" class="alert alert-danger">
+                <span *ngIf="angForm.get('Type').errors.required"></span>  Type est obligatoire
+              </div>
 
             </div>
           </div>
@@ -50,7 +53,7 @@
 
               </select>
               <div *ngIf="angForm.get('CategoryStakeInternal').errors && (angForm.get('CategoryStakeInternal').touched || angForm.get('CategoryStakeInternal').dirty )" class="alert alert-danger">
-                <span *ngIf="angForm.get('CategoryStakeInternal').errors.required"></span>  description is required
+                <span *ngIf="angForm.get('CategoryStakeInternal').errors.required"></span>  categories est obligatoire
               </div>
             </div>
           </div>
