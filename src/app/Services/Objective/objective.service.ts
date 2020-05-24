@@ -18,7 +18,7 @@ export class ObjectiveService {
   }
 
   public getObjective() {
-    return this.http.get(this.host+"/GetObjectiveByAction");
+    return this.http.get(this.host+"/GetObjective");
   }
 
   public saveObjective(data) {
@@ -26,7 +26,7 @@ export class ObjectiveService {
 
   }
   public getAdvencementObjective() {
-    return this.http.get(this.host+"/saveAvencementObjective");
+    return this.http.get(this.host+"/SaveAdvancementObjective");
 
   }
 

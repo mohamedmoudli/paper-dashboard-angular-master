@@ -56,7 +56,7 @@ export class StakeService {
   }
 
   public getCountType() {
-    return this.http.get(this.host+"/nembreType");
+    return this.http.get(this.host+"/TypeCount");
 
   }
 

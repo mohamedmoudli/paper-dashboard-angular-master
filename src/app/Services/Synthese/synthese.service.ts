@@ -9,39 +9,39 @@ export class SyntheseService {
 
   constructor(private http: HttpClient) { }
   public GetNbreEtatRisque() {
-    return this.http.get(this.host+"/GetNbreEtatRisque");
+    return this.http.get(this.host+"/GetNbreRiskState");
 
   }
   public GetNbreCategorieRisque() {
-    return this.http.get(this.host+"/GetNbreCategorieRisque");
+    return this.http.get(this.host+"/GetcategoryriskNumber");
 
   }
   public GetNbreEtatOpportunite() {
-    return this.http.get(this.host+"/GetNbreEtatOpportunite");
+    return this.http.get(this.host+"/GetOpportunityNumberState");
 
   }
   public GetNbreCategorieOpportunite() {
-    return this.http.get(this.host+"/GetNbreCategorieOpportunite");
+    return this.http.get(this.host+"/GetOpportunityCategoryNumber");
 
   }
   public GetNbreCurrentStateActionPlan() {
-    return this.http.get(this.host+"/nembreCurrentState");
+    return this.http.get(this.host+"/CurrentStateNumber");
 
   }
   public GetNbreStateEfficacityActionPlan() {
-    return this.http.get(this.host+"/nembreStateEfficacity");
+    return this.http.get(this.host+"/EfficientStateNumber");
 
   }
 
   public GetNbreCurrentStateActionPlanbyProcess() {
-    return this.http.get(this.host+"/nembreCurrentStatebyProcess");
+    return this.http.get(this.host+"/CurrentStateNumberbyProcess");
 
   }
   public GetNbreAdvencementActionPlanbyProcess() {
-    return this.http.get(this.host+"/nembreAvencementbyProcess");
+    return this.http.get(this.host+"/AdvancementNumberbyProcess");
 
   }
   public GetTimeLimitAdvencementbyProcess() {
-    return this.http.get(this.host+"/nembreAvencementbyProcessbyTimeLimit");
+    return this.http.get(this.host+"/AdvancementNumberbyProcessbyTimeLimit");
   }
 }

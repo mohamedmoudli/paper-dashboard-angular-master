@@ -16,6 +16,7 @@ import {InterestedPartyService} from '../../Services/InterestedParty/interested-
 })
 export class InterestedPartyComponent implements OnInit {
   public animal: string;
+  public interestedparty: any;
 
   public bubbleChartOptions: ChartOptions = {
     responsive: true,
@@ -31,11 +32,11 @@ export class InterestedPartyComponent implements OnInit {
   public bubbleChartData: ChartDataSets[] = [
     {
       data: [
-        {x: 8 , y: 3 , r: 8},
+        {x: localStorage.getItem('influence') , y: localStorage.getItem('power') , r: 8},
         {x: 2 , y: 3 , r: 8},
 
       ],
-      label: 'Series A',
+      label: this.interestedparty,
     },
   ];
 
@@ -100,12 +101,12 @@ export class InterestedPartyComponent implements OnInit {
     influence: ""
   };
 
-
   constructor(private interestedPartyService: InterestedPartyService,
               private router: Router ,  private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
+
     if (!!localStorage.getItem('seul')) {
       const seul = localStorage.getItem('seul');
       this.interestedPartyService.getpipertinante(seul)
@@ -210,29 +211,18 @@ export class InterestedPartyComponent implements OnInit {
   }
 
 
-  aff(id) {
-    this.interestedPartyService.getInterestedPartybyid(id)
-      .subscribe((data) => {
-        this.users2 = data;
-        console.log(this.users2);
-      }, error => {
-
-      })
-  }
-
-  test123() {
-    alert(this.nom_champ)
-  }
 
 
   setpoid() {
-    console.log(this.data);
-    console.log(this.id);
+
     this.interestedPartyService.getLoadsbyid(this.id, this.data)
       .subscribe(
         (data) => {
           console.log(data);
           this.respoid = data;
+          localStorage.setItem('power' , this.data.Power);
+          localStorage.setItem('influence' , this.data.influence);
+          localStorage.setItem('Interest' , this.data.Interest);
           return this.router.navigate(['partieinteresse']);
         }, error => {
           console.log(error);
@@ -253,6 +243,7 @@ export class InterestedPartyComponent implements OnInit {
         }
       )
   }
+
 
   savehistoriquepi() {
     for (let element of this.pipert) {

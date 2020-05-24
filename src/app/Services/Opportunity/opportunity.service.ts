@@ -26,11 +26,11 @@ export class OpportunityService {
     return this.http.delete(this.host+"/api/state_opportunities/"+id );
   }
   public getOpportunity() {
-    return this.http.get(this.host+"/GetOpportunityByAction");
+    return this.http.get(this.host+"/GetOpportunity");
   }
 
   public saveOpportunity(data) {
-    return this.http.post(this.host+"/CreateOppOrtunite" , data);
+    return this.http.post(this.host+"/CreateOpportunite" , data);
 
   }
   public getCategoryOpportunity() {
@@ -66,7 +66,7 @@ export class OpportunityService {
 
   }
   public reevaluationOpportinuty(id , data) {
-    return this.http.post(this.host+"/UpdateOppOrtunity/"+id , data);
+    return this.http.post(this.host+"/UpdateOpportunity/"+id , data);
 
   }
   public gethistoricalOpportunity() {

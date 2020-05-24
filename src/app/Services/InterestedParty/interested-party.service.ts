@@ -28,11 +28,11 @@ export class InterestedPartyService {
   }
 
   public getCategoryByInterestedParty() {
-    return this.http.get(this.host+"/partieinteresse/cat1");
+    return this.http.get(this.host+"/InterestedPartyByCategory");
 
   }
   public getNbreCategory() {
-    return this.http.get(this.host+"/nbreCategories");
+    return this.http.get(this.host+"/CategoryNumber");
 
   }
 
@@ -56,7 +56,7 @@ export class InterestedPartyService {
 
   }
   public getExigencyPI() {
-    return this.http.get(this.host+"/GetExigencyByAction");
+    return this.http.get(this.host+"/GetExigency");
 
   }
 
@@ -69,20 +69,20 @@ export class InterestedPartyService {
   }
 
   public getLoadsbyid(id , data) {
-    console.log(this.http.post(this.host+"/getPoids/"+id ,data));
+    console.log(this.http.post(this.host+"/getWeight/"+id ,data));
 
-    return this.http.post(this.host+"/getPoids/"+id ,data);
+    return this.http.post(this.host+"/getWeight/"+id ,data);
 
   }
 
   public getpipertinante(id) {
     console.log(id);
-    return this.http.get(this.host+"/pipertinante/"+id);
+    return this.http.get(this.host+"/RevelantInterestedParty/"+id);
 
   }
   public getInterestedPartybyid(id) {
     console.log(id);
-    return this.http.get(this.host+"/partieinteresse/cat/"+id);
+    return this.http.get(this.host+"/api/interseted_parties/"+id);
 
   }
 
@@ -105,7 +105,7 @@ export class InterestedPartyService {
   }
 
   public savehistoricalPI(seul) {
-    return this.http.get(this.host+"/savehistorique/"+seul);
+    return this.http.get(this.host+"/SaveHistoricalInterestedParty/"+seul);
 
   }
 

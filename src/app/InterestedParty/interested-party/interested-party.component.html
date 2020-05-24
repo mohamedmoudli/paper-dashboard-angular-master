@@ -91,7 +91,7 @@
         <form #f="ngForm" (ngSubmit)="setpoid()">
 
 
-          <select name="id" placeholder="nom cat" [(ngModel)]="id" >
+          <select name="id" placeholder="nom cat" [(ngModel)]="id"   >
 
             <option *ngFor="let c of users1" value="{{c.id}}">{{c.NameInterestedParty}}</option>
 
