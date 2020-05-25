@@ -51,7 +51,7 @@
 
 
       <div class="med">
-        <div class=" col-md-4" *ngFor="let c of users" >
+        <div class=" col-md-4" *ngFor="let c of CategoryByInterestedParty" >
           <div class="navbar colorInterestedParty" ><h4>{{c.NameCategory}}</h4></div>
           <table mat-table [dataSource]="c.intersetedParties" class="example-table table "
                  matSort matSortActive="id" matSortDisableClear matSortDirection="asc">
@@ -80,7 +80,7 @@
       <div class=" bg-primary">
         <h1>partie intéressé pertinante </h1>
       </div>
-      <svg class="bi bi-search" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helppiPertinante()">
+      <svg class="bi bi-search" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helpInterestedPartyRevelant()">
         <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
         <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
       </svg>
@@ -93,7 +93,7 @@
 
           <select name="id" placeholder="nom cat" [(ngModel)]="id"   >
 
-            <option *ngFor="let c of users1" value="{{c.id}}">{{c.NameInterestedParty}}</option>
+            <option *ngFor="let c of InteresetedParty" value="{{c.id}}">{{c.NameInterestedParty}}</option>
 
           </select>
           <p>est_ce que vous voulez evaluer</p>
@@ -142,7 +142,7 @@
             <input type="radio" name="exigence" value="non" [(ngModel)]="exigence">
             <label >non</label>
           </div>
-          <div *ngIf="affexigence()">
+          <div *ngIf="displayExigency()">
             <button class=" btn bg-success" routerLink="/exigencesPI">definir les exigences</button>
           </div>
         </div>
@@ -170,7 +170,7 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of pipert " >
+          <tr *ngFor="let c of interestedpartyRevelant " >
             <td>Pi{{c.id}}</td>
             <td>{{c.NameInterestedParty}}</td>
             <td >{{c.Influence}}</td>
@@ -190,7 +190,7 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of pipert " >
+          <tr *ngFor="let c of interestedpartyRevelant " >
             <td>Pi{{c.id}}</td>
             <td>{{c.NameInterestedParty}}</td>
             <td >{{c.Influence}}</td>

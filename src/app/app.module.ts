@@ -108,6 +108,10 @@ import { DelateHistoricalInterestedPartyComponent } from './InterestedParty/dela
 import { DelateHistoricalRiskComponent } from './Risk/delate-historical-risk/delate-historical-risk.component';
 import { DelateHistoricalOpportunityComponent } from './Opportunity/delate-historical-opportunity/delate-historical-opportunity.component';
 import { DelateHistoricalObjectiveComponent } from './Objective/delate-historical-objective/delate-historical-objective.component';
+import { SaveHistoricalInterestedPartyComponent } from './InterestedParty/save-historical-interested-party/save-historical-interested-party.component';
+import { SaveHistoricalRiskComponent } from './Risk/save-historical-risk/save-historical-risk.component';
+import { SaveHistoricalOpportunityComponent } from './Opportunity/save-historical-opportunity/save-historical-opportunity.component';
+import { SaveHistoricalObjectiveComponent } from './Objective/save-historical-objective/save-historical-objective.component';
 
 
 
@@ -118,6 +122,10 @@ import { DelateHistoricalObjectiveComponent } from './Objective/delate-historica
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    SaveHistoricalInterestedPartyComponent,
+    SaveHistoricalRiskComponent,
+    SaveHistoricalOpportunityComponent,
+    SaveHistoricalObjectiveComponent,
 
 
 

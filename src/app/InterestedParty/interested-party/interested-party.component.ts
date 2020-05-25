@@ -8,6 +8,8 @@ import {DefinitionPIRelevantComponent} from '../definition-pirelevant/definition
 import {DefinitionInterestedPartyComponent} from '../definition-interested-party/definition-interested-party.component';
 import {CreateInterestedPartyComponent} from '../create-interested-party/create-interested-party.component';
 import {InterestedPartyService} from '../../Services/InterestedParty/interested-party.service';
+import {CreateCategoryInterestedPartyComponent} from '../create-category-interested-party/create-category-interested-party.component';
+import {SaveHistoricalInterestedPartyComponent} from '../save-historical-interested-party/save-historical-interested-party.component';
 
 @Component({
   selector: 'app-interested-party',
@@ -15,7 +17,9 @@ import {InterestedPartyService} from '../../Services/InterestedParty/interested-
   styleUrls: ['./interested-party.component.css']
 })
 export class InterestedPartyComponent implements OnInit {
-  public animal: string;
+  CategoryByInterestedParty: any;
+  InteresetedParty: any;
+  interestedpartyRevelant : any;
   public interestedparty: any;
 
   public bubbleChartOptions: ChartOptions = {
@@ -117,7 +121,6 @@ export class InterestedPartyComponent implements OnInit {
 
           }
         )
-
     }
 
 
@@ -146,21 +149,15 @@ export class InterestedPartyComponent implements OnInit {
         console.log(false);
       });
 
-    this.interestedPartyService.getNameCategory()
-      .subscribe((data) => {
 
-
-      }, error => {
-        console.log(false);
-      });
 
 
     this.interestedPartyService.getCategoryByInterestedParty()
       .subscribe((data) => {
 
         console.log(data);
-        this.users = data;
-        console.log(this.users);
+        this.CategoryByInterestedParty = data;
+        console.log(this.CategoryByInterestedParty);
       }, error => {
         console.log(false);
       });
@@ -168,8 +165,8 @@ export class InterestedPartyComponent implements OnInit {
 
     this.interestedPartyService.getInteresetedParty()
       .subscribe((data) => {
-        this.users1 = data['hydra:member'];
-        console.log(this.users1)
+        this.InteresetedParty = data['hydra:member'];
+        console.log(this.InteresetedParty)
 
       }, error => {
         console.log(false);
@@ -200,7 +197,7 @@ export class InterestedPartyComponent implements OnInit {
 
   }
 
-  affexigence() {
+  displayExigency() {
     return this.exigence == 'oui';
 
   }
@@ -232,7 +229,7 @@ export class InterestedPartyComponent implements OnInit {
     this.interestedPartyService.getInterestedPartyRevelant(this.idseul)
       .subscribe((data) => {
           console.log(data);
-          this.pipert = data;
+          this.interestedpartyRevelant = data;
         }, error => {
 
         }
@@ -240,21 +237,23 @@ export class InterestedPartyComponent implements OnInit {
   }
 
 
-  savehistoricalInterestedParty() {
-    for (let element of this.pipert) {
-      console.log(element);
-      this.interestedPartyService.savehistoricalPI(this.idseul)
-        .subscribe((data) => {
-            console.log(data);
-            this.pipert = data;
-          }, error => {
 
-          }
-        )
-    }
+  savehistoricalInterestedParty(): void {
+   this.charingTheCategoryInterestedParty();
+    const dialogRef = this.dialog.open(SaveHistoricalInterestedPartyComponent, {
+      width: "400px",
+      height: "200px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+
+    });
   }
-
-
+  charingTheCategoryInterestedParty(){
+    this.interestedPartyService.charingInterestedParty(this.pipert);
+  }
   definitionInterestedParty(){
     const dialogRef = this.dialog.open(DefinitionInterestedPartyComponent, {
       width: "500px",
@@ -264,7 +263,7 @@ export class InterestedPartyComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
   definitionInterestedPartyRevelant(){
@@ -276,10 +275,10 @@ export class InterestedPartyComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
-  helpInterestedRevelant(){
+  helpInterestedPartyRevelant(){
     const dialogRef = this.dialog.open(HelpPiRelevantComponent, {
       width: "500px",
       height: "300px",
@@ -288,7 +287,7 @@ export class InterestedPartyComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 }
