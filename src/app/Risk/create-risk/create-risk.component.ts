@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {RiskService} from '../../Services/Risk/risk.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-create-risk',
@@ -8,13 +9,48 @@ import {RiskService} from '../../Services/Risk/risk.service';
   styleUrls: ['./create-risk.component.css']
 })
 export class CreateRiskComponent implements OnInit {
-
+  angForm: FormGroup;
+  submitted = false;
   categoryrisk: any ;
   Strategic: any ;
   Process: any ;
   StateRisk: any;
+  public data = {
+    Description: '',
+    ShortTerm: '',
+    MediumTerm: '',
+    LongTerm: '',
+    DateIdentification: '',
+    Causes: '',
+    Censequence: '',
+    Gravity: '',
+    Probability: '',
+    Detectability: '',
+    idprocess: '',
+    idstrategic: '',
+    idStateRisk: '',
+    idcategory: '',
+    Comment: ''
+  };
   constructor(private riskService: RiskService,
-              private router: Router) { }
+              private router: Router , private fb : FormBuilder) {
+    this.angForm = this.fb.group({
+      Description: ['', [Validators.required]],
+      DateIdentification: ['', [Validators.required]],
+      Causes: ['', [Validators.required]],
+      Censequence: ['', [Validators.required]],
+      Gravity: ['', [Validators.required]],
+      Probability: ['', [Validators.required]],
+      Detectability: ['', [Validators.required]],
+      idprocess: ['', [Validators.required]],
+      idstrategic: ['', [Validators.required]],
+      idStateRisk: ['', [Validators.required]],
+      idcategory: ['', [Validators.required]],
+      Durée: ['', [Validators.required]],
+      Comment: ['', [Validators.required]],
+
+    });
+  }
 
   ngOnInit(): void {
     this.riskService.getCategoryRisk()
@@ -56,15 +92,15 @@ export class CreateRiskComponent implements OnInit {
       });
   }
 
-  CreateRisk(data){
-    console.log(data);
-    this.riskService.saveRisk(data).subscribe(
+  CreateRisk(){
+
+    this.riskService.saveRisk(this.data).subscribe(
       resp=>{
         console.log(resp);
         console.log(true);
         this.router.navigate(['risque'])
       },error => {
-        this.router.navigate(['risque'])
+
         console.log(error);
 
         return error;
@@ -72,4 +108,14 @@ export class CreateRiskComponent implements OnInit {
     )
   }
 
+  get f() {
+    return this.angForm.controls;
+  }
+  onSubmit() {
+    this.submitted = true;
+    if (this.angForm.invalid) {
+
+      return;
+    }
+  }
 }

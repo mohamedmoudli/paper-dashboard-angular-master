@@ -49,7 +49,7 @@
               <select name="CategoryStakeInternal" placeholder="nom cat" formControlName="CategoryStakeInternal" id="pet-select" [(ngModel)]="data.CategoryStakeInternal" class="form-control">
 
                 <option value="">--choisir la categories--</option>
-                <option *ngFor="let c of users" value="api/category_stake_internals/{{c.id}}">{{c.NameCategoryStakInternal}}</option>
+                <option *ngFor="let c of CategoryInternal" value="api/category_stake_internals/{{c.id}}">{{c.NameCategoryStakInternal}}</option>
 
               </select>
               <div *ngIf="angForm.get('CategoryStakeInternal').errors && (angForm.get('CategoryStakeInternal').touched || angForm.get('CategoryStakeInternal').dirty )" class="alert alert-danger">
