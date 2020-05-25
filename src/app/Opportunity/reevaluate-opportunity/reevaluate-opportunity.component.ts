@@ -9,10 +9,10 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
   styleUrls: ['./reevaluate-opportunity.component.css']
 })
 export class ReevaluateOpportunityComponent implements OnInit {
-  categorieOpportunite: any ;
-  Strategique: any ;
+  categoryOpportunity: any ;
+  Strategic: any ;
   Process: any ;
-  EtatOpportunite: any ;
+  StateOpportunity: any ;
   public data = {
     EffortReevaluation: '',
     AventageReevaluation: '',
@@ -29,8 +29,8 @@ export class ReevaluateOpportunityComponent implements OnInit {
     this.opportunityService.getStrategicOpportunity()
       .subscribe((data) => {
 
-        this.Strategique = data['hydra:member'];
-        console.log(this.Strategique);
+        this.Strategic = data['hydra:member'];
+        console.log(this.Strategic);
 
       },error => {
         console.log(false);
@@ -39,8 +39,8 @@ export class ReevaluateOpportunityComponent implements OnInit {
     this.opportunityService.getStateOpportunity()
       .subscribe((data) => {
 
-        this.EtatOpportunite = data['hydra:member'];
-        console.log(this.EtatOpportunite);
+        this.StateOpportunity = data['hydra:member'];
+        console.log(this.StateOpportunity);
 
       },error => {
         console.log(false);

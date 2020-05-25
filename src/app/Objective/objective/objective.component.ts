@@ -12,8 +12,8 @@ import {PIRelevantComponent} from '../../Risk/pirelevant/pirelevant.component';
 })
 export class ObjectiveComponent implements OnInit {
   objective : any;
-  Enjeu : any;
-  animal : any;
+  Stake : any;
+
   public hidder = ["id", "Description"  , "Enjeu", "Temps1" , "Temps2" , "Temps3" , "Temps4" ,
     "Temps2020" , "Temps2021" , "ProcessLie" , "IndicateurPredefini" , "IndicateurPerformance" , "ObjectiveAAtendre" ,
     "EtatInitial" ,  "NumAction" , "EtatActuelIndiacteur" , "Avencement" , "EtatActuel" ,
@@ -35,8 +35,8 @@ export class ObjectiveComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.Enjeu = data['hydra:member'];
-        console.log(this.Enjeu);
+        this.Stake = data['hydra:member'];
+        console.log(this.Stake);
       }, error => {
         console.log(false);
       });
@@ -49,7 +49,7 @@ export class ObjectiveComponent implements OnInit {
       });
   }
 
-  saveHistoriqueOpportunite(){
+  saveHistoricalOpportunity(){
     this.objectiveService.savehistoricalObjective()
       .subscribe((data) => {
 
@@ -60,7 +60,7 @@ export class ObjectiveComponent implements OnInit {
       });
   }
 
-  public affficheEnjeux(): void {
+  public dispalyStake(): void {
 
     const dialogRef = this.dialog.open(StakeRiskComponent, {
       width: "300px",
@@ -70,11 +70,11 @@ export class ObjectiveComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 
-  public afffichePIpertinante(): void {
+  public DisplayInterestedPartyRevelant(): void {
 
     const dialogRef = this.dialog.open(PIRelevantComponent, {
       width: "300px",
@@ -84,7 +84,7 @@ export class ObjectiveComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 }

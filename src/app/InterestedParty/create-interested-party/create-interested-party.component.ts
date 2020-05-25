@@ -10,7 +10,7 @@ import {MatDialogRef} from '@angular/material/dialog';
   styleUrls: ['./create-interested-party.component.css']
 })
 export class CreateInterestedPartyComponent implements OnInit {
-  public users = [];
+  public CategoryInterestedParty = [];
   interestedparty: any;
   constructor(private interestedPartyService: InterestedPartyService,
               private router:Router ,  public dialogRef: MatDialogRef<CreateInterestedPartyComponent>) { }
@@ -20,8 +20,8 @@ export class CreateInterestedPartyComponent implements OnInit {
     this.interestedPartyService.getCategoryInterestedParty()
       .subscribe((data) => {
 
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.CategoryInterestedParty = data['hydra:member'];
+        console.log(this.CategoryInterestedParty);
 
       },error => {
         console.log(false);

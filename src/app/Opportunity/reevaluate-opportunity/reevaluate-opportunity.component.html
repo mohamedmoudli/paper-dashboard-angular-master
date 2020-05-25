@@ -32,7 +32,7 @@
         <select name="idstrategicReevaluation" placeholder="nom cat"  [(ngModel)]="data.idstrategicReevaluation" type="number" class="form-control" >
           <option value="">--Strategique--</option>
 
-          <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NameStrategicOpportunity}}</option>
+          <option *ngFor="let c of Strategic" value="{{c.id}}">{{c.NameStrategicOpportunity}}</option>
 
         </select>
       </div>
@@ -56,7 +56,7 @@
         <select name="idStateOpportunityReevaluation" placeholder="nom cat"  [(ngModel)]="data.idStateOpportunityReevaluation" type="number" class="form-control" >
           <option value="">--Etat --</option>
 
-          <option *ngFor="let c of EtatOpportunite" value="{{c.id}}">{{c.NameStateOpportunity}}</option>
+          <option *ngFor="let c of StateOpportunity" value="{{c.id}}">{{c.NameStateOpportunity}}</option>
 
         </select>
       </div>

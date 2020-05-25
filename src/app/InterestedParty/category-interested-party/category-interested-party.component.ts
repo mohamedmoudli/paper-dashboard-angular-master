@@ -14,7 +14,7 @@ import {InterestedPartyService} from '../../Services/InterestedParty/interested-
 })
 export class CategoryInterestedPartyComponent implements OnInit {
   med: any;
-  public animal: string;
+
   public name: string;
   public fisrtname;
   public CategoryinterestedParty = [];
@@ -61,7 +61,7 @@ this.charingTheCategoryInterestedParty();
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 
@@ -77,7 +77,7 @@ this.charingTheCategoryInterestedParty();
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
   charingTheCategoryInterestedParty(){

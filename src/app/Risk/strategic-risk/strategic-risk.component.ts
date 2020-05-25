@@ -14,10 +14,6 @@ import {RiskService} from '../../Services/Risk/risk.service';
 })
 export class StrategicRiskComponent implements OnInit {
 
-  med: any;
-  public animal: string;
-  public name: string;
-  public fisrtname;
   public StrategicRisk = [];
   public dataSource = new MatTableDataSource(this.StrategicRisk);
   public hidder = ["id" , "nom categories"];
@@ -46,16 +42,6 @@ export class StrategicRiskComponent implements OnInit {
   public applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  public search() {
-    if (this.fisrtname != "") {
-
-    } else if (this.fisrtname == "") {
-      this.ngOnInit();
-    }
-    this.StrategicRisk = this.StrategicRisk.filter( (res) => {
-      return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
-    });
-  }
 
 
 
@@ -70,7 +56,7 @@ export class StrategicRiskComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 
@@ -86,7 +72,7 @@ export class StrategicRiskComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
   charingTheStrategicRisk(){

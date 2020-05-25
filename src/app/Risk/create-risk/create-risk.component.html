@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                   <select name="idcategory" placeholder="nom cat"  ngModel type="number" class="form-control" >
                     <option value="">--choisir categories--</option>
-                    <option *ngFor="let c of categorierisque" value="{{c.id}}">{{c.NameCategoryRisk}}</option>
+                    <option *ngFor="let c of categoryrisk" value="{{c.id}}">{{c.NameCategoryRisk}}</option>
                   </select>
                 </div>
               </div>
@@ -111,7 +111,7 @@
                 <div class="col-sm-6">
                   <select name="idstrategic" placeholder="nom cat"  ngModel type="number" class="form-control" >
                     <option value="">--choisir processus--</option>
-                    <option *ngFor="let c of Strategique" value="{{c.id}}">{{c.NameStrategicRisk}}</option>
+                    <option *ngFor="let c of Strategic" value="{{c.id}}">{{c.NameStrategicRisk}}</option>
                   </select>
                 </div>
               </div>
@@ -120,7 +120,7 @@
                 <div class="col-sm-6">
                   <select name="idStateRisk" placeholder="nom cat"  ngModel type="number" class="form-control" >
                     <option value="">--choisir processus--</option>
-                    <option *ngFor="let c of EtatRisque" value="{{c.id}}">{{c.NameStateRisk}}</option>
+                    <option *ngFor="let c of StateRisk" value="{{c.id}}">{{c.NameStateRisk}}</option>
                   </select>
                 </div>
               </div>

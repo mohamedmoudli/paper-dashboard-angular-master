@@ -15,9 +15,9 @@ import {RiskService} from '../../Services/Risk/risk.service';
 })
 export class RiskComponent implements OnInit {
   public animal: string;
-  users: any ;
-  risque: any ;
-  Enjeu: any ;
+  Risk: any ;
+  risk: any ;
+  Stake: any ;
 
 
   public hidder = ["id", "CategorieRisque" , "description" , "court term" , "moyen term" , "long term" ,
@@ -32,8 +32,8 @@ export class RiskComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.users = data;
-        console.log(this.users);
+        this.Risk = data;
+        console.log(this.Risk);
       }, error => {
         console.log(false);
       });
@@ -41,8 +41,8 @@ export class RiskComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.Enjeu = data['hydra:member'];
-        console.log(this.Enjeu);
+        this.Stake = data['hydra:member'];
+        console.log(this.Stake);
       }, error => {
         console.log(false);
       });
@@ -61,7 +61,7 @@ export class RiskComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 
@@ -75,16 +75,13 @@ export class RiskComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
   saveHistoricalRisk(){
     this.riskService.savehistoricalRisk()
       .subscribe((data) => {
 
-        console.log(data);
-        this.users = data;
-        console.log(this.users);
       }, error => {
         console.log(false);
       });
@@ -99,7 +96,7 @@ export class RiskComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 

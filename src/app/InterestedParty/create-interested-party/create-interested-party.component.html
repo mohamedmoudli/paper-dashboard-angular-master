@@ -14,7 +14,7 @@
       <select name="CategoryInterestedParty" placeholder="nom cat" id="pet-select" ngModel class="form-control" >
 
         <option value="">--choisir categories--</option>
-        <option *ngFor="let c of users" value="api/categorye_interested_parties/{{c.id}}">{{c.NameCategory}}</option>
+        <option *ngFor="let c of CategoryInterestedParty" value="api/categorye_interested_parties/{{c.id}}">{{c.NameCategory}}</option>
 
       </select>
     </div>

@@ -21,7 +21,7 @@
                   <select name="idStake" placeholder="nom cat"  [(ngModel)]="data.idStake" type="number" class="form-control" >
                     <option value="">--choisir enjeu--</option>
 
-                    <option *ngFor="let c of Enjeu" value="{{c.id}}">{{c.Description}}</option>
+                    <option *ngFor="let c of Stake" value="{{c.id}}">{{c.Description}}</option>
 
                   </select>
                 </div>
@@ -153,7 +153,7 @@
 
               <button class="btn btn-danger distance"  style="float: left">Annuler</button>
               <div class="col-sm-8">
-              <button class="btn btn-primary "  style="float: right"   (click)="saveObjective()">create</button>
+              <button class="btn btn-primary "  style="float: right"   (click)="CreateObjective()">create</button>
               </div>
             </form>
 

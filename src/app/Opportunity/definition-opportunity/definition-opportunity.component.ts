@@ -7,7 +7,7 @@ import {MatDialogRef} from '@angular/material/dialog';
   styleUrls: ['./definition-opportunity.component.css']
 })
 export class DefinitionOpportunityComponent implements OnInit {
-  afficheaideEnjeu : any;
+
   constructor(public dialogRef: MatDialogRef<DefinitionOpportunityComponent>) { }
 
   ngOnInit(): void {

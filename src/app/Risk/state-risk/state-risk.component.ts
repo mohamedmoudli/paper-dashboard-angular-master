@@ -14,10 +14,7 @@ import {DelateStateRiskComponent} from '../delate-state-risk/delate-state-risk.c
   styleUrls: ['./state-risk.component.css']
 })
 export class StateRiskComponent implements OnInit {
-  med: any;
-  public animal: string;
-  public name: string;
-  public fisrtname;
+
   public stateRisk = [];
   StateRisk: any;
   public dataSource = new MatTableDataSource(this.stateRisk);
@@ -47,16 +44,6 @@ export class StateRiskComponent implements OnInit {
   public applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  public search() {
-    if (this.fisrtname != "") {
-
-    } else if (this.fisrtname == "") {
-      this.ngOnInit();
-    }
-    this.stateRisk = this.stateRisk.filter( (res) => {
-      return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
-    });
-  }
 
 
 
@@ -71,7 +58,7 @@ export class StateRiskComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 
@@ -87,7 +74,7 @@ export class StateRiskComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+ 
     });
   }
   charingTheStateRisk(){

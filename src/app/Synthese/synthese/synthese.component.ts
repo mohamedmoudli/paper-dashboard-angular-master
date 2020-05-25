@@ -134,7 +134,7 @@ export class SyntheseComponent implements OnInit {
               private router: Router ,  private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.syntheseService.GetNbreEtatRisque()
+    this.syntheseService.GetStateRiskNumber()
       .subscribe((data) => {
 
         this.catchartjs = data;
@@ -153,7 +153,7 @@ export class SyntheseComponent implements OnInit {
         console.log(false);
       });
 
-    this.syntheseService.GetNbreCategorieRisque()
+    this.syntheseService.GetCategoryRiskNumber()
       .subscribe((data) => {
 
         this.catchartjsCategorie = data;
@@ -173,7 +173,7 @@ export class SyntheseComponent implements OnInit {
       });
 
 
-    this.syntheseService.GetNbreEtatOpportunite()
+    this.syntheseService.GetStateOpportunityNumber()
       .subscribe((data) => {
 
         this.catchartjsEtatOpportunite = data;
@@ -192,7 +192,7 @@ export class SyntheseComponent implements OnInit {
         console.log('gggggg');
       });
 
-    this.syntheseService.GetNbreCategorieOpportunite()
+    this.syntheseService.GetCategoryOpportunityNumber()
       .subscribe((data) => {
 
         this.catchartjsCategorieOpportunite = data;
@@ -211,7 +211,7 @@ export class SyntheseComponent implements OnInit {
         console.log('gggggg');
       });
 
-    this.syntheseService.GetNbreCurrentStateActionPlan()
+    this.syntheseService.GetCurrentStateActionPlanNumber()
       .subscribe((data) => {
 
         this.catchartjsCurrentState = data;
@@ -229,7 +229,7 @@ export class SyntheseComponent implements OnInit {
       }, error => {
         console.log('gggggg');
       });
-    this.syntheseService.GetNbreStateEfficacityActionPlan()
+    this.syntheseService.GetStateEfficacityActionPlanNumber()
       .subscribe((data) => {
 
         this.catchartjsStateEfficacity = data;
@@ -248,7 +248,7 @@ export class SyntheseComponent implements OnInit {
         console.log('gggggg');
       });
 
-    this.syntheseService.GetNbreCurrentStateActionPlanbyProcess()
+    this.syntheseService.GetCurrentStateActionPlanbyProcessNumber()
       .subscribe((data) => {
 
         this.catchartjsCurrentStateByProcess = data;
@@ -268,7 +268,7 @@ export class SyntheseComponent implements OnInit {
       });
 
 
-    this.syntheseService.GetNbreAdvencementActionPlanbyProcess()
+    this.syntheseService.GetAdvencementActionPlanbyProcessNumber()
       .subscribe((data) => {
 
         this.catchartjsAdvencementByProcess = data;

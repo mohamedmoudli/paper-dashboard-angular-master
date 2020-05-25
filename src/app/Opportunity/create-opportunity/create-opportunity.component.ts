@@ -9,9 +9,9 @@ import {Router} from '@angular/router';
 })
 export class CreateOpportunityComponent implements OnInit {
   categoryOpportunity: any ;
-  Strategique: any ;
+  Strategic: any ;
   Process: any ;
-  EtatOpportunite: any;
+  StateOpportunity: any;
   constructor(private opportunityService: OpportunityService,
               private router: Router) { }
 
@@ -29,8 +29,8 @@ export class CreateOpportunityComponent implements OnInit {
     this.opportunityService.getStateOpportunity()
       .subscribe((data) => {
 
-        this.EtatOpportunite = data['hydra:member'];
-        console.log(this.EtatOpportunite);
+        this.StateOpportunity = data['hydra:member'];
+        console.log(this.StateOpportunity);
 
       },error => {
         console.log(false);
@@ -39,8 +39,8 @@ export class CreateOpportunityComponent implements OnInit {
     this.opportunityService.getStrategicOpportunity()
       .subscribe((data) => {
 
-        this.Strategique = data['hydra:member'];
-        console.log(this.Strategique);
+        this.Strategic = data['hydra:member'];
+        console.log(this.Strategic);
 
       },error => {
         console.log(false);

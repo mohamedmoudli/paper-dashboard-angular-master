@@ -8,10 +8,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./create-objective.component.css']
 })
 export class CreateObjectiveComponent implements OnInit {
-  categorieOpportunite: any ;
-  Strategique: any ;
+
+  Strategic: any ;
   Process: any ;
-  Enjeu: any;
+  Stake: any;
   IndicateurPredefini: any;
   public data = {
     idStake: '',
@@ -49,14 +49,14 @@ export class CreateObjectiveComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.Enjeu = data['hydra:member'];
-        console.log(this.Enjeu);
+        this.Stake = data['hydra:member'];
+        console.log(this.Stake);
       }, error => {
         console.log(false);
       });
   }
 
-  saveObjective(){
+  CreateObjective(){
     console.log();
     this.objectiveService.saveObjective(this.data).subscribe(
       resp=>{

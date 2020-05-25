@@ -10,7 +10,7 @@ import {RiskService} from '../../Services/Risk/risk.service';
   styleUrls: ['./stake-risk.component.css']
 })
 export class StakeRiskComponent implements OnInit {
-  Enjeu: any ;
+  Stake: any ;
   public hidder = ["id", "description" ];
 
   constructor(
@@ -24,8 +24,8 @@ export class StakeRiskComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.Enjeu = data['hydra:member'];
-        console.log(this.Enjeu);
+        this.Stake = data['hydra:member'];
+        console.log(this.Stake);
       }, error => {
         console.log(false);
       });

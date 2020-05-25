@@ -8,36 +8,36 @@ export class SyntheseService {
   public host: string = "http://localhost:8000";
 
   constructor(private http: HttpClient) { }
-  public GetNbreEtatRisque() {
+  public GetStateRiskNumber() {
     return this.http.get(this.host+"/GetNbreRiskState");
 
   }
-  public GetNbreCategorieRisque() {
+  public GetCategoryRiskNumber() {
     return this.http.get(this.host+"/GetcategoryriskNumber");
 
   }
-  public GetNbreEtatOpportunite() {
+  public GetStateOpportunityNumber() {
     return this.http.get(this.host+"/GetOpportunityNumberState");
 
   }
-  public GetNbreCategorieOpportunite() {
+  public GetCategoryOpportunityNumber() {
     return this.http.get(this.host+"/GetOpportunityCategoryNumber");
 
   }
-  public GetNbreCurrentStateActionPlan() {
+  public GetCurrentStateActionPlanNumber() {
     return this.http.get(this.host+"/CurrentStateNumber");
 
   }
-  public GetNbreStateEfficacityActionPlan() {
+  public GetStateEfficacityActionPlanNumber() {
     return this.http.get(this.host+"/EfficientStateNumber");
 
   }
 
-  public GetNbreCurrentStateActionPlanbyProcess() {
+  public GetCurrentStateActionPlanbyProcessNumber() {
     return this.http.get(this.host+"/CurrentStateNumberbyProcess");
 
   }
-  public GetNbreAdvencementActionPlanbyProcess() {
+  public GetAdvencementActionPlanbyProcessNumber() {
     return this.http.get(this.host+"/AdvancementNumberbyProcess");
 
   }

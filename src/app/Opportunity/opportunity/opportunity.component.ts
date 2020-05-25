@@ -14,9 +14,9 @@ import {ReevaluateOpportunityComponent} from '../reevaluate-opportunity/reevalua
   styleUrls: ['./opportunity.component.css']
 })
 export class OpportunityComponent implements OnInit {
-  opportunite : any;
-  Enjeu : any;
-  animal : any;
+  opportunity : any;
+  Stake : any;
+
   public hidder = ["id", "CategorieRisque" , "description" , "court term" , "moyen term" , "long term" ,
     "date d'indentification" , "Coherence" , "Allignement" , "Presence" , "Competences" , "Continute" , "Gain" , "Efforts" ,
     "Aventages" , "Poids" , "Decision" , "Stategique" , "process lié" , "N action" , "etat risque" ,
@@ -30,8 +30,8 @@ export class OpportunityComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.opportunite = data;
-        console.log(this.opportunite);
+        this.opportunity = data;
+        console.log(this.opportunity);
       }, error => {
         console.log(false);
       });
@@ -39,8 +39,8 @@ export class OpportunityComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.Enjeu = data['hydra:member'];
-        console.log(this.Enjeu);
+        this.Stake = data['hydra:member'];
+        console.log(this.Stake);
       }, error => {
         console.log(false);
       });
@@ -57,7 +57,7 @@ export class OpportunityComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 
@@ -71,7 +71,7 @@ export class OpportunityComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
   saveHistoricalOpportunity(){
@@ -93,7 +93,7 @@ export class OpportunityComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
   definitionOpportunity(){
@@ -104,7 +104,7 @@ export class OpportunityComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
   helpOpportunity(){
@@ -116,7 +116,7 @@ export class OpportunityComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 }

@@ -12,10 +12,6 @@ import {InterestedPartyService} from '../../Services/InterestedParty/interested-
 })
 export class ExigencyInterestedPartyComponent implements OnInit {
 
-  med: any;
-  public animal: string;
-  public name: string;
-  public fisrtname;
   public exigency: any;
 
   public hidder = ["id" , "nom categories"];
@@ -44,12 +40,6 @@ export class ExigencyInterestedPartyComponent implements OnInit {
   }
 
 
-  public afficher() {
-    this.med = !this.med;
-    console.log(this.med);
-  }
-
-
   public CreateExigency(): void {
     this.charingTheExigency();
     const dialogRef = this.dialog.open(CreateExigencyInterestedPartyComponent, {
@@ -60,7 +50,7 @@ export class ExigencyInterestedPartyComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
   public delateExigency(data): void {
@@ -74,7 +64,7 @@ export class ExigencyInterestedPartyComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
   charingTheExigency(){

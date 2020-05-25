@@ -14,12 +14,8 @@ import {RiskService} from '../../Services/Risk/risk.service';
 })
 export class CategoryRiskComponent implements OnInit {
 
-  med: any;
-  public animal: string;
-  public name: string;
-  public fisrtname;
   public CategoryRisk = [];
-  public dataSource = new MatTableDataSource(this.CategoryRisk);
+
   public hidder = ["id" , "nom categories"];
   public test = false;
   public data = {
@@ -42,25 +38,6 @@ export class CategoryRiskComponent implements OnInit {
 
     this.riskService.castRisk.subscribe(Risk => this.CategoryRisk = Risk);
   }
-
-
-  public applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-  public search() {
-    if (this.fisrtname != "") {
-
-    } else if (this.fisrtname == "") {
-      this.ngOnInit();
-    }
-    this.CategoryRisk = this.CategoryRisk.filter( (res) => {
-      return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
-    });
-  }
-
-
-
-
   public CreateCategory(): void {
     this.charingTheCategoryRisk();
     const dialogRef = this.dialog.open(CreateCategoryRiskComponent, {
@@ -71,7 +48,7 @@ export class CategoryRiskComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 
@@ -87,7 +64,7 @@ export class CategoryRiskComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 

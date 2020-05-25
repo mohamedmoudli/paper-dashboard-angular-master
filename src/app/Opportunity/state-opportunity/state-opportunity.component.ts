@@ -15,12 +15,8 @@ import {DeleteStateOpportunityComponent} from '../delete-state-opportunity/delet
 })
 export class StateOpportunityComponent implements OnInit {
 
-  med: any;
-  public animal: string;
-  public name: string;
-  public fisrtname;
   public stateOpportunity: any;
-  public dataSource = new MatTableDataSource(this.stateOpportunity);
+
   public hidder = ["id" , "nom categories"];
   public test = false;
   public data = {
@@ -44,19 +40,7 @@ export class StateOpportunityComponent implements OnInit {
   }
 
 
-  public applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-  public search() {
-    if (this.fisrtname != "") {
 
-    } else if (this.fisrtname == "") {
-      this.ngOnInit();
-    }
-    this.stateOpportunity = this.stateOpportunity.filter( (res) => {
-      return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
-    });
-  }
 
 
 
@@ -71,7 +55,7 @@ export class StateOpportunityComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 
@@ -87,7 +71,7 @@ export class StateOpportunityComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 

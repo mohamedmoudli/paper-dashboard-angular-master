@@ -9,10 +9,10 @@ import {RiskService} from '../../Services/Risk/risk.service';
 })
 export class CreateRiskComponent implements OnInit {
 
-  categorierisque: any ;
-  Strategique: any ;
+  categoryrisk: any ;
+  Strategic: any ;
   Process: any ;
-  EtatRisque: any;
+  StateRisk: any;
   constructor(private riskService: RiskService,
               private router: Router) { }
 
@@ -20,8 +20,8 @@ export class CreateRiskComponent implements OnInit {
     this.riskService.getCategoryRisk()
       .subscribe((data) => {
 
-        this.categorierisque = data['hydra:member'];
-        console.log(this.categorierisque);
+        this.categoryrisk = data['hydra:member'];
+        console.log(this.categoryrisk);
 
       },error => {
         console.log(false);
@@ -29,8 +29,8 @@ export class CreateRiskComponent implements OnInit {
     this.riskService.getStateRisk()
       .subscribe((data) => {
 
-        this.EtatRisque = data['hydra:member'];
-        console.log(this.EtatRisque);
+        this.StateRisk = data['hydra:member'];
+        console.log(this.StateRisk);
 
       },error => {
         console.log(false);
@@ -39,8 +39,8 @@ export class CreateRiskComponent implements OnInit {
     this.riskService.getStrategicRisk()
       .subscribe((data) => {
 
-        this.Strategique = data['hydra:member'];
-        console.log(this.Strategique);
+        this.Strategic = data['hydra:member'];
+        console.log(this.Strategic);
 
       },error => {
         console.log(false);

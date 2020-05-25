@@ -12,7 +12,7 @@ import {DelateInterestedPartyComponent} from '../delate-interested-party/delate-
 })
 export class ListInterestedPartyComponent implements OnInit {
   interestedParty: any;
-  animal: any;
+
   public hidder = ["id", "pi" , "influence", "interet" ,  "pouvoir", "poids"];
   constructor(private interestedPartyService: InterestedPartyService,
               private router: Router , private dialog: MatDialog ) { }
@@ -41,7 +41,7 @@ export class ListInterestedPartyComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
   public delateInterestedParty(data): void {
@@ -54,7 +54,7 @@ export class ListInterestedPartyComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 
