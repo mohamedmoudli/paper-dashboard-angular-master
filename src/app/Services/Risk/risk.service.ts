@@ -28,11 +28,11 @@ export class RiskService {
     return this.http.delete(this.host+"/api/state_risks/"+id);
   }
   public getRisk() {
-    return this.http.get(this.host+"/getRisk");
+    return this.http.get(this.host+"/GetRisk");
   }
 
   public saveRisk(data) {
-    return this.http.post(this.host+"/saveRisk" , data);
+    return this.http.post(this.host+"/createRisk" , data);
 
   }
   public getCategoryRisk() {

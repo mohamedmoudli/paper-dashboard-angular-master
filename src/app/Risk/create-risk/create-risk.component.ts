@@ -56,7 +56,7 @@ export class CreateRiskComponent implements OnInit {
       });
   }
 
-  ajouterrisque(data){
+  CreateRisk(data){
     console.log(data);
     this.riskService.saveRisk(data).subscribe(
       resp=>{
@@ -64,7 +64,7 @@ export class CreateRiskComponent implements OnInit {
         console.log(true);
         this.router.navigate(['risque'])
       },error => {
-
+        this.router.navigate(['risque'])
         console.log(error);
 
         return error;

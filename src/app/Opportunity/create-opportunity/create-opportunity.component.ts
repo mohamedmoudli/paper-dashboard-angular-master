@@ -64,7 +64,7 @@ export class CreateOpportunityComponent implements OnInit {
         console.log(true);
         return this.router.navigate(['Opportunite'])
       },error => {
-
+        return this.router.navigate(['Opportunite'])
         console.log(error);
 
         return error;

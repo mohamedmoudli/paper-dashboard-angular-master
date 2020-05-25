@@ -62,9 +62,8 @@ export class CreateObjectiveComponent implements OnInit {
       resp=>{
         console.log(resp);
         console.log(true);
-
+        return this.router.navigate(['Objective']);
       },error => {
-
         console.log(error);
 
         return error;
