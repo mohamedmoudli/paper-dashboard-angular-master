@@ -75,7 +75,7 @@ export class InterestedPartyService {
 
   }
 
-  public getInterestedPartyRevelant(id) {
+  public getInterestedPartyRelevant(id) {
     console.log(id);
     return this.http.get(this.host+"/RevelantInterestedParty/"+id);
 

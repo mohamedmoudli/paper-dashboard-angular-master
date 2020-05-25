@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {StakeRiskComponent} from '../../Risk/stake-risk/stake-risk.component';
 import {PIRelevantComponent} from '../../Risk/pirelevant/pirelevant.component';
+import {SaveHistoricalObjectiveComponent} from '../save-historical-objective/save-historical-objective.component';
 
 @Component({
   selector: 'app-objective',
@@ -49,7 +50,7 @@ export class ObjectiveComponent implements OnInit {
       });
   }
 
-  saveHistoricalOpportunity(){
+  saveHistoricalOpportunity1(){
     this.objectiveService.savehistoricalObjective()
       .subscribe((data) => {
 
@@ -60,6 +61,19 @@ export class ObjectiveComponent implements OnInit {
       });
   }
 
+  saveHistoricalOpportunity(): void {
+
+    const dialogRef = this.dialog.open(SaveHistoricalObjectiveComponent, {
+      width: "300px",
+      height: "300px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+
+    });
+  }
   public dispalyStake(): void {
 
     const dialogRef = this.dialog.open(StakeRiskComponent, {

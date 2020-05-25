@@ -8,7 +8,6 @@ import {MatDialogRef} from '@angular/material/dialog';
 })
 export class HelpPiRelevantComponent implements OnInit {
 
-  afficheaideEnjeu : any;
   constructor(public dialogRef: MatDialogRef<HelpPiRelevantComponent>) { }
 
   ngOnInit(): void {

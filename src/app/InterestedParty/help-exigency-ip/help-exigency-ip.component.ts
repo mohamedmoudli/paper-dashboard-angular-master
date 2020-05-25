@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-help-exigency-ip',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpExigencyIpComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<HelpExigencyIpComponent>) { }
 
   ngOnInit(): void {
   }
-
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }

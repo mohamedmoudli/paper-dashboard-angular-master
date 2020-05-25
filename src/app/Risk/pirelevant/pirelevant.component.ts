@@ -10,7 +10,7 @@ import {InterestedPartyService} from '../../Services/InterestedParty/interested-
   styleUrls: ['./pirelevant.component.css']
 })
 export class PIRelevantComponent implements OnInit {
-  pipert: any ;
+  interestedpartyRevelant: any ;
   public hidder = ["id", "nom pipertinante" ];
 
   constructor(
@@ -22,10 +22,10 @@ export class PIRelevantComponent implements OnInit {
   ngOnInit(): void {
     if (!!localStorage.getItem('seul')) {
       const seul = localStorage.getItem('seul');
-      this.interestedPartyService.getInterestedPartyRevelant(seul)
+      this.interestedPartyService.getInterestedPartyRelevant(seul)
         .subscribe((data) => {
             console.log(data);
-            this.pipert = data;
+            this.interestedpartyRevelant = data;
           }, error => {
 
           }

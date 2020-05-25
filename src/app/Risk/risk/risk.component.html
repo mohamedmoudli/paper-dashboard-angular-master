@@ -8,7 +8,7 @@
       <div class="row">
         <button routerLink="/ajouterRisque" class="btn btn-success">ajouter un risque</button>
         <button (click)="DisplayStake()" class="btn btn-warning" >enjeux</button>
-        <button (click)="DisplayPIpertinante()" class="btn btn-warning">pipertinante</button>
+        <button (click)="DisplayPIRelevant()" class="btn btn-warning">pipertinante</button>
 
         <div style="float: left" >
           <button class="btn btn-primary" routerLink="/historiqueRisque" style="float: left">historique</button>
@@ -44,7 +44,7 @@
 
                   </thead>
                   <tbody>
-                  <tr *ngFor="let c of risk">
+                  <tr *ngFor="let c of Risk">
                     <td class="bordertd">Ris{{c.id}}</td>
                     <td class="bordertd">{{c.CategoryRisk.nameCategoryRisk}}</td>
                     <td class="bordertd">{{c.Description}}</td>

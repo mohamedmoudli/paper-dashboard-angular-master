@@ -7,6 +7,7 @@ import {PIRelevantComponent} from '../../Risk/pirelevant/pirelevant.component';
 import {HelpOpportunityComponent} from '../help-opportunity/help-opportunity.component';
 import {DefinitionOpportunityComponent} from '../definition-opportunity/definition-opportunity.component';
 import {ReevaluateOpportunityComponent} from '../reevaluate-opportunity/reevaluate-opportunity.component';
+import {SaveHistoricalOpportunityComponent} from '../save-historical-opportunity/save-historical-opportunity.component';
 
 @Component({
   selector: 'app-opportunity',
@@ -74,15 +75,18 @@ export class OpportunityComponent implements OnInit {
 
     });
   }
+
   saveHistoricalOpportunity(){
-    this.opportunityService.savehistoricalOpportunite()
-      .subscribe((data) => {
+    const dialogRef = this.dialog.open(SaveHistoricalOpportunityComponent, {
+      width: "400px",
+      height: "200px",
 
-        console.log(data);
+    });
 
-      }, error => {
-        console.log(false);
-      });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+
+    });
   }
   reevaluateOpportunity(id){
     const dialogRef = this.dialog.open(ReevaluateOpportunityComponent, {
@@ -119,4 +123,5 @@ export class OpportunityComponent implements OnInit {
 
     });
   }
+
 }

@@ -19,7 +19,7 @@ import {SaveHistoricalInterestedPartyComponent} from '../save-historical-interes
 export class InterestedPartyComponent implements OnInit {
   CategoryByInterestedParty: any;
   InteresetedParty: any;
-  interestedpartyRevelant : any;
+  interestedpartyRelevant : any;
   public interestedparty: any;
 
   public bubbleChartOptions: ChartOptions = {
@@ -75,24 +75,20 @@ export class InterestedPartyComponent implements OnInit {
 
   public id;
   public influence;
-  public poui: number;
+
   public nom_champ: any;
   public nom_champ1: any;
 
-  public NomPI;
   public test: any = [];
-  public test1 = [];
-  namecategories: any;
+
   public users: Object = [];
   public Nbre: Object = [];
-  public users1: Object = [];
-  public users2: Object = [];
+
   public respoid: Object = [];
-  public pipert: any ;
-  public users5: [];
+
+
   public catchartjs: any;
-  users3: any;
-  nomcat: any;
+
   public listeCat = ["categorie", "nbre"];
   public pertinantePouvoir = ["id", "pi", "influence", "pouvoir", "poids"];
   public pertinanteInteret = ["id", "pi", "influence", "interet", "poids"];
@@ -113,10 +109,10 @@ export class InterestedPartyComponent implements OnInit {
 
     if (!!localStorage.getItem('seul')) {
       const seul = localStorage.getItem('seul');
-      this.interestedPartyService.getInterestedPartyRevelant(seul)
+      this.interestedPartyService.getInterestedPartyRelevant(seul)
         .subscribe((data) => {
             console.log(data);
-            this.pipert = data;
+            this.interestedpartyRelevant = data;
           }, error => {
 
           }
@@ -140,15 +136,6 @@ export class InterestedPartyComponent implements OnInit {
       }, error => {
         console.log(false);
       });
-
-
-    this.interestedPartyService.getCategoryInterestedParty()
-      .subscribe((data) => {
-
-      }, error => {
-        console.log(false);
-      });
-
 
 
 
@@ -226,10 +213,10 @@ export class InterestedPartyComponent implements OnInit {
 
   InterestedPartyRevelant() {
     localStorage.setItem('seul' , this.idseul);
-    this.interestedPartyService.getInterestedPartyRevelant(this.idseul)
+    this.interestedPartyService.getInterestedPartyRelevant(this.idseul)
       .subscribe((data) => {
           console.log(data);
-          this.interestedpartyRevelant = data;
+          this.interestedpartyRelevant = data;
         }, error => {
 
         }
@@ -239,7 +226,7 @@ export class InterestedPartyComponent implements OnInit {
 
 
   savehistoricalInterestedParty(): void {
-   this.charingTheCategoryInterestedParty();
+
     const dialogRef = this.dialog.open(SaveHistoricalInterestedPartyComponent, {
       width: "400px",
       height: "200px",
@@ -251,9 +238,7 @@ export class InterestedPartyComponent implements OnInit {
 
     });
   }
-  charingTheCategoryInterestedParty(){
-    this.interestedPartyService.charingInterestedParty(this.pipert);
-  }
+
   definitionInterestedParty(){
     const dialogRef = this.dialog.open(DefinitionInterestedPartyComponent, {
       width: "500px",

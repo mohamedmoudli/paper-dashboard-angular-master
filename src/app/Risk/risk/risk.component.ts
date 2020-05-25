@@ -7,6 +7,7 @@ import {DefinionRiskComponent} from '../definion-risk/definion-risk.component';
 import {PIRelevantComponent} from '../pirelevant/pirelevant.component';
 import {StakeRiskComponent} from '../stake-risk/stake-risk.component';
 import {RiskService} from '../../Services/Risk/risk.service';
+import {SaveHistoricalRiskComponent} from '../save-historical-risk/save-historical-risk.component';
 
 @Component({
   selector: 'app-risk',
@@ -65,7 +66,7 @@ export class RiskComponent implements OnInit {
     });
   }
 
-  public DisplayPIpertinante(): void {
+  public DisplayPIRelevant(): void {
 
     const dialogRef = this.dialog.open(PIRelevantComponent, {
       width: "300px",
@@ -78,14 +79,21 @@ export class RiskComponent implements OnInit {
 
     });
   }
-  saveHistoricalRisk(){
-    this.riskService.savehistoricalRisk()
-      .subscribe((data) => {
 
-      }, error => {
-        console.log(false);
-      });
+  public saveHistoricalRisk(): void {
+
+    const dialogRef = this.dialog.open(SaveHistoricalRiskComponent, {
+      width: "300px",
+      height: "300px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+
+    });
   }
+
 
   definitionRisk(){
     const dialogRef = this.dialog.open(DefinionRiskComponent, {
