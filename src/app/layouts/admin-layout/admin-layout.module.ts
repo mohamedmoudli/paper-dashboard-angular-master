@@ -14,9 +14,9 @@ import { NotificationsComponent }   from '../../pages/notifications/notification
 import { UpgradeComponent }         from '../../pages/upgrade/upgrade.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {LoginComponent} from '../../pages/login/login.component';
+import {LoginComponent} from '../../Authentification/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
-import {CreateRegisterComponent} from '../../pages/create-register/create-register.component';
+import {CreateRegisterComponent} from '../../Authentification/create-register/create-register.component';
 import {HomeComponent} from '../../pages/home/home.component';
 import {LoginGuard} from '../../Guard/login.guard';
 import {SidebarComponent} from '../../sidebar/sidebar.component';

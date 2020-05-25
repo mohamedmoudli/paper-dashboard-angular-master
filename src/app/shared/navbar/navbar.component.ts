@@ -2,7 +2,7 @@ import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/co
 import { ROUTES } from '../../sidebar/sidebar.component';
 import { Router } from '@angular/router';
 import { Location} from '@angular/common';
-import {AuthentificationService} from '../../Login/authentification.service';
+import {AuthentificationService} from '../../Services/Login/authentification.service';
 
 @Component({
     moduleId: module.id,

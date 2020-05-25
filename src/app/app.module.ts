@@ -13,9 +13,9 @@ import { AppRoutes } from './app.routing';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { TestComponent } from './test/test.component';
-import { LoginComponent } from './pages/login/login.component';
+import { LoginComponent } from './Authentification/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
-import { CreateRegisterComponent } from './pages/create-register/create-register.component';
+import { CreateRegisterComponent } from './Authentification/create-register/create-register.component';
 import { HomeComponent } from './pages/home/home.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
