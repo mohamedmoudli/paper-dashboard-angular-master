@@ -18,6 +18,7 @@ import {StakeService} from '../../Services/Stake/stake.service';
   styleUrls: ['./stake.component.css']
 })
 export class StakeComponent implements OnInit {
+  CategoryByStake :any;
 
   public animal: string;
   p:number = 1;
@@ -50,8 +51,8 @@ export class StakeComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.users = data;
-        console.log(this.users);
+        this.CategoryByStake = data;
+        console.log(this.CategoryByStake);
       }, error => {
         console.log(false);
       });
@@ -95,32 +96,7 @@ export class StakeComponent implements OnInit {
   }
 
 
-  public ajouterCategoriesIntern(): void {
 
-    const dialogRef = this.dialog.open(CreateCategoryInternalComponent, {
-      width: "500px",
-      height: "300px",
-
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed");
-      this.animal = result;
-    });
-  }
-  public ajouterCategoriesExtern(): void {
-
-    const dialogRef = this.dialog.open(CreateCategoryExternalComponent, {
-      width: "500px",
-      height: "300px",
-
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed");
-      this.animal = result;
-    });
-  }
   help(){
     const dialogRef = this.dialog.open(HelpStakeComponent, {
       width: "500px",

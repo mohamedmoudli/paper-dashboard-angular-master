@@ -109,7 +109,7 @@ export class InterestedPartyComponent implements OnInit {
 
     if (!!localStorage.getItem('seul')) {
       const seul = localStorage.getItem('seul');
-      this.interestedPartyService.getpipertinante(seul)
+      this.interestedPartyService.getInterestedPartyRevelant(seul)
         .subscribe((data) => {
             console.log(data);
             this.pipert = data;
@@ -179,7 +179,7 @@ export class InterestedPartyComponent implements OnInit {
   }
 
 
-  affiche() {
+  displayInterest() {
     if (this.data.nom_champ == 'interet') {
       this.interet = this.data.Interest;
       return true;
@@ -190,7 +190,7 @@ export class InterestedPartyComponent implements OnInit {
 
   }
 
-  affiche1() {
+  displaypower() {
     if (this.data.nom_champ == 'pouvoir') {
       this.interet = this.data.Interest;
       return true;
@@ -206,14 +206,9 @@ export class InterestedPartyComponent implements OnInit {
   }
 
 
-  public search() {
-
-  }
 
 
-
-
-  setpoid() {
+  getWeight() {
 
     this.interestedPartyService.getLoadsbyid(this.id, this.data)
       .subscribe(
@@ -232,9 +227,9 @@ export class InterestedPartyComponent implements OnInit {
   }
 
 
-  pipertinante() {
+  InterestedPartyRevelant() {
     localStorage.setItem('seul' , this.idseul);
-    this.interestedPartyService.getpipertinante(this.idseul)
+    this.interestedPartyService.getInterestedPartyRevelant(this.idseul)
       .subscribe((data) => {
           console.log(data);
           this.pipert = data;
@@ -245,7 +240,7 @@ export class InterestedPartyComponent implements OnInit {
   }
 
 
-  savehistoriquepi() {
+  savehistoricalInterestedParty() {
     for (let element of this.pipert) {
       console.log(element);
       this.interestedPartyService.savehistoricalPI(this.idseul)
@@ -260,7 +255,7 @@ export class InterestedPartyComponent implements OnInit {
   }
 
 
-  definitionpartieinteresse(){
+  definitionInterestedParty(){
     const dialogRef = this.dialog.open(DefinitionInterestedPartyComponent, {
       width: "500px",
       height: "260px",
@@ -272,7 +267,7 @@ export class InterestedPartyComponent implements OnInit {
       this.animal = result;
     });
   }
-  definitionpiPertinante(){
+  definitionInterestedPartyRevelant(){
     const dialogRef = this.dialog.open(DefinitionPIRelevantComponent, {
       width: "500px",
       height: "300px",
@@ -284,7 +279,7 @@ export class InterestedPartyComponent implements OnInit {
       this.animal = result;
     });
   }
-  helppiPertinante(){
+  helpInterestedRevelant(){
     const dialogRef = this.dialog.open(HelpPiRelevantComponent, {
       width: "500px",
       height: "300px",

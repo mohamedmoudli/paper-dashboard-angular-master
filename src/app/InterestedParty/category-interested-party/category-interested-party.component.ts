@@ -46,19 +46,7 @@ export class CategoryInterestedPartyComponent implements OnInit {
   }
 
 
-  public applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-  public search() {
-    if (this.fisrtname != "") {
 
-    } else if (this.fisrtname == "") {
-      this.ngOnInit();
-    }
-    this.CategoryinterestedParty = this.CategoryinterestedParty.filter( (res) => {
-      return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
-    });
-  }
 
 
 

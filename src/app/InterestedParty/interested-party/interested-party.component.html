@@ -6,7 +6,7 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content container ">
-      <button class="btn btn-simple" (click)="definitionpartieinteresse()" style="float: right">definition</button>
+      <button class="btn btn-simple" (click)="definitionInterestedParty()" style="float: right">definition</button>
       <div>
         <button class="btn btn-danger " routerLink="/historiquepipertinante" >historque </button>
       </div>
@@ -84,11 +84,11 @@
         <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
         <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
       </svg>
-      <button class="btn btn-simple" (click)="definitionpiPertinante()" style="float: right">definition</button>
+      <button class="btn btn-simple" (click)="definitionInterestedPartyRevelant()" style="float: right">definition</button>
 
       <div>
 
-        <form #f="ngForm" (ngSubmit)="setpoid()">
+        <form #f="ngForm" (ngSubmit)="getWeight()">
 
 
           <select name="id" placeholder="nom cat" [(ngModel)]="id"   >
@@ -104,12 +104,12 @@
             <input type="radio" name="data.nom_champ" value="pouvoir" [(ngModel)]="data.nom_champ">
             <label >pouvoir</label>
           </div>
-          <div class="form-group" *ngIf="affiche()">
+          <div class="form-group" *ngIf="displayInterest()">
             <label class="control-label"> {{data.nom_champ}}</label>
             <input type="number" name="data.Interest"  [(ngModel)]="data.Interest"   class="form-control">
 
           </div>
-          <div class="form-group" *ngIf="affiche1()">
+          <div class="form-group" *ngIf="displaypower()">
             <label class="control-label"> {{data.nom_champ}}</label>
             <input type="number" name="data.Power"  [(ngModel)]="data.Power"  class="form-control">
 
@@ -148,7 +148,7 @@
         </div>
 
         <div>
-          <form #f="ngForm" (ngSubmit)="pipertinante()">
+          <form #f="ngForm" (ngSubmit)="InterestedPartyRevelant()">
             <div class="form-group">
               <label class="control-label">quel est votre seul de pertinances ? pouvoir/interet </label>
               <input type="number" name="seul"  [(ngModel)]="idseul" class="form-control">
@@ -162,10 +162,8 @@
       <div class="card col-md-11">
 
         <div class=" navbar "> <h4>liste des partie interessé pertinante </h4></div>
-        <mat-form-field style="float: right" >
-          <input matInput (keyup)="search()" [(ngModel)]="NomPI" placeholder="Filter">
-        </mat-form-field>
-        <table class="table" *ngIf="affiche1()">
+
+        <table class="table" *ngIf="displaypower()">
           <thead>
           <tr>
             <th *ngFor="let c of pertinantePouvoir"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
@@ -185,7 +183,7 @@
           </tbody>
         </table>
 
-        <table class="table" *ngIf="affiche()">
+        <table class="table" *ngIf="displayInterest()">
           <thead>
           <tr>
             <th *ngFor="let c of pertinanteInteret"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
@@ -208,7 +206,7 @@
 
       </div>
 
-      <button class=" btn bg-default" (click)="savehistoriquepi()" >Enregistrer Etat</button>
+      <button class=" btn bg-default" (click)="savehistoricalInterestedParty()" >Enregistrer Etat</button>
 
 
     </div>

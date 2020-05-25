@@ -33,7 +33,7 @@
         <div class="container">
           <div class="med" style="float: left">
             <h1>--------------force/strenaths-------------------</h1>
-            <div  *ngFor="let p of users">
+            <div  *ngFor="let p of CategoryByStake">
               <div class="navbar bg-success" ><h2 class="text-danger">{{p.NameCategoryStakInternal}}</h2></div>
               <div>
                 <table mat-table [dataSource]="p.stakes" class="example-table table card"
@@ -61,7 +61,7 @@
           </div>
           <div class="med" style="float: right"  >
             <h1>----------faiblesses/weaknesses--------</h1>
-            <div  *ngFor="let p of users">
+            <div  *ngFor="let p of CategoryByStake">
               <div class="navbar  bg-success" ><h2 class="text-danger">{{p.NameCategoryStakInternal}}</h2></div>
               <div>
                 <table mat-table [dataSource]="p.stakes" class="example-table table card"

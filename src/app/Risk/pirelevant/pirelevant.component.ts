@@ -22,7 +22,7 @@ export class PIRelevantComponent implements OnInit {
   ngOnInit(): void {
     if (!!localStorage.getItem('seul')) {
       const seul = localStorage.getItem('seul');
-      this.interestedPartyService.getpipertinante(seul)
+      this.interestedPartyService.getInterestedPartyRevelant(seul)
         .subscribe((data) => {
             console.log(data);
             this.pipert = data;
