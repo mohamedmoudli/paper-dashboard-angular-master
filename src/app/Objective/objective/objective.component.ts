@@ -5,6 +5,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {StakeRiskComponent} from '../../Risk/stake-risk/stake-risk.component';
 import {PIRelevantComponent} from '../../Risk/pirelevant/pirelevant.component';
 import {SaveHistoricalObjectiveComponent} from '../save-historical-objective/save-historical-objective.component';
+import {HelpObjectiveComponent} from '../help-objective/help-objective.component';
 
 @Component({
   selector: 'app-objective',
@@ -50,16 +51,7 @@ export class ObjectiveComponent implements OnInit {
       });
   }
 
-  saveHistoricalOpportunity1(){
-    this.objectiveService.savehistoricalObjective()
-      .subscribe((data) => {
 
-        console.log(data);
-
-      }, error => {
-        console.log(false);
-      });
-  }
 
   saveHistoricalOpportunity(): void {
 
@@ -78,6 +70,19 @@ export class ObjectiveComponent implements OnInit {
 
     const dialogRef = this.dialog.open(StakeRiskComponent, {
       width: "300px",
+      height: "300px",
+
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+
+    });
+  }
+  public helpObjective(): void {
+
+    const dialogRef = this.dialog.open(HelpObjectiveComponent, {
+      width: "400px",
       height: "300px",
 
     });

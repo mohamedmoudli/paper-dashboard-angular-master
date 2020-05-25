@@ -110,8 +110,8 @@ export class RiskComponent implements OnInit {
 
   helpRisk(){
     const dialogRef = this.dialog.open(HelpRiskComponent, {
-      width: "300px",
-      height: "300px",
+      width: "350px",
+      height: "400px",
 
     });
 
