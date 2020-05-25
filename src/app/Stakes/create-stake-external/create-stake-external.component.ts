@@ -20,7 +20,7 @@ export class CreateStakeExternalComponent implements OnInit {
     Type: '',
     CategoryStakeExternal: ''
   };
-  public users = [];
+  public CategoryExternal = [];
   public Type = [];
   constructor(private stakeService: StakeService,
               private router:Router , private fb:FormBuilder ) {
@@ -40,8 +40,8 @@ export class CreateStakeExternalComponent implements OnInit {
     this.stakeService.getCategoryExternal()
       .subscribe((data) => {
 
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.CategoryExternal = data['hydra:member'];
+        console.log(this.CategoryExternal);
 
       },error => {
         console.log(false);
@@ -54,7 +54,7 @@ export class CreateStakeExternalComponent implements OnInit {
       .subscribe((data) => {
 
         this.Type = data['hydra:member'];
-        console.log(this.users);
+
 
       },error => {
         console.log(false);
@@ -67,7 +67,7 @@ export class CreateStakeExternalComponent implements OnInit {
     this.stakeService.saveStake(this.data).subscribe(
       resp=>{
         console.log(resp);
-        console.log(this.users);
+
         this.router.navigate(['enjeu'])
 
       },error => {

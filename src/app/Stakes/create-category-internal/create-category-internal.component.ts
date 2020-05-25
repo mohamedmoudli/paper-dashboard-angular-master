@@ -14,7 +14,7 @@ export class CreateCategoryInternalComponent implements OnInit {
 
   angForm: FormGroup;
   submitted = false;
-  CatstakeInternal:any;
+  Categoryinternal:any;
   itemCategory:any;
   public data = {
     NameCategoryStakInternal: ''
@@ -29,15 +29,15 @@ export class CreateCategoryInternalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.stakeService.cast.subscribe(user=> this.CatstakeInternal = user);
-    console.log(this.CatstakeInternal);
+    this.stakeService.cast.subscribe(user=> this.Categoryinternal = user);
+    console.log(this.Categoryinternal);
   }
   CreatecategoryInternal(){
     this.stakeService.CreateCategoryinternal(this.data).subscribe(
       resp=>{
-        console.log(this.CatstakeInternal);
-        this.CatstakeInternal = this.CatstakeInternal.push(this.data);
-        console.log(this.CatstakeInternal);
+        console.log(this.Categoryinternal);
+        this.Categoryinternal = this.Categoryinternal.push(this.data);
+        console.log(this.Categoryinternal);
         return this.onNoClick();
       },error => {
 
@@ -63,7 +63,7 @@ export class CreateCategoryInternalComponent implements OnInit {
     this.dialogRef.close();
   }
   editTheUser(){
-    this.stakeService.editUser(this.CatstakeInternal);
+    this.stakeService.editUser(this.Categoryinternal);
 
   }
 }

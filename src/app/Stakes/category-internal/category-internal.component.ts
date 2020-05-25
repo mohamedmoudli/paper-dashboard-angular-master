@@ -16,12 +16,9 @@ import {StakeService} from '../../Services/Stake/stake.service';
 export class CategoryInternalComponent implements OnInit {
 
   editUser:any;
-  med: any;
-  public animal: string;
-  public name: string;
-  public fisrtname;
-  public CatstakeInternal = [];
-  public dataSource = new MatTableDataSource(this.CatstakeInternal);
+
+  public CategoryInternal = [];
+
   public hidder = ["id" , "nom categories"];
   public test = false;
   public data = {
@@ -36,32 +33,19 @@ export class CategoryInternalComponent implements OnInit {
     this.stakeService.getCategoryInternal()
       .subscribe((data) => {
 
-        this.CatstakeInternal = data['hydra:member'];
-        console.log(this.CatstakeInternal);
+        this.CategoryInternal = data['hydra:member'];
+        console.log(this.CategoryInternal);
       },error => {
         console.log(false);
       });
-    this.stakeService.cast.subscribe(user => this.CatstakeInternal = user);
+    this.stakeService.cast.subscribe(user => this.CategoryInternal = user);
   }
   editTheUser(){
-    this.stakeService.editUser(this.CatstakeInternal);
+    this.stakeService.editUser(this.CategoryInternal);
 
   }
 
 
-  public applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-  public search() {
-    if (this.fisrtname != "") {
-
-    } else if (this.fisrtname == "") {
-      this.ngOnInit();
-    }
-    this.CatstakeInternal = this.CatstakeInternal.filter( (res) => {
-      return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
-    });
-  }
 
 
 
@@ -76,7 +60,7 @@ export class CategoryInternalComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 
@@ -92,7 +76,7 @@ export class CategoryInternalComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 }

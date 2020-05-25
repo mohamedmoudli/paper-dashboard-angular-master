@@ -17,7 +17,7 @@ export class CreateStakeInternalComponent implements OnInit {
     Type: '',
     CategoryStakeInternal: ''
   };
-  public users = [];
+  public CategoryInternal = [];
   public Type = [];
   constructor(private stakeService: StakeService,
               private router:Router , private fb:FormBuilder) {
@@ -36,8 +36,8 @@ export class CreateStakeInternalComponent implements OnInit {
     this.stakeService.getCategoryInternal()
       .subscribe((data) => {
 
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.CategoryInternal = data['hydra:member'];
+        console.log(this.CategoryInternal);
 
       },error => {
         console.log(false);
@@ -50,7 +50,7 @@ export class CreateStakeInternalComponent implements OnInit {
       .subscribe((data) => {
 
         this.Type = data['hydra:member'];
-        console.log(this.users);
+
 
       },error => {
         console.log(false);

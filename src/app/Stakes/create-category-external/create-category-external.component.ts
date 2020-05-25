@@ -13,7 +13,7 @@ import {StakeService} from '../../Services/Stake/stake.service';
 export class CreateCategoryExternalComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
-  users:any;
+  CategoryExternal:any;
   itemCategory:any;
   public data = {
     NameCategoryStakExternal: ''
@@ -28,16 +28,16 @@ export class CreateCategoryExternalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.stakeService.cast.subscribe(user=> this.users = user);
-    console.log(this.users);
+    this.stakeService.cast.subscribe(user=> this.CategoryExternal = user);
+    console.log(this.CategoryExternal);
   }
    CreatecategoryExternal(){
      this.editTheUser();
     this.stakeService.CreateCategoryExternal(this.data).subscribe(
       resp=>{
-        console.log(this.users);
-        this.users = this.users.push(this.data);
-        console.log(this.users);
+        console.log(this.CategoryExternal);
+        this.CategoryExternal = this.CategoryExternal.push(this.data);
+        console.log(this.CategoryExternal);
         return this.onNoClick();
       },error => {
 
@@ -63,7 +63,7 @@ export class CreateCategoryExternalComponent implements OnInit {
     this.dialogRef.close();
   }
   editTheUser(){
-    this.stakeService.editUser(this.users);
+    this.stakeService.editUser(this.CategoryExternal);
 
   }
 }

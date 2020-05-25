@@ -20,7 +20,7 @@ import {StakeService} from '../../Services/Stake/stake.service';
 export class StakeComponent implements OnInit {
   CategoryByStake :any;
 
-  public animal: string;
+  public result: string;
   p:number = 1;
 
   public barChartOptions = {
@@ -106,7 +106,7 @@ export class StakeComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+      this.result = result;
     });
   }
 
@@ -119,7 +119,7 @@ export class StakeComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+      this.result = result;
     });
   }
 
@@ -137,7 +137,7 @@ export class StakeComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+      this.result = result;
     });
   }
 

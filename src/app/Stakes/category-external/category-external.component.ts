@@ -17,12 +17,7 @@ import {StakeService} from '../../Services/Stake/stake.service';
 export class CategoryExternalComponent implements OnInit {
 
   editUser:any;
-  med: any;
-  public animal: string;
-  public name: string;
-  public fisrtname;
-  public users : any;
-  public dataSource = new MatTableDataSource(this.users);
+  CategoryExternal:any;
   public hidder = ["id" , "nom categories"];
   public test = false;
   public data = {
@@ -37,36 +32,21 @@ export class CategoryExternalComponent implements OnInit {
     this.stakeService.getCategoryExternal()
       .subscribe((data) => {
 
-        this.users = data['hydra:member'];
-        console.log(this.users);
+        this.CategoryExternal = data['hydra:member'];
+        console.log(this.CategoryExternal);
       },error => {
         console.log(false);
       });
-    this.stakeService.cast.subscribe(user => this.users = user);
+    this.stakeService.cast.subscribe(user => this.CategoryExternal = user);
   }
   editTheUser(){
-    this.stakeService.editUser(this.users);
+    this.stakeService.editUser(this.CategoryExternal);
 
   }
 
-  public applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-  public search() {
-    if (this.fisrtname != "") {
-
-    } else if (this.fisrtname == "") {
-      this.ngOnInit();
-    }
-    this.users = this.users.filter( (res) => {
-      return res.fisrtname.toLocaleLowerCase().match(this.fisrtname.toLocaleLowerCase());
-    });
-  }
 
 
-
-
-  public ajouterCategoriedialog(): void {
+  public CreateCategoryExternal(): void {
     this.editTheUser();
     const dialogRef = this.dialog.open(CreateCategoryExternalComponent, {
       width: "500px",
@@ -76,12 +56,12 @@ export class CategoryExternalComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 
 
-  public delateCategorie(data): void {
+  public DelateCategoryExternal(data): void {
     this.editTheUser();
 
     const dialogRef = this.dialog.open(DelateCategoryExternalComponent, {
@@ -94,7 +74,7 @@ export class CategoryExternalComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
 

@@ -6,7 +6,7 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content" >
-      <button class="btn btn-primary " (click)="ajouterCategoriedialog()">ajouter categories</button>
+      <button class="btn btn-primary " (click)="CreateCategoryExternal()">ajouter categories</button>
       <div class="card col-md-6">
 
         <table class="table">
@@ -16,11 +16,11 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of users">
+          <tr *ngFor="let c of CategoryExternal">
             <td>{{c.id}}</td>
             <td>{{c.NameCategoryStakExternal}}</td>
             <td></td>
-            <td><button class="btn btn-danger" (click)="delateCategorie(c)">supp</button></td>
+            <td><button class="btn btn-danger" (click)="DelateCategoryExternal(c)">supp</button></td>
           </tr>
           </tbody>
         </table>
