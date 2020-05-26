@@ -7,61 +7,78 @@
     <div class="content">
 <h1>Ajouter opportunité</h1>
           <div class="card-body">
-            <form #f="ngForm" (ngSubmit)="CreateOpportunity(f.value)">
+            <form [formGroup]="angForm" name="form" (ngSubmit)="onSubmit()">
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Categorie de risque</label>
                 <div class="col-sm-6">
-                  <select name="idcategory" placeholder="nom cat"  ngModel type="number" class="form-control" >
+                  <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idcategory').errors && (angForm.get('idcategory').touched || angForm.get('idcategory').dirty ) }">
+                  <select name="idcategory" placeholder="nom cat"  formControlName="idcategory"  [(ngModel)]="data.idcategory" type="number" class="form-control" >
                     <option value="">--choisir categories--</option>
                     <option *ngFor="let c of categoryOpportunity" value="{{c.id}}">{{c.NameCategoryOpportunity}}</option>
                   </select>
+                    <div *ngIf="angForm.get('idcategory').errors && (angForm.get('idcategory').touched || angForm.get('idcategory').dirty )" class="alert alert-danger">
+                      <span *ngIf="angForm.get('idcategory').errors.required"></span>  categories est obligatoire
+                    </div>
                 </div>
+              </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Description</label>
                 <div class="col-sm-6">
-                  <input type="text" name="Description"  ngModel class="form-control">
+                  <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Description').errors && (angForm.get('Description').touched || angForm.get('Description').dirty ) }">
+                  <input type="text" name="Description"   formControlName="Description"  [(ngModel)]="data.Description" class="form-control">
+                    <div *ngIf="angForm.get('Description').errors && (angForm.get('Description').touched || angForm.get('Description').dirty )" class="alert alert-danger">
+                      <span *ngIf="angForm.get('Description').errors.required"></span>  description est obligatoire
+                    </div>
                 </div>
+              </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Durée</label>
                 <div class="col-sm-6 distanceOpportunité ">
                   <div>
-                    <input class="form-check-input" type="checkbox" name="ShortTerm"  value="*" ngModel>
+                    <input class="form-check-input" type="checkbox" name="ShortTerm"  formControlName="Durée" value="*" [(ngModel)]="data.ShortTerm">
                     <label class="form-check-label" >court term</label><br>
                   </div>
-                  <input class="form-check-input" type="checkbox" name="MediumTerm" value="*" ngModel>
+                  <input class="form-check-input" type="checkbox" name="MediumTerm" formControlName="Durée" value="*" [(ngModel)]="data.MediumTerm">
                   <label class="form-check-label">moyen term</label><br>
-                  <input class="form-check-input" type="checkbox" name="LongTerm" value="*" ngModel>
+                  <input class="form-check-input" type="checkbox" name="LongTerm" formControlName="Durée" value="*" [(ngModel)]="data.LongTerm">
                   <label class="form-check-label">long term</label>
                 </div>
               </div>
 
+
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Date:</label>
                 <div class="col-sm-6">
-                  <input type="date" name="DateIdentification"  ngModel class="form-control">
+                  <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('DateIdentification').errors && (angForm.get('DateIdentification').touched || angForm.get('DateIdentification').dirty ) }">
+                  <input type="date" name="DateIdentification"  formControlName="DateIdentification"  [(ngModel)]="data.DateIdentification" class="form-control">
+                    <div *ngIf="angForm.get('DateIdentification').errors && (angForm.get('DateIdentification').touched || angForm.get('DateIdentification').dirty )" class="alert alert-danger">
+                      <span *ngIf="angForm.get('DateIdentification').errors.required"></span>  Date d'identification est obligatoire
+                    </div>
                 </div>
+              </div>
               </div>
 
               <div>
                 <div class="form-group row">
                   <label class="col-sm-2 col-form-label">identification de l'opportunité</label>
                   <div class="col-sm-6 distanceOpportunité ">
-                    <div>
-                      <input class="form-check-input" type="checkbox" name="Consistency"  value="*" ngModel>
+
+                      <input class="form-check-input" type="checkbox" name="Consistency" formControlName="Identification" value="*" [(ngModel)]="data.Consistency">
                       <label class="form-check-label" >Coherence</label><br>
-                    </div>
-                    <input class="form-check-input" type="checkbox" name="Alignment" value="*" ngModel>
+                    <input class="form-check-input" type="checkbox" name="Alignment"  formControlName="Identification" value="*" [(ngModel)]="data.Alignment">
                     <label class="form-check-label">Allignement</label><br>
-                    <input class="form-check-input" type="checkbox" name="Presence" value="*" ngModel>
+                    <input class="form-check-input" type="checkbox" name="Presence" formControlName="Identification" value="*" [(ngModel)]="data.Presence">
                     <label class="form-check-label">Presence</label><br>
-                    <input class="form-check-input" type="checkbox" name="Skills" value="*" ngModel>
+                    <input class="form-check-input" type="checkbox" name="Skills" formControlName="Identification" value="*" [(ngModel)]="data.Skills">
                     <label class="form-check-label">Competences</label><br>
-                    <input class="form-check-input" type="checkbox" name="Continuity" value="*" ngModel>
+                    <input class="form-check-input" type="checkbox" name="Continuity" formControlName="Identification" value="*" [(ngModel)]="data.Continuity">
                     <label class="form-check-label">Continute</label><br>
-                    <input class="form-check-input" type="checkbox" name="Gain" value="*" ngModel>
+                    <input class="form-check-input" type="checkbox" name="Gain" formControlName="Identification" value="*" [(ngModel)]="data.Gain">
                     <label class="form-check-label">Gain</label>
+
+                  </div>
                   </div>
                 </div>
 
@@ -73,70 +90,100 @@
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Efforts:</label>
                 <div class="col-sm-6">
-                  <select name="Efforts" placeholder="nom cat"  ngModel type="number" class="form-control" >
-                    <option value="">--Gravité--</option>
+                  <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Efforts').errors && (angForm.get('Efforts').touched || angForm.get('Efforts').dirty ) }">
+                  <select name="Efforts" placeholder="nom cat"  formControlName="Efforts"  [(ngModel)]="data.Efforts" type="number" class="form-control" >
+                    <option value="">--Efforts--</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
 
                   </select>
+                    <div *ngIf="angForm.get('Efforts').errors && (angForm.get('Efforts').touched || angForm.get('Efforts').dirty )" class="alert alert-danger">
+                      <span *ngIf="angForm.get('Efforts').errors.required"></span>  Efforts est obligatoire
+                    </div>
                 </div>
+              </div>
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Aventage:</label>
                 <div class="col-sm-6">
-                  <select name="Advantage" placeholder="nom cat"  ngModel type="number" class="form-control" >
-                    <option value="">--Gravité--</option>
+                  <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Advantage').errors && (angForm.get('Advantage').touched || angForm.get('Advantage').dirty ) }">
+                  <select name="Advantage" placeholder="nom cat"  formControlName="Advantage"  [(ngModel)]="data.Advantage" type="number" class="form-control" >
+                    <option value="">--Aventage--</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
 
                   </select>
+                    <div *ngIf="angForm.get('Advantage').errors && (angForm.get('Advantage').touched || angForm.get('Advantage').dirty )" class="alert alert-danger">
+                      <span *ngIf="angForm.get('Advantage').errors.required"></span>  Aventage est obligatoire
+                    </div>
                 </div>
+              </div>
               </div>
 
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">processus</label>
                 <div class="col-sm-6">
-                  <select name="idprocess" placeholder="nom cat"  ngModel type="number" class="form-control" >
+                  <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idprocess').errors && (angForm.get('idprocess').touched || angForm.get('idprocess').dirty ) }">
+                  <select name="idprocess" placeholder="nom cat"  formControlName="idprocess"  [(ngModel)]="data.idprocess" type="number" class="form-control" >
                     <option value="">--choisir processus--</option>
                     <option *ngFor="let c of Process" value="{{c.id}}">{{c.Process}}</option>
                   </select>
+                    <div *ngIf="angForm.get('idprocess').errors && (angForm.get('idprocess').touched || angForm.get('idprocess').dirty )" class="alert alert-danger">
+                      <span *ngIf="angForm.get('idprocess').errors.required"></span>  processus est obligatoire
+                    </div>
                 </div>
+              </div>
               </div>
 
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Strategique</label>
                 <div class="col-sm-6">
-                  <select name="idstrategic" placeholder="nom cat"  ngModel type="number" class="form-control" >
+                  <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idstrategic').errors && (angForm.get('idstrategic').touched || angForm.get('idstrategic').dirty ) }">
+                  <select name="idstrategic" placeholder="nom cat"  formControlName="idstrategic"  [(ngModel)]="data.idstrategic" type="number" class="form-control" >
                     <option value="">--choisir processus--</option>
                     <option *ngFor="let c of Strategic" value="{{c.id}}">{{c.NameStrategicOpportunity}}</option>
                   </select>
+                    <div *ngIf="angForm.get('idstrategic').errors && (angForm.get('idstrategic').touched || angForm.get('idstrategic').dirty )" class="alert alert-danger">
+                      <span *ngIf="angForm.get('idstrategic').errors.required"></span>  strategique est obligatoire
+                    </div>
                 </div>
               </div>
+              </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">etat du risque</label>
+                <label class="col-sm-2 col-form-label">etat opportunité</label>
                 <div class="col-sm-6">
-                  <select name="idStateOpportunity" placeholder="nom cat"  ngModel type="number" class="form-control" >
-                    <option value="">--choisir processus--</option>
+                  <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idStateOpportunity').errors && (angForm.get('idStateOpportunity').touched || angForm.get('idStateOpportunity').dirty ) }">
+                  <select name="idStateOpportunity" placeholder="nom cat"  formControlName="idStateOpportunity"  [(ngModel)]="data.idStateOpportunity" type="number" class="form-control" >
+                    <option value="">--choisir etat opportunité--</option>
                     <option *ngFor="let c of StateOpportunity" value="{{c.id}}">{{c.NameStateOpportunity}}</option>
                   </select>
+                    <div *ngIf="angForm.get('idStateOpportunity').errors && (angForm.get('idStateOpportunity').touched || angForm.get('idStateOpportunity').dirty )" class="alert alert-danger">
+                      <span *ngIf="angForm.get('idStateOpportunity').errors.required"></span>  strategique est obligatoire
+                    </div>
                 </div>
+              </div>
               </div>
 
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Commentaire:</label>
                 <div class="col-sm-6">
-                  <input type="text" name="Comment"  ngModel class="form-control">
+                  <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Comment').errors && (angForm.get('Comment').touched || angForm.get('Comment').dirty ) }">
+                    <input type="text" name="Comment"  formControlName="Comment"  [(ngModel)]="data.Comment" class="form-control">
+                    <div *ngIf="angForm.get('Comment').errors && (angForm.get('Comment').touched || angForm.get('Comment').dirty )" class="alert alert-danger">
+                      <span *ngIf="angForm.get('Comment').errors.required"></span>  Commentaire est obligatoire
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="distance">
                 <button class="btn btn-danger" routerLink="/risque" style="float: left">Annuler</button>
               </div>
               <div class="col-sm-8">
-                <button class="btn btn-primary "  style="float: right"  >create</button>
+                <button class="btn btn-primary "  style="float: right" [disabled]="angForm.invalid" (click)="CreateOpportunity()" >create</button>
               </div>
             </form>
 
