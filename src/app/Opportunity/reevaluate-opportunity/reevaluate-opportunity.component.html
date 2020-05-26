@@ -1,9 +1,10 @@
 <div>
-  <form>
+  <form [formGroup]="angForm" name="form" (ngSubmit)="onSubmit()">
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Effort Reevaluation:</label>
       <div class="col-sm-8 distancereevaluation">
-        <select name="EffortReevaluation" placeholder="nom cat"  [(ngModel)]="data.EffortReevaluation" type="number" class="form-control" >
+        <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Efforts').errors && (angForm.get('Efforts').touched || angForm.get('Efforts').dirty ) }">
+        <select name="EffortReevaluation" placeholder="nom cat" formControlName="Efforts" [(ngModel)]="data.EffortReevaluation" type="number" class="form-control" >
           <option value="">--Gravité--</option>
           <option>1</option>
           <option>2</option>
@@ -11,12 +12,17 @@
           <option>4</option>
 
         </select>
+          <div *ngIf="angForm.get('Efforts').errors && (angForm.get('Efforts').touched || angForm.get('Efforts').dirty )" class="alert alert-danger">
+            <span *ngIf="angForm.get('Efforts').errors.required"></span>  Efforts est obligatoire
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Aventage Reevaluation:</label>
       <div class="col-sm-8 distancereevaluation">
-        <select name="AdvantageReevaluation" placeholder="nom cat"  [(ngModel)]="data.AventageReevaluation" type="number" class="form-control" >
+        <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Advantage').errors && (angForm.get('Advantage').touched || angForm.get('Advantage').dirty ) }">
+        <select name="AdvantageReevaluation" placeholder="nom cat" formControlName="Advantage" [(ngModel)]="data.AventageReevaluation" type="number" class="form-control" >
           <option value="">--Aventage Reevaluation--</option>
           <option>1</option>
           <option>2</option>
@@ -24,46 +30,64 @@
           <option>4</option>
 
         </select>
+          <div *ngIf="angForm.get('Advantage').errors && (angForm.get('Advantage').touched || angForm.get('Advantage').dirty )" class="alert alert-danger">
+            <span *ngIf="angForm.get('Advantage').errors.required"></span>  Aventage est obligatoire
+          </div>
+        </div>
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Strategique Reevaluation:</label>
       <div class="col-sm-8 distancereevaluation">
-        <select name="idstrategicReevaluation" placeholder="nom cat"  [(ngModel)]="data.idstrategicReevaluation" type="number" class="form-control" >
+        <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idstrategic').errors && (angForm.get('idstrategic').touched || angForm.get('idstrategic').dirty ) }">
+        <select name="idstrategicReevaluation" placeholder="nom cat" formControlName="idstrategic" [(ngModel)]="data.idstrategicReevaluation" type="number" class="form-control" >
           <option value="">--Strategique--</option>
 
           <option *ngFor="let c of Strategic" value="{{c.id}}">{{c.NameStrategicOpportunity}}</option>
 
         </select>
+          <div *ngIf="angForm.get('idstrategic').errors && (angForm.get('idstrategic').touched || angForm.get('idstrategic').dirty )" class="alert alert-danger">
+            <span *ngIf="angForm.get('idstrategic').errors.required"></span>  strategique est obligatoire
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-2 col-form-label">Strategique Reevaluation:</label>
+      <label class="col-sm-2 col-form-label">processus Reevaluation:</label>
       <div class="col-sm-8 distancereevaluation">
-        <select name="idprocessReevaluation" placeholder="nom cat"  [(ngModel)]="data.idprocessReevaluation" type="number" class="form-control" >
+        <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idprocess').errors && (angForm.get('idprocess').touched || angForm.get('idprocess').dirty ) }">
+        <select name="idprocessReevaluation" placeholder="nom cat" formControlName="idprocess"  [(ngModel)]="data.idprocessReevaluation" type="number" class="form-control" >
           <option value="">--Processus--</option>
 
           <option *ngFor="let c of Process" value="{{c.id}}">{{c.Process}}</option>
 
         </select>
+          <div *ngIf="angForm.get('idprocess').errors && (angForm.get('idprocess').touched || angForm.get('idprocess').dirty )" class="alert alert-danger">
+            <span *ngIf="angForm.get('idprocess').errors.required"></span>  processus est obligatoire
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="form-group row">
       <label class="col-sm-2 col-form-label">Etat Reevaluation:</label>
       <div class="col-sm-8 distancereevaluation">
-        <select name="idStateOpportunityReevaluation" placeholder="nom cat"  [(ngModel)]="data.idStateOpportunityReevaluation" type="number" class="form-control" >
+        <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idStateOpportunity').errors && (angForm.get('idStateOpportunity').touched || angForm.get('idStateOpportunity').dirty ) }">
+        <select name="idStateOpportunityReevaluation" placeholder="nom cat" formControlName="idStateOpportunity"   [(ngModel)]="data.idStateOpportunityReevaluation" type="number" class="form-control" >
           <option value="">--Etat --</option>
 
           <option *ngFor="let c of StateOpportunity" value="{{c.id}}">{{c.NameStateOpportunity}}</option>
-
         </select>
+          <div *ngIf="angForm.get('idStateOpportunity').errors && (angForm.get('idStateOpportunity').touched || angForm.get('idStateOpportunity').dirty )" class="alert alert-danger">
+            <span *ngIf="angForm.get('idStateOpportunity').errors.required"></span>  strategique est obligatoire
+          </div>
+        </div>
       </div>
     </div>
 
     <button class="btn btn-danger" (click)="onNoClick()" style="float: left">Annuler</button>
 
-    <button class="btn btn-primary "  style="float: right"  (click)="reevaluateOpportunity()" >create</button>
+    <button class="btn btn-primary "  style="float: right"  [disabled]="angForm.invalid" (click)="reevaluateOpportunity()" >reevaluer</button>
   </form>
 </div>

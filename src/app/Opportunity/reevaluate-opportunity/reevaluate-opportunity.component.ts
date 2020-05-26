@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {OpportunityService} from '../../Services/Opportunity/opportunity.service';
 import {Router} from '@angular/router';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-reevaluate-opportunity',
@@ -9,7 +10,9 @@ import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
   styleUrls: ['./reevaluate-opportunity.component.css']
 })
 export class ReevaluateOpportunityComponent implements OnInit {
-  categoryOpportunity: any ;
+  angForm: FormGroup;
+  submitted = false;
+
   Strategic: any ;
   Process: any ;
   StateOpportunity: any ;
@@ -23,7 +26,17 @@ export class ReevaluateOpportunityComponent implements OnInit {
 
   constructor(private opportunityService: OpportunityService,
               private router:Router ,  public dialogRef: MatDialogRef<ReevaluateOpportunityComponent>,
-              @Inject(MAT_DIALOG_DATA) public id:number) { }
+              @Inject(MAT_DIALOG_DATA) public id:number , private fb : FormBuilder) {
+
+    this.angForm = this.fb.group({
+
+      Efforts: ['', [Validators.required]],
+      Advantage: ['', [Validators.required]],
+      idprocess: ['', [Validators.required]],
+      idstrategic: ['', [Validators.required]],
+      idStateOpportunity: ['', [Validators.required]],
+    });
+  }
 
   ngOnInit(): void {
     this.opportunityService.getStrategicOpportunity()
@@ -61,7 +74,6 @@ export class ReevaluateOpportunityComponent implements OnInit {
   public reevaluateOpportunity() {
     this.opportunityService.reevaluationOpportinuty(this.id , this.data).subscribe((data) => {
       console.log("ffffffffff");
-      this.ngOnInit();
       return this.onNoClick();
     }), (error) => {
 
@@ -70,6 +82,17 @@ export class ReevaluateOpportunityComponent implements OnInit {
 
   }
   onNoClick(): void {
+    this.router.navigate(['Opportunite']);
     this.dialogRef.close();
+  }
+  get f() {
+    return this.angForm.controls;
+  }
+  onSubmit() {
+    this.submitted = true;
+    if (this.angForm.invalid) {
+
+      return;
+    }
   }
 }
