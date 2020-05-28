@@ -88,7 +88,7 @@
                 <label class="col-sm-2 col-form-label">temps 2021 :</label>
                 <div class="col-sm-6">
                   <select name="Time2021" placeholder="nom cat"  [(ngModel)]="data.Time2021" type="number" class="form-control" >
-                    <option value="">--Gravité--</option>
+                    <option value="">--temps 2021 --</option>
                     <option>X</option>
                     <option>V</option>
                     <option>R</option>
@@ -106,8 +106,8 @@
                 </div>
               </div>
 
-              <div>
-                <input class="form-check-input" type="radio" name="PredefinedIndicator" value="*" [(ngModel)]="data.PredefinedIndicator" >
+              <div class="distanceObjective form-group row">
+                <input class="form-check-input" type="checkbox" name="PredefinedIndicator" value="*" [(ngModel)]="data.PredefinedIndicator" >
                 <label class="form-check-label">IndicateurPredefini</label><br>
               </div>
 

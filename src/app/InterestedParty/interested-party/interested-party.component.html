@@ -98,7 +98,7 @@
           </select>
           <p>est_ce que vous voulez evaluer</p>
           <div>
-            <input type="radio" name="data.nom_champ"  value="interet" [(ngModel)]="data.nom_champ">
+            <input type="radio" name="data.nom_champ"  value="interet" [(ngModel)]="data.nom_champ" >
             <label>intéret</label>
 
             <input type="radio" name="data.nom_champ" value="pouvoir" [(ngModel)]="data.nom_champ">
@@ -170,7 +170,7 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of interestedpartyRevelant " >
+          <tr *ngFor="let c of interestedpartyRelevant " >
             <td>Pi{{c.id}}</td>
             <td>{{c.NameInterestedParty}}</td>
             <td >{{c.Influence}}</td>
@@ -190,7 +190,7 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of interestedpartyRevelant " >
+          <tr *ngFor="let c of interestedpartyRelevant " >
             <td>Pi{{c.id}}</td>
             <td>{{c.NameInterestedParty}}</td>
             <td >{{c.Influence}}</td>
