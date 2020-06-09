@@ -1,8 +1,8 @@
 
 <div class="col-md-6 container    my-5">
   <div class="card card-user  panel">
-    <div class="card-header panel-heading bg-primary ">
-      <h5 class="card-title "> create compte </h5>
+    <div class="card-header panel-heading bg-primary position ">
+      <h1 class="card-title "> create compte </h1>
     </div>
     <div class="card-body">
 <form #f="ngForm" (ngSubmit)="createCompte(f.value)">
@@ -30,11 +30,13 @@
       <option value="ROLE_USER">role user</option>
       <option value="ROLE_ADMIN">role admin</option>
       <option value="ROLE_SUPERADMIN">role super admin</option>
+      <option value="ROLE_ADMINPRINCIPALE">role admin principale</option>
     </select>
   </div>
+
   <button class="btn btn-danger" routerLink="/login" style="float: left">Annuler</button>
 
-  <button class="btn btn-primary "  style="float: right"  >create</button>
+  <button class="btn btn-primary "  style="float: right"  >create115454</button>
 </form>
 
     </div>

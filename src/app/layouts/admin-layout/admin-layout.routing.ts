@@ -11,7 +11,7 @@ import { UpgradeComponent } from '../../pages/upgrade/upgrade.component';
 import {LoginComponent} from '../../Authentification/login/login.component';
 import {CreateRegisterComponent} from '../../Authentification/create-register/create-register.component';
 import {HomeComponent} from '../../pages/home/home.component';
-import {LoginGuard} from '../../Guard/login.guard';
+import {LoginGuard} from '../../Guard/Login/login.guard';
 import {Test5Component} from '../../test5/test5.component';
 import {Test6Component} from '../../test6/test6.component';
 
@@ -49,52 +49,53 @@ import {CurrentStateplanactionComponent} from '../../ActionPlan/current-statepla
 import {StateEfficacityActionPlanComponent} from '../../ActionPlan/state-efficacity-action-plan/state-efficacity-action-plan.component';
 import {CreateStakeInternalComponent} from '../../Stakes/create-stake-internal/create-stake-internal.component';
 import {CreateStakeExternalComponent} from '../../Stakes/create-stake-external/create-stake-external.component';
+import {CreateRegisterAdminComponent} from "../../Authentification/create-register-admin/create-register-admin.component";
+import {SuperAdminGuard} from "../../Guard/SuperAdmin/super-admin.guard";
+import {UserGuard} from "../../Guard/User/user.guard";
+import {AdminGuard} from "../../Guard/Admin/admin.guard";
+import {AdminPrincipaleGuard} from "../../Guard/AdminPrincipale/admin-principale.guard";
 
 
 export const AdminLayoutRoutes: Routes = [
 
     { path: 'user',           component: UserComponent },
-    { path: 'table',          component: TableComponent },
-    { path: 'typography',     component: TypographyComponent },
     { path: 'login',     component: LoginComponent },
     { path: 'home',     component: HomeComponent , canActivate: [LoginGuard] },
     { path: 'createregister',     component: CreateRegisterComponent },
-    { path: 'icons',          component: IconsComponent },
-    { path: 'maps',           component: MapsComponent },
-    { path: 'notifications',  component: NotificationsComponent },
-    { path: 'categoriesPI',  component: CategoryInterestedPartyComponent },
-    { path: 'exigencesPI',  component: ExigencyInterestedPartyComponent },
-    { path: 'listePartieinteresse',  component: ListInterestedPartyComponent },
-    { path: 'partieinteresse',  component: InterestedPartyComponent },
-    { path: 'enjeu',  component: StakeComponent },
-    { path: 'enjeuIntern',  component: CreateStakeInternalComponent },
-    { path: 'enjeuExtern',  component: CreateStakeExternalComponent },
-    { path: 'strategiqueRisque',  component: StrategicRiskComponent },
-    { path: 'guideutlisation',  component: UtilizationGuideComponent },
-    { path: 'processus',  component: ProcessComponent },
-    { path: 'RisqueCategories',  component: CategoryRiskComponent },
-    { path: 'risque',  component: RiskComponent },
-    { path: 'ajouterRisque',  component: CreateRiskComponent },
-    { path: 'etatRisque',  component: StateRiskComponent },
-    { path: 'historiqueRisque',  component: HistoricalRiskComponent },
-    { path: 'CategoriesEnjeuIntern',  component: CategoryInternalComponent},
-    { path: 'CategoriesEnjeuExtern',  component: CategoryExternalComponent },
-    { path: 'test5',  component: Test5Component },
-    { path: 'historiquepipertinante',  component: HistoricalInterestedPartyComponent },
-    { path: 'historiqueOpportunite',  component: HistoricalOpportunityComponent },
-    { path: 'Opportunite',  component: OpportunityComponent },
-    { path: 'CategoriesOpportunite',  component: CategoryOpportunityComponent },
-    { path: 'StrategiqueOpportunite',  component: StrategicOpportunityComponent },
-    { path: 'etatOpportunite',  component: StateOpportunityComponent },
-    { path: 'ajouterOpportunite',  component: CreateOpportunityComponent },
-    { path: 'Objective',  component: ObjectiveComponent },
-    { path: 'Plandeaction',  component: ActionPlanComponent },
-    { path: 'CreatePlandeaction',  component: CreateActionPlanComponent },
-    { path: 'etatEfficacite',  component: StateEfficacityActionPlanComponent },
-    { path: 'etatactuel',  component: CurrentStateplanactionComponent },
-    { path: 'ajouterObjective',  component: CreateObjectiveComponent },
-    { path: 'historiqueObjective',  component: HistoricalObjectiveComponent },
+    { path: 'createregisteradmin',     component: CreateRegisterAdminComponent , canActivate: [AdminPrincipaleGuard]  },
+
+    { path: 'categoriesPI',  component: CategoryInterestedPartyComponent , canActivate: [SuperAdminGuard] },
+    { path: 'exigencesPI',  component: ExigencyInterestedPartyComponent , canActivate: [UserGuard] },
+    { path: 'listePartieinteresse',  component: ListInterestedPartyComponent , canActivate: [AdminGuard] },
+    { path: 'partieinteresse',  component: InterestedPartyComponent , canActivate: [LoginGuard]},
+    { path: 'enjeu',  component: StakeComponent , canActivate: [LoginGuard] },
+    { path: 'enjeuIntern',  component: CreateStakeInternalComponent , canActivate: [AdminGuard] },
+    { path: 'enjeuExtern',  component: CreateStakeExternalComponent , canActivate: [AdminGuard]},
+    { path: 'strategiqueRisque',  component: StrategicRiskComponent , canActivate: [SuperAdminGuard] },
+    { path: 'guideutlisation',  component: UtilizationGuideComponent , canActivate: [LoginGuard]},
+    { path: 'processus',  component: ProcessComponent , canActivate: [LoginGuard]},
+    { path: 'RisqueCategories',  component: CategoryRiskComponent , canActivate: [SuperAdminGuard] },
+    { path: 'risque',  component: RiskComponent , canActivate: [LoginGuard]},
+    { path: 'ajouterRisque',  component: CreateRiskComponent , canActivate: [AdminGuard]},
+    { path: 'etatRisque',  component: StateRiskComponent , canActivate: [SuperAdminGuard] },
+    { path: 'historiqueRisque',  component: HistoricalRiskComponent , canActivate: [LoginGuard]},
+    { path: 'CategoriesEnjeuIntern',  component: CategoryInternalComponent , canActivate: [SuperAdminGuard] },
+    { path: 'CategoriesEnjeuExtern',  component: CategoryExternalComponent , canActivate: [SuperAdminGuard] },
+    { path: 'historiquepipertinante',  component: HistoricalInterestedPartyComponent , canActivate: [LoginGuard]},
+    { path: 'historiqueOpportunite',  component: HistoricalOpportunityComponent , canActivate: [LoginGuard]},
+    { path: 'Opportunite',  component: OpportunityComponent , canActivate: [LoginGuard]},
+    { path: 'CategoriesOpportunite',  component: CategoryOpportunityComponent , canActivate: [SuperAdminGuard] },
+    { path: 'StrategiqueOpportunite',  component: StrategicOpportunityComponent , canActivate: [SuperAdminGuard]  },
+    { path: 'etatOpportunite',  component: StateOpportunityComponent , canActivate: [SuperAdminGuard]  },
+    { path: 'ajouterOpportunite',  component: CreateOpportunityComponent , canActivate: [AdminGuard]},
+    { path: 'Objective',  component: ObjectiveComponent , canActivate: [LoginGuard]},
+    { path: 'Plandeaction',  component: ActionPlanComponent , canActivate: [LoginGuard]},
+    { path: 'CreatePlandeaction',  component: CreateActionPlanComponent , canActivate: [AdminGuard]},
+    { path: 'etatEfficacite',  component: StateEfficacityActionPlanComponent , canActivate: [SuperAdminGuard] },
+    { path: 'etatactuel',  component: CurrentStateplanactionComponent , canActivate: [SuperAdminGuard] },
+    { path: 'ajouterObjective',  component: CreateObjectiveComponent , canActivate: [AdminGuard]},
+    { path: 'historiqueObjective',  component: HistoricalObjectiveComponent , canActivate: [LoginGuard]},
     { path: 'definition',  component: DefinitionComponent },
-    { path: 'Synthese1',  component: SyntheseComponent },
+    { path: 'Synthese1',  component: SyntheseComponent , canActivate: [LoginGuard]},
     { path: 'upgrade',        component: UpgradeComponent }
 ];

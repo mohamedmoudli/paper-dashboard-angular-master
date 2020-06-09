@@ -77,6 +77,10 @@ export class AuthentificationService {
     console.log(data);
     return this.http.post(this.host+"my_register" , data );
   }
+  createregisteradmin(data){
+    console.log(data);
+    return this.http.post(this.host+"my_registerAdmin" , data );
+  }
   forgetservice(data){
     return this.http.post(this.host+"forgotten_password" , data );
 

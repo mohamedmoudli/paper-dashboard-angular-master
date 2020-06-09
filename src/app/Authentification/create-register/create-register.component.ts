@@ -20,7 +20,7 @@ export class CreateRegisterComponent implements OnInit {
     this.authService.createregister(data).subscribe(
       resp=>{
         console.log(resp);
-        return this.router.navigate(['categoriesPI']);
+        return this.router.navigate(['login']);
       },error => {
         this.err=error;
         console.log(error);

@@ -18,7 +18,7 @@ import {LoginComponent} from '../../Authentification/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CreateRegisterComponent} from '../../Authentification/create-register/create-register.component';
 import {HomeComponent} from '../../pages/home/home.component';
-import {LoginGuard} from '../../Guard/login.guard';
+import {LoginGuard} from '../../Guard/Login/login.guard';
 import {SidebarComponent} from '../../sidebar/sidebar.component';
 import {NavbarComponent} from '../../shared/navbar/navbar.component';
 import {FooterComponent} from '../../shared/footer/footer.component';
@@ -135,6 +135,11 @@ import {DelateHistoricalInterestedPartyComponent} from '../../InterestedParty/de
 import {DelateHistoricalRiskComponent} from '../../Risk/delate-historical-risk/delate-historical-risk.component';
 import {DelateHistoricalOpportunityComponent} from '../../Opportunity/delate-historical-opportunity/delate-historical-opportunity.component';
 import {DelateHistoricalObjectiveComponent} from '../../Objective/delate-historical-objective/delate-historical-objective.component';
+import {SaveHistoricalInterestedPartyComponent} from "../../InterestedParty/save-historical-interested-party/save-historical-interested-party.component";
+import {SaveHistoricalRiskComponent} from "../../Risk/save-historical-risk/save-historical-risk.component";
+import {SaveHistoricalOpportunityComponent} from "../../Opportunity/save-historical-opportunity/save-historical-opportunity.component";
+import {SaveHistoricalObjectiveComponent} from "../../Objective/save-historical-objective/save-historical-objective.component";
+import {CreateRegisterAdminComponent} from "../../Authentification/create-register-admin/create-register-admin.component";
 
 
 @NgModule({
@@ -271,6 +276,11 @@ import {DelateHistoricalObjectiveComponent} from '../../Objective/delate-histori
     DelateHistoricalRiskComponent,
     DelateHistoricalOpportunityComponent,
     DelateHistoricalObjectiveComponent,
+    SaveHistoricalInterestedPartyComponent,
+    SaveHistoricalRiskComponent,
+    SaveHistoricalOpportunityComponent,
+    SaveHistoricalObjectiveComponent,
+    CreateRegisterAdminComponent,
     HelpStakeComponent
   ]
 })

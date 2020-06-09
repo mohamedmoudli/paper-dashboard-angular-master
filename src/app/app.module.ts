@@ -112,6 +112,7 @@ import { SaveHistoricalInterestedPartyComponent } from './InterestedParty/save-h
 import { SaveHistoricalRiskComponent } from './Risk/save-historical-risk/save-historical-risk.component';
 import { SaveHistoricalOpportunityComponent } from './Opportunity/save-historical-opportunity/save-historical-opportunity.component';
 import { SaveHistoricalObjectiveComponent } from './Objective/save-historical-objective/save-historical-objective.component';
+import { CreateRegisterAdminComponent } from './Authentification/create-register-admin/create-register-admin.component';
 
 
 
@@ -122,10 +123,7 @@ import { SaveHistoricalObjectiveComponent } from './Objective/save-historical-ob
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    SaveHistoricalInterestedPartyComponent,
-    SaveHistoricalRiskComponent,
-    SaveHistoricalOpportunityComponent,
-    SaveHistoricalObjectiveComponent,
+
 
 
 
