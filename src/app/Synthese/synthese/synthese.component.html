@@ -73,13 +73,13 @@
       <table class="table ">
         <thead>
         <tr>
-         <th></th> <th *ngFor="let p of advencementbytimelimit"> {{p.Delai}}</th>
+         <th></th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let c of advencementbytimelimit">
-          <td>{{c.Process.process}}</td>
-          <td>{{c.Advancement}}</td>
+          <td>{{c.Process}}</td>
+          <td *ngFor="let a of c.actionPlans "  > <p>{{a.Delai}}</p>{{a.Advancement}}</td>
         </tr>
         </tbody>
       </table>

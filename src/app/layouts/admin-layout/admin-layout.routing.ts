@@ -54,12 +54,16 @@ import {SuperAdminGuard} from "../../Guard/SuperAdmin/super-admin.guard";
 import {UserGuard} from "../../Guard/User/user.guard";
 import {AdminGuard} from "../../Guard/Admin/admin.guard";
 import {AdminPrincipaleGuard} from "../../Guard/AdminPrincipale/admin-principale.guard";
+import {ForgettPasswordComponent} from "../../Authentification/forgett-password/forgett-password.component";
+import {ResetPasswordComponent} from "../../Authentification/reset-password/reset-password.component";
 
 
 export const AdminLayoutRoutes: Routes = [
 
     { path: 'user',           component: UserComponent },
     { path: 'login',     component: LoginComponent },
+    { path: 'forgettpassword',     component: ForgettPasswordComponent },
+    { path: 'resetpassword',     component: ResetPasswordComponent },
     { path: 'home',     component: HomeComponent , canActivate: [LoginGuard] },
     { path: 'createregister',     component: CreateRegisterComponent },
     { path: 'createregisteradmin',     component: CreateRegisterAdminComponent , canActivate: [AdminPrincipaleGuard]  },

@@ -286,7 +286,7 @@ export class SyntheseComponent implements OnInit {
       }, error => {
         console.log('gggggg');
       });
-    this.syntheseService.GetTimeLimitAdvencementbyProcess()
+    this.syntheseService.GetDelaibyprocess()
       .subscribe(
         (data)=>{
          this.advencementbytimelimit = data;

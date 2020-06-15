@@ -113,6 +113,9 @@ import { SaveHistoricalRiskComponent } from './Risk/save-historical-risk/save-hi
 import { SaveHistoricalOpportunityComponent } from './Opportunity/save-historical-opportunity/save-historical-opportunity.component';
 import { SaveHistoricalObjectiveComponent } from './Objective/save-historical-objective/save-historical-objective.component';
 import { CreateRegisterAdminComponent } from './Authentification/create-register-admin/create-register-admin.component';
+import { ForgettPasswordComponent } from './Authentification/forgett-password/forgett-password.component';
+import { CheckEmailToResetComponent } from './Authentification/check-email-to-reset/check-email-to-reset.component';
+import { ResetPasswordComponent } from './Authentification/reset-password/reset-password.component';
 
 
 
@@ -123,6 +126,7 @@ import { CreateRegisterAdminComponent } from './Authentification/create-register
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+
 
 
 

@@ -121,5 +121,11 @@ export class AuthentificationService {
     }
     else return false;
   }
+  forgettPassword(data){
+    return this.http.post(this.host+"forgotten_password" , data);
+  }
+  ResetPassword(token , data){
+    return this.http.post(this.host+"reset_password/"+token , data);
+  }
 }
 
