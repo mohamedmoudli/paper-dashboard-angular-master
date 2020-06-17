@@ -56,6 +56,8 @@ import {AdminGuard} from "../../Guard/Admin/admin.guard";
 import {AdminPrincipaleGuard} from "../../Guard/AdminPrincipale/admin-principale.guard";
 import {ForgettPasswordComponent} from "../../Authentification/forgett-password/forgett-password.component";
 import {ResetPasswordComponent} from "../../Authentification/reset-password/reset-password.component";
+import {ReflextionGuideComponent} from "../../ReflexionGuide/reflextion-guide/reflextion-guide.component";
+import {ReevaluateOpportunityComponent} from "../../Opportunity/reevaluate-opportunity/reevaluate-opportunity.component";
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -88,6 +90,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'historiquepipertinante',  component: HistoricalInterestedPartyComponent , canActivate: [LoginGuard]},
     { path: 'historiqueOpportunite',  component: HistoricalOpportunityComponent , canActivate: [LoginGuard]},
     { path: 'Opportunite',  component: OpportunityComponent , canActivate: [LoginGuard]},
+    { path: 'reevaluationopportunite',  component: ReevaluateOpportunityComponent , canActivate: [AdminGuard]},
     { path: 'CategoriesOpportunite',  component: CategoryOpportunityComponent , canActivate: [SuperAdminGuard] },
     { path: 'StrategiqueOpportunite',  component: StrategicOpportunityComponent , canActivate: [SuperAdminGuard]  },
     { path: 'etatOpportunite',  component: StateOpportunityComponent , canActivate: [SuperAdminGuard]  },
@@ -95,11 +98,12 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'Objective',  component: ObjectiveComponent , canActivate: [LoginGuard]},
     { path: 'Plandeaction',  component: ActionPlanComponent , canActivate: [LoginGuard]},
     { path: 'CreatePlandeaction',  component: CreateActionPlanComponent , canActivate: [AdminGuard]},
-    { path: 'etatEfficacite',  component: StateEfficacityActionPlanComponent , canActivate: [SuperAdminGuard] },
-    { path: 'etatactuel',  component: CurrentStateplanactionComponent , canActivate: [SuperAdminGuard] },
+    { path: 'etatEfficacite',  component: StateEfficacityActionPlanComponent  },
+    { path: 'etatactuel',  component: CurrentStateplanactionComponent },
     { path: 'ajouterObjective',  component: CreateObjectiveComponent , canActivate: [AdminGuard]},
     { path: 'historiqueObjective',  component: HistoricalObjectiveComponent , canActivate: [LoginGuard]},
     { path: 'definition',  component: DefinitionComponent },
+    { path: 'reflextionguide',  component: ReflextionGuideComponent },
     { path: 'Synthese1',  component: SyntheseComponent , canActivate: [LoginGuard]},
     { path: 'upgrade',        component: UpgradeComponent }
 ];

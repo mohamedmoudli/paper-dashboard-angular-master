@@ -250,15 +250,15 @@ export class SyntheseComponent implements OnInit {
 
     this.syntheseService.GetCurrentStateActionPlanbyProcessNumber()
       .subscribe((data) => {
-
+        var catchartjsCurrentStateByProcess = JSON.stringify(Object.assign({}, data));
         this.catchartjsCurrentStateByProcess = data;
         console.log(data);
         for (let element of this.catchartjsCurrentStateByProcess ) {
-          this.pieChartLabelsCurrentStateByProcess.push(element.Type);
+          this.pieChartLabelsCurrentStateByProcess.push(JSON.parse(element));
           this.chartColorsCurrentStateByProcess.push(element.Type);
           this.pieChartDataCurrentStateByProcess.push(element.nbre);
 
-          console.log(this.pieChartDataCurrentStateByProcess);
+          console.log(this.pieChartLabelsCurrentStateByProcess);
           console.log(data);
         }
 

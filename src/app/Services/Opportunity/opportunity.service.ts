@@ -70,7 +70,7 @@ export class OpportunityService {
 
   }
   public gethistoricalOpportunity() {
-    return this.http.get(this.host+"/api/historical_opportunities");
+    return this.http.get(this.host+"/GethistoricalOpportunity");
   }
   public savehistoricalOpportunite() {
     return this.http.get(this.host+"/savehistoricalOpportunity");

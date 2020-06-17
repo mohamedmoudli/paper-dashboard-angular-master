@@ -9,7 +9,7 @@ export class UserGuard implements CanActivate {
   constructor( private router:Router){}
   canActivate(){
     const role = localStorage.getItem('role');
-    if (role == 'ROLE_USER') {
+    if (role == 'ROLE_USER' || role == 'ROLE_ADMIN' || role == 'ROLE_SUPERADMIN' || role == 'ROLE_ADMINPRINCIPALE') {
       return true;
     } else {
       this.router.navigate(['home']);

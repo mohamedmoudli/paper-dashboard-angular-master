@@ -21,10 +21,10 @@
             <button class="btn btn-success" routerLink="/enjeuExtern">ajouter enjeu extern</button>
           </li>
           <li class="nav-item">
-            <button class="btn btn-warning" style="float: left" routerLink="/CategoriesEnjeuIntern">ajouter Categorie Intern</button>
+            <button class="btn btn-warning" style="float: left" routerLink="/CategoriesEnjeuIntern" *ngIf="CreateRole()">ajouter Categorie Intern</button>
           </li>
           <li class="nav-item">
-            <button class="btn btn-warning" routerLink="/CategoriesEnjeuExtern">ajouter Categorie extern</button>
+            <button class="btn btn-warning" routerLink="/CategoriesEnjeuExtern" *ngIf="CreateRole()">ajouter Categorie extern</button>
           </li>
         </ul>
         <div class="bg-primary">
@@ -41,7 +41,7 @@
 
                   <ng-container matColumnDef="id">
                     <th mat-header-cell *matHeaderCellDef>id</th>
-                    <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 1 ">{{row.id}}</p></td>
+                    <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 1 ">E{{row.id}}</p></td>
                   </ng-container>
 
                   <!-- Product Price Column -->
@@ -69,7 +69,7 @@
 
                   <ng-container matColumnDef="id">
                     <th mat-header-cell *matHeaderCellDef>id</th>
-                    <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 2 ">{{row.id}}</p></td>
+                    <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 2 ">E{{row.id}}</p></td>
                   </ng-container>
 
                   <!-- Product Price Column -->
@@ -108,7 +108,7 @@
 
                 <ng-container matColumnDef="id">
                   <th mat-header-cell *matHeaderCellDef>id</th>
-                  <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 3 ">{{row.id}}</p></td>
+                  <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 3 ">E{{row.id}}</p></td>
                 </ng-container>
 
                 <!-- Product Price Column -->
@@ -136,7 +136,7 @@
 
                 <ng-container matColumnDef="id">
                   <th mat-header-cell *matHeaderCellDef>id</th>
-                  <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 4 ">{{row.id}}</p></td>
+                  <td mat-cell *matCellDef="let row" > <p *ngIf=" row.Type.id == 4 ">E{{row.id}}</p></td>
                 </ng-container>
 
                 <!-- Product Price Column -->
@@ -175,7 +175,7 @@
           </thead>
           <tbody >
           <tr *ngFor="let c of Stake | paginate: { itemsPerPage : 5 , currentPage:p }">
-            <td>{{c.id}}</td>
+            <td>E{{c.id}}</td>
             <td>{{c.Description}}</td>
             <td></td>
             <td><button class="btn btn-danger" (click)="delateStake(c)">supp</button></td>

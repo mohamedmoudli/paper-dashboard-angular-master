@@ -1,14 +1,13 @@
 
 
-  <h1 class="card-title "> ajouter processus </h1>
+  <h1 class="card-title "> ajouter un processus </h1>
 
 <div class="card-body">
   <form  [formGroup]="angForm" name="form"  (ngSubmit)=" onSubmit() " >
 
     <div class="form-group">
       <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Process').errors && (angForm.get('Process').touched || angForm.get('Process').dirty ) }">
-        <label class="control-label"> process:</label>
-        <input type="text" name="Process" formControlName="Process" [(ngModel)]="data.Process" class="form-control">
+         <input type="text" name="Process" formControlName="Process" [(ngModel)]="data.Process" class="form-control">
         <div *ngIf="angForm.get('Process').errors && (angForm.get('Process').touched || angForm.get('Process').dirty )" class="alert alert-danger">
           <span *ngIf="angForm.get('Process').errors.required"></span>  processus est obligatoire
         </div>

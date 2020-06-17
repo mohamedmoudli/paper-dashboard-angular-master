@@ -13,6 +13,9 @@ import {DelateHistoricalRiskComponent} from '../delate-historical-risk/delate-hi
 })
 export class HistoricalRiskComponent implements OnInit {
   historique : any;
+  public data = {
+    Strategique: ''
+  };
   public animal: string;
   p:number = 1;
   public hidder = ["id" , "Criticite", "decision" , "strategique" , "processus" , "Etat risque" , "Commentaire" ,"num action" , "date"];
@@ -24,11 +27,12 @@ export class HistoricalRiskComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.historique = data['hydra:member'];
+        this.historique = data;
         console.log(this.historique);
       }, error => {
         console.log(false);
       });
+
     this.riskService.castRisk.subscribe( Risk => this.historique = Risk);
   }
 

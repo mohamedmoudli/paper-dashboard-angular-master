@@ -26,7 +26,7 @@
             <td>{{c.id}}</td>
             <td>{{c.Etat}}</td>
             <td>{{c.Commentaire}}</td>
-            <td>  <p *ngFor="let p of c.NumeroAction "> {{ p.id}}</p> </td>
+            <td>  <p *ngFor="let p of c.NumAction "> {{ p}}</p> </td>
             <td>{{c.Date | date}}</td>
             <td><button class="btn btn-danger" (click)="delateHistoricalOpportunity(c)">supp</button></td>
 

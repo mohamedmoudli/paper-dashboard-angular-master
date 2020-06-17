@@ -16,7 +16,7 @@ export class StrategicRiskComponent implements OnInit {
 
   public StrategicRisk = [];
   public dataSource = new MatTableDataSource(this.StrategicRisk);
-  public hidder = ["id" , "nom categories"];
+  public hidder = ["id" , "nom strategique"];
   public test = false;
   public data = {
     nomcat: ""

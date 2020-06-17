@@ -12,7 +12,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class ReevaluateOpportunityComponent implements OnInit {
   angForm: FormGroup;
   submitted = false;
-
+  id: any;
   Strategic: any ;
   Process: any ;
   StateOpportunity: any ;
@@ -25,8 +25,8 @@ export class ReevaluateOpportunityComponent implements OnInit {
   };
 
   constructor(private opportunityService: OpportunityService,
-              private router:Router ,  public dialogRef: MatDialogRef<ReevaluateOpportunityComponent>,
-              @Inject(MAT_DIALOG_DATA) public id:number , private fb : FormBuilder) {
+              private router:Router ,
+               private fb : FormBuilder) {
 
     this.angForm = this.fb.group({
 
@@ -39,6 +39,8 @@ export class ReevaluateOpportunityComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.opportunityService.castOpportunity.subscribe(Opportunity=> this.id = Opportunity);
+    console.log(this.id);
     this.opportunityService.getStrategicOpportunity()
       .subscribe((data) => {
 
@@ -74,17 +76,14 @@ export class ReevaluateOpportunityComponent implements OnInit {
   public reevaluateOpportunity() {
     this.opportunityService.reevaluationOpportinuty(this.id , this.data).subscribe((data) => {
       console.log("ffffffffff");
-      return this.onNoClick();
+      return this.router.navigate(['Opportunite'])
     }), (error) => {
 
       console.log("Error", error);
     };
 
   }
-  onNoClick(): void {
-    this.router.navigate(['Opportunite']);
-    this.dialogRef.close();
-  }
+
   get f() {
     return this.angForm.controls;
   }

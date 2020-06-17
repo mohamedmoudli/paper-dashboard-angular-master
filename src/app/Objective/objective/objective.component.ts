@@ -93,6 +93,12 @@ export class ObjectiveComponent implements OnInit {
     });
   }
 
+  public CreateObjectiveRole(){
+    const role = localStorage.getItem('role');
+    if (role == 'ROLE_ADMIN' || role == 'ROLE_SUPERADMIN' || role == 'ROLE_ADMINPRINCIPALE' ) {
+      return true;
+    }
+}
   public DisplayInterestedPartyRevelant(): void {
 
     const dialogRef = this.dialog.open(PIRelevantComponent, {
@@ -106,4 +112,5 @@ export class ObjectiveComponent implements OnInit {
 
     });
   }
+
 }

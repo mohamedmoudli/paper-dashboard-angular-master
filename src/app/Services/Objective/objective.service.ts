@@ -31,7 +31,7 @@ export class ObjectiveService {
   }
 
   public gethistoricalObjective() {
-    return this.http.get(this.host+"/api/historical_objectives");
+    return this.http.get(this.host+"/GethistoricalObjective");
   }
 
   public savehistoricalObjective() {

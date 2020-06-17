@@ -1,3 +1,11 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content" >
+
 <div>
   <form [formGroup]="angForm" name="form" (ngSubmit)="onSubmit()">
     <div class="form-group row">
@@ -86,8 +94,13 @@
       </div>
     </div>
 
-    <button class="btn btn-danger" (click)="onNoClick()" style="float: left">Annuler</button>
+    <button class="btn btn-danger" routerLink="/Opportunite" style="float: left">Annuler</button>
 
     <button class="btn btn-primary "  style="float: right"  [disabled]="angForm.invalid" (click)="reevaluateOpportunity()" >reevaluer</button>
   </form>
+</div>
+
+    </div>
+
+  </div>
 </div>

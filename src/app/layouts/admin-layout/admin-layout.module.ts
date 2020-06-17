@@ -140,6 +140,10 @@ import {SaveHistoricalRiskComponent} from "../../Risk/save-historical-risk/save-
 import {SaveHistoricalOpportunityComponent} from "../../Opportunity/save-historical-opportunity/save-historical-opportunity.component";
 import {SaveHistoricalObjectiveComponent} from "../../Objective/save-historical-objective/save-historical-objective.component";
 import {CreateRegisterAdminComponent} from "../../Authentification/create-register-admin/create-register-admin.component";
+import {ForgettPasswordComponent} from "../../Authentification/forgett-password/forgett-password.component";
+import {CheckEmailToResetComponent} from "../../Authentification/check-email-to-reset/check-email-to-reset.component";
+import {ResetPasswordComponent} from "../../Authentification/reset-password/reset-password.component";
+import {ReflextionGuideComponent} from "../../ReflexionGuide/reflextion-guide/reflextion-guide.component";
 
 
 @NgModule({
@@ -281,6 +285,10 @@ import {CreateRegisterAdminComponent} from "../../Authentification/create-regist
     SaveHistoricalOpportunityComponent,
     SaveHistoricalObjectiveComponent,
     CreateRegisterAdminComponent,
+    ForgettPasswordComponent,
+    CheckEmailToResetComponent,
+    ResetPasswordComponent,
+    ReflextionGuideComponent,
     HelpStakeComponent
   ]
 })

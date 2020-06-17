@@ -68,8 +68,9 @@ export class RiskService {
 
   }
   public gethistoricalRisk() {
-    return this.http.get(this.host+"/api/historical_risks");
+    return this.http.get(this.host+"/GethistoricalRisk");
   }
+
   public savehistoricalRisk() {
     return this.http.get(this.host+"/savehistoricalRisk");
   }

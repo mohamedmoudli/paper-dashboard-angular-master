@@ -25,7 +25,7 @@ export class HistoricalObjectiveComponent implements OnInit {
       .subscribe((data) => {
 
         console.log(data);
-        this.historique = data['hydra:member'];
+        this.historique = data;
         console.log(this.historique);
       }, error => {
         console.log(false);

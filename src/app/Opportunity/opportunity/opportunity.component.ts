@@ -89,17 +89,10 @@ export class OpportunityComponent implements OnInit {
     });
   }
   reevaluateOpportunity(id){
-    const dialogRef = this.dialog.open(ReevaluateOpportunityComponent, {
-      width: "500px",
-      height: "300px",
-      data:id
-    });
+    this.opportunityService.charingOpportunity(id);
+    return this.router.navigate(['reevaluationopportunite'])
+    }
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed");
-
-    });
-  }
   definitionOpportunity(){
     const dialogRef = this.dialog.open(DefinitionOpportunityComponent, {
       width: "300px",
@@ -123,5 +116,10 @@ export class OpportunityComponent implements OnInit {
 
     });
   }
-
+  public CreateRole() {
+    const role = localStorage.getItem('role');
+    if ( role == 'ROLE_SUPERADMIN') {
+      return true;
+    }
+  }
 }

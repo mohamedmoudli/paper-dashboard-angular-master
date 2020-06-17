@@ -56,10 +56,13 @@
       </div>
 
       <h3 class="text-success">etat par process</h3>
-      <div style="display: block">
-        <canvas baseChart [data]="pieChartDataCurrentStateByProcess"
-                [labels]="pieChartLabelsCurrentStateByProcess" [colors]="chartColorsCurrentStateByProcess"
-                [labels]="chartLabelsCurrentStateByProcess" [colors]="chartColorsCurrentStateByProcess" [chartType]="pieChartTypeCurrentStateByProcess"></canvas>
+      <div style="display: block" *ngFor="let c of catchartjsCurrentStateByProcess">
+        <canvas baseChart [data]="pieChartDataCurrentStateByProcess" *ngFor="let c of catchartjsCurrentStateByProcess"
+                [labels]="pieChartLabelsCurrentStateByProcess " [colors]="chartColorsCurrentStateByProcess"
+                [labels]="chartLabelsCurrentStateByProcess" [colors]="chartColorsCurrentStateByProcess" [chartType]="pieChartTypeCurrentStateByProcess">
+
+
+        </canvas>
       </div>
       <h3 class="text-success">avencement par process</h3>
       <div style="display: block">

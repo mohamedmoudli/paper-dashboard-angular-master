@@ -56,6 +56,43 @@ export class InterestedPartyComponent implements OnInit {
   ];
 
 
+
+  public bubbleChartOptionsinteret: ChartOptions = {
+    responsive: true,
+    scales: {
+      xAxes: [{ticks: {min: 0, max: 5,}}],
+      yAxes: [{ticks: {min: 0, max: 5,}}]
+    }
+  };
+  public bubbleChartTypeinteret: ChartType = 'bubble';
+  public bubbleChartLegendinteret = true;
+  public interetinteret: string;
+
+  public bubbleChartDatainteret: ChartDataSets[] = [
+    {
+      data: [
+        {x: localStorage.getItem('influence') , y: localStorage.getItem('Interest') , r: 8},
+
+
+      ],
+      label: this.interestedparty,
+    },
+  ];
+
+  public bubbleChartColorsinteret: Color[] = [
+    {
+      backgroundColor: [
+        'red',
+        'green',
+        'blue',
+        'purple',
+      ]
+    }
+  ];
+
+
+
+
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -274,5 +311,11 @@ export class InterestedPartyComponent implements OnInit {
       console.log("The dialog was closed");
 
     });
+  }
+  public CreateRole() {
+    const role = localStorage.getItem('role');
+    if ( role == 'ROLE_SUPERADMIN') {
+      return true;
+    }
   }
 }

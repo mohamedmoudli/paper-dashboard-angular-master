@@ -18,7 +18,7 @@ export class StateRiskComponent implements OnInit {
   public stateRisk = [];
   StateRisk: any;
   public dataSource = new MatTableDataSource(this.stateRisk);
-  public hidder = ["id" , "nom categories"];
+  public hidder = ["id" , "nom etat"];
   public test = false;
   public data = {
     nomcat: ""
@@ -74,7 +74,7 @@ export class StateRiskComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
- 
+
     });
   }
   charingTheStateRisk(){

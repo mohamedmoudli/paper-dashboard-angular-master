@@ -17,7 +17,7 @@ export class StateOpportunityComponent implements OnInit {
 
   public stateOpportunity: any;
 
-  public hidder = ["id" , "nom categories"];
+  public hidder = ["id" , "nom Etat"];
   public test = false;
   public data = {
     nomcat: ""

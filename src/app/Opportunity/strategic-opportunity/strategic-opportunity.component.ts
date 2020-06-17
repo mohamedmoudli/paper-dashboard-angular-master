@@ -15,7 +15,7 @@ export class StrategicOpportunityComponent implements OnInit {
 
   public StrategicOpportunity = [];
 
-  public hidder = ["id" , "nom categories"];
+  public hidder = ["id" , "nom strategic"];
   public test = false;
 
   constructor( private opportunityService: OpportunityService,
