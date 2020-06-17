@@ -58,6 +58,9 @@ import {ForgettPasswordComponent} from "../../Authentification/forgett-password/
 import {ResetPasswordComponent} from "../../Authentification/reset-password/reset-password.component";
 import {ReflextionGuideComponent} from "../../ReflexionGuide/reflextion-guide/reflextion-guide.component";
 import {ReevaluateOpportunityComponent} from "../../Opportunity/reevaluate-opportunity/reevaluate-opportunity.component";
+import {ReflextionGuideRisqueComponent} from "../../ReflexionGuide/reflextion-guide-risque/reflextion-guide-risque.component";
+import {ReflextionGuideInterestedPartyComponent} from "../../ReflexionGuide/reflextion-guide-interested-party/reflextion-guide-interested-party.component";
+import {ReflextionGuideObjectiveComponent} from "../../ReflexionGuide/reflextion-guide-objective/reflextion-guide-objective.component";
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -98,12 +101,15 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'Objective',  component: ObjectiveComponent , canActivate: [LoginGuard]},
     { path: 'Plandeaction',  component: ActionPlanComponent , canActivate: [LoginGuard]},
     { path: 'CreatePlandeaction',  component: CreateActionPlanComponent , canActivate: [AdminGuard]},
-    { path: 'etatEfficacite',  component: StateEfficacityActionPlanComponent  },
-    { path: 'etatactuel',  component: CurrentStateplanactionComponent },
+    { path: 'etatEfficacite',  component: StateEfficacityActionPlanComponent  , canActivate: [SuperAdminGuard] },
+    { path: 'etatactuel',  component: CurrentStateplanactionComponent  , canActivate: [SuperAdminGuard] },
     { path: 'ajouterObjective',  component: CreateObjectiveComponent , canActivate: [AdminGuard]},
     { path: 'historiqueObjective',  component: HistoricalObjectiveComponent , canActivate: [LoginGuard]},
     { path: 'definition',  component: DefinitionComponent },
     { path: 'reflextionguide',  component: ReflextionGuideComponent },
+    { path: 'reflextionguideRisque',  component: ReflextionGuideRisqueComponent },
+    { path: 'reflextionguideObjective',  component: ReflextionGuideObjectiveComponent },
+    { path: 'reflextionguidePartieinteressé',  component: ReflextionGuideInterestedPartyComponent },
     { path: 'Synthese1',  component: SyntheseComponent , canActivate: [LoginGuard]},
     { path: 'upgrade',        component: UpgradeComponent }
 ];

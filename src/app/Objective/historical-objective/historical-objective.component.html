@@ -12,7 +12,7 @@
       <div class="card table-responsive">
         <div class="row distance">
           <h3>chercher : </h3>
-          <input type="text" placeholder="search" [(ngModel)]="historique.Description" class="form-control col-md-4">
+          <input type="text" placeholder="search" [(ngModel)]="data.Strategique" class="form-control col-md-4">
         </div>
         <table class="table" >
           <thead class=" text-primary">
@@ -21,7 +21,7 @@
           </tr>
           </thead>
           <tbody >
-          <tr *ngFor="let c of historique | filter: historique.Description | paginate: { itemsPerPage : 5 , currentPage:p }">
+          <tr *ngFor="let c of historique | filter: data.Strategique | paginate: { itemsPerPage : 5 , currentPage:p }">
             <td>{{c.id}}</td>
             <td>{{c.Description}}</td>
             <td>{{c.Stake}}</td>
@@ -40,7 +40,7 @@
             <td>{{c.Advancement}}</td>
             <td>{{c.Comment}}</td>
             <td>{{c.Date | date }}</td>
-            <td><button class="btn btn-danger" (click)="delateHistoricalOjective(c)">supp</button></td>
+            <td *ngIf="CreateRole()"><button class="btn btn-danger" (click)="delateHistoricalOjective(c)">supp</button></td>
 
           </tr>
 

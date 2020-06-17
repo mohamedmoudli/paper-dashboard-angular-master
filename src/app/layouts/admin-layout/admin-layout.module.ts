@@ -144,6 +144,9 @@ import {ForgettPasswordComponent} from "../../Authentification/forgett-password/
 import {CheckEmailToResetComponent} from "../../Authentification/check-email-to-reset/check-email-to-reset.component";
 import {ResetPasswordComponent} from "../../Authentification/reset-password/reset-password.component";
 import {ReflextionGuideComponent} from "../../ReflexionGuide/reflextion-guide/reflextion-guide.component";
+import {ReflextionGuideInterestedPartyComponent} from "../../ReflexionGuide/reflextion-guide-interested-party/reflextion-guide-interested-party.component";
+import {ReflextionGuideRisqueComponent} from "../../ReflexionGuide/reflextion-guide-risque/reflextion-guide-risque.component";
+import {ReflextionGuideObjectiveComponent} from "../../ReflexionGuide/reflextion-guide-objective/reflextion-guide-objective.component";
 
 
 @NgModule({
@@ -289,6 +292,9 @@ import {ReflextionGuideComponent} from "../../ReflexionGuide/reflextion-guide/re
     CheckEmailToResetComponent,
     ResetPasswordComponent,
     ReflextionGuideComponent,
+    ReflextionGuideInterestedPartyComponent,
+    ReflextionGuideRisqueComponent,
+    ReflextionGuideObjectiveComponent,
     HelpStakeComponent
   ]
 })

@@ -1,0 +1,361 @@
+
+<div class="wrapper">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <sidebar-cmp></sidebar-cmp>
+  </div>
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="content " >
+
+
+
+<div class=" bg-primary">
+  <h1>Risque et opportunite</h1>
+</div>
+      <h2 class="text-primary">Objectifs de la feuille "Risque"</h2>
+<p>* Dans la feuille "Risques" vous êtes censés d'identifier, évaluer et analyser vos risques.
+  * Vous trouvez ainsi différentes catégories pour classifier vos risques.
+  * Vous auriez besoin de visualiser vos enjeux et vos parties intéressées pour l'identification des risques, ils se trouvent dans les boutons au-dessus du tableau.
+  * Pour l'évaluation, vous trouvez trois paramètres: Gravité, Fréquence et Détectablité qui résultent la criticité du risque qui vous aidera à prendre une décision face à ce risque.
+  * C'est à vous de fixer les seuils d'acceptance et d'urgence.
+  * Ces paramètre doivent être réévalués suite aux actions mises face aux risques, c'est pourquoi, vous trouvez 2 parties: une pour l'évaluation et l'autre pour la réévaluation.
+  *Vous trouvez des synthèses dans la feuille "Synthèse".</p>
+
+<p>NB: *Généralement le seuil d'acceptance est de 25% de la valeur maximale de la criticité
+  *Généralement lorsque un risque a 4 comme Gravité, on doit agir immédiatement
+  * Si vous ne nvoulez pas évaluer un des critères, il suffit de le mettre toujours 1 dans la grille et recalculer vos seuils</p>
+<div class="col-md-8">
+  <h2>Échelle de criticité</h2>
+  <table class="table card">
+    <thead>
+    <th></th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Seuil d'acceptance (16 dans ce cas)</td>
+      <td>C'est le seuil jusqu' auquel vous pouvez vivre avec le risque </td>
+    </tr>
+    <tr>
+      <td>Seuil d'urgence (32 dans ce cas)</td>
+      <td>C'est le seuil à partir duquel vous devez réagir immédiatement face au risque </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<div >
+
+  <p>Detectabilité = 1</p>
+  <table class="table  col-md-5">
+    <thead>
+    <th></th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td >1</td>
+      <td class="bg-success">1</td>
+      <td class="bg-success">2</td>
+      <td class="bg-success">3</td>
+      <td class="bg-success">4</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="bg-success">2</td>
+      <td class="bg-success">4</td>
+      <td class="bg-success">6</td>
+      <td class="bg-success">8</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td class="bg-success">3</td>
+      <td class="bg-success">6</td>
+      <td class="bg-success">9</td>
+      <td class="bg-success">12</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td class="bg-success">4</td>
+      <td class="bg-success">8</td>
+      <td class="bg-success">12</td>
+      <td class="bg-warning">16</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<div >
+  <p>Detectabilité = 2</p>
+  <table class="table col-md-5">
+    <thead>
+    <th></th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td >1</td>
+      <td class="bg-success">2</td>
+      <td class="bg-success">4</td>
+      <td class="bg-success">6</td>
+      <td class="bg-success">8</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="bg-success">4</td>
+      <td class="bg-success">8</td>
+      <td class="bg-success">12</td>
+      <td class="bg-success">16</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td class="bg-success">6</td>
+      <td class="bg-success">12</td>
+      <td class="bg-success">18</td>
+      <td class="bg-success">24</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td class="bg-success">8</td>
+      <td class="bg-success">16</td>
+      <td class="bg-success">24</td>
+      <td class="bg-danger">32</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<div >
+  <p>Detectabilité = 3</p>
+  <table  class="table col-md-5">
+    <thead>
+    <th></th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td >1</td>
+      <td class="bg-success">3</td>
+      <td class="bg-success">6</td>
+      <td class="bg-success">9</td>
+      <td class="bg-success">12</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="bg-success">6</td>
+      <td class="bg-success">12</td>
+      <td class="bg-warning">18</td>
+      <td class="bg-warning">24</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td class="bg-success">9</td>
+      <td class="bg-warning">18</td>
+      <td class="bg-warning">27</td>
+      <td class="bg-danger">36</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td class="bg-success">12</td>
+      <td class="bg-warning">24</td>
+      <td class="bg-danger">36</td>
+      <td class="bg-danger">48</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div >
+  <p>Detectabilité = 4</p>
+  <table class="table col-md-5">
+    <thead>
+    <th></th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td >1</td>
+      <td class="bg-success">4</td>
+      <td class="bg-success">8</td>
+      <td class="bg-success">12</td>
+      <td class="bg-warning">16</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="bg-success">8</td>
+      <td class="bg-warning">16</td>
+      <td class="bg-warning">24</td>
+      <td class="bg-danger">32</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td class="bg-success">12</td>
+      <td class="bg-warning">24</td>
+      <td class="bg-danger">36</td>
+      <td class="bg-danger">48</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td class="bg-warning">16</td>
+      <td class="bg-danger">32</td>
+      <td class="bg-danger">48</td>
+      <td class="bg-danger">64</td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+<h3>Lors de l'identification des risques et opportunités, vous pouvez vous posez les questions
+  suivantes pour vous aider à la reflexion sur les différents éléments qui peuvent générer
+  des risques et des opportunités touchant à votre activité et votre organisme.</h3>
+<table class="table card">
+  <thead class="bg-warning">
+  <th>Catégories</th>
+  <th>Question</th>
+  </thead>
+  <tbody>
+  <td rowspan="8">Technologiques </td>
+  <tr>
+    <td>Est-ce que vous maitrisez  toutes les technologies que vous utilisez dans vos activités ?    </td>
+  </tr>
+  <tr>
+    <td>Les ressources informatiques permettent-elles de bien servir les processus?       </td>
+  </tr>
+  <tr>
+    <td>Est-ce que votre infrastructure informatique est bien installée et sécurisée?</td>
+  </tr>
+  <tr>
+    <td>Que ferais vous pour suivre les actualités des nouvelles technologies qui touchent à vos activités  ?</td>
+  </tr>
+  <tr>
+    <td>Est-ce qu'il y a de nouvelles technologies dans le même domaine de votre activité ? </td>
+  </tr>
+  <tr>
+    <td>Les technologies que vous utilisez sont des technologies d'actualité ou bien délaissées ? </td>
+  </tr>
+
+  <tr>
+    <td>Est-ce que les technologies en développement sont cohérentes avec les compétences existantes sur le marché ?  </td>
+  </tr>
+
+
+  <td rowspan="12">Produit/Service </td>
+  <tr>
+    <td>En quoi vos produits/services sont différentes sur le marché ?    </td>
+  </tr>
+  <tr>
+    <td>Est-ce que les informations relatives à vos produits et services sont communiquées aux clients ?     </td>
+  </tr>
+  <tr>
+    <td>Quel est le retour client sur vos produits et services ?</td>
+  </tr>
+  <tr>
+    <td>Quel est le taux de réclamation clients suite aux non-conformité du produit/service ? </td>
+  </tr>
+  <tr>
+    <td>Quel est le facteur qui génére le grand nombre de non-conformité ? </td>
+  </tr>
+  <tr>
+    <td>Est-ce que vous confrontez des risques lors de la conception et le développement de vos produits et services ? </td>
+  </tr>
+
+  <tr>
+    <td>Est-ce que les produits et services fournis chez des prestataires externes suivi la procédure d'assurance de conformité ?  </td>
+  </tr>
+
+  <tr>
+    <td>Est-ce que votre strétégie de suivi des produits et services après la livaison est efficace ? </td>
+  </tr>
+  <tr>
+    <td>Vos moyens sont-ils assez robustes pour ne pas avoir des non conformités des exigences dans vos produits et services ?  </td>
+  </tr>
+  <tr>
+    <td>Est-ce que le processus de libération des produits et services est efficace ?  </td>
+  </tr>
+  <tr>
+    <td>Est-ce que vous consolidez vos non conformités à la fin pour se projeter avec de nouveaux risques et opportunités ?  </td>
+  </tr>
+  <tr>
+    <td> Projet</td>
+    <td> Est-ce que vous consolidez les risques et les opportunités des projets pour en tirer les risques et les opportunités
+      que vous pouvez faire face à haut niveau ?</td>
+  </tr>
+
+
+  <td rowspan="6">Produit/Service </td>
+  <tr>
+    <td>Vos process donnent-ils les résultats attendus ?    </td>
+  </tr>
+  <tr>
+    <td>Vos process sont-ils toujours en amélioration continue suite aux résultats délivrés par les indicateurs ?   </td>
+  </tr>
+  <tr>
+    <td>Est-ce que vous avez pris les précaution nécessaires en cas où un de vos process donne des résultats innattendus ? </td>
+  </tr>
+  <tr>
+    <td>Est-ce que vos processus porssèdent les ressources nécessaires pour leurs bon fonctionnement ?  </td>
+  </tr>
+  <tr>
+    <td>Est-ce qu'il y des opportunités de nouveaux outils ou d'automatisation pour vos processus ?  </td>
+  </tr>
+
+
+
+  <td rowspan="6">Outillage </td>
+  <tr>
+    <td>Avez-vous des outils qui nécessite un étalonage ?    </td>
+  </tr>
+  <tr>
+    <td>Si oui, l'intervalle d'étalonage est-il suffisant pour garder vos outils en bonne état ?   </td>
+  </tr>
+  <tr>
+    <td>Si oui, est ce que vous utilisez des étalons vérifiés ?  </td>
+  </tr>
+  <tr>
+    <td>Est-ce que vos ressources matériels accomplissent bien vos activités et assure l'amélioration continue de votre système management ?  </td>
+  </tr>
+  <tr>
+    <td>Est-ce que vous effectuer les actions de surveillence et mesure sur vos outils régulièrement ?   </td>
+  </tr>
+
+
+  <td rowspan="7">Stratégique  </td>
+  <tr>
+    <td>Qu'est ce que vous faisez pour garder vos collaborateurs et vos partenaires ?   </td>
+  </tr>
+  <tr>
+    <td>Est-ce que vos objectifs stratégiques sont en cohérence avec vos activités ?    </td>
+  </tr>
+  <tr>
+    <td>Les  processus  de  planification  stratégique  de  votre  organisation  comprennent‐ils  des  mécanismes  structurés ?  </td>
+  </tr>
+  <tr>
+    <td>Est ce que ces mécanisme donnent des résultats efficaces ?  </td>
+  </tr>
+  <tr>
+    <td>Est-ce que vous avez eu des cas où vous avez raté une opportunités ?    </td>
+  </tr>
+  <tr>
+    <td>Est-ce que vous avez eu des cas où vous avez raté une opportunités ?    </td>
+  </tr>
+
+
+  </tbody>
+</table>
+    </div>
+
+  </div>
+
+</div>

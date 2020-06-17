@@ -53,11 +53,11 @@ export class ObjectiveComponent implements OnInit {
 
 
 
-  saveHistoricalOpportunity(): void {
+  saveHistoricalObjective(): void {
 
     const dialogRef = this.dialog.open(SaveHistoricalObjectiveComponent, {
-      width: "300px",
-      height: "300px",
+      width: "400px",
+      height: "200px",
 
     });
 

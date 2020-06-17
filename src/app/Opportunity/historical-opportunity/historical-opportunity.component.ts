@@ -13,6 +13,9 @@ import {DelateHistoricalOpportunityComponent} from '../delate-historical-opportu
 export class HistoricalOpportunityComponent implements OnInit {
   historique : any;
   public animal: string;
+  public data = {
+    Strategique: ''
+  };
   p:number = 1;
   public hidder = ["id" , "Etat " , "Commentaire" ,"num action" , "date"];
   constructor(private opportunityService: OpportunityService,
@@ -47,5 +50,12 @@ export class HistoricalOpportunityComponent implements OnInit {
   }
   charingTheHistoricalOpportunity(){
     this.opportunityService.charingOpportunity(this.historique);
+  }
+
+  public CreateRole() {
+    const role = localStorage.getItem('role');
+    if ( role == 'ROLE_SUPERADMIN') {
+      return true;
+    }
   }
 }

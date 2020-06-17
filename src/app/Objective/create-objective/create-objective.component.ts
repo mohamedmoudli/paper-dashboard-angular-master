@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ObjectiveService} from '../../Services/Objective/objective.service';
 import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-create-objective',
@@ -8,10 +9,12 @@ import {Router} from '@angular/router';
   styleUrls: ['./create-objective.component.css']
 })
 export class CreateObjectiveComponent implements OnInit {
-
+  angForm: FormGroup;
+  submitted = false;
   Strategic: any ;
   Process: any ;
   Stake: any;
+
   IndicateurPredefini: any;
   public data = {
     idStake: '',
@@ -32,7 +35,27 @@ export class CreateObjectiveComponent implements OnInit {
     Comment: ''
   };
   constructor(private objectiveService: ObjectiveService,
-              private router: Router) { }
+              private router: Router , private fb : FormBuilder) {
+    this.angForm = this.fb.group({
+      idStake: ['', [Validators.required]],
+      idprocess: ['', [Validators.required]],
+      Description: ['', [Validators.required]],
+      Time1: ['', [Validators.required]],
+      Time2: ['', [Validators.required]],
+      Time3: ['', [Validators.required]],
+      Time4: ['', [Validators.required]],
+      Time2020: ['', [Validators.required]],
+      Time2021: ['', [Validators.required]],
+      PredefinedIndicator: ['', [Validators.required]],
+      ObjectiveToWait: ['', [Validators.required]],
+      InitialState: ['', [Validators.required]],
+      CurrentState: ['', [Validators.required]],
+      CurrentStateIndiactor: ['', [Validators.required]],
+      Comment: ['', [Validators.required]],
+
+
+    });
+  }
 
   ngOnInit(): void {
 
@@ -69,5 +92,16 @@ export class CreateObjectiveComponent implements OnInit {
         return error;
       }
     )
+  }
+
+  get f() {
+    return this.angForm.controls;
+  }
+  onSubmit() {
+    this.submitted = true;
+    if (this.angForm.invalid) {
+
+      return;
+    }
   }
 }

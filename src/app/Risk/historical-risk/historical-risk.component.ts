@@ -54,4 +54,11 @@ export class HistoricalRiskComponent implements OnInit {
   charingTheHistoricalRisk(){
     this.riskService.charingRisk(this.historique);
   }
+
+  public CreateRole() {
+    const role = localStorage.getItem('role');
+    if ( role == 'ROLE_SUPERADMIN') {
+      return true;
+    }
+  }
 }

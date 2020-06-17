@@ -9,7 +9,18 @@ import {SyntheseService} from '../../Services/Synthese/synthese.service';
   styleUrls: ['./synthese.component.css']
 })
 export class SyntheseComponent implements OnInit {
+  allObjective: boolean = false;
+  allbyObjective: boolean = false ;
+  p:number = 1;
+  public hidder = ["id" , "Description" , "Enjeux" ,"T1" , "T2" ,"T3" , "T4" , "T2020" , "T2021" ,
+    "Process lie" , "indicateur" , "indicateur performance", "Objective a attendre" ,"Etat intial" ,
+    "Num Action" , "Advencement" , "Commentaire" , "date"];
   catchartjs : any;
+  Stake : any;
+  Description : any;
+  Objective : any;
+  Objectivebyid : any;
+  DescriptionHistorical : any;
   catchartjsCategorie : any;
   catchartjsCategorieOpportunite : any;
   catchartjsCurrentState : any;
@@ -22,6 +33,23 @@ export class SyntheseComponent implements OnInit {
   public Nbre: Object = [];
   public Process: Object = [];
   public NbreCategorie : Object = [];
+
+
+
+  public barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
+  public barChartLabels = [];
+  public data1 = [];
+  public barChartType = 'line';
+  public barChartLegend = true;
+  public barChartData = [
+    {data: this.data1, label: 'NOMBRE DE PI PAR CATEGORIES'},
+
+  ];
+
+
 
   public pieChartLabels = [];
   public pieChartData = [];
@@ -134,6 +162,16 @@ export class SyntheseComponent implements OnInit {
               private router: Router ,  private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.syntheseService.getStake()
+      .subscribe((data) => {
+
+        console.log(data);
+        this.Stake = data['hydra:member'];
+        console.log(this.Stake);
+      }, error => {
+        console.log(false);
+      });
+
     this.syntheseService.GetStateRiskNumber()
       .subscribe((data) => {
 
@@ -296,5 +334,47 @@ export class SyntheseComponent implements OnInit {
         }
       )
   }
+ public DisplayObjective(){
+   this.syntheseService.gethistoricalObjectivebyStake(this.Description)
+     .subscribe((data) => {
 
+       console.log(data);
+       this.Objective = data;
+       console.log(this.Objective);
+     }, error => {
+       console.log(false);
+     });
+
+ }
+
+  public DisplayObjectivebyDescription(){
+    this.syntheseService.gethistoricalObjectivebyStakebyDescription(this.Description , this.DescriptionHistorical)
+      .subscribe((data) => {
+
+        console.log(data);
+
+        this.Objectivebyid = data;
+        console.log(this.Objectivebyid);
+        for (let element of this.Objectivebyid) {
+          this.barChartLabels.push(element.Date );
+          this.data1.push(element.Advancement);
+
+          console.log(this.data1);
+          console.log(data);
+        }
+
+        this.Nbre = data;
+      }, error => {
+        console.log(false);
+      });
+
+  }
+public DisplayallObjective(){
+  this.allObjective !== this.allObjective;
+  console.log(this.allObjective)
+}
+  public DisplayallbyObjective(){
+    this.allbyObjective !== this.allbyObjective;
+    console.log(this.allbyObjective)
+  }
 }

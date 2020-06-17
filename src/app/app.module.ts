@@ -117,7 +117,8 @@ import { ForgettPasswordComponent } from './Authentification/forgett-password/fo
 import { CheckEmailToResetComponent } from './Authentification/check-email-to-reset/check-email-to-reset.component';
 import { ResetPasswordComponent } from './Authentification/reset-password/reset-password.component';
 import { ReflextionGuideComponent } from './ReflexionGuide/reflextion-guide/reflextion-guide.component';
-
+import { ReflextionGuideInterestedPartyComponent } from './ReflexionGuide/reflextion-guide-interested-party/reflextion-guide-interested-party.component';
+import { ReflextionGuideObjectiveComponent } from './ReflexionGuide/reflextion-guide-objective/reflextion-guide-objective.component';
 
 
 
@@ -127,6 +128,9 @@ import { ReflextionGuideComponent } from './ReflexionGuide/reflextion-guide/refl
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+
+
+
 
 
 

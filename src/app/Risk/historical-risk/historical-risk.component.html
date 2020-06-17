@@ -31,7 +31,7 @@
             <td><p *ngFor="let p of c.NumAction "> {{ p}}</p> </td>
             <td>{{c.Date | date}}</td>
 
-            <td><button class="btn btn-danger" (click)="delateHistoricalRisk(c)">supp</button></td>
+            <td *ngIf="CreateRole()"><button class="btn btn-danger" (click)="delateHistoricalRisk(c)">supp</button></td>
 
           </tr>
 

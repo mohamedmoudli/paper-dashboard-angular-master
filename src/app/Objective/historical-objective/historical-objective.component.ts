@@ -12,7 +12,10 @@ import {DelateHistoricalObjectiveComponent} from '../delate-historical-objective
 })
 export class HistoricalObjectiveComponent implements OnInit {
   p:number = 1;
-  public animal: string;
+
+  public data = {
+    Strategique: ''
+  };
   historique : any;
   public hidder = ["id" , "Description" , "Enjeux" ,"T1" , "T2" ,"T3" , "T4" , "T2020" , "T2021" ,
     "Process lie" , "indicateur" , "indicateur performance", "Objective a attendre" ,"Etat intial" ,
@@ -44,10 +47,17 @@ export class HistoricalObjectiveComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log("The dialog was closed");
-      this.animal = result;
+
     });
   }
   charingTheHistoricalOjective(){
     this.objectiveService.charingObjective(this.historique);
+  }
+
+  public CreateRole() {
+    const role = localStorage.getItem('role');
+    if ( role == 'ROLE_SUPERADMIN') {
+      return true;
+    }
   }
 }

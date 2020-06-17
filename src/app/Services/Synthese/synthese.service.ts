@@ -8,6 +8,20 @@ export class SyntheseService {
   public host: string = "http://localhost:8000";
 
   constructor(private http: HttpClient) { }
+  public getStake() {
+    return this.http.get(this.host+"/api/stakes");
+
+  }
+  public gethistoricalObjective() {
+    return this.http.get(this.host+"/GethistoricalObjective");
+  }
+  public gethistoricalObjectivebyStake(Stake) {
+    return this.http.get(this.host+"/GethistoricalObjectivebyStake/"+Stake);
+  }
+  public gethistoricalObjectivebyStakebyDescription(Stake, Description) {
+    return this.http.get(this.host+"/GethistoricalObjectivebyDescription/"+Stake+"/"+Description);
+  }
+
   public GetStateRiskNumber() {
     return this.http.get(this.host+"/GetNbreRiskState");
 

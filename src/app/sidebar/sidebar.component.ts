@@ -20,9 +20,9 @@ export const ROUTES: RouteInfo[] = [
     { path: '/Objective',          title: 'Objective',              icon:'nc-diamond',      class: '' },
     { path: '/Plandeaction',          title: 'Plandeaction',              icon:'nc-diamond',      class: '' },
     { path: '/Synthese1',          title: 'Synthese',              icon:'nc-diamond',      class: '' },
+    { path: '/reflextionguide',          title: 'reflextionguide',              icon:'nc-diamond',      class: '' },
 
-    { path: '/user',          title: 'User Profile',      icon:'nc-single-02',  class: '' },
-    { path: '/table',         title: 'Table List',        icon:'nc-tile-56',    class: '' },
+
     { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
 
 ];
