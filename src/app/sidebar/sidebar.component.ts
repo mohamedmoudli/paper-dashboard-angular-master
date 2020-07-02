@@ -9,21 +9,19 @@ export interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard',     title: 'Dashboard',         icon:'nc-bank',       class: '' },
-    { path: '/createregisteradmin',     title: 'CreateAdmin',         icon:'nc-bank',       class: '' },
-    { path: '/guideutlisation',         title: 'guideutlisation',             icon:'nc-diamond',    class: '' },
-    { path: '/processus',         title: 'processus',             icon:'nc-diamond',    class: '' },
-    { path: '/enjeu', title: 'enjeux',     icon:'nc-diamond',    class: '' },
-    { path: '/partieinteresse',          title: 'partieinteresse',              icon:'nc-diamond',      class: '' },
-    { path: '/risque',          title: 'risque',              icon:'nc-diamond',      class: '' },
-    { path: '/Opportunite',          title: 'Opportunite',              icon:'nc-diamond',      class: '' },
-    { path: '/Objective',          title: 'Objective',              icon:'nc-diamond',      class: '' },
-    { path: '/Plandeaction',          title: 'Plandeaction',              icon:'nc-diamond',      class: '' },
-    { path: '/Synthese1',          title: 'Synthese',              icon:'nc-diamond',      class: '' },
-    { path: '/reflextionguide',          title: 'reflextionguide',              icon:'nc-diamond',      class: '' },
+    { path: '/createregisteradmin',     title: 'Creation Admin',         icon:'nc-single-02',class:''},
+    { path: '/guideutlisation',         title: 'Guide utlisation',             icon:' nc-book-bookmark',    class: '' },
+    { path: '/processus',         title: 'Processus',             icon:'nc-ruler-pencil',    class: '' },
+    { path: '/enjeu', title: 'Enjeux',     icon:'nc-settings',    class: '' },
+    { path: '/partieinteresse',          title: 'Partie interessée',              icon:'nc-bullet-list-67',      class: '' },
+    { path: '/risque',          title: 'Risque',              icon:'nc-bookmark-2',      class: '' },
+    { path: '/Opportunite',          title: 'Opportunité',             icon:'nc-diamond',      class: '' },
+    { path: '/Objective',          title: 'Objectif',              icon:' nc-spaceship',      class: '' },
+    { path: '/Plandeaction',          title: 'Plan action',              icon:'nc-paper',      class: '' },
+    { path: '/Synthese1',          title: 'Synthese',              icon:'nc-chart-bar-32',      class: '' },
+    { path: '/reflextionguide',          title: 'Guide de reflexion',              icon:'nc-bullet-list-67',      class: '' },
 
 
-    { path: '/typography',    title: 'Typography',        icon:'nc-caps-small', class: '' },
 
 ];
 

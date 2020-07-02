@@ -1,24 +1,24 @@
 
 <div >
-  <h1 class="card-title "> ajouter categories intern </h1>
+  <h1 class="card-title "> Ajouter catégorie interne </h1>
 </div>
 <div class="card-body">
   <form [formGroup]="angForm" name="form"  (ngSubmit)=" onSubmit() ">
 
     <div class="form-group">
       <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('NameCategoryStakInternal').errors && (angForm.get('NameCategoryStakInternal').touched || angForm.get('NameCategoryStakInternal').dirty ) }">
-        <label class="control-label">nom categorie:</label>
+        <label class="control-label">Nom catégorie</label>
         <input type="text" name="NameCategoryStakInternal"  formControlName="NameCategoryStakInternal" [(ngModel)]="data.NameCategoryStakInternal" class="form-control">
         <div *ngIf="angForm.get('NameCategoryStakInternal').errors && (angForm.get('NameCategoryStakInternal').touched || angForm.get('NameCategoryStakInternal').dirty )" class="alert alert-danger">
-          <span *ngIf="angForm.get('NameCategoryStakInternal').errors.required"></span>  nom de categories est obligatoire
+          <span *ngIf="angForm.get('NameCategoryStakInternal').errors.required"></span>le champ  nom de catégorie est obligatoire
         </div>
       </div>
     </div>
 
 
-    <button class="btn btn-danger" (click)="onNoClick()" style="float: left">Annuler</button>
+    <button class="btn btn-danger" (click)="onNoClick()" style="float: left " >Annuler</button>
 
-    <button class="btn btn-primary "  [disabled]="angForm.invalid"   style="float: right"  (click)="CreatecategoryInternal()" >create</button>
+    <button class="btn btn-primary "  [disabled]="angForm.invalid"   style="float: right  "  (click)="CreatecategoryInternal()" >Créer</button>
   </form>
 </div>
 

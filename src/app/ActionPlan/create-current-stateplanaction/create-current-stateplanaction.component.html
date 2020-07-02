@@ -1,16 +1,16 @@
 
 <div >
-  <h1 class="card-title "> Ajouter Etat Actuel  </h1>
+  <h1 class="card-title "> Ajouter l'état actuel  </h1>
 </div>
 <div class="card-body">
   <form [formGroup]="angForm" name="form" (ngSubmit)=" onSubmit() ">
 
     <div class="form-group">
       <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('NameCurrentState').errors && (angForm.get('NameCurrentState').touched || angForm.get('NameCurrentState').dirty ) }">
-        <label class="control-label">Etat Actuel:</label>
+        <label class="control-label">Etat actuel</label>
         <input type="text" name="NameCurrentState"  [(ngModel)]="data.NameCurrentState"  formControlName="NameCurrentState" class="form-control">
         <div *ngIf="angForm.get('NameCurrentState').errors && (angForm.get('NameCurrentState').touched || angForm.get('NameCurrentState').dirty )" class="alert alert-danger">
-          <span *ngIf="angForm.get('NameCurrentState').errors.required"></span>  categories est obligatoire
+          <span *ngIf="angForm.get('NameCurrentState').errors.required"></span> le champ état actuel est obligatoire
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
 
     <button class="btn btn-danger"  style="float: left" (click)="onNoClick()">Annuler</button>
 
-    <button class="btn btn-primary "  style="float: right" [disabled]="angForm.invalid" (click)="createCurrentState()" >create</button>
+    <button class="btn btn-primary "  style="float: right" [disabled]="angForm.invalid" (click)="createCurrentState()" >Créer</button>
   </form>
 
 </div>

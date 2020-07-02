@@ -1,13 +1,13 @@
 
 <div >
-  <h1 class="card-title "> ajouter categories extern</h1>
+  <h1 class="card-title "> Ajouter catégorie externe</h1>
 </div>
 <div class="card-body">
   <form [formGroup]="angForm" name="form"  (ngSubmit)=" onSubmit() " >
 
     <div class="form-group">
       <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('NameCategoryStakExternal').errors && (angForm.get('NameCategoryStakExternal').touched || angForm.get('NameCategoryStakExternal').dirty ) }">
-        <label class="control-label">nom categorie:</label>
+        <label class="control-label">Nom catégorie</label>
         <input type="text" name="NameCategoryStakExternal" formControlName="NameCategoryStakExternal" [(ngModel)]="data.NameCategoryStakExternal" class="form-control">
         <div *ngIf="angForm.get('NameCategoryStakExternal').errors && (angForm.get('NameCategoryStakExternal').touched || angForm.get('NameCategoryStakExternal').dirty )" class="alert alert-danger">
           <span *ngIf="angForm.get('NameCategoryStakExternal').errors.required"></span>  nom de categories est obligatoire
@@ -16,9 +16,9 @@
     </div>
 
 
-    <button class="btn btn-danger" (click)="onNoClick()" style="float: left">Annuler</button>
+    <button class="btn btn-danger" (click)="onNoClick()" style="float: left ">Annuler</button>
 
-    <button class="btn btn-primary "  style="float: right"   [disabled]="angForm.invalid" (click)="CreatecategoryExternal()" >create</button>
+    <button class="btn btn-primary "  style="float: right "   [disabled]="angForm.invalid" (click)="CreatecategoryExternal()" >Créer</button>
   </form>
 
 </div>

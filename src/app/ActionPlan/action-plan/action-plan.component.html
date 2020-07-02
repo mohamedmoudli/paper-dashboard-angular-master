@@ -6,20 +6,20 @@
     <navbar-cmp></navbar-cmp>
     <div class="content">
       <div class="row">
-        <button class="btn btn-success" routerLink="/CreatePlandeaction" style="float: left">ajouter plan d'action</button>
-        <button class="btn btn-danger" routerLink="/etatEfficacite" style="float: left">ajouter etat de efficatite</button>
-        <button class="btn btn-danger" routerLink="/etatactuel" style="float: left">ajouter etat actuel</button>
+        <button class="btn btn-success" routerLink="/CreatePlandeaction" style="text-transform:lowercase">+ Ajouter plan d'action</button>
+        <button class="btn btn-danger" routerLink="/etatEfficacite" style="text-transform:lowercase">+ Ajouter état d'éfficacité</button>
+        <button class="btn btn-danger" routerLink="/etatactuel" >+ Ajouter état actuel</button>
         <div class="col-md-12">
           <div >
             <div class="card-header couleurObjective">
-              <h4 class="card-title"> plan de action</h4>
+              <h4 class="card-title"> Plan de action</h4>
             </div>
             <div>
               <div class="card table-responsive">
                 <table class="table">
                   <thead >
                   <tr>
-                    <th *ngFor="let c of hidder" class="bordertd bg-primary">{{c}}</th><td></td><td></td><td></td>
+                    <th *ngFor="let c of hidder" class="bordertd bg-primary" style="text-transform:lowercase" >{{c}}</th><td></td><td></td><td></td>
                   </tr>
 
                   </thead>
@@ -61,4 +61,3 @@
     <footer-cmp></footer-cmp>
   </div>
 </div>
-<fixedplugin-cmp></fixedplugin-cmp>

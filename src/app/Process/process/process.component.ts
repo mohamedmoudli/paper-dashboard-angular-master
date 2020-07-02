@@ -55,8 +55,8 @@ export class ProcessComponent implements OnInit {
   public CreateProcess(): void {
     this.charingTheProcess();
     const dialogRef = this.dialog.open(CreateProcessComponent, {
-      width: "500px",
-      height: "450px",
+      width: "600px",
+      height: "500px",
 
     });
 

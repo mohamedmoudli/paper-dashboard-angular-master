@@ -11,22 +11,22 @@
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
           <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
         </svg>
-        <button class="btn btn-simple" (click)="definitionOpportunity()" style="float: right">definition</button>
+        <button class="btn btn-simple" (click)="definitionOpportunity()" style="float: right">Définition</button>
 
         <div  >
-          <button class="btn btn-primary" routerLink="/historiqueOpportunite" style="float: left">historique</button>
+          <button class="btn btn-primary" routerLink="/historiqueOpportunite" style="float: left">Historique</button>
         </div>
-        <button routerLink="/ajouterOpportunite" class="btn btn-success">ajouter un opportunite</button>
-        <button (click)="DisplayStake()"  class="btn btn-warning" >enjeux</button>
-        <button (click)="DisplayPIpertinante()" class="btn btn-warning">pipertinante</button>
+        <button routerLink="/ajouterOpportunite" class="btn btn-success">+ Ajouter opportunité</button>
+        <button (click)="DisplayStake()"  class="btn btn-warning" >Enjeux</button>
+        <button (click)="DisplayPIpertinante()" class="btn btn-warning">PI pertinente</button>
 
         <div style="float: left" >
-          <button class="btn bg-default" (click)="saveHistoricalOpportunity()" style="float: left">Enregister Etat</button>
+          <button class="btn bg-default" (click)="saveHistoricalOpportunity()" style="float: left">Enregister l'état</button>
         </div>
         <div class="col-md-12">
           <div class="">
             <div class="card-header couleurOpportunite">
-              <h4 class="card-title "> Opportunite</h4>
+              <h4 class="card-title "> Opportunité</h4>
             </div>
             <div>
               <div class=" card table-responsive">
@@ -34,9 +34,9 @@
                   <thead >
                   <tr>
                     <td colspan="3"></td>
-                    <td colspan="10" class="couleurIdentification">identification du Opportunite</td>
-                    <td colspan="8" class=" couleurEvaluation">evaluation</td>
-                    <td colspan="8" class="couleurReevaluation ">reevaluation</td>
+                    <td colspan="10" class="couleurIdentification">Identification des Opportunités</td>
+                    <td colspan="8" class=" couleurEvaluation">Evaluation</td>
+                    <td colspan="8" class="couleurReevaluation ">Réevaluation</td>
                   </tr>
                   <tr>
                     <th *ngFor="let c of hidder" class="bordertd bg-primary">{{c}}</th><td></td><td></td><td></td>
@@ -107,15 +107,15 @@
         </div>
       </div>
       <div class="form">
-        <button class="btn btn-danger" routerLink="/CategoriesOpportunite" *ngIf="CreateRole()">gerer categorie</button>
+        <button class="btn btn-danger" routerLink="/CategoriesOpportunite" *ngIf="CreateRole()">Gérer catégorie</button>
 
-        <button class="btn btn-danger" routerLink="/etatOpportunite" *ngIf="CreateRole()">gerer etat</button>
+        <button class="btn btn-danger" routerLink="/etatOpportunite" *ngIf="CreateRole()">Gérer l'état</button>
 
-        <button class="btn btn-danger" routerLink="/StrategiqueOpportunite" style="float: left" *ngIf="CreateRole()">gerer strategique</button>
+        <button class="btn btn-danger" routerLink="/StrategiqueOpportunite" style="float: left" *ngIf="CreateRole()">Gérer les stratégies</button>
       </div>
       <div class="card col-md-6">
-      <h3 class="text-break">Seul de reflextion : 4</h3>
-      <h3 class="text-break">Seul de reaction : 9</h3>
+      <h3 class="text-break">Seuil de reflextion : 4</h3>
+      <h3 class="text-break">Seuil de reaction : 9</h3>
       </div>
       <div class="col-md-4 card" >
         <table class="table ">

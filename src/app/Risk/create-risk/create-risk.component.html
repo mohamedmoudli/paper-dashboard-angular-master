@@ -5,10 +5,10 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content">
-      <h1>Ajouter risque</h1>
+      <h1>Ajouter un risque</h1>
             <form [formGroup]="angForm" name="form" (ngSubmit)="onSubmit()">
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Categorie de risque</label>
+                <label class="col-sm-2 col-form-label">Catégorie de risque</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idcategory').errors && (angForm.get('idcategory').touched || angForm.get('idcategory').dirty ) }">
                   <select name="idcategory" placeholder="nom cat"  placeholder="nom cat" formControlName="idcategory"  [(ngModel)]="data.idcategory" type="number" class="form-control" >
@@ -16,7 +16,7 @@
                     <option *ngFor="let c of categoryrisk" value="{{c.id}}">{{c.NameCategoryRisk}}</option>
                   </select>
                   <div *ngIf="angForm.get('idcategory').errors && (angForm.get('idcategory').touched || angForm.get('idcategory').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('idcategory').errors.required"></span>  categories est obligatoire
+                    <span *ngIf="angForm.get('idcategory').errors.required"></span>le champ  catégorie est obligatoire
                   </div>
                 </div>
               </div>
@@ -27,7 +27,7 @@
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Description').errors && (angForm.get('Description').touched || angForm.get('Description').dirty ) }">
                   <input type="text" name="Description"   formControlName="Description"  [(ngModel)]="data.Description" class="form-control">
                   <div *ngIf="angForm.get('Description').errors && (angForm.get('Description').touched || angForm.get('Description').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('Description').errors.required"></span>  description est obligatoire
+                    <span *ngIf="angForm.get('Description').errors.required"></span> le champ description est obligatoire
                   </div>
                 </div>
               </div>
@@ -37,17 +37,17 @@
                 <div class="col-sm-6 distanceRisk ">
                   <div>
                   <input class="form-check-input" type="checkbox" name="ShortTerm" formControlName="Durée" value="*" [(ngModel)]="data.ShortTerm">
-                  <label class="form-check-label" >court term</label><br>
+                  <label class="form-check-label" >court terme</label><br>
                   </div>
                   <input class="form-check-input" type="checkbox" name="MediumTerm" formControlName="Durée" value="*" [(ngModel)]="data.MediumTerm">
-                  <label class="form-check-label">moyen term</label><br>
+                  <label class="form-check-label">moyen terme</label><br>
                   <input class="form-check-input" type="checkbox" name="LongTerm" formControlName="Durée" value="*" [(ngModel)]="data.LongTerm">
-                  <label class="form-check-label">long term</label>
+                  <label class="form-check-label">long terme</label>
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Date:</label>
+                <label class="col-sm-2 col-form-label">Date</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('DateIdentification').errors && (angForm.get('DateIdentification').touched || angForm.get('DateIdentification').dirty ) }">
                   <input type="date" name="DateIdentification"  formControlName="DateIdentification"  [(ngModel)]="data.DateIdentification" class="form-control">
@@ -59,18 +59,18 @@
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Causes:</label>
+                <label class="col-sm-2 col-form-label">Cause</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Causes').errors && (angForm.get('Causes').touched || angForm.get('Causes').dirty ) }">
                   <input type="text" name="Causes"  formControlName="Causes"  [(ngModel)]="data.Causes" class="form-control">
                     <div *ngIf="angForm.get('Causes').errors && (angForm.get('Causes').touched || angForm.get('Causes').dirty )" class="alert alert-danger">
-                      <span *ngIf="angForm.get('Causes').errors.required"></span>  Causes est obligatoire
+                      <span *ngIf="angForm.get('Causes').errors.required"></span>le champs  cause est obligatoire
                     </div>
                 </div>
               </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Censequence:</label>
+                <label class="col-sm-2 col-form-label">Conséquence</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Censequence').errors && (angForm.get('Censequence').touched || angForm.get('Censequence').dirty ) }">
                   <input type="text" name="Censequence"  formControlName="Censequence"  [(ngModel)]="data.Censequence" class="form-control">
@@ -82,7 +82,7 @@
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Gravite:</label>
+                <label class="col-sm-2 col-form-label">Gravité</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Gravity').errors && (angForm.get('Gravity').touched || angForm.get('Gravity').dirty ) }">
                   <select name="Gravity" placeholder="nom cat"  formControlName="Gravity"  [(ngModel)]="data.Gravity" type="number" class="form-control" >
@@ -94,13 +94,13 @@
 
                   </select>
                     <div *ngIf="angForm.get('Gravity').errors && (angForm.get('Gravity').touched || angForm.get('Gravity').dirty )" class="alert alert-danger">
-                      <span *ngIf="angForm.get('Gravity').errors.required"></span>  Gravité est obligatoire
+                      <span *ngIf="angForm.get('Gravity').errors.required"></span>le champ  gravité est obligatoire
                     </div>
                 </div>
               </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Probabilité:</label>
+                <label class="col-sm-2 col-form-label">Probabilité</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Probability').errors && (angForm.get('Probability').touched || angForm.get('Probability').dirty ) }">
                   <select name="Probability" placeholder="nom cat"  formControlName="Probability"  [(ngModel)]="data.Probability" type="number" class="form-control" >
@@ -112,13 +112,13 @@
 
                   </select>
                     <div *ngIf="angForm.get('Probability').errors && (angForm.get('Probability').touched || angForm.get('Probability').dirty )" class="alert alert-danger">
-                      <span *ngIf="angForm.get('Probability').errors.required"></span>  Probabilité est obligatoire
+                      <span *ngIf="angForm.get('Probability').errors.required"></span>le champ  probabilité est obligatoire
                     </div>
                 </div>
               </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Detectabilité:</label>
+                <label class="col-sm-2 col-form-label">Detectabilité</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Detectability').errors && (angForm.get('Detectability').touched || angForm.get('Detectability').dirty ) }">
                   <select name="Detectability" placeholder="nom cat" formControlName="Detectability"  [(ngModel)]="data.Detectability" type="number" class="form-control" >
@@ -137,11 +137,11 @@
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">processus</label>
+                <label class="col-sm-2 col-form-label">Processus</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idprocess').errors && (angForm.get('idprocess').touched || angForm.get('idprocess').dirty ) }">
                   <select name="idprocess" placeholder="nom cat"  formControlName="idprocess"  [(ngModel)]="data.idprocess" type="number" class="form-control" >
-                    <option value="">--choisir processus--</option>
+                    <option value="">--choisir un processus--</option>
                     <option *ngFor="let c of Process" value="{{c.id}}">{{c.Process}}</option>
                   </select>
                     <div *ngIf="angForm.get('idprocess').errors && (angForm.get('idprocess').touched || angForm.get('idprocess').dirty )" class="alert alert-danger">
@@ -152,11 +152,11 @@
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Strategique</label>
+                <label class="col-sm-2 col-form-label">Stratégie</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idstrategic').errors && (angForm.get('idstrategic').touched || angForm.get('idstrategic').dirty ) }">
                   <select name="idstrategic" placeholder="nom cat"  formControlName="idstrategic"  [(ngModel)]="data.idstrategic" type="number" class="form-control" >
-                    <option value="">--choisir Strategique--</option>
+                    <option value="">--choisir une Stratégie--</option>
                     <option *ngFor="let c of Strategic" value="{{c.id}}">{{c.NameStrategicRisk}}</option>
                   </select>
                     <div *ngIf="angForm.get('idstrategic').errors && (angForm.get('idstrategic').touched || angForm.get('idstrategic').dirty )" class="alert alert-danger">
@@ -166,11 +166,11 @@
               </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">etat du risque</label>
+                <label class="col-sm-2 col-form-label">Etat du risque</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idStateRisk').errors && (angForm.get('idStateRisk').touched || angForm.get('idStateRisk').dirty ) }">
                   <select name="idStateRisk" placeholder="nom cat"  formControlName="idStateRisk"  [(ngModel)]="data.idStateRisk" type="number" class="form-control" >
-                    <option value="">--choisir etat du risque--</option>
+                    <option value="">--choisir un état du risque--</option>
                     <option *ngFor="let c of StateRisk" value="{{c.id}}">{{c.NameStateRisk}}</option>
                   </select>
                     <div *ngIf="angForm.get('idStateRisk').errors && (angForm.get('idStateRisk').touched || angForm.get('idStateRisk').dirty )" class="alert alert-danger">
@@ -182,7 +182,7 @@
 
               <div class="form-group row">
 
-                <label class="col-sm-2 col-form-label">Commentaire:</label>
+                <label class="col-sm-2 col-form-label">Commentaire</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Comment').errors && (angForm.get('Comment').touched || angForm.get('Comment').dirty ) }">
                   <input type="text" name="Comment"  formControlName="Comment"  [(ngModel)]="data.Comment" class="form-control">
@@ -196,7 +196,7 @@
               <button class="btn btn-danger" routerLink="/risque" style="float: left">Annuler</button>
               </div>
               <div class="col-sm-8">
-              <button class="btn btn-primary "  style="float: right"  [disabled]="angForm.invalid" (click)="CreateRisk()" >create</button>
+              <button class="btn btn-primary "  style="float: right"  [disabled]="angForm.invalid" (click)="CreateRisk()" >Créer</button>
               </div>
             </form>
 

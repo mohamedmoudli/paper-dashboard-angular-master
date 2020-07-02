@@ -8,7 +8,7 @@
     <div class="content" >
 
       <div class="col-md-6">
-        <button class="btn btn-primary " (click)="CreateCurrentState()">ajouter etat actuel</button>
+        <button class="btn btn-primary " (click)="CreateCurrentState()">+ Ajouter état actuel </button>
         <div class="card ">
 
           <table class="table">
@@ -19,7 +19,7 @@
             </thead>
             <tbody >
             <tr *ngFor="let c of CurrentState">
-              <td>{{c.id}}</td>
+              <td>Etat{{c.id}}</td>
               <td>{{c.NameCurrentState}}</td>
               <td></td>
               <td><button class="btn btn-danger" (click)="delateCurrentState(c)">supp</button></td>

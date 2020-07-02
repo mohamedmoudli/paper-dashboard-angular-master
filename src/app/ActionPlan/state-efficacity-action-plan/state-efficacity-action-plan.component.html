@@ -6,7 +6,7 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content" >
-      <button class="btn btn-primary " (click)="CreateStateEfficacity()">ajouter etat de efficacite</button>
+      <button class="btn btn-primary " (click)="CreateStateEfficacity()">+ Ajouter l'état d'efficacité </button>
       <div class="card col-md-6">
 
         <table class="table">
@@ -17,7 +17,7 @@
           </thead>
           <tbody >
           <tr *ngFor="let c of StateEfficacity">
-            <td>{{c.id}}</td>
+            <td>Etat{{c.id}}</td>
             <td>{{c.NameStateEfficacy}}</td>
             <td></td>
             <td><button class="btn btn-danger" (click)="delateStateEfficacity(c)">supp</button></td>

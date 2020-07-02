@@ -14,13 +14,13 @@
       </div>
 
         <div >
-          <h1> Périmètre d'application de managment </h1>
+          <h2> Périmètre d'application de managment </h2>
         </div>
         <form >
           <div>
             <textarea name="perimetre" [(ngModel)]="perimeter" class="col-md-10"> </textarea>
           </div>
-          <button (click)="saveperimetre()" class="btn bg-primary">ok</button>
+          <button (click)="saveperimetre()" class="btn text-white colorbleu" style="text-transform:none" >Afficher</button>
         </form>
 
 
@@ -29,13 +29,13 @@
         </div>
 
         <div >
-          <h1> Politique </h1>
+          <h2> Politique </h2>
         </div>
         <form >
           <div>
             <textarea name="politique" [(ngModel)]="Politics" class="col-md-10"> </textarea>
           </div>
-          <button (click)="savepolitique()" class="btn bg-primary">ok</button>
+          <button (click)="savepolitique()" class="btn text-white colorbleu" style="text-transform:none" >Afficher</button>
         </form>
 
 
@@ -43,7 +43,7 @@
           <h2>{{ displayPolitics }}</h2>
         </div>
 
-      <button class="btn btn-success " (click)="CreateProcess()">ajouter </button>
+      <button class="btn colororange text-white " (click)="CreateProcess()" style="text-transform:none"  >+ Ajouter processus </button>
       <div class="card col-md-10">
         <table class="table" >
           <thead class=" text-primary">
@@ -56,7 +56,7 @@
             <td>{{c.Process}}</td>
             <td>{{c.PerformanceIndicator}}</td>
             <td>{{c.Pilot}}</td>
-            <td><button class="btn btn-danger" (click)="delateProcess(c)">supp</button></td>
+            <td><button class="btn btn-danger" (click)="delateProcess(c)">supprimer</button></td>
 
             <td ></td>
 
@@ -70,7 +70,7 @@
     </div>
   </div>
 </div>
-<fixedplugin-cmp></fixedplugin-cmp>
+
 
 
 

@@ -5,13 +5,13 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content" >
-      <button class="btn btn-primary " (click)="CreateCategoryInternal()">ajouter categories</button>
+      <button class="btn btn-primary " (click)="CreateCategoryInternal()">+ Ajouter catégorie</button>
       <div class="card col-md-6">
 
         <table class="table">
           <thead class=" text-primary">
           <tr>
-            <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+            <th *ngFor="let c of hidder"  ><h5 >{{c}}</h5></th><td></td><td></td><td></td>
           </tr>
           </thead>
           <tbody >
@@ -31,5 +31,5 @@
 
   </div>
 </div>
-<fixedplugin-cmp></fixedplugin-cmp>
+
 

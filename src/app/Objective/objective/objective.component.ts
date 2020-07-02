@@ -24,6 +24,7 @@ export class ObjectiveComponent implements OnInit {
               private router: Router , private dialog: MatDialog) { }
 
   ngOnInit(): void {
+
     this.objectiveService.getObjective()
       .subscribe((data) => {
 

@@ -7,10 +7,10 @@
 
     <div class="form-group">
       <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('NameStateOpportunity').errors && (angForm.get('NameStateOpportunity').touched || angForm.get('NameStateOpportunity').dirty ) }">
-        <label class="control-label">nom categorie:</label>
+        <label class="control-label">Nom état</label>
         <input type="text" name="NameStateOpportunity"  [(ngModel)]="data.NameStateOpportunity"  formControlName="NameStateOpportunity" class="form-control">
         <div *ngIf="angForm.get('NameStateOpportunity').errors && (angForm.get('NameStateOpportunity').touched || angForm.get('NameStateOpportunity').dirty )" class="alert alert-danger">
-          <span *ngIf="angForm.get('NameStateOpportunity').errors.required"></span>  categories est obligatoire
+          <span *ngIf="angForm.get('NameStateOpportunity').errors.required"></span> le champs état est obligatoire
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
 
     <button class="btn btn-danger"  style="float: left" (click)="onNoClick()">Annuler</button>
 
-    <button class="btn btn-primary "  style="float: right" [disabled]="angForm.invalid" (click)="createState()" >create</button>
+    <button class="btn btn-primary "  style="float: right" [disabled]="angForm.invalid" (click)="createState()" >Créer</button>
   </form>
 
 </div>

@@ -7,6 +7,7 @@
 
     <div class="form-group">
       <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Process').errors && (angForm.get('Process').touched || angForm.get('Process').dirty ) }">
+        <label class="control-label"> nom processus:</label>
          <input type="text" name="Process" formControlName="Process" [(ngModel)]="data.Process" class="form-control">
         <div *ngIf="angForm.get('Process').errors && (angForm.get('Process').touched || angForm.get('Process').dirty )" class="alert alert-danger">
           <span *ngIf="angForm.get('Process').errors.required"></span>  processus est obligatoire
@@ -33,9 +34,9 @@
     </div>
 
 
-    <button class="btn btn-danger" (click)="onNoClick()"  style="float: left">Annuler</button>
+    <button class="btn btn-danger" (click)="onNoClick()"  style="float: left ; text-transform:none">Annuler</button>
 
-    <button class="btn btn-primary " [disabled]="angForm.invalid" style="float: right"  (click)="CreateProcess()" >create</button>
+    <button class="btn btn-primary " [disabled]="angForm.invalid" style="float: right ; text-transform:none "  (click)="CreateProcess()"  >Créer</button>
   </form>
 
 </div>

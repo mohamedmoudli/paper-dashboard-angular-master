@@ -239,7 +239,9 @@ export class InterestedPartyComponent implements OnInit {
           localStorage.setItem('power' , this.data.Power);
           localStorage.setItem('influence' , this.data.influence);
           localStorage.setItem('Interest' , this.data.Interest);
-          return this.router.navigate(['partieinteresse']);
+
+          window.location.reload();
+
         }, error => {
           console.log(error);
 

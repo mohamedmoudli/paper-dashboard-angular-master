@@ -9,11 +9,11 @@
 <div>
   <form [formGroup]="angForm" name="form" (ngSubmit)="onSubmit()">
     <div class="form-group row">
-      <label class="col-sm-2 col-form-label">Effort Reevaluation:</label>
+      <label class="col-sm-2 col-form-label">Effort à fournir</label>
       <div class="col-sm-8 distancereevaluation">
         <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Efforts').errors && (angForm.get('Efforts').touched || angForm.get('Efforts').dirty ) }">
         <select name="EffortReevaluation" placeholder="nom cat" formControlName="Efforts" [(ngModel)]="data.EffortReevaluation" type="number" class="form-control" >
-          <option value="">--Gravité--</option>
+          <option value="">--Effort--</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -21,17 +21,17 @@
 
         </select>
           <div *ngIf="angForm.get('Efforts').errors && (angForm.get('Efforts').touched || angForm.get('Efforts').dirty )" class="alert alert-danger">
-            <span *ngIf="angForm.get('Efforts').errors.required"></span>  Efforts est obligatoire
+            <span *ngIf="angForm.get('Efforts').errors.required"></span> le champs effort est obligatoire
           </div>
         </div>
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-sm-2 col-form-label">Aventage Reevaluation:</label>
+      <label class="col-sm-2 col-form-label">Avantages requis</label>
       <div class="col-sm-8 distancereevaluation">
         <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Advantage').errors && (angForm.get('Advantage').touched || angForm.get('Advantage').dirty ) }">
         <select name="AdvantageReevaluation" placeholder="nom cat" formControlName="Advantage" [(ngModel)]="data.AventageReevaluation" type="number" class="form-control" >
-          <option value="">--Aventage Reevaluation--</option>
+          <option value="">--Avantages requis--</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -39,30 +39,30 @@
 
         </select>
           <div *ngIf="angForm.get('Advantage').errors && (angForm.get('Advantage').touched || angForm.get('Advantage').dirty )" class="alert alert-danger">
-            <span *ngIf="angForm.get('Advantage').errors.required"></span>  Aventage est obligatoire
+            <span *ngIf="angForm.get('Advantage').errors.required"></span> le champ  Avantage est obligatoire
           </div>
         </div>
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-sm-2 col-form-label">Strategique Reevaluation:</label>
+      <label class="col-sm-2 col-form-label">Stratégie</label>
       <div class="col-sm-8 distancereevaluation">
         <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idstrategic').errors && (angForm.get('idstrategic').touched || angForm.get('idstrategic').dirty ) }">
         <select name="idstrategicReevaluation" placeholder="nom cat" formControlName="idstrategic" [(ngModel)]="data.idstrategicReevaluation" type="number" class="form-control" >
-          <option value="">--Strategique--</option>
+          <option value="">--Stratégie--</option>
 
           <option *ngFor="let c of Strategic" value="{{c.id}}">{{c.NameStrategicOpportunity}}</option>
 
         </select>
           <div *ngIf="angForm.get('idstrategic').errors && (angForm.get('idstrategic').touched || angForm.get('idstrategic').dirty )" class="alert alert-danger">
-            <span *ngIf="angForm.get('idstrategic').errors.required"></span>  strategique est obligatoire
+            <span *ngIf="angForm.get('idstrategic').errors.required"></span> le champ stratégie est obligatoire
           </div>
         </div>
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-2 col-form-label">processus Reevaluation:</label>
+      <label class="col-sm-2 col-form-label">Processus</label>
       <div class="col-sm-8 distancereevaluation">
         <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idprocess').errors && (angForm.get('idprocess').touched || angForm.get('idprocess').dirty ) }">
         <select name="idprocessReevaluation" placeholder="nom cat" formControlName="idprocess"  [(ngModel)]="data.idprocessReevaluation" type="number" class="form-control" >
@@ -72,14 +72,14 @@
 
         </select>
           <div *ngIf="angForm.get('idprocess').errors && (angForm.get('idprocess').touched || angForm.get('idprocess').dirty )" class="alert alert-danger">
-            <span *ngIf="angForm.get('idprocess').errors.required"></span>  processus est obligatoire
+            <span *ngIf="angForm.get('idprocess').errors.required"></span> le champ processus est obligatoire
           </div>
         </div>
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-2 col-form-label">Etat Reevaluation:</label>
+      <label class="col-sm-2 col-form-label">Etat</label>
       <div class="col-sm-8 distancereevaluation">
         <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idStateOpportunity').errors && (angForm.get('idStateOpportunity').touched || angForm.get('idStateOpportunity').dirty ) }">
         <select name="idStateOpportunityReevaluation" placeholder="nom cat" formControlName="idStateOpportunity"   [(ngModel)]="data.idStateOpportunityReevaluation" type="number" class="form-control" >
@@ -88,15 +88,17 @@
           <option *ngFor="let c of StateOpportunity" value="{{c.id}}">{{c.NameStateOpportunity}}</option>
         </select>
           <div *ngIf="angForm.get('idStateOpportunity').errors && (angForm.get('idStateOpportunity').touched || angForm.get('idStateOpportunity').dirty )" class="alert alert-danger">
-            <span *ngIf="angForm.get('idStateOpportunity').errors.required"></span>  strategique est obligatoire
+            <span *ngIf="angForm.get('idStateOpportunity').errors.required"></span> le champ état est obligatoire
           </div>
         </div>
       </div>
     </div>
-
+    <div class="distance">
     <button class="btn btn-danger" routerLink="/Opportunite" style="float: left">Annuler</button>
-
-    <button class="btn btn-primary "  style="float: right"  [disabled]="angForm.invalid" (click)="reevaluateOpportunity()" >reevaluer</button>
+    </div>
+    <div class="col-sm-10">
+    <button class="btn btn-primary "  style="float: right"  [disabled]="angForm.invalid" (click)="reevaluateOpportunity()" >Réévaluer</button>
+    </div>
   </form>
 </div>
 

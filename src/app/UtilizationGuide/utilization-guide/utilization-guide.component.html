@@ -5,13 +5,13 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content">
-      <button class="btn btn-primary " (click)="CreateUtilizationGuideComponent()">ajouter </button>
+      <button class="btn btn-primary " (click)="CreateUtilizationGuideComponent()" style="text-transform:lowercase" >ajouter </button>
       <h1>Liste de diffusion</h1>
       <div class="card col-md-8">
         <table mdbTable class="table" >
           <thead class=" text-primary">
           <tr>
-            <th *ngFor="let c of hidder1"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
+            <th *ngFor="let c of hidder1" style="text-transform:lowercase" ><h5 >{{c}}</h5></th><td></td><td></td><td></td>
           </tr>
           </thead>
           <tbody >

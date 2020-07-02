@@ -8,10 +8,10 @@
     <div class="content">
 
       <div class="bg-primary">
-        <h1>Objective</h1>
+        <h1>Objectif</h1>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Enjeu:</label>
+        <label class="col-sm-2 col-form-label">Enjeu</label>
         <div class="col-sm-4">
           <select name="idStake" placeholder="nom cat"  [(ngModel)]="Description" (click)="DisplayObjective()" type="number" class="form-control" >
             <option value="">--choisir enjeu--</option>
@@ -22,13 +22,13 @@
         </div>
       </div>
       <div >
-     <button class="btn btn-danger" (click)="allObjective = !allObjective" >afficher</button>
+     <button class="btn btn-danger" (click)="allObjective = !allObjective" >Afficher</button>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Objective:</label>
+        <label class="col-sm-2 col-form-label">Objectif</label>
         <div class="col-sm-4">
           <select name="idStake" placeholder="nom cat"  [(ngModel)]="DescriptionHistorical" (click)="DisplayObjectivebyDescription()"  type="number" class="form-control" >
-            <option value="">--choisir Objective--</option>
+            <option value="">--choisir Objectif--</option>
 
             <option *ngFor="let c of Objective" value="{{c.Description}}">{{c.Description}}</option>
 
@@ -36,7 +36,7 @@
         </div>
       </div>
 
-      <button class="btn btn-danger" (click)="allbyObjective = !allbyObjective"  >afficher</button>
+      <button class="btn btn-danger" (click)="allbyObjective = !allbyObjective"  >Afficher</button>
 
       <div class="col-md-8 card" >
         <div style="display: block">
@@ -128,7 +128,7 @@
       </div>
 
 
-<h3 class="text-success">Categories risque</h3>
+<h3 class="text-success">Catégorie de risque</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartData"
                 [labels]="pieChartLabels" [colors]="chartColors"
@@ -138,28 +138,28 @@
       <div class="bg-primary">
         <h1>Opportunite</h1>
       </div>
-      <h3 class="text-success">Etat Opportunite</h3>
+      <h3 class="text-success">Etat de l'opportunité</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartDataEtatOpportunite"
                 [labels]="pieChartLabelsEtatOpportunite" [colors]="chartColorsEtatOpportunite"
                 [labels]="chartLabelsEtatOpportunite" [colors]="chartColorsEtatOpportunite" [chartType]="pieChartTypeEtatOpportunite"></canvas>
       </div>
-      <h3 class="text-success">Categories Opportunite</h3>
+      <h3 class="text-success">Catégorie opportunite</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartDataCategorieOpportunite"
                 [labels]="pieChartLabelsCategorieOpportunite" [colors]="chartColorsCategorieOpportunite"
                 [labels]="chartLabelsCategorieOpportunite" [colors]="chartColorsCategorieOpportunite" [chartType]="pieChartTypeCategorieOpportunite"></canvas>
       </div>
       <div class="bg-primary">
-        <h1>plan d'action</h1>
+        <h1>Plan d'action</h1>
       </div>
-      <h3 class="text-success">etat actuel</h3>
+      <h3 class="text-success">Etat actuel</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartDataCurrentState"
                 [labels]="pieChartLabelsCurrentState" [colors]="chartColorsCurrentState"
                 [labels]="chartLabelsCurrentState" [colors]="chartColorsCurrentState" [chartType]="pieChartTypeCurrentState"></canvas>
       </div>
-      <h3 class="text-success">etat d'efficacité</h3>
+      <h3 class="text-success">Etat d'efficacité</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartDataStateEfficacity"
                 [labels]="pieChartLabelsStateEfficacity" [colors]="chartColorsStateEfficacity"
@@ -167,21 +167,21 @@
       </div>
 
 
-      <h3 class="text-success">avencement par process</h3>
+      <h3 class="text-success">Avancement par process</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartDataAdvencementByProcess"
                 [labels]="pieChartLabelsAdvencementByProcess" [colors]="chartColorsAdvencementByProcess"
                 [labels]="chartLabelsAdvencementByProcess" [colors]="chartColorsAdvencementByProcess" [chartType]="pieChartTypeAdvencementByProcess"></canvas>
       </div>
 
-      <h3 class="text-success">avencement par délai</h3>
+      <h3 class="text-success">Avancement par délai</h3>
       <div class="card">
       <table class="table ">
         <thead>
         <tr>
-         <th>prosessus</th>
-         <th>dalai</th>
-         <th>avencement</th>
+         <th>Prosessus</th>
+         <th>Délai</th>
+         <th>Avancement</th>
         </tr>
         </thead>
         <tbody>

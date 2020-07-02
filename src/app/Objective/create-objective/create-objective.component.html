@@ -5,7 +5,7 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content">
-<h1>Objective</h1>
+<h1>Objectif</h1>
           <div class="card-body">
             <form [formGroup]="angForm" name="form" (ngSubmit)="onSubmit()">
               <div class="form-group row">
@@ -14,14 +14,14 @@
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Description').errors && (angForm.get('Description').touched || angForm.get('Description').dirty ) }">
                   <input type="text" name="Description"  [(ngModel)]="data.Description" formControlName="Description" class="form-control">
                     <div *ngIf="angForm.get('Description').errors && (angForm.get('Description').touched || angForm.get('Description').dirty )" class="alert alert-danger">
-                      <span *ngIf="angForm.get('Description').errors.required"></span>  Description est obligatoire
+                      <span *ngIf="angForm.get('Description').errors.required"></span> le champ description est obligatoire
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Enjeu:</label>
+                <label class="col-sm-2 col-form-label">Enjeu</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idStake').errors && (angForm.get('idStake').touched || angForm.get('idStake').dirty ) }">
                   <select name="idStake" placeholder="nom cat"  [(ngModel)]="data.idStake" formControlName="idStake"  type="number" class="form-control" >
@@ -31,7 +31,7 @@
 
                   </select>
                     <div *ngIf="angForm.get('idStake').errors && (angForm.get('idStake').touched || angForm.get('idStake').dirty )" class="alert alert-danger">
-                      <span *ngIf="angForm.get('idStake').errors.required"></span>  Enjeu est obligatoire
+                      <span *ngIf="angForm.get('idStake').errors.required"></span> le champ enjeu est obligatoire
                     </div>
                   </div>
                 </div>
@@ -40,87 +40,87 @@
 
               <h1>Durée</h1>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">temps 1 :</label>
+                <label class="col-sm-2 col-form-label">Temps 1</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Time1').errors && (angForm.get('Time1').touched || angForm.get('Time1').dirty ) }">
                   <select name="Time1" placeholder="nom cat"  [(ngModel)]="data.Time1" formControlName="Time1" type="number" class="form-control" >
-                    <option value="">--Temps 1--</option>
+                    <option value="">--temps 1--</option>
                     <option>X</option>
                     <option>V</option>
                     <option>R</option>
                   </select>
                     <div *ngIf="angForm.get('Time1').errors && (angForm.get('Time1').touched || angForm.get('Time1').dirty )" class="alert alert-danger">
-                      <span *ngIf="angForm.get('Time1').errors.required"></span>  Time1 est obligatoire
+                      <span *ngIf="angForm.get('Time1').errors.required"></span> insérer le temps 1
                     </div>
                   </div>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">temps 2 :</label>
+                <label class="col-sm-2 col-form-label">Temps 2</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Time2').errors && (angForm.get('Time2').touched || angForm.get('Time2').dirty ) }">
                   <select name="Time2" placeholder="nom cat"  [(ngModel)]="data.Time2" formControlName="Time2" type="number" class="form-control" >
-                    <option value="">--Temps 2--</option>
+                    <option value="">--temps 2--</option>
                     <option>X</option>
                     <option>V</option>
                     <option>R</option>
                   </select>
                   <div *ngIf="angForm.get('Time2').errors && (angForm.get('Time2').touched || angForm.get('Time2').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('Time2').errors.required"></span>  Time2 est obligatoire
+                    <span *ngIf="angForm.get('Time2').errors.required"></span> insérer le temps 2
                   </div>
                 </div>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">temps 3 :</label>
+                <label class="col-sm-2 col-form-label">Temps 3</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Time3').errors && (angForm.get('Time3').touched || angForm.get('Time3').dirty ) }">
                   <select name="Time3" placeholder="nom cat"  [(ngModel)]="data.Time3" formControlName="Time3" type="number" class="form-control" >
-                    <option value="">--Temps 3--</option>
+                    <option value="">--temps 3--</option>
                     <option>X</option>
                     <option>V</option>
                     <option>R</option>
                   </select>
                   <div *ngIf="angForm.get('Time3').errors && (angForm.get('Time3').touched || angForm.get('Time3').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('Time3').errors.required"></span>  Time3 est obligatoire
+                    <span *ngIf="angForm.get('Time3').errors.required"></span>insérer le temps 3
                   </div>
                 </div>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">temps 4 :</label>
+                <label class="col-sm-2 col-form-label">Temps 4</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Time4').errors && (angForm.get('Time4').touched || angForm.get('Time4').dirty ) }">
                   <select name="Time4" placeholder="nom cat"  [(ngModel)]="data.Time4" formControlName="Time4" type="number" class="form-control" >
-                    <option value="">--Temps 4--</option>
+                    <option value="">--temps 4--</option>
                     <option>X</option>
                     <option>V</option>
                     <option>R</option>
                   </select>
                   <div *ngIf="angForm.get('Time4').errors && (angForm.get('Time4').touched || angForm.get('Time4').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('Time4').errors.required"></span>  Time4 est obligatoire
+                    <span *ngIf="angForm.get('Time4').errors.required"></span> insérer le temps 4
                   </div>
                 </div>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">temps 2020 :</label>
+                <label class="col-sm-2 col-form-label">Temps 2020</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Time2020').errors && (angForm.get('Time2020').touched || angForm.get('Time2020').dirty ) }">
                   <select name="Time2020" placeholder="nom cat"  [(ngModel)]="data.Time2020" formControlName="Time2020" type="number" class="form-control" >
-                    <option value="">--Temps 2020--</option>
+                    <option value="">--temps 2020--</option>
                     <option>X</option>
                     <option>V</option>
                     <option>R</option>
                   </select>
                   <div *ngIf="angForm.get('Time2020').errors && (angForm.get('Time2020').touched || angForm.get('Time2020').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('Time2020').errors.required"></span>  Time2020 est obligatoire
+                    <span *ngIf="angForm.get('Time2020').errors.required"></span> le champ Time2020 est obligatoire
                   </div>
                 </div>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">temps 2021 :</label>
+                <label class="col-sm-2 col-form-label">Temps 2021</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Time2021').errors && (angForm.get('Time2021').touched || angForm.get('Time2021').dirty ) }">
                   <select name="Time2021" placeholder="nom cat"  [(ngModel)]="data.Time2021" formControlName="Time2021" type="number" class="form-control" >
@@ -130,14 +130,14 @@
                     <option>R</option>
                   </select>
                   <div *ngIf="angForm.get('Time2021').errors && (angForm.get('Time2021').touched || angForm.get('Time2021').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('Time2021').errors.required"></span>  Time2021 est obligatoire
+                    <span *ngIf="angForm.get('Time2021').errors.required"></span>le champ  Time2021 est obligatoire
                   </div>
                 </div>
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">processus</label>
+                <label class="col-sm-2 col-form-label">Processus</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idprocess').errors && (angForm.get('idprocess').touched || angForm.get('idprocess').dirty ) }">
                   <select name="idprocess" placeholder="nom cat"  [(ngModel)]="data.idprocess" formControlName="idprocess" type="number" class="form-control" >
@@ -162,30 +162,30 @@
               </div>
 
               <div class="form-group row" *ngIf="!data.PredefinedIndicator">
-                <label class="col-sm-2 col-form-label">Indicateur de Performance</label>
+                <label class="col-sm-2 col-form-label">Indicateur de performance</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('PredefinedIndicator').errors && (angForm.get('PredefinedIndicator').touched || angForm.get('PredefinedIndicator').dirty ) }">
                   <input type="text" name="IndicateurPerformance"  [(ngModel)]="data.PerformanceIndicator" formControlName="PredefinedIndicator" class="form-control">
                   <div *ngIf="angForm.get('PredefinedIndicator').errors && (angForm.get('PredefinedIndicator').touched || angForm.get('PredefinedIndicator').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('PredefinedIndicator').errors.required"></span>  indicateur est obligatoire
+                    <span *ngIf="angForm.get('PredefinedIndicator').errors.required"></span> le champ indicateur est obligatoire
                   </div>
                 </div>
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Objective a Atendre :</label>
+                <label class="col-sm-2 col-form-label">Objectif à atteindre :</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('ObjectiveToWait').errors && (angForm.get('ObjectiveToWait').touched || angForm.get('ObjectiveToWait').dirty ) }">
                   <input type="text" name="ObjectiveToWait"  [(ngModel)]="data.ObjectiveToWait" formControlName="ObjectiveToWait" class="form-control">
                   <div *ngIf="angForm.get('ObjectiveToWait').errors && (angForm.get('ObjectiveToWait').touched || angForm.get('ObjectiveToWait').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('ObjectiveToWait').errors.required"></span>  Objective a atteindre est obligatoire
+                    <span *ngIf="angForm.get('ObjectiveToWait').errors.required"></span> le champ objectif à atteindre est obligatoire
                   </div>
                 </div>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Etat Initial :</label>
+                <label class="col-sm-2 col-form-label">Etat initial</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('InitialState').errors && (angForm.get('InitialState').touched || angForm.get('InitialState').dirty ) }">
                   <input type="text" name="InitialState"  [(ngModel)]="data.InitialState" formControlName="InitialState" class="form-control">
@@ -196,35 +196,35 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label"> Etat Actuel :</label>
+                <label class="col-sm-2 col-form-label"> Etat Actuel</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('CurrentState').errors && (angForm.get('CurrentState').touched || angForm.get('CurrentState').dirty ) }">
                   <input type="text" name="CurrentState"  [(ngModel)]="data.CurrentState" formControlName="CurrentState" class="form-control">
                   <div *ngIf="angForm.get('CurrentState').errors && (angForm.get('CurrentState').touched || angForm.get('CurrentState').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('CurrentState').errors.required"></span>  Etat Actuel est obligatoire
+                    <span *ngIf="angForm.get('CurrentState').errors.required"></span> le champs état actuel est obligatoire
                   </div>
                 </div>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label"> Etat Actuel Indiacteur :</label>
+                <label class="col-sm-2 col-form-label"> Etat Actuel Indiacteur</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('CurrentStateIndiactor').errors && (angForm.get('CurrentStateIndiactor').touched || angForm.get('CurrentStateIndiactor').dirty ) }">
                   <input type="text" name="CurrentStateIndiactor"  [(ngModel)]="data.CurrentStateIndiactor" formControlName="CurrentStateIndiactor" class="form-control">
                   <div *ngIf="angForm.get('CurrentStateIndiactor').errors && (angForm.get('CurrentStateIndiactor').touched || angForm.get('CurrentStateIndiactor').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('CurrentStateIndiactor').errors.required"></span> Etat Actuel Indiacteur est obligatoire
+                    <span *ngIf="angForm.get('CurrentStateIndiactor').errors.required"></span> le champ état est obligatoire
                   </div>
                 </div>
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label"> Commentaire :</label>
+                <label class="col-sm-2 col-form-label"> Commentaire</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Comment').errors && (angForm.get('Comment').touched || angForm.get('Comment').dirty ) }">
                   <input type="text" name="Comment"  [(ngModel)]="data.Comment" formControlName="Comment" class="form-control">
                   <div *ngIf="angForm.get('Comment').errors && (angForm.get('Comment').touched || angForm.get('Comment').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('Comment').errors.required"></span>  categories est obligatoire
+                    <span *ngIf="angForm.get('Comment').errors.required"></span> le champ commentaire est obligatoire
                   </div>
                 </div>
                 </div>
@@ -233,7 +233,7 @@
 
               <button class="btn btn-danger distance"  style="float: left">Annuler</button>
               <div class="col-sm-8">
-              <button class="btn btn-primary "  style="float: right"  [disabled]="angForm.invalid" (click)="CreateObjective()">create</button>
+              <button class="btn btn-primary "  style="float: right"  [disabled]="angForm.invalid" (click)="CreateObjective()">Créer</button>
               </div>
             </form>
 

@@ -1,8 +1,8 @@
 
 <div class="col-md-6 container    my-5">
   <div class="card card-user  ">
-    <div class="card-header panel-heading bg-primary position ">
-      <h1 class="card-title"> Login</h1>
+    <div class=" colorLogin position ">
+      <h1 class="text-white"> Login</h1>
     </div>
     <div class="card-body">
       <form  #f="ngForm" (ngSubmit)="onLogin(f.value)">
@@ -13,22 +13,23 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label">Login:</label>
+          <label class="control-label">Mail</label>
           <input type="text" name="email" ngModel class="form-control">
         </div>
         <div class="form-group">
-          <label class="control-label">Password:</label>
+          <label class="control-label">Mot de passe</label>
           <input type="password" name="password" ngModel class="form-control">
         </div>
-        <button type="submit" class="btn btn-primary" >Login</button>
+        <div class="centrerbutton">
+        <button type="submit" class="btn text-white centrer col-md-4" >Se connecter</button>
+        </div>
       </form>
 
   </div>
-    <div>
-      <a routerLink="/createregister">creer un compte</a>
-    </div>
-    <div>
-      <a routerLink="/forgettpassword">Informations de compte oubliées ?</a>
+    <div class="position1">
+      <a routerLink="/createregister">Créer un compte   |</a>
+
+      <a routerLink="/forgettpassword">|     Mot de passe oublié ?</a>
     </div>
 </div>
 </div>

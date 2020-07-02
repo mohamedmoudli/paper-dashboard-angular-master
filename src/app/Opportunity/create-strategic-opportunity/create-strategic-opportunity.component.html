@@ -1,16 +1,16 @@
 
 <div >
-  <h5 class="card-title "> Ajouter Strategique </h5>
+  <h5 class="card-title "> Ajouter Stratégie </h5>
 </div>
 <div class="card-body">
   <form [formGroup]="angForm" name="form" (ngSubmit)=" onSubmit() ">
 
     <div class="form-group">
       <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('NameStrategicOpportunity').errors && (angForm.get('NameStrategicOpportunity').touched || angForm.get('NameStrategicOpportunity').dirty ) }">
-        <label class="control-label">nom categorie:</label>
+        <label class="control-label">Nom stratégie</label>
         <input type="text" name="NameStrategicOpportunity"  [(ngModel)]="data.NameStrategicOpportunity"  formControlName="NameStrategicOpportunity" class="form-control">
         <div *ngIf="angForm.get('NameStrategicOpportunity').errors && (angForm.get('NameStrategicOpportunity').touched || angForm.get('NameStrategicOpportunity').dirty )" class="alert alert-danger">
-          <span *ngIf="angForm.get('NameStrategicOpportunity').errors.required"></span>  categories est obligatoire
+          <span *ngIf="angForm.get('NameStrategicOpportunity').errors.required"></span> le champ stratégie est obligatoire
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
 
     <button class="btn btn-danger"  style="float: left" (click)="onNoClick()">Annuler</button>
 
-    <button class="btn btn-primary "  style="float: right" [disabled]="angForm.invalid" (click)="createStrategic()" >create</button>
+    <button class="btn btn-primary "  style="float: right" [disabled]="angForm.invalid" (click)="createStrategic()" >Créer</button>
   </form>
 
 </div>

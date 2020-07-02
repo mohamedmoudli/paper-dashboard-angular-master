@@ -1,16 +1,16 @@
 
 <div >
-  <h1 class="card-title "> ajouter partie interesse </h1>
+  <h1 class="card-title "> Ajouter une partie interessée </h1>
 </div>
 <div class="card-body">
   <form #f="ngForm" (ngSubmit)="CreateInterestedParty(f.value)">
 
     <div class="form-group">
-      <label class="control-label">nom partie interesse:</label>
+      <label class="control-label">Nom partie interessée</label>
       <input type="text" name="NameInterestedParty"  ngModel class="form-control">
     </div>
     <div>
-      <label>Catégorie partie interessé</label>
+      <label>Catégorie partie interessée</label>
       <select name="CategoryInterestedParty" placeholder="nom cat" id="pet-select" ngModel class="form-control" >
 
         <option value="">--choisir categories--</option>
@@ -21,7 +21,7 @@
 
     <button class="btn btn-danger" (click)="onNoClick()" style="float: left">Annuler</button>
 
-    <button class="btn btn-primary "  style="float: right"  >create</button>
+    <button class="btn btn-primary "  style="float: right"  >Créer</button>
   </form>
 
 </div>

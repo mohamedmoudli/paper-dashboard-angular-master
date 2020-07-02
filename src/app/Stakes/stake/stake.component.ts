@@ -32,7 +32,7 @@ export class StakeComponent implements OnInit {
   public barChartType = 'bar';
   public barChartLegend = true;
   public barChartData = [
-    {data: this.data1, label: 'NOMBRE DE PI PAR CATEGORIES'},
+    {data: this.data1, label: 'Nombre des enjeux par catégorie'},
 
   ];
 
