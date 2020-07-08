@@ -13,7 +13,7 @@ import {DelateInterestedPartyComponent} from '../delate-interested-party/delate-
 export class ListInterestedPartyComponent implements OnInit {
   interestedParty: any;
 
-  public hidder = ["id", "pi" , "influence", "interet" ,  "pouvoir", "poids"];
+  public hidder = ["Id", "PI" , "influence", "Interet" ,  "Pouvoir", "Poids"];
   constructor(private interestedPartyService: InterestedPartyService,
               private router: Router , private dialog: MatDialog ) { }
 

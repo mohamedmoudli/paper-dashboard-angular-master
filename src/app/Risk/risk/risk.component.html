@@ -6,28 +6,28 @@
     <navbar-cmp></navbar-cmp>
     <div class="content">
       <div class="row">
-        <button routerLink="/ajouterRisque" class="btn btn-success">+ Ajouter un risque</button>
-        <button (click)="DisplayStake()" class="btn btn-warning" >Enjeux</button>
-        <button (click)="DisplayPIRelevant()" class="btn btn-warning">PI pertinente</button>
+        <button routerLink="/ajouterRisque" class="btn colororange ml-3">+ Ajouter un risque</button>
+        <button (click)="DisplayStake()" class="btn colororange ml-1" >Enjeux</button>
+        <button (click)="DisplayPIRelevant()" class="btn colororange ml-1">PI pertinente</button>
 
-        <div style="float: left" >
-          <button class="btn btn-primary" routerLink="/historiqueRisque" style="float: left">Historique</button>
-        </div>
-        <svg class="bi bi-gear-fill" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" routerLink="/reflextionguideRisque">
+
+          <button class="btn colororange ml-1" routerLink="/historiqueRisque" style="float: left">Historique</button>
+
+        <svg class="bi bi-gear-fill ml-1" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" routerLink="/reflextionguideRisque">
           <path fill-rule="evenodd" d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 0 0-5.86 2.929 2.929 0 0 0 0 5.858z"/>
         </svg>
 
-        <svg class="bi bi-search" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helpRisk()">
+        <svg class="bi bi-search ml-1" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helpRisk()">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
           <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
         </svg>
-        <button class="btn btn-simple" (click)="definitionRisk()" style="float: right">Définition</button>
-        <div style="float: left" >
-          <button class="btn bg-default" (click)="saveHistoricalRisk()" style="float: left">Enregister Etat</button>
-        </div>
-        <div class="col-md-12">
+        <button class="btn colorbleu text-white ml-1" (click)="definitionRisk()" style="float: right">Définition</button>
+
+        <button class="btn colorbleu text-white ml-1" (click)="saveHistoricalRisk()" style="float: left">Enregister l'état</button>
+
+        <div class="col-md-12 mt-1">
           <div >
-            <div class="card-header couleurOpportunite">
+            <div class="card-header colorbleu textOpportunite text-white">
               <h4 class="card-title"> Risque</h4>
             </div>
             <div >
@@ -35,13 +35,13 @@
                 <table class="table">
                   <thead  >
                   <tr>
-                    <td colspan="3"></td>
-                    <td colspan="6" class="couleurIdentification">Identification du risque</td>
-                    <td colspan="9" class=" couleurEvaluation">Evaluation risque</td>
-                    <td colspan="1" class="couleurReevaluation ">Commentaire</td>
+
+                    <td colspan="9" class="colorbleuf textOpportunite ">Identification du risque</td>
+                    <td colspan="9" class=" colorbleu textOpportunite text-white">Evaluation risque</td>
+                    <td colspan="1" class="colorbleuf textOpportunite  ">Commentaire</td>
                   </tr>
                   <tr>
-                    <th *ngFor="let c of hidder" class="bordertd bg-primary">{{c}}</th><td></td><td></td><td></td>
+                    <th *ngFor="let c of hidder" class="bordertd colorbleuf ">{{c}}</th><td></td><td></td><td></td>
                   </tr>
 
                   </thead>
@@ -82,15 +82,15 @@
         </div>
       </div>
       <div class="form">
-      <button class="btn btn-danger" routerLink="/RisqueCategories" *ngIf="CreateRole()">Gérer les catégories</button>
-      <button class="btn btn-danger" routerLink="/strategiqueRisque" *ngIf="CreateRole()" >Gérer les stratégies</button>
-      <button class="btn btn-danger" routerLink="/etatRisque" style="float: left" *ngIf="CreateRole()">Gérer l'état</button>
+      <button class="btn colororange ml-1" routerLink="/RisqueCategories" *ngIf="CreateRole()">Gérer les catégories</button>
+      <button class="btn colororange ml-1" routerLink="/strategiqueRisque" *ngIf="CreateRole()" >Gérer les stratégies</button>
+      <button class="btn colororange " routerLink="/etatRisque" style="float: left" *ngIf="CreateRole()">Gérer l'état</button>
       </div>
-      <div class="card col-md-6">
+      <div class="card col-md-6 mt-1">
       <h3 class="text-break">Seuil d'acceptance : 16</h3>
       <h3 class="text-break">Seuil d'attention : 32</h3>
       </div>
-      <div class="col-md-4 card" >
+      <div class="col-md-4  mt-1" >
         <table class="table ">
           <thead>
           <th>Etat du risque</th>

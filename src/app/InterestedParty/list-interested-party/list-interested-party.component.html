@@ -6,7 +6,7 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content" >
-      <button class="btn btn-primary " (click)="CreateInterestedParty()">ajouter partie interesse</button>
+      <button class="btn btn-primary " (click)="CreateInterestedParty()">+ Ajouter partie interésse</button>
       <div class="card col-md-6">
 
         <table class="table">
@@ -24,7 +24,10 @@
             <td >{{c.Power}}</td>
             <td >{{c.Weight}}</td>
             <td></td>
-            <td><button class="btn btn-danger" (click)="delateInterestedParty(c)">supp</button></td>
+            <td>
+              <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                <mat-icon (click)="delateInterestedParty(c)" class="text-white">delete</mat-icon>
+              </button></td>
           </tr>
           </tbody>
         </table>

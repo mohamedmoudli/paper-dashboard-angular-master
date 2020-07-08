@@ -13,7 +13,7 @@
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idcategory').errors && (angForm.get('idcategory').touched || angForm.get('idcategory').dirty ) }">
                   <select name="idcategory" placeholder="nom cat"  formControlName="idcategory"  [(ngModel)]="data.idcategory" type="number" class="form-control" >
-                    <option value="">--choisir categories--</option>
+                    <option value="">--choisir catégorie--</option>
                     <option *ngFor="let c of categoryOpportunity" value="{{c.id}}">{{c.NameCategoryOpportunity}}</option>
                   </select>
                     <div *ngIf="angForm.get('idcategory').errors && (angForm.get('idcategory').touched || angForm.get('idcategory').dirty )" class="alert alert-danger">

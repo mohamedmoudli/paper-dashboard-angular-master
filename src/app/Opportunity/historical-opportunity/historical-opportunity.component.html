@@ -7,12 +7,12 @@
     <navbar-cmp></navbar-cmp>
     <div class="content">
 
-      <div class="card-header couleurHistoricalOpportunity">
-        <h2 class="card-title"> Historique des Opportunités</h2>
+      <div class="card-header colorbleu textopp text-white">
+        <h2 class="card-title "> Historique des Opportunités</h2>
       </div>
       <div class="card table-responsive">
         <div>
-          <h3>chercher : </h3>
+
           <input type="text" placeholder="recherche" [(ngModel)]="data.Strategique" class="form-control col-md-4">
         </div>
         <table class="table" >
@@ -28,7 +28,10 @@
             <td>{{c.Commentaire}}</td>
             <td>  <p *ngFor="let p of c.NumAction "> {{ p}}</p> </td>
             <td>{{c.Date | date}}</td>
-            <td *ngIf="CreateRole()"><button class="btn btn-danger" (click)="delateHistoricalOpportunity(c)">supp</button></td>
+            <td *ngIf="CreateRole()">
+              <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                <mat-icon (click)="delateHistoricalOpportunity(c)" class="text-white">delete</mat-icon>
+              </button></td>
 
           </tr>
 
@@ -40,10 +43,10 @@
 
 
     </div>
-    <footer-cmp></footer-cmp>
+
   </div>
 </div>
-<fixedplugin-cmp></fixedplugin-cmp>
+
 
 
 

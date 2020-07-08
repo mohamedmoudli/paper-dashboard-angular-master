@@ -21,9 +21,9 @@ export class RiskComponent implements OnInit {
   Stake: any ;
 
 
-  public hidder = ["id", "CategorieRisque" , "description" , "court term" , "moyen term" , "long term" ,
-    "date d'indentification" , "cause" , "consequence" , "gravite" , "probabilité" , "detectabilité" , "creticité" , "decision" ,
-    'strategique' , "process lié" , "N action" , "etat risque" , "commentaire"];
+  public hidder = ["Id", "catégorie" , "description" , "court terme" , "moyen terme" , "long terme" ,
+    "date d'indentification" , "cause" , "consequence" , "gravité" , "probabilité" , "detectabilité" , "criticité" , "décision" ,
+    'stratégie' , "processus lié" , "N action" , "état" , "commentaire"];
   constructor(private riskService: RiskService,
               private router: Router , private dialog: MatDialog) { }
 

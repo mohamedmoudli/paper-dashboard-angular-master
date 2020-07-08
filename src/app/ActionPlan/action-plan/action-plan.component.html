@@ -6,12 +6,12 @@
     <navbar-cmp></navbar-cmp>
     <div class="content">
       <div class="row">
-        <button class="btn btn-success" routerLink="/CreatePlandeaction" style="text-transform:lowercase">+ Ajouter plan d'action</button>
-        <button class="btn btn-danger" routerLink="/etatEfficacite" style="text-transform:lowercase">+ Ajouter état d'éfficacité</button>
-        <button class="btn btn-danger" routerLink="/etatactuel" >+ Ajouter état actuel</button>
-        <div class="col-md-12">
+        <button class="btn colororange ml-3" routerLink="/CreatePlandeaction" style="text-transform:lowercase">+ Ajouter plan d'action</button>
+        <button class="btn colororange ml-1" routerLink="/etatEfficacite" style="text-transform:lowercase">+ Ajouter état d'éfficacité</button>
+        <button class="btn colororange ml-1" routerLink="/etatactuel" >+ Ajouter état actuel</button>
+        <div class="col-md-12 mt-1">
           <div >
-            <div class="card-header couleurObjective">
+            <div class="card-header colorbleu text-white textOpportunite">
               <h4 class="card-title"> Plan de action</h4>
             </div>
             <div>
@@ -19,7 +19,7 @@
                 <table class="table">
                   <thead >
                   <tr>
-                    <th *ngFor="let c of hidder" class="bordertd bg-primary" style="text-transform:lowercase" >{{c}}</th><td></td><td></td><td></td>
+                    <th *ngFor="let c of hidder" class="bordertd couleurIdentification" style="text-transform:lowercase" >{{c}}</th><td></td><td></td><td></td>
                   </tr>
 
                   </thead>
@@ -58,6 +58,6 @@
         </div>
       </div>
     </div>
-    <footer-cmp></footer-cmp>
+
   </div>
 </div>

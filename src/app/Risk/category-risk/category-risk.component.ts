@@ -16,7 +16,7 @@ export class CategoryRiskComponent implements OnInit {
 
   public CategoryRisk = [];
 
-  public hidder = ["id" , "nom categories"];
+  public hidder = ["id" , "nom catégorie"];
   public test = false;
   public data = {
     nomcat: ""

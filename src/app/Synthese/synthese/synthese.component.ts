@@ -58,8 +58,8 @@ export class SyntheseComponent implements OnInit {
 
   public chartColors: Array<any> = [
     {
-      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
-      hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
+      backgroundColor: ['#86ccdc', '#EE8900', '#FDB45C', '#949FB1', '#4D5360'],
+      hoverBackgroundColor: ['#86ccdc', '#EE8900', '#FDB45C', '#949FB1', '#4D5360'],
       borderWidth: 2,
     }
   ];
@@ -71,7 +71,7 @@ export class SyntheseComponent implements OnInit {
 
   public chartColorsEtatRisque : Array<any> = [
     {
-      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
+      backgroundColor: ['#F7464A', '#4D5360', '#FDB45C', '#949FB1', '#4D5360'],
       hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
       borderWidth: 2,
     }
@@ -86,7 +86,7 @@ export class SyntheseComponent implements OnInit {
 
   public chartColorsEtatOpportunite : Array<any> = [
     {
-      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
+      backgroundColor: ['#F7464A', '#4D5360', '#FDB45C', '#949FB1', '#4D5360'],
       hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
       borderWidth: 2,
     }
@@ -100,7 +100,7 @@ export class SyntheseComponent implements OnInit {
 
   public chartColorsCategorieOpportunite : Array<any> = [
     {
-      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
+      backgroundColor: ['#F7464A', '#949FB1', '#FDB45C', '#949FB1', '#4D5360'],
       hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
       borderWidth: 2,
     }
@@ -113,7 +113,7 @@ export class SyntheseComponent implements OnInit {
 
   public chartColorsCurrentState : Array<any> = [
     {
-      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
+      backgroundColor: ['#F7464A', '#4D5360', '#FDB45C', '#949FB1', '#4D5360'],
       hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
       borderWidth: 2,
     }
@@ -125,7 +125,7 @@ export class SyntheseComponent implements OnInit {
 
   public chartColorsStateEfficacity : Array<any> = [
     {
-      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
+      backgroundColor: ['#F7464A', '#4D5360', '#FDB45C', '#949FB1', '#4D5360'],
       hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
       borderWidth: 2,
     }
@@ -137,7 +137,7 @@ export class SyntheseComponent implements OnInit {
 
   public chartColorsCurrentStateByProcess : Array<any> = [
     {
-      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
+      backgroundColor: ['#F7464A', '#4D5360', '#FDB45C', '#949FB1', '#4D5360'],
       hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
       borderWidth: 2,
     }
@@ -150,7 +150,7 @@ export class SyntheseComponent implements OnInit {
 
   public chartColorsAdvencementByProcess : Array<any> = [
     {
-      backgroundColor: ['#F7464A', '#00FF00', '#FDB45C', '#949FB1', '#4D5360'],
+      backgroundColor: ['#F7464A', '#949FB1', '#FDB45C', '#949FB1', '#4D5360'],
       hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5', '#616774'],
       borderWidth: 2,
     }

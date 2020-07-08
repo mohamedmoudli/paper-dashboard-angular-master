@@ -14,37 +14,39 @@
       </div>
 
         <div >
-          <h2> Périmètre d'application de managment </h2>
+          <h3> Périmètre d'application de managment </h3>
         </div>
-        <form >
+        <form  >
           <div>
             <textarea name="perimetre" [(ngModel)]="perimeter" class="col-md-10"> </textarea>
+
           </div>
-          <button (click)="saveperimetre()" class="btn text-white colorbleu" style="text-transform:none" >Afficher</button>
+          <button (click)="saveperimetre()" class="btn text-white colorbleu btn-sm" style="text-transform:none" >Afficher</button>
         </form>
 
 
-        <div class="card">
-          <h2>{{ displayperimeter }}</h2>
+        <div class="card mt-1">
+          <h3>{{ displayperimeter }}</h3>
         </div>
 
         <div >
-          <h2> Politique </h2>
+          <h3> Politique </h3>
         </div>
         <form >
           <div>
             <textarea name="politique" [(ngModel)]="Politics" class="col-md-10"> </textarea>
           </div>
-          <button (click)="savepolitique()" class="btn text-white colorbleu" style="text-transform:none" >Afficher</button>
+          <button (click)="savepolitique()" class="btn text-white colorbleu btn-sm" style="text-transform:none" >Afficher</button>
         </form>
 
 
-        <div class="card">
-          <h2>{{ displayPolitics }}</h2>
+        <div class="card mt-1">
+          <h3>{{ displayPolitics }}</h3>
         </div>
 
-      <button class="btn colororange text-white " (click)="CreateProcess()" style="text-transform:none"  >+ Ajouter processus </button>
+      <button class="btn colororange text-white mb-1" (click)="CreateProcess()" style="text-transform:none"  >+ Ajouter processus </button>
       <div class="card col-md-10">
+
         <table class="table" >
           <thead class=" text-primary">
           <tr>
@@ -56,7 +58,13 @@
             <td>{{c.Process}}</td>
             <td>{{c.PerformanceIndicator}}</td>
             <td>{{c.Pilot}}</td>
-            <td><button class="btn btn-danger" (click)="delateProcess(c)">supprimer</button></td>
+            <td>
+
+                <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                  <mat-icon (click)="delateProcess(c)" class="text-white">delete</mat-icon>
+                </button>
+
+              </td>
 
             <td ></td>
 

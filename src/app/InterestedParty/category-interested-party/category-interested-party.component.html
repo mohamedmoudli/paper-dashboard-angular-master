@@ -9,7 +9,7 @@
       <button class="btn btn-primary " (click)="CreateCategory()">+ Ajouter catégorie</button>
       <div class="card col-md-6">
 
-        <table class="table">
+        <table class="table  mt-1">
           <thead class=" text-primary">
           <tr>
             <th *ngFor="let c of hidder"><h5 >{{c}}</h5></th><td></td><td></td><td></td>
@@ -20,7 +20,10 @@
             <td>Cat{{c.id}}</td>
             <td>{{c.NameCategory}}</td>
             <td></td>
-            <td><button class="btn btn-danger" (click)="delateCategory(c)">supp</button></td>
+            <td>
+              <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                <mat-icon (click)="delateCategory(c)" class="text-white">delete</mat-icon>
+              </button></td>
           </tr>
           </tbody>
         </table>

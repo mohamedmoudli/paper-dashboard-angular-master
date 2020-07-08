@@ -19,7 +19,7 @@ export class CategoryInterestedPartyComponent implements OnInit {
   public fisrtname;
   public CategoryinterestedParty = [];
   public dataSource = new MatTableDataSource(this.CategoryinterestedParty);
-  public hidder = ["id" , "nom categories"];
+  public hidder = ["Id" , "Nom catégorie"];
   public test = false;
   public data = {
     nomcat: ""

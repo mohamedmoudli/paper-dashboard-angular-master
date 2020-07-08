@@ -7,25 +7,25 @@
     <navbar-cmp></navbar-cmp>
     <div class="content ">
       <div class="row">
-        <svg class="bi bi-search" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helpOpportunity()">
+        <svg class="bi bi-search ml-3" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right" (click)="helpOpportunity()">
           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
           <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
         </svg>
-        <button class="btn btn-simple" (click)="definitionOpportunity()" style="float: right">Définition</button>
+        <button class="btn colorbleu text-white ml-1" (click)="definitionOpportunity()" style="float: right">Définition</button>
 
         <div  >
-          <button class="btn btn-primary" routerLink="/historiqueOpportunite" style="float: left">Historique</button>
+          <button class="btn colororange ml-1" routerLink="/historiqueOpportunite" style="float: left">Historique</button>
         </div>
-        <button routerLink="/ajouterOpportunite" class="btn btn-success">+ Ajouter opportunité</button>
-        <button (click)="DisplayStake()"  class="btn btn-warning" >Enjeux</button>
-        <button (click)="DisplayPIpertinante()" class="btn btn-warning">PI pertinente</button>
+        <button routerLink="/ajouterOpportunite" class="btn colororange ml-1">+ Ajouter opportunité</button>
+        <button (click)="DisplayStake()"  class="btn colororange ml-1" >Enjeux</button>
+        <button (click)="DisplayPIpertinante()" class="btn colororange ml-1">PI pertinente</button>
 
         <div style="float: left" >
-          <button class="btn bg-default" (click)="saveHistoricalOpportunity()" style="float: left">Enregister l'état</button>
+          <button class="btn colorbleu ml-1 text-white" (click)="saveHistoricalOpportunity()" style="float: left">Enregister l'état</button>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 mt-1">
           <div class="">
-            <div class="card-header couleurOpportunite">
+            <div class="card-header  colorbleu text-white textopp ">
               <h4 class="card-title "> Opportunité</h4>
             </div>
             <div>
@@ -33,13 +33,13 @@
                 <table  class=" table">
                   <thead >
                   <tr>
-                    <td colspan="3"></td>
-                    <td colspan="10" class="couleurIdentification">Identification des Opportunités</td>
-                    <td colspan="8" class=" couleurEvaluation">Evaluation</td>
-                    <td colspan="8" class="couleurReevaluation ">Réevaluation</td>
+
+                    <td colspan="13" class="couleurIdentification">Identification des Opportunités</td>
+                    <td colspan="8" class="colorbleu textopp ">Evaluation</td>
+                    <td colspan="8" class="couleurIdentification ">Réévaluation</td>
                   </tr>
                   <tr>
-                    <th *ngFor="let c of hidder" class="bordertd bg-primary">{{c}}</th><td></td><td></td><td></td>
+                    <th *ngFor="let c of hidder" class="bordertd couleurIdentification">{{c}}</th><td></td><td></td><td></td>
                   </tr>
 
                   </thead>
@@ -107,13 +107,13 @@
         </div>
       </div>
       <div class="form">
-        <button class="btn btn-danger" routerLink="/CategoriesOpportunite" *ngIf="CreateRole()">Gérer catégorie</button>
+        <button class="btn colororange ml-1" routerLink="/CategoriesOpportunite" *ngIf="CreateRole()">Gérer catégorie</button>
 
-        <button class="btn btn-danger" routerLink="/etatOpportunite" *ngIf="CreateRole()">Gérer l'état</button>
+        <button class="btn colororange  ml-1" routerLink="/etatOpportunite" *ngIf="CreateRole()">Gérer l'état</button>
 
-        <button class="btn btn-danger" routerLink="/StrategiqueOpportunite" style="float: left" *ngIf="CreateRole()">Gérer les stratégies</button>
+        <button class="btn colororange" routerLink="/StrategiqueOpportunite" style="float: left" *ngIf="CreateRole()">Gérer les stratégies</button>
       </div>
-      <div class="card col-md-6">
+      <div class="card col-md-6 mt-1">
       <h3 class="text-break">Seuil de reflextion : 4</h3>
       <h3 class="text-break">Seuil de reaction : 9</h3>
       </div>

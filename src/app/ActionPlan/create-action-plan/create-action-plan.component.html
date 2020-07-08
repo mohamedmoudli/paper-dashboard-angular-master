@@ -14,7 +14,7 @@
                 <label class="col-sm-2 col-form-label">Origine</label>
                 <div class="col-sm-6">
                   <select name="Origin" placeholder="nom cat"  [(ngModel)]="data.Origin" type="number" class="form-control" >
-                    <option value="">--Origine--</option>
+                    <option value="">--choisir origine--</option>
                     <option value="Exigence pi">Exigence pi</option>
                     <option value="Risque">Risque</option>
                     <option value="Opportunite">Opportunité</option>
@@ -27,7 +27,7 @@
 
 
               <div class="form-group row" *ngIf="data.Origin == 'Exigence pi'">
-                  <label class="col-sm-2 col-form-label">exigence :</label>
+                  <label class="col-sm-2 col-form-label">exigence</label>
                   <div class="col-sm-6">
                 <select  name="idExigency" placeholder="nom cat" [(ngModel)]="data.idExigency" type="number" class="form-control">
 
@@ -38,7 +38,7 @@
               </div>
               </div>
               <div  class="form-group row" *ngIf="data.Origin == 'Risque'">
-                <label class="col-sm-2 col-form-label">Risque :</label>
+                <label class="col-sm-2 col-form-label">Risque</label>
                 <div class="col-sm-6">
                 <select  name="idRisk" placeholder="nom cat" [(ngModel)]="data.idRisk" type="number" class="form-control" >
 
@@ -49,18 +49,18 @@
                 </div>
               </div>
               <div  class="form-group row" *ngIf="data.Origin == 'Objective'">
-                <label class="col-sm-2 col-form-label">Objective :</label>
+                <label class="col-sm-2 col-form-label">Objectif</label>
                 <div class="col-sm-6">
                 <select  name="idObjective" placeholder="nom cat" [(ngModel)]="data.idObjective" type="number" class="form-control">
 
-                  <option value="">--choisir objective--</option>
+                  <option value="">--choisir objectif--</option>
                   <option *ngFor="let c of objective" value="{{c.id}}">{{c.id}}</option>
 
                 </select>
                 </div>
               </div>
               <div class="form-group row"  *ngIf="data.Origin == 'Opportunite'">
-                <label class="col-sm-2 col-form-label">Opportunité :</label>
+                <label class="col-sm-2 col-form-label">Opportunité</label>
                 <div class="col-sm-6">
                 <select  name="idOpportunity" placeholder="nom cat" [(ngModel)]="data.idOpportunity" type="number" class="form-control" >
 
@@ -71,11 +71,11 @@
                 </div>
               </div>
               <div class="form-group row"  *ngIf="data.Origin == 'OpportuniteReevaaluation'">
-                <label class="col-sm-2 col-form-label">Opportunité :</label>
+                <label class="col-sm-2 col-form-label">Stratégie</label>
                 <div class="col-sm-6">
                 <select  name="idOpportunityreevaluation" placeholder="nom cat" [(ngModel)]="data.idOpportunityreevaluation" type="number" class="form-control"  >
 
-                  <option value="">--choisir strategique--</option>
+                  <option value="">--choisir stratégie--</option>
                   <option *ngFor="let c of opportunite" value="{{c.id}}">{{c.id}}</option>
 
                 </select>
@@ -88,74 +88,74 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Date Debut Panifie : </label>
+                <label class="col-sm-2 col-form-label">Date début planifié</label>
                 <div class="col-sm-6">
                   <input type="date" name="StartDatePanifies"  [(ngModel)]="data.StartDatePanifies" class="form-control">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Delai: </label>
+                <label class="col-sm-2 col-form-label">Délai </label>
                 <div class="col-sm-6">
                   <input type="text" name="Delai"  [(ngModel)]="data.Delai" class="form-control">
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Respensable: </label>
+                <label class="col-sm-2 col-form-label">Responsable</label>
                 <div class="col-sm-6">
                   <input type="text" name="Responsible"  [(ngModel)]="data.Responsible" class="form-control">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Realisateur: </label>
+                <label class="col-sm-2 col-form-label">Réalisateur </label>
                 <div class="col-sm-6">
                   <input type="text" name="Director"  [(ngModel)]="data.Director" class="form-control">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Consulter: </label>
+                <label class="col-sm-2 col-form-label">Consulté</label>
                 <div class="col-sm-6">
                   <input type="text" name="Consult"  [(ngModel)]="data.Consult" class="form-control">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Avencement: </label>
+                <label class="col-sm-2 col-form-label">Avancement</label>
                 <div class="col-sm-6">
                   <input type="number" name="Advancement"  [(ngModel)]="data.Advancement" class="form-control">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Critere De Cloture: </label>
+                <label class="col-sm-2 col-form-label">Critere de clôture</label>
                 <div class="col-sm-6">
                   <input type="text" name="ClosingCriterion"  [(ngModel)]="data.ClosingCriterion" class="form-control">
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Preuve De Cloture: </label>
+                <label class="col-sm-2 col-form-label">Preuve de clôturee</label>
                 <div class="col-sm-6">
                   <input type="text" name="ProofOfClosure"  [(ngModel)]="data.ProofOfClosure" class="form-control">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Critaire de Efficacite : </label>
+                <label class="col-sm-2 col-form-label">Critére d'efficacité</label>
                 <div class="col-sm-6">
                   <input type="text" name="CriteriaEfficiency"  [(ngModel)]="data.CriteriaEfficiency" class="form-control">
                 </div>
               </div>
 
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">etat d'efficacité :</label>
+                <label class="col-sm-2 col-form-label">Etat d'efficacité :</label>
                 <div class="col-sm-6">
                 <select  name="StateOfEfficacy" placeholder="nom cat" [(ngModel)]="data.StateOfEfficacy" type="number" class="form-control" >
-                  <option value="">--choisir etate de efficacité--</option>
+                  <option value="">--choisir état d'efficacité--</option>
                   <option *ngFor="let c of StateEfficacity" value="{{c.id}}">{{c.NameStateEfficacy}}</option>
 
                 </select>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">etat actuel :</label>
+                <label class="col-sm-2 col-form-label">Etat actuel</label>
                 <div class="col-sm-6">
                 <select  name="CurrentState" placeholder="nom cat" [(ngModel)]="data.CurrentState" type="number" class="form-control" >
 
@@ -166,7 +166,7 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Commentaire: </label>
+                <label class="col-sm-2 col-form-label">Commentaire</label>
                 <div class="col-sm-6">
                   <input type="text" name="Comment"  [(ngModel)]="data.Comment" class="form-control">
                 </div>
@@ -174,7 +174,7 @@
 
               <button class="btn btn-danger distance" routerLink="/categoriesPI" style="float: left">Annuler</button>
               <div class="col-sm-8">
-              <button class="btn btn-primary "  style="float: right"  (click)="CreateActionPlan()">create</button>
+              <button class="btn btn-primary "  style="float: right"  (click)="CreateActionPlan()">Créer</button>
               </div>
             </form>
           </div>

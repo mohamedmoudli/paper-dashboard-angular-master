@@ -20,7 +20,10 @@
             <td>Etat{{c.id}}</td>
             <td>{{c.NameStateOpportunity}}</td>
             <td></td>
-            <td><button class="btn btn-danger" (click)="delateStateOpportunity(c)">supp</button></td>
+            <td>
+              <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                <mat-icon (click)="delateStateOpportunity(c)" class="text-white">delete</mat-icon>
+              </button></td>
           </tr>
           </tbody>
         </table>

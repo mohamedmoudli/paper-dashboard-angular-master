@@ -5,13 +5,13 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content">
-      <div class="card-header colorHistoricalInteretedParty col-md-10">
-        <h2 class="card-title"> historique partie interessé</h2>
+      <div class="card-header colorbleu text-white col-md-10 mb-3">
+        <h2 class="card-title"> Historique partie interessée</h2>
       </div>
       <div class="card col-md-10">
         <div class="row">
-          <h3>chercher : </h3>
-          <input type="text" placeholder="search" [(ngModel)]="historical.NomPI" class="form-control col-md-4">
+
+          <input type="text" placeholder="recherche" [(ngModel)]="historical.NomPI" class="form-control col-md-4">
         </div>
         <table class="table" >
           <thead class=" text-primary">
@@ -25,7 +25,10 @@
             <td>{{c.Poids}}</td>
             <td>{{c.Date | date}}</td>
 
-            <td><button class="btn btn-danger" (click)="delateHistoricalInterestedParty(c)">supp</button></td>
+            <td>
+              <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                <mat-icon (click)="delateHistoricalInterestedParty(c)" class="text-white">delete</mat-icon>
+              </button></td>
 
           </tr>
 

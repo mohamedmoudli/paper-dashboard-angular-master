@@ -18,7 +18,7 @@ export class CategoryExternalComponent implements OnInit {
 
   editUser:any;
   CategoryExternal:any;
-  public hidder = ["id" , "nom categories"];
+  public hidder = ["id" , "nom catégorie"];
   public test = false;
   public data = {
     nomcat: ""

@@ -18,10 +18,10 @@ export class OpportunityComponent implements OnInit {
   opportunity : any;
   Stake : any;
 
-  public hidder = ["id", "CategorieRisque" , "description" , "court term" , "moyen term" , "long term" ,
-    "date d'indentification" , "Coherence" , "Allignement" , "Presence" , "Competences" , "Continute" , "Gain" , "Efforts" ,
-    "Aventages" , "Poids" , "Decision" , "Stategique" , "process lié" , "N action" , "etat risque" ,
-    "Efforts" ,"Aventages" ,"Poids" ,"Decision" , "Stategique" , "process lié" , "N action" , "etat risque" , "commentaire"];
+  public hidder = ["id", "catégorie" , "description" , "court terme" , "moyen terme" , "long terme" ,
+    "date d'indentification" , "cohérence" , "allignement" , "présence" , "compétences" , "continuté" , "gain" , "efforts" ,
+    "avantages" , "poids" , "décision" , "statégie" , "processus lié" , "N action" , "état" ,
+    "efforts" ,"avantages" ,"poids" ,"décision" , "Statégie" , "processus lié" , "N action" , "état" , "commentaire"];
 
   constructor(private opportunityService: OpportunityService,
               private router: Router , private dialog: MatDialog) { }

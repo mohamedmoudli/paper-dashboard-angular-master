@@ -11,12 +11,12 @@
                 <label class="col-sm-2 col-form-label">Catégorie de risque</label>
                 <div class="col-sm-6">
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('idcategory').errors && (angForm.get('idcategory').touched || angForm.get('idcategory').dirty ) }">
-                  <select name="idcategory" placeholder="nom cat"  placeholder="nom cat" formControlName="idcategory"  [(ngModel)]="data.idcategory" type="number" class="form-control" >
-                    <option value="">--choisir categories--</option>
+                  <select class="mb-1" name="idcategory" placeholder="nom cat"  placeholder="nom cat" formControlName="idcategory"  [(ngModel)]="data.idcategory" type="number" class="form-control" >
+                    <option value="">--choisir catégorie--</option>
                     <option *ngFor="let c of categoryrisk" value="{{c.id}}">{{c.NameCategoryRisk}}</option>
                   </select>
-                  <div *ngIf="angForm.get('idcategory').errors && (angForm.get('idcategory').touched || angForm.get('idcategory').dirty )" class="alert alert-danger">
-                    <span *ngIf="angForm.get('idcategory').errors.required"></span>le champ  catégorie est obligatoire
+                  <div role="alert"  *ngIf="angForm.get('idcategory').errors && (angForm.get('idcategory').touched || angForm.get('idcategory').dirty )" class="alert alert-danger">
+                   le champ  catégorie est obligatoire
                   </div>
                 </div>
               </div>
@@ -52,7 +52,7 @@
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('DateIdentification').errors && (angForm.get('DateIdentification').touched || angForm.get('DateIdentification').dirty ) }">
                   <input type="date" name="DateIdentification"  formControlName="DateIdentification"  [(ngModel)]="data.DateIdentification" class="form-control">
                     <div *ngIf="angForm.get('DateIdentification').errors && (angForm.get('DateIdentification').touched || angForm.get('DateIdentification').dirty )" class="alert alert-danger">
-                      <span *ngIf="angForm.get('DateIdentification').errors.required"></span>  Date d'identification est obligatoire
+                      <span *ngIf="angForm.get('DateIdentification').errors.required"></span> le champ date d'identification est obligatoire
                     </div>
                 </div>
               </div>
@@ -64,7 +64,7 @@
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Causes').errors && (angForm.get('Causes').touched || angForm.get('Causes').dirty ) }">
                   <input type="text" name="Causes"  formControlName="Causes"  [(ngModel)]="data.Causes" class="form-control">
                     <div *ngIf="angForm.get('Causes').errors && (angForm.get('Causes').touched || angForm.get('Causes').dirty )" class="alert alert-danger">
-                      <span *ngIf="angForm.get('Causes').errors.required"></span>le champs  cause est obligatoire
+                      <span *ngIf="angForm.get('Causes').errors.required"></span>le champ cause est obligatoire
                     </div>
                 </div>
               </div>
@@ -75,7 +75,7 @@
                   <div  class="form-group" [ngClass]="{ 'is-invalid': angForm.get('Censequence').errors && (angForm.get('Censequence').touched || angForm.get('Censequence').dirty ) }">
                   <input type="text" name="Censequence"  formControlName="Censequence"  [(ngModel)]="data.Censequence" class="form-control">
                     <div *ngIf="angForm.get('Censequence').errors && (angForm.get('Censequence').touched || angForm.get('Censequence').dirty )" class="alert alert-danger">
-                      <span *ngIf="angForm.get('Censequence').errors.required"></span>  Causes est obligatoire
+                      <span *ngIf="angForm.get('Censequence').errors.required"></span> le champ conséquance est obligatoire
                     </div>
                 </div>
               </div>

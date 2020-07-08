@@ -7,7 +7,7 @@
     <navbar-cmp></navbar-cmp>
     <div class="content">
 
-      <div class="bg-primary">
+      <div class="colorbleu text-white">
         <h1>Objectif</h1>
       </div>
       <div class="form-group row">
@@ -22,13 +22,13 @@
         </div>
       </div>
       <div >
-     <button class="btn btn-danger" (click)="allObjective = !allObjective" >Afficher</button>
+     <button class="btn colororange" (click)="allObjective = !allObjective" >Afficher</button>
       </div>
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Objectif</label>
         <div class="col-sm-4">
           <select name="idStake" placeholder="nom cat"  [(ngModel)]="DescriptionHistorical" (click)="DisplayObjectivebyDescription()"  type="number" class="form-control" >
-            <option value="">--choisir Objectif--</option>
+            <option value="">--choisir objectif--</option>
 
             <option *ngFor="let c of Objective" value="{{c.Description}}">{{c.Description}}</option>
 
@@ -36,7 +36,7 @@
         </div>
       </div>
 
-      <button class="btn btn-danger" (click)="allbyObjective = !allbyObjective"  >Afficher</button>
+      <button class="btn colororange" (click)="allbyObjective = !allbyObjective"  >Afficher</button>
 
       <div class="col-md-8 card" >
         <div style="display: block">
@@ -117,10 +117,10 @@
       <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </div>
 
-<div class="bg-primary">
-  <h1>RISQUE</h1>
+<div class="colorbleu text-white">
+  <h1>Risque</h1>
 </div>
- <h3 class="text-success">Etat de risque</h3>
+ <h3 class="text-warning">Etat de risque</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartDataEtatRisque"
                 [labels]="pieChartLabelsEtatRisque" [colors]="chartColorsEtatRisque"
@@ -128,38 +128,38 @@
       </div>
 
 
-<h3 class="text-success">Catégorie de risque</h3>
+<h3 class="text-warning">Catégorie de risque</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartData"
                 [labels]="pieChartLabels" [colors]="chartColors"
                 [labels]="chartLabels" [colors]="chartColors" [chartType]="pieChartType"></canvas>
       </div>
 
-      <div class="bg-primary">
+      <div class="colorbleu text-white">
         <h1>Opportunite</h1>
       </div>
-      <h3 class="text-success">Etat de l'opportunité</h3>
+      <h3 class="text-warning">Etat de l'opportunité</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartDataEtatOpportunite"
                 [labels]="pieChartLabelsEtatOpportunite" [colors]="chartColorsEtatOpportunite"
                 [labels]="chartLabelsEtatOpportunite" [colors]="chartColorsEtatOpportunite" [chartType]="pieChartTypeEtatOpportunite"></canvas>
       </div>
-      <h3 class="text-success">Catégorie opportunite</h3>
+      <h3 class="text-warning">Catégorie opportunite</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartDataCategorieOpportunite"
                 [labels]="pieChartLabelsCategorieOpportunite" [colors]="chartColorsCategorieOpportunite"
                 [labels]="chartLabelsCategorieOpportunite" [colors]="chartColorsCategorieOpportunite" [chartType]="pieChartTypeCategorieOpportunite"></canvas>
       </div>
-      <div class="bg-primary">
+      <div class="colorbleu text-white">
         <h1>Plan d'action</h1>
       </div>
-      <h3 class="text-success">Etat actuel</h3>
+      <h3 class="text-warning">Etat actuel</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartDataCurrentState"
                 [labels]="pieChartLabelsCurrentState" [colors]="chartColorsCurrentState"
                 [labels]="chartLabelsCurrentState" [colors]="chartColorsCurrentState" [chartType]="pieChartTypeCurrentState"></canvas>
       </div>
-      <h3 class="text-success">Etat d'efficacité</h3>
+      <h3 class="text-warning">Etat d'efficacité</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartDataStateEfficacity"
                 [labels]="pieChartLabelsStateEfficacity" [colors]="chartColorsStateEfficacity"
@@ -167,14 +167,14 @@
       </div>
 
 
-      <h3 class="text-success">Avancement par process</h3>
+      <h3 class="text-warning">Avancement par process</h3>
       <div style="display: block">
         <canvas baseChart [data]="pieChartDataAdvencementByProcess"
                 [labels]="pieChartLabelsAdvencementByProcess" [colors]="chartColorsAdvencementByProcess"
                 [labels]="chartLabelsAdvencementByProcess" [colors]="chartColorsAdvencementByProcess" [chartType]="pieChartTypeAdvencementByProcess"></canvas>
       </div>
 
-      <h3 class="text-success">Avancement par délai</h3>
+      <h3 class="text-warning">Avancement par délai</h3>
       <div class="card">
       <table class="table ">
         <thead>
@@ -194,7 +194,6 @@
       </table>
       </div>
     </div>
-    <footer-cmp></footer-cmp>
   </div>
 </div>
 

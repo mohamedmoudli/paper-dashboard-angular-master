@@ -93,6 +93,7 @@ export class InterestedPartyComponent implements OnInit {
 
 
 
+
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true

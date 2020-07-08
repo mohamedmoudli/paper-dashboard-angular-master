@@ -6,7 +6,7 @@
   <div class="main-panel">
     <navbar-cmp></navbar-cmp>
     <div class="content " >
-      <button class="btn btn-primary" (click)="CreateStateRisk()">+ Ajouter etat</button>
+      <button class="btn btn-primary" (click)="CreateStateRisk()">+ Ajouter un état</button>
       <div class="card col-md-6">
 
         <table class="table">
@@ -17,10 +17,13 @@
           </thead>
           <tbody >
           <tr *ngFor="let c of stateRisk">
-            <td>Etat{{c.id}}</td>
+            <td>{{c.id}}</td>
             <td>{{c.NameStateRisk}}</td>
             <td></td>
-            <td><button class="btn btn-danger" (click)="delateStateRisk(c)">supp</button></td>
+            <td>
+              <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                <mat-icon (click)="delateStateRisk(c)" class="text-white">delete</mat-icon>
+              </button></td>
           </tr>
           </tbody>
         </table>
@@ -33,7 +36,7 @@
   </div>
 </div>
 
-<fixedplugin-cmp></fixedplugin-cmp>
+
 
 
 

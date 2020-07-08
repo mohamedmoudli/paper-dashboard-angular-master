@@ -95,7 +95,11 @@ export class CreateActionPlanComponent implements OnInit {
       resp=>{
         console.log(resp);
         console.log(true);
-        return this.router.navigate(['Plandeaction'])
+
+        this.router.navigateByUrl('/Objective', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['Plandeaction']);
+        });
+
       },error => {
 
         console.log(error);
